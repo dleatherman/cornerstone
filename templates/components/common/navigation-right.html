@@ -1,7 +1,7 @@
 <nav class="navUser navUser-right-max-width">
-   {{> components/common/currency-selector}}
+  {{> components/common/currency-selector}}
 
-   <ul class="navUser-section navUser-section--alt responsive-nav navUser-right-max-width">
+  <ul class="navUser-section navUser-section--alt responsive-nav navUser-right-max-width">
       <!--{{#if customer}}
           <li class="navUser-item account-link" id="my-account">
               <a class="navUser-action is-text " href="{{urls.account.index}}">{{lang 'common.account'}}</a>
@@ -18,18 +18,16 @@
           </li>
       {{/unless}}-->
       <li class="navUser-item icon-link quickSearch" id="search">
-         <a class="navUser-action navUser-action--quickSearch" href="/search.php" data-search="quickSearch"
-            aria-controls="quickSearch" aria-expanded="false">
+        <a class="navUser-action navUser-action--quickSearch" href="/search.php" 
+        data-search="quickSearch" aria-controls="quickSearch" aria-expanded="false">
             <svg width="17px" height="17px" viewBox="0 0 17 17">
-               <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                  <g id="quickSearch-icon" fill="#C7C8C7" fill-rule="nonzero">
-                     <path
-                        d="M15,13.9146341 L11.0532786,10 C11.9016393,8.93902434 12.4303279,7.62195125 12.4303279,6.1707317 C12.4303279,2.76829269 9.63934425,-7.10542736e-15 6.2090164,-7.10542736e-15 C2.77868852,-7.10542736e-15 0,2.76829269 0,6.1707317 C0,9.57317075 2.7909836,12.3414634 6.22131148,12.3414634 C7.68442625,12.3414634 9.01229508,11.8170732 10.0819672,10.9756097 L14.0286885,14.8902438 L15,13.9146341 Z M6.22131148,10.9634147 C3.5532787,10.9634147 1.38934427,8.80487808 1.38934427,6.1707317 C1.38934427,3.53658537 3.56557377,1.37804878 6.22131148,1.37804878 C8.87704917,1.37804878 11.0532786,3.53658537 11.0532786,6.1707317 C11.0532786,8.80487808 8.88934425,10.9634147 6.22131148,10.9634147 Z"
-                        id="Shape"></path>
-                  </g>
-               </g>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="quickSearch-icon" fill="#C7C8C7" fill-rule="nonzero">
+                        <path d="M15,13.9146341 L11.0532786,10 C11.9016393,8.93902434 12.4303279,7.62195125 12.4303279,6.1707317 C12.4303279,2.76829269 9.63934425,-7.10542736e-15 6.2090164,-7.10542736e-15 C2.77868852,-7.10542736e-15 0,2.76829269 0,6.1707317 C0,9.57317075 2.7909836,12.3414634 6.22131148,12.3414634 C7.68442625,12.3414634 9.01229508,11.8170732 10.0819672,10.9756097 L14.0286885,14.8902438 L15,13.9146341 Z M6.22131148,10.9634147 C3.5532787,10.9634147 1.38934427,8.80487808 1.38934427,6.1707317 C1.38934427,3.53658537 3.56557377,1.37804878 6.22131148,1.37804878 C8.87704917,1.37804878 11.0532786,3.53658537 11.0532786,6.1707317 C11.0532786,8.80487808 8.88934425,10.9634147 6.22131148,10.9634147 Z" id="Shape"></path>
+                    </g>
+                </g>
             </svg>
-         </a>
+        </a>
       </li>
       <!--<li class="navUser-item icon-link shopping-bag-li" id="shopping">
         <a class="navUser-action shopping-bag" href="{{urls.cart}}">
@@ -42,5 +40,5 @@
             </svg>
         </a>
       </li>-->
-   </ul>
+  </ul>
 </nav>

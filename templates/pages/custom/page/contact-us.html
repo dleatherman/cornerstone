@@ -1,11 +1,15 @@
+---
+blog:
+    recent_posts:
+        limit: {{theme_settings.homepage_blog_posts_count}}
+---
 {{#partial "page"}}
 
 {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
 
 <main class="page">
-    {{#unless theme_settings.hide_contact_us_page_heading }}
-        <h1 class="page-heading">{{page.title}}</h1>
-    {{/unless}}
+
+    <h1 class="page-heading">{{page.title}}</h1>
 
     {{#if page.sub_pages}}
         <nav class="navBar navBar--sub">

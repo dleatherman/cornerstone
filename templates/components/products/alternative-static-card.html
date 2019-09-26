@@ -1,0 +1,24 @@
+<li class="product">
+  <a class="product-item" href="{{url}}" {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}>
+    <article class="card {{#if alternate}}card--alternate{{/if}}" {{#if settings.data_tag_enabled}} data-event-type="{{event}}" data-entity-id="{{id}}" data-position="{{position}}" data-name="{{name}}" data-product-category="{{#each category}}{{#if @last}}{{this}}{{else}}{{this}}, {{/if}}{{/each}}" data-product-brand="{{brand.name}}" data-product-price="{{#if price.with_tax}}{{price.with_tax.value}}{{else}}{{price.without_tax.value}}{{/if}}"  {{/if}}>
+      <figure class="card-figure">
+        <div class="card-prod-container" href="{{url}}" {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}>
+          <div class="card-img-container">
+            <div class="product-image">
+              <img class="card-image lazyload" data-sizes="auto" src="{{cdn image 'productgallery_size' (cdn theme_settings.default_image_product)}}"  alt="{{image.alt}}" title="{{image.alt}}">
+            </div>
+            <div class="alternative-product-name-brand">
+              <h3 class="name">{{name}}</h3>
+              <span class="brand">{{brand}}</span>
+            </div>
+          </div>
+        </div>
+      </figure>
+      <div class="card-body">
+        <div class="card-text" data-test-info-type="price">
+          {{price}}
+        </div>
+      </div>
+    </article>
+  </a>
+</li>

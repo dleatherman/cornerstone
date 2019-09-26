@@ -1,20 +1,46 @@
-<nav>
-    {{#if category.subcategories}}
-        <div class="sidebarBlock">
-            <h5 class="sidebarBlock-heading">{{category.name}}</h5>
-            <ul class="navList">
+{{#if category.subcategories}}
+    <ul class="list-filter-container">
+        <li class="list-item main-item"><a class="main-link" href="#">
+            <div>
+                <span>Add Filter by</span><br>
+                Category
+            </div>
+            <img src="{{cdn 'img/downarrow.svg'}}" width="20px" height="20px" />
+        </a>
+
+        </a>
+            <ul class="dropdown">
                 {{#each category.subcategories}}
-                <li class="navList-item">
-                    <a class="navList-action" href="{{url}}" alt="{{name}}" title="{{name}}">{{name}}</a>
-                </li>
+                    <li class="list-item sub-item">
+                        <a href="{{url}}" alt="{{name}}" title="{{name}}">
+                            <div>{{name}}</div>
+                            <div class="filter-circle {{#if selected }} selected {{/if}}"></div>
+                        </a>
+                    </li>
                 {{/each}}
             </ul>
+        </li>
+    </ul>
+    <li class="mobile-filter-title">
+        <div class="name">
+            <span>Category</span>
+            <span class="add-icon active">{{> components/common/plus-icon }}</span>
+            <span class="minus-icon">{{> components/common/minus-icon }}</span>
         </div>
-    {{/if}}
-
-    {{#if category.faceted_search_enabled}}
-        {{> components/faceted-search/index category}}
-    {{else}}
-        {{> components/category/shop-by-price shop_by_price=category.shop_by_price category_url=category.url}}
-    {{/if}}
-</nav>
+        
+        <ul class="mobile-filter-list">
+            {{#each category.subcategories}}
+                <li class="mobile-filter-item">
+                    <a href="{{url}}">{{name}}
+                        <div class="mobile-filter-circle {{#if selected }} selected {{/if}}"></div>
+                    </a>
+                </li>
+            {{/each}}
+        </ul>
+    </li>
+{{/if}}
+{{#if category.faceted_search_enabled}}
+    {{> components/faceted-search/index category}}
+{{else}}
+    {{> components/category/shop-by-price shop_by_price=category.shop_by_price category_url=category.url}}
+{{/if}}

@@ -114,7 +114,8 @@
   background-image: url('../img/touch-texture.jpg');
 
   &:hover {
-    background-image: url('../img/touch-hover.jpg');
+    background-image: none;
+    background-color: stencilColor("color-touch");
   }
 }
 
@@ -122,7 +123,8 @@
   background-image: url('../img/taste-texture.jpg');
 
   &:hover {
-    background-image: url('../img/taste-hover.jpg');
+    background-image: none;
+    background-color: stencilColor("color-taste");
   }
 }
 
@@ -130,7 +132,8 @@
   background-image: url('../img/aroma-texture.jpg');
 
   &:hover {
-    background-image: url('../img/aroma-hover.jpg');
+    background-image: none;
+    background-color: stencilColor("color-aroma");
   }
 }
 
@@ -138,7 +141,8 @@
   background-image: url('../img/gaze-texture.jpg');
 
   &:hover {
-    background-image: url('../img/gaze-hover.jpg');
+    background-image: none;
+    background-color: stencilColor("color-gaze");
   }
 }
 
@@ -146,6 +150,7 @@
   background-image: url('../img/listen-texture.jpg');
 
   &:hover {
-    background-image: url('../img/listen-hover.jpg');
+    background-image: none;
+    background-color: stencilColor("color-listen");
   }
 }

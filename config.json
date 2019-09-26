@@ -622,7 +622,12 @@
         "off-white": "#F4F4F0",
         "desert-tan": "#A36D39",
         "table-lines": "#E1E1E1",
-        "colored-bg": "#F5EFEC"
+        "colored-bg": "#F5EFEC",
+        "color-touch": "#dfd0cd",
+        "color-taste": "#aa7949",
+        "color-aroma": "#c8c8c8",
+        "color-gaze": "#e3b196",
+        "color-listen": "#787c83"
       }
     }
   ]

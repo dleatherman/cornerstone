@@ -1,19 +1,74 @@
-<fieldset class="form-fieldset actionBar-section">
-    <div class="form-field">
-        <label class="form-label" for="sort">{{lang 'common.sorter.sort_by'}}</label>
-        <select class="form-select form-select--small" name="sort" id="sort">
-            <option value="featured" {{#if sort '==' 'featured'}}selected{{/if}}>{{lang 'common.sorter.featured'}}</option>
-            <option value="newest" {{#if sort '==' 'newest'}}selected{{/if}}>{{lang 'common.sorter.newest'}}</option>
-            <option value="bestselling" {{#if sort '==' 'bestselling'}}selected{{/if}}>{{lang 'common.sorter.top_sellers'}}</option>
-            <option value="alphaasc" {{#if sort '==' 'alphaasc'}}selected{{/if}}>{{lang 'common.sorter.alpha_asc'}}</option>
-            <option value="alphadesc" {{#if sort '==' 'alphadesc'}}selected{{/if}}>{{lang 'common.sorter.alpha_desc'}}</option>
-            <option value="avgcustomerreview" {{#if sort '==' 'avgcustomerreview'}}selected{{/if}}>{{lang 'common.sorter.reviews'}}</option>
-            <option value="priceasc" {{#if sort '==' 'priceasc'}}selected{{/if}}>{{lang 'common.sorter.price_asc'}}</option>
-            <option value="pricedesc" {{#if sort '==' 'pricedesc'}}selected{{/if}}>{{lang 'common.sorter.price_desc'}}</option>
+
+<input name="sort" id="sort" style="color: black;" type="hidden"/>
+<ul class="list-filter-container sort-container">
+    <li class="list-item main-item"><a class="main-link" href="#">
+            <div>
+                <span>Order by</span><br>
+                {{#if sort '==' 'featured'}} 
+                    {{lang 'common.sorter.featured'}} 
+                {{/if}}
+                {{#if sort '==' 'newest'}} 
+                    {{lang 'common.sorter.newest'}} 
+                {{/if}}
+
+                {{#if sort '==' 'bestselling'}} 
+                    Best Selling
+                {{/if}}
+
+                {{#if sort '==' 'alphaasc'}} 
+                    A to Z
+                {{/if}}
+                {{#if sort '==' 'alphadesc'}} 
+                    Z to A
+                {{/if}}
+                {{#if sort '==' 'avgcustomerreview'}} 
+                    By Review
+                {{/if}}
+                {{#if sort '==' 'priceasc'}} 
+                    PRICE: ASCENDING
+                {{/if}}
+                {{#if sort '==' 'price_desc'}} 
+                    PRICE: DESCENDING
+                {{/if}}
+                {{#if sort '==' 'relevance'}} 
+                    RELEVANCE
+                {{/if}}
+            </div>
+            <img src="{{cdn 'img/downarrow.svg'}}" width="20px" height="20px" />
+        </a>
+        </a>
+        <ul class="dropdown">
+            <li class="list-item sub-item" data-value="featured">
+                {{lang 'common.sorter.featured'}}
+            </li>
+            <li class="list-item sub-item" data-value="newest">
+                {{lang 'common.sorter.newest'}}
+            </li>
+            <li class="list-item sub-item" data-value="bestselling">
+                {{lang 'common.sorter.top_sellers'}}
+            </li>
+            <li class="list-item sub-item" data-value="alphaasc">
+                {{lang 'common.sorter.alpha_asc'}}
+            </li>
+            <li class="list-item sub-item" data-value="alphadesc">
+                {{lang 'common.sorter.alpha_desc'}}
+            </li>
+            <li class="list-item sub-item" data-value="avgcustomerreview">
+                {{lang 'common.sorter.reviews'}}
+            </li>
+            <li class="list-item sub-item" data-value="priceasc">
+                {{lang 'common.sorter.price_asc'}}
+            </li>
+            <li class="list-item sub-item" data-value="pricedesc">
+                {{lang 'common.sorter.price_desc'}}
+            </li>
             {{#if result_count}}
-                <option value="relevance" {{#if sort '==' 'relevance'}}selected{{/if}}>{{lang 'common.sorter.relevance'}}</option>
+                <li class="list-item sub-item" data-value="relevance">
+                    {{lang 'common.sorter.relevance'}}
+                </li>
             {{/if}}
-        </select>
-    </div>
-</fieldset>
+            
+        </ul>
+    </li>
+</ul>
 

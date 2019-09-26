@@ -1,0 +1,18 @@
+<article class="card {{#if alternate}}card--alternate{{/if}}" {{#if settings.data_tag_enabled}} data-event-type="{{event}}" data-entity-id="{{id}}" data-position="{{position}}" data-name="{{name}}" data-product-category="{{#each category}}{{#if @last}}{{this}}{{else}}{{this}}, {{/if}}{{/each}}" data-product-brand="{{brand.name}}" data-product-price="{{#if price.with_tax}}{{price.with_tax.value}}{{else}}{{price.without_tax.value}}{{/if}}"  {{/if}}>
+  <figure class="card-figure">
+    <a href="{{url}}" {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}>
+      <div class="card-img-container">
+          <img class="card-image lazyload" data-sizes="auto" src="" data-src="{{img}}" alt="img" title="img">
+      </div>
+    </a>
+  </figure>
+  <div class="card-body">
+      <h4 class="card-title">
+        <a href="{{url}}" {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}>{{name}}</a>
+      </h4>
+      <p class="card-text brand" data-test-info-type="brandName">{{brand}}</p>
+      <div class="card-text" data-test-info-type="price">
+        <span class="price-label">${{price}}</span>
+      </div>
+  </div>
+</article>

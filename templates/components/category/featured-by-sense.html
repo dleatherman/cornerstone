@@ -1,0 +1,29 @@
+<section class="senses-container">
+  <h2>{{main-title}}</h2>
+  <div class="favorite-text">
+    <span>{{subtitle}}</span>
+    <img class="sense-arrow" src="{{cdn 'icons/sense-arrow.svg'}}" alt="sense-arrow" />
+  </div>
+  <div class="items-container">
+    <form action="{{urls.compare}}" method='POST' {{#if settings.data_tag_enabled}} data-list-name="Category: {{category.name}}" {{/if}} data-product-compare>
+      <ul class="productGrid">
+        {{#if items}}
+          {{#each (limit items 4)}}
+            <li class="product">
+              {{>components/products/card settings=../settings show_rating=../settings.show_product_rating theme_settings=../theme_settings customer=../customer event=../event position=(add @index 1)}}
+            </li>
+          {{/each}}
+        {{/if}}
+        {{#is products "touch-main" }}
+          {{>components/products/senses-products/touch-main }}
+        {{/is}}
+        {{#is products "touch-turn-up" }}
+          {{>components/products/senses-products/touch-turn-up }}
+        {{/is}}
+      </ul>
+    </form>
+    <a href="{{link-url}}" class="shop-all">{{link-text}}
+      <img src="{{cdn 'icons/right-arrow.svg'}}" alt="right-arrow" />
+    </a>
+  </div>
+</section> 

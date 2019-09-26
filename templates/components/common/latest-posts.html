@@ -1,0 +1,21 @@
+<section class="latest-posts">
+  <div class="container">
+    <h2>
+        {{#if text}}
+            {{text}}<br />
+            {{text2}}
+        {{else}}
+            your guide to connection, wine, jammies, travel,<br />
+            good eats, love, oh and did we mention wine?
+        {{/if}}
+    </h2>
+    <div class="posts-container">
+        {{#each posts}}
+            {{> components/blog/post post=this}}
+        {{/each}}
+        <p class="button-wrapper">
+            <a class="button" href="/stories">Explore more stories</a>
+        </p>
+    </div>
+  </div>
+</section>

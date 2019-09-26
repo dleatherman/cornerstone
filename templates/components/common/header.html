@@ -9,23 +9,42 @@
     {{/each}}
 </div>
 {{/if}}
-<header class="header" role="banner">
-    <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
-        <span class="mobileMenu-toggleIcon">Toggle menu</span>
-    </a>
-    {{> components/common/navigation}}
-
-    {{#if page_type '===' 'default'}}
-        <h1 class="header-logo header-logo--{{theme_settings.logo-position}}">
-            {{> components/common/store-logo}}
-        </h1>
-    {{else}}
-        <div class="header-logo header-logo--{{theme_settings.logo-position}}">
-            {{> components/common/store-logo}}
+<header class="header {{addClass}} {{currentPage}}" role="banner" id="menu">
+    <div class="container">
+        <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu" id="prueba">
+            <span class="mobileMenu-toggleIcon">Toggle menu</span>
+        </a>
+        <a href="#" class="mobileMenu-toggle-senses hide">
+            <span class="mobileMenu-toggleIcon">Toggle menu</span>
+        </a>
+        {{> components/common/navigation-left}}
+        
+        {{#if page_type '===' 'default'}}
+            <h1 class="header-logo header-logo--{{theme_settings.logo-position}}">
+                {{> components/common/store-logo}}
+            </h1>
+        {{else}}
+            <div class="header-logo header-logo--{{theme_settings.logo-position}}">
+                {{> components/common/store-logo}}
+            </div>
+        {{/if}}
+        {{!> components/common/navigation-right}}
+        <!-- {{{region name="header_bottom"}}} -->
+        
+        {{> components/common/shop-menu posts=blog.recent_posts secondary_posts=blog.posts}}
+        {{> components/common/stories-menu posts=blog.recent_posts secondary_posts=blog.posts}}
+        
+        {{!> components/common/mobile-menu}}
+        <div class="mobile-menu">
+          <ul class="list-container main-list-container">
+            <li>
+              <a class="menu-link main" href="/stories/">Stories</a>
+             </li>
+             <li>
+              <a class="menu-link main" href="/about-us/">About Pepper</a>
+             </li>
+          </ul>
         </div>
-    {{/if}}
-    <div class="navPages-container" id="menu" data-menu>
-        {{> components/common/navigation-menu}}
+        <div class="dropdown dropdown--quickSearch" id="quickSearch" aria-hidden="true" tabindex="-1" data-prevent-quick-search-close></div>
     </div>
 </header>
-{{{region name="header_bottom"}}}

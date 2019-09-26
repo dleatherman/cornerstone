@@ -1,0 +1,70 @@
+<div class="StoriesMenu">
+  <div class="ShopMenu-options">
+    <div class="menu-column">
+      <ul class="menu-list">
+        <li class="menu-main-category-item">
+          <a class="category-name menu-main-category-name">Our Story</a>
+          <ul class="menu-list">
+            <li class="menu-sub-category-item">
+              <a class="category-name menu-sub-category-name">The Founders</a>
+            </li>
+            <li class="menu-sub-category-item">
+              <a class="category-name menu-sub-category-name">The Curators</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="menu-list">
+        <li class="menu-main-category-item">
+          <a class="category-name menu-main-category-name">Our Dream Team</a>
+          <ul class="menu-list">
+            <li class="menu-sub-category-item">
+              <a class="category-name menu-sub-category-name">Strategy</a>
+            </li>
+            <li class="menu-sub-category-item">
+              <a class="category-name menu-sub-category-name">Creatives</a>
+            </li>
+            <li class="menu-sub-category-item">
+              <a class="category-name menu-sub-category-name">Curators</a>
+            </li>
+            <li class="menu-sub-category-item">
+              <a class="category-name menu-sub-category-name">Computer Whiz</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="menu-list">
+        <li class="menu-main-category-item">
+          <a class="category-name menu-main-category-name">Senses</a>
+          <ul class="menu-list">
+            <li class="menu-sub-category-item">
+              <a href="/touch"
+                class="category-name menu-sub-category-name">Touch Stories</a>
+            </li>
+            <li class="menu-sub-category-item">
+              <a href="/taste"
+                class="category-name menu-sub-category-name">Taste Stories</a>
+            </li>
+            <li class="menu-sub-category-item">
+              <a href="/aroma"
+                class="category-name menu-sub-category-name">Aroma Stories</a>
+            </li>
+            <li class="menu-sub-category-item">
+              <a href="/gaze"
+                class="category-name menu-sub-category-name">Gaze Stories</a>
+            </li>
+            <li class="menu-sub-category-item">
+              <a href="/listen"
+                class="category-name menu-sub-category-name">Listen Stories</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="ShopMenu-posts">
+      {{> components/common/menu-blog-post post=posts.[0] secondary_post=secondary_posts.[0]}}
+      {{> components/common/menu-blog-post post=posts.[1] secondary_post=secondary_posts.[1]}}
+      {{> components/common/menu-blog-post post=posts.[2] secondary_post=secondary_posts.[2]}}
+  </div>
+</div>

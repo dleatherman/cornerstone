@@ -380,17 +380,10 @@ class FacetedSearch {
             return;
         }
 
-        const url = Url.parse(window.location.href, true);
-        let queryParams = decodeURI($(event.currentTarget).serialize()).split('&');
-        queryParams = urlUtils.parseQueryParams(queryParams);
+        const url = Url.parse(window.location.href);
+        const queryParams = decodeURI($(event.currentTarget).serialize());
 
-        for (const key in queryParams) {
-            if (queryParams.hasOwnProperty(key)) {
-                url.query[key] = queryParams[key];
-            }
-        }
-
-        urlUtils.goToUrl(Url.format({ pathname: url.pathname, search: urlUtils.buildQueryString(url.query) }));
+        urlUtils.goToUrl(Url.format({ pathname: url.pathname, search: `?${queryParams}` }));
     }
 
     onStateChange() {

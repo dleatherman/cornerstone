@@ -1,0 +1,40 @@
+
+{{#if post}}
+<div class="menu-blog-post">
+    <a class="post-image-link" href="{{post.url}}">
+      <div class="post-image-container">
+          <!-- <img class="post-image" src="{{cdn 'img/post-cover.jpg'}}" alt="post" /> -->
+        <!-- <img class="lazyload post-image" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage post.thumbnail}}" alt="{{post.thumbnail.alt}}" title="{{post.thumbnail.alt}}"> -->
+        <div class="lazyload post-image-2" style="background-image: url('{{getImage post.thumbnail}}')" ></div>
+      </div>
+    </a>
+    
+    <div><span class="post-sense">{{#each post.tags}}{{name}}{{/each}}</span><span class="post-date">{{post.date_published}}</span></div>
+    <a class="post-title" href="{{post.url}}">{{post.title}}</a>
+    <div>
+      <span class="post-author">{{#if post.author}}{{post.author}}{{/if}}</span>
+      <span class="post-length">3 Minute Read</span>
+    </div>
+</div>
+{{else}}
+  {{#if secondary_post}}
+  <div class="menu-blog-post">
+      <a class="post-image-link" href="{{secondary_post.url}}">
+        <div class="post-image-container">
+          <div class="lazyload post-image-2" style="background-image: url('{{getImage secondary_post.thumbnail}}')" ></div>
+        </div>
+      </a>
+      
+      <div><span class="post-sense">{{#each secondary_post.tags}}{{name}}{{/each}}</span><span class="post-date">{{secondary_post.date_published}}</span></div>
+      <a class="post-title" href="{{post.url}}">{{secondary_post.title}}</a>
+      <div>
+        <span class="post-author">{{#if secondary_post.author}}{{secondary_post.author}}{{/if}}</span>
+        <span class="post-length">3 Minute Read</span>
+        <span class="post-flag"><img src="{{cdn 'img/post-flag.svg'}}" alt="post flag" /></span>
+      </div>
+  </div>
+  {{/if}}
+{{/if}}
+
+
+

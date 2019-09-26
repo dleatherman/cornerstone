@@ -67,12 +67,11 @@ export default class Cart extends PageManager {
         const oldQty = preVal !== null ? preVal : minQty;
         const minError = $el.data('quantityMinError');
         const maxError = $el.data('quantityMaxError');
-        const newQty = parseInt(Number($el.val()), 10);
+        const newQty = parseInt(Number($el.attr('value')), 10);
         let invalidEntry;
-
         // Does not quality for min/max quantity
         if (!newQty) {
-            invalidEntry = $el.val();
+            invalidEntry = $el.attr('value');
             $el.val(oldQty);
             return swal({
                 text: `${invalidEntry} is not a valid entry`,
@@ -195,17 +194,22 @@ export default class Cart extends PageManager {
         }
 
         utils.api.cart.getContent(options, (err, response) => {
-            this.$cartContent.html(response.content);
-            this.$cartTotals.html(response.totals);
-            this.$cartMessages.html(response.statusMessages);
+            const numberOfItems = parseInt($(response.content).data("cart-quantity") || 0);
+            if (numberOfItems > 0) {
+                this.$cartContent.html(response.content);
+                this.$cartTotals.html(response.totals);
+                this.$cartMessages.html(response.statusMessages);
 
-            $cartPageTitle.replaceWith(response.pageTitle);
-            this.bindEvents();
-            this.$overlay.hide();
+                $cartPageTitle.replaceWith(response.pageTitle);
+                this.bindEvents();
+                this.$overlay.hide();
 
-            const quantity = $('[data-cart-quantity]', this.$cartContent).data('cartQuantity') || 0;
+                const quantity = $('[data-cart-quantity]', this.$cartContent).data('cartQuantity') || 0;
 
-            $('body').trigger('cart-quantity-update', quantity);
+                $('body').trigger('cart-quantity-update', quantity);
+            } else {
+                location.reload();
+            }
         });
     }
 
@@ -241,9 +245,12 @@ export default class Cart extends PageManager {
             const itemId = $(event.currentTarget).data('cartItemid');
             const string = $(event.currentTarget).data('confirmDelete');
             swal({
+                title: 'Remove this product',
                 text: string,
-                type: 'warning',
                 showCancelButton: true,
+                confirmButtonText: 'delete',
+                reverseButtons: true,
+                showCloseButton: true
             }).then(() => {
                 // remove item from cart
                 cartRemoveItem(itemId);
@@ -291,7 +298,10 @@ export default class Cart extends PageManager {
             if (!code) {
                 return swal({
                     text: $codeInput.data('error'),
-                    type: 'error',
+                    title: 'Error',
+                    showCancelButton: false,
+                    confirmButtonText: 'Try Again',
+                    showCloseButton: true
                 });
             }
 
@@ -301,7 +311,10 @@ export default class Cart extends PageManager {
                 } else {
                     swal({
                         text: response.data.errors.join('\n'),
-                        type: 'error',
+                        title: 'Error on coupon',
+                        showCancelButton: false,
+                        confirmButtonText: 'Try Again',
+                        showCloseButton: true
                     });
                 }
             });

@@ -24,7 +24,6 @@ export default class {
         const $content = $('#productReviews-content', this.$reviewsContent);
 
         $('.productView-reviewLink').on('click', () => {
-            $('.productView-reviewTabLink').trigger('click');
             if (!$content.hasClass('is-open')) {
                 this.$collapsible.trigger(CollapsibleEvents.click);
             }

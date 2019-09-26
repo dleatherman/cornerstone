@@ -1,0 +1,51 @@
+.latest-posts {
+  background-color: stencilColor("gray-3");
+  padding: 3rem 0;
+  
+  @include breakpoint("medium") {
+      padding-bottom: 4rem;
+  }
+
+  .posts-container {
+    margin: 0 auto;
+    
+    @include breakpoint("medium") {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    a {
+        color: stencilColor("navy");
+        text-decoration: none;
+    }
+  }
+
+  h2 {
+    color: stencilColor("navy");
+    font-family: stencilFontFamily("rollerscript-font");
+    font-size: 28px;
+    font-weight: normal;
+    margin: 0 0 4rem;
+  }
+  
+  .button-wrapper {
+      margin: 0 auto;
+      max-width: 86%;
+      
+     @include breakpoint("medium") {
+          display: none;
+      }
+  }
+  
+  .button {
+      background-color: stencilColor("color-primary");
+      border-radius: 0;
+      color: white !important;
+      font-family: stencilFontFamily("sweet-font");
+      letter-spacing: 2px;
+      margin: 0;
+      text-transform: uppercase;
+      width: 100%;
+  }
+}

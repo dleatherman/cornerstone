@@ -1,0 +1,228 @@
+.ShopMenu, .StoriesMenu {
+  position: absolute;
+  width: 100%;
+  top: 90px;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s .3s, opacity .3s linear;
+  display: none;
+  background: white;
+  height: auto;
+  padding: 3.2rem 5rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s linear;
+  justify-content: space-between;
+  z-index: 1;
+
+  @include breakpoint("medium") {
+    display: flex;
+  }
+  
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .3s linear;
+  }
+
+  .ShopMenu-options {
+    display: flex;
+  }
+  
+  .category-name {
+    font-family: stencilFontFamily("sweet-font");
+    font-size: 17px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  
+  .menu-list {
+    list-style: none;
+    margin: 0;
+  }
+  
+  .menu-column{
+    margin-right: 4rem;
+  }
+  
+  .menu-column > .menu-list:not(:last-of-type) {
+    margin-bottom: .8rem;
+  }
+  
+  .menu-main-category-name {
+    color: stencilColor("pink");
+    line-height: 25px;
+
+    &:hover {
+      color: stencilColor("navy");
+    }
+  }
+  
+  .menu-sub-category-name {
+    color: stencilColor("navy");
+    font-size: 17px;
+    font-family: stencilFontFamily("sweet-font");
+    line-height: 25px;
+    text-transform: capitalize;
+
+    &:hover {
+      font-weight: bold;
+    }
+  }
+  
+  .ShopMenu-posts {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+  }
+  
+  .menu-blog-post {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    flex: 1;
+
+    a {
+      text-decoration: none;
+    }
+  }
+  
+  .post-image {
+    margin-bottom: 1rem;
+  }
+
+  .post-image-link {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .post-image-2 {
+    height: 100%;
+    width: 100%;
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .post-sense, .post-date {
+    font-family: stencilFontFamily("sweet-font");
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: stencilColor("navy");
+    letter-spacing: 3px;
+    text-decoration: none;
+  }
+  
+  .post-sense {
+    margin-right: 1rem;
+    position: relative;
+  
+    &::before {
+      content: "|";
+      position: absolute;
+      color: stencilColor("pink");
+      top: 50%;
+      transform: translateY(-50%);
+      right: -.9rem;
+      font-weight: 400;
+    }
+  }
+  
+  .post-title {
+    margin-bottom: 1.5rem;
+    text-decoration: none;
+    font-family: stencilFontFamily("domaine-font");
+    color: stencilColor("pink");
+    font-size: 1.7rem;
+
+    &:hover {
+      color: stencilColor("navy");
+    }
+  }
+  
+  .post-author, .post-length {
+    font-family: stencilFontFamily("sweet-font");
+    font-size: 1rem;
+    color: stencilColor("navy");
+  }
+  
+  .post-author {
+    margin-right: 1.5rem;
+    position: relative;
+  
+    &::before {
+      content: "•";
+      position: absolute;
+      color: stencilColor("navy");
+      top: 50%;
+      transform: translateY(-50%);
+      right: -1.1rem;
+      font-weight: 400;
+    }
+  }
+  
+  .post-flag{
+    margin-left: 1rem;
+    img {
+      width: 20px;
+      height: 17px;
+    }
+  }
+}
+
+.StoriesMenu .ShopMenu-options {
+  min-width: 250px;
+}
+
+.ShopMenu {
+  .menu-blog-post {
+    &:not(:last-of-type) {
+      @include breakpoint("large") { 
+        margin-right: 3rem;
+      }
+    }
+
+    @include breakpoint("medium") {
+      &:last-of-type {
+        display: none;
+      }
+    }
+
+    @include breakpoint("large") { 
+      &:last-of-type {
+        display: flex;
+      }
+    }
+  }
+}
+
+
+.StoriesMenu {
+  .menu-blog-post {
+    &:not(:last-of-type) {
+      margin-right: 3rem;
+    }
+
+    @include breakpoint("medium") {
+      &:last-of-type {
+        display: none;
+      }
+
+      &:nth-child(2) {
+        margin-right: 0;
+      }
+    }
+
+    @include breakpoint("large") { 
+      &:nth-child(2) {
+        margin-right: 3rem;
+      }
+      &:last-of-type {
+        display: flex;
+      }
+    }
+  }
+}

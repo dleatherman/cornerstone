@@ -188,3 +188,23 @@
 
 // Payment Methods
 @import "stencil/paymentMethods/component";
+
+// Secondary Menu
+@import "stencil/secondaryMenu/component";
+
+// Shop Menu
+@import "stencil/headerMenus/component";
+
+// Filters
+@import "stencil/filters/filters";
+
+// -----------------------------------------------------------------------------
+
+// Latest Posts
+@import "common/latest-posts";
+@import "common/post-box";
+@import "common/connect-more";
+@import "common/ordering-dropdown";
+
+// About Us
+@import "stencil/aboutUs/component";

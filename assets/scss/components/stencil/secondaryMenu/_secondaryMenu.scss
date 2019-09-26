@@ -1,0 +1,151 @@
+.secondary-menu {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  list-style: none;
+  display: none;
+  
+  @include breakpoint("medium") {
+      display: flex;
+  }
+
+  &:not(.search-menu) {
+      .secondary-menu-item {
+          display: flex;
+          justify-content: center;
+
+          &.home-item {
+              flex-grow: 1;
+              flex-basis: 0;
+          }
+      }  
+  }
+
+  .secondary-menu-item {
+      height: 80px;
+      cursor: pointer;
+      background-color: white;
+
+      .secondary-menu-item-link {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+        //   padding: 25px 0;
+          text-align: center;
+          align-items: center;
+          height: 100%;
+          text-decoration: none;
+          flex: 1;
+          .secondary-menu-img {
+              width: 19px;
+              height: 30px;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-image: url('../img/moonicon.png'); 
+              background-size: cover;
+          }
+  
+          .secondary-menu-name {
+            margin: 0;
+            font-size: 25px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-family: stencilFontFamily("sweet-font");
+            text-decoration: none;
+            color: stencilColor("navy");
+            font-weight: 200;
+            position: relative;
+            transition: all .3s;
+          }
+      }
+
+      &.active {
+        background-image: none;
+      }
+  }
+
+  &.search-menu {
+      display: flex;
+      position: initial;
+      justify-content: stretch;
+      flex-direction: column;
+
+      &.hide {
+          display: none;
+      }
+      
+      .secondary-menu-item {
+          width: 100%;
+          min-height: 96px;
+          display: inline-flex;
+          justify-content: center;
+
+          .secondary-menu-item-link {
+              height: auto;
+          }
+          .secondary-menu-img {
+              background-image: url('../img/moonbicon copy.png'); 
+          }
+
+          .secondary-menu-name {
+              color: stencilColor("navy");
+          }
+      }
+
+      .secondary-menu-item:nth-child(odd) {
+          border-right: 1px solid rgba(217, 217, 217, 0.5);
+      }
+  }
+
+}
+
+.texture {
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+}
+
+.touch-texture {
+  background-image: url('../img/touch-texture.jpg');
+
+  &:hover {
+    background-image: url('../img/touch-hover.jpg');
+  }
+}
+
+.taste-texture {
+  background-image: url('../img/taste-texture.jpg');
+
+  &:hover {
+    background-image: url('../img/taste-hover.jpg');
+  }
+}
+
+.aroma-texture {
+  background-image: url('../img/aroma-texture.jpg');
+
+  &:hover {
+    background-image: url('../img/aroma-hover.jpg');
+  }
+}
+
+.gaze-texture {
+  background-image: url('../img/gaze-texture.jpg');
+
+  &:hover {
+    background-image: url('../img/gaze-hover.jpg');
+  }
+}
+
+.listen-texture {
+  background-image: url('../img/listen-texture.jpg');
+
+  &:hover {
+    background-image: url('../img/listen-hover.jpg');
+  }
+}

@@ -1,58 +1,97 @@
 <!DOCTYPE html>
 <html class="no-js" lang="{{ locale_name }}">
-    <head>
-        <title>{{ head.title }}</title>
-        {{{ resourceHints }}}
-        {{{ head.meta_tags }}}
-        {{{ head.config }}}
-        {{#block "head"}} {{/block}}
 
-        <link href="{{ head.favicon }}" rel="shortcut icon">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+    <title>
+        {{#if page_title}}
+        {{page_title}}
+        {{else}}
+        {{ head.title }}
+        {{/if}}
+    </title>
+    {{{ resourceHints }}}
+    {{{ head.meta_tags }}}
+    {{{ head.config }}}
+    {{#block "head"}} {{/block}}
 
-        <script>
-            {{!-- Change document class from no-js to js so we can detect this in css --}}
-            document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
-        </script>
-        {{!-- Load Lazysizes script ASAP so images will appear --}}
-        <script>
-            {{!-- Only load visible elements until the onload event fires, after which preload nearby elements. --}}
-            window.lazySizesConfig = window.lazySizesConfig || {};
-            window.lazySizesConfig.loadMode = 1;
-        </script>
-        <script async src="{{cdn 'assets/dist/theme-bundle.head_async.js'}}"></script>
+    <link href="{{ head.favicon }}" rel="shortcut icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <meta name="theme-color" content="#E5B593">
+    <meta name="p:domain_verify" content="abad376d734e1dcb120af94475c69260" />
 
-        {{ getFontsCollection }}
-        {{{stylesheet '/assets/css/theme.css'}}}
+    <style type="text/css" media="screen, print">
+        @font-face {
+            font-family: "SweetSansPro";
+            src: url("{{cdn 'fonts/SweetSansPro-Regular.otf'}}");
+        }
 
-        {{{head.scripts}}}
+        @font-face {
+            font-family: "DomaineDisp";
+            src: url("{{cdn 'fonts/DomaineDisp-Regular.otf'}}");
+        }
 
-        {{~inject 'themeSettings' theme_settings}}
-        {{~inject 'genericError' (lang 'common.generic_error')}}
-        {{~inject 'maintenanceMode' settings.maintenance}}
-        {{~inject 'urls' urls}}
-        {{~inject 'secureBaseUrl' settings.secure_base_url}}
-        {{~inject 'cartId' cart_id}}
-        {{~inject 'template' template}}
-    </head>
-    <body>
-        <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
+        @font-face {
+            font-family: "FreightText";
+            src: url("{{cdn 'fonts/FreightText-Book.otf'}}");
+        }
 
-        {{~#and settings.privacy_cookie settings.is_eu_ip_address}}
-            {{> components/common/cookie}}
-        {{/and}}
+        @font-face {
+            font-family: "RollerscriptSmooth";
+            src: url("{{cdn 'fonts/Rollerscript-Smooth.otf'}}");
+        }
 
-        {{> components/common/header }}
-        {{> components/common/body }}
-        {{> components/common/footer }}
+        @font-face {
+            font-family: "Avenir";
+            src: url("{{cdn 'fonts/Avenir.ttc'}}");
+        }
+    </style>
 
-        <script>window.__webpack_public_path__ = "{{cdn 'assets/dist/'}}";</script>
-        <script src="{{cdn 'assets/dist/theme-bundle.main.js'}}"></script>
-        <script>
-            {{!-- Exported in app.js --}}
-            window.stencilBootstrap("{{page_type}}", {{jsContext}}).load();
-        </script>
+    <script>
+        // Change document class from no-js to js so we can detect this in css
+        document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+    </script>
 
-        {{{footer.scripts}}}
-    </body>
+    {{ getFontsCollection }}
+    {{{stylesheet '/assets/css/theme.css'}}}
+
+    {{{head.scripts}}}
+    {{{head.rsslinks}}}
+
+    {{inject 'themeSettings' theme_settings}}
+    {{inject 'genericError' (lang 'common.generic_error')}}
+    {{inject 'maintenanceMode' settings.maintenance}}
+    {{inject 'urls' urls}}
+    {{inject 'secureBaseUrl' settings.secure_base_url}}
+    {{inject 'cartId' cart_id}}
+    {{inject 'template' template}}
+    {{{snippet 'j'}}}
+</head>
+
+<body>
+    {{{snippet 'header'}}}
+    <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
+
+    {{#and settings.privacy_cookie settings.is_eu_ip_address}}
+    {{> components/common/cookie}}
+    {{/and}}
+
+    {{> components/common/header }}
+    {{> components/common/body page_content=page_content}}
+    {{#if show_ig_feed}}
+    {{>components/common/connect-more}}
+    {{/if}}
+    {{> components/common/footer }}
+    {{> components/common/footer-sm }}
+
+    <script>window.__webpack_public_path__ = "{{cdn 'assets/dist/'}}";</script>
+    <script src="{{cdn 'assets/dist/theme-bundle.main.js'}}"></script>
+    <script>
+        // Exported in app.js
+        window.stencilBootstrap("{{page_type}}", {{ jsContext }}).load();
+    </script>
+
+    {{{footer.scripts}}}
+    {{{snippet 'footer'}}}
+</body>
+
 </html>

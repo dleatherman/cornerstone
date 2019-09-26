@@ -3,7 +3,7 @@ const webpack = require('webpack'),
       commonConfig = require('./webpack.common.js');
 
 module.exports = merge(commonConfig, {
-    devtool: 'inline-source-map',
+    devtool: 'eval-cheap-module-source-map',
     mode: 'development',
     performance: {
         hints: false,

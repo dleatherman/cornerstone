@@ -15,21 +15,47 @@
     @include u-listBullets("none");
     @include grid-row($behavior: "nest");
     font-size: 0; // 1
-    margin-bottom: spacing("single");
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 
     .product {
-        @include grid-column(6, $float: none);
+        width: 100%;
         display: inline-block;
         font-size: fontSize("base"); // 1
         vertical-align: top;
+        padding: 0 0.75rem 1rem;
 
         @include breakpoint("small") {
-            width: grid-calc(4, $total-columns);
+            width: calc((100% - 3rem) / 2);
         }
 
-        @include breakpoint("medium") {
-            width: grid-calc(3, $total-columns);
+        @include breakpoint("large") {
+            padding: 0 0.75rem;
+            width: calc((100% - 3rem) / 4);
         }
+
+        .button {
+            color: stencilColor("grey");
+            background: stencilColor("navy");
+            font-family: stencilFontFamily("sweet-font");
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid stencilColor("navy");
+            border-radius: 0;
+            font-weight: 300;
+    
+            &:hover {
+                color: stencilColor("navy");
+                background: transparent;
+                border: 1px solid stencilColor("navy");
+            }
+        }
+    }
+
+    @include breakpoint("medium") {
+        margin-bottom: spacing("single");
     }
 }
 

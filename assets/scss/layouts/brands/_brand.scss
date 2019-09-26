@@ -1,3 +1,52 @@
+.brands-page {
+    padding: 3em 1em 0;
+
+    @include breakpoint("small") {
+        padding: 3em 2em 0;
+    }
+
+    .card {
+        margin-bottom: 1em;
+    }
+
+    .category-headline {
+        padding-bottom: 2em !important;
+        border-bottom: 1px solid stencilColor("pink");
+
+        .favorite-text {
+            position: relative;
+            display: block;
+            
+            span {
+              font-family: stencilFontFamily("rollerscript-font");
+              color: stencilColor("navy");
+              font-size: 22px;
+
+              @include breakpoint("medium") {
+                font-size: 28px;
+              }
+            }
+        
+            .sense-arrow {
+              position: absolute;
+              vertical-align: text-top;
+              margin-left: 1em;
+              margin-top: 20px;
+              z-index: 3;
+            }
+
+            img  {
+                height: 70px;
+                width: auto;
+
+                @include breakpoint("medium") {
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
 .brand-image-container {
     position: relative;
     max-width: get-width(stencilString('thumb_size'));

@@ -1,25 +1,94 @@
 ---
+carousel: {{theme_settings.homepage_show_carousel}}
 blog:
     posts:
-        limit: 5
+        limit: 9
         pages: 3
-        summary: 200
+        summary: 90
 ---
 {{#partial "page"}}
-
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-
-<main class="page">
-    {{#unless theme_settings.hide_blog_page_heading }}
-        <h1 class="page-heading">{{ blog.name }}</h1>
-    {{/unless}}
-
-    {{#each blog.posts}}
-        {{> components/blog/post post=this}}
-    {{/each}}
-
-    {{> components/common/paginator pagination.blog}}
+<main class="page stories-landing">
+    <div class="senses-explorer-wrapper">
+        <div class="senses-explorer">
+            <div class="senses-explorer-text container">
+                <p class="senses-explorer-title">We believe that the more connected we are, the better we are.</p>
+                <p class="senses-explorer-description">Letting the exploration of the five senses be the guide, we feature editorials that offer tips and tricks for sharing new experiences together.<br />Lifestyle products and toys available soon.</p>
+                <p class="senses-explorer-prompt">explore the senses</p>
+            </div>
+        </div>
+        {{#each carousel.slides}}
+        <div class="senses-explorer senses-explorer-feature" style="background-image: url({{image}});">
+            <div class="senses-explorer-text container">
+                <p class="senses-explorer-title">{{{heading}}}</p>
+                <p class="senses-explorer-description">{{{text}}}</p>
+                <p class="senses-explorer-prompt">explore the senses</p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <ul class="senses-menu">
+        <li class="senses-menu-item touch-texture texture">touch</li>
+        <li class="senses-menu-item taste-texture texture">taste</li>
+        <li class="senses-menu-item aroma-texture texture">aroma</li>
+        <li class="senses-menu-item gaze-texture texture">gaze</li>
+        <li class="senses-menu-item listen-texture texture">listen</li>
+    </ul>
+    <script>
+        function indexInParent(node) {
+            var children = node.parentNode.childNodes;
+            var num = 0;
+            for (var i=0; i<children.length; i++) {
+               if (children[i]==node) return num;
+               if (children[i].nodeType==1) num++;
+            }
+            return -1;
+        }
+        
+        var senses = document.querySelectorAll('.senses-menu li'),
+            senseFeatures = document.querySelectorAll('.senses-explorer-feature');
+        for (var s = 0; s < senses.length; s++) {
+            senses[s].addEventListener('mouseover', function() {
+                senseFeatures[indexInParent(event.target)].classList.add('active');
+            });
+            senses[s].addEventListener('mouseout', function() {
+                senseFeatures[indexInParent(event.target)].classList.remove('active');
+            });
+        }
+    </script>
+    <div class="senses-explorer-carousel">
+        <p class="senses-explorer-summary">Tips, tricks and toys for a deeper connection with your person through the exploration of all five senses.</p>
+        {{> components/carousel arrows=theme_settings.homepage_show_carousel_arrows}}
+    </div>
+    <div class="featured-stories">
+        <div class="container">
+            {{#each blog.posts}}
+                {{#contains (JSONstringify (pluck tags 'name')) 'featured' }}
+                    {{> components/blog/main-blog-post post=this}}
+                {{/contains}}
+            {{/each}}
+        </div>
+    </div>
+    <div class="story-archive container">
+        <h1>Today's Top Stories</h1>
+        {{#each blog.posts}}
+            {{> components/blog/post post=this sense=true}}
+        {{/each}}
+        {{> components/common/paginator pagination.blog text="tell me more, tell me more"}}
+    </div>
+    <div class="subscription-section">
+        <div class="container">
+            <h2>Everyone loves love letters.</h2>
+            <p class="roller-text">Like what you see? Stay in the know on all things Pepper.</p>
+            <div class="newsletter" data-section-type="newsletterSubscription">
+                {{#if settings.show_newsletter_box}}
+                    {{> components/common/subscription-form}}
+                {{/if}}
+                {{> components/common/payment-icons}}
+            </div>
+        </div>
+        
+    </div>
+    {{>components/common/connect-more}}
 </main>
-
 {{/partial}}
-{{> layout/base}}
+{{> layout/base page_title="Stories - Pepper" }}

@@ -14,17 +14,24 @@ $second_value : str-slice($value_of_swatch_size, $position_of_x + 1);
 
 [data-product-attribute] .form-option.form-option-swatch {
     overflow: visible;
+    border-radius: 50%;
 }
 
 .form-option-variant--color,
 .form-option-variant--pattern {
     height: $second_value +"px";
     width: $first_value +"px";
+    border-radius: 50%;
+}
+
+.form-option-variant--color {
+    width: 30px;
+    height: 30px;
 }
 
 .form-option-expanded {
     background-color: stencilColor("body-bg");
-    border: 1px solid stencilColor("input-border-color-active");
+    // border: 1px solid stencilColor("input-border-color-active");
     left: calc(100% + 55px);
     opacity: 0;
     padding: 3px;

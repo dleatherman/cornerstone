@@ -1,0 +1,244 @@
+.terms-base-body {
+  display: flex;
+  padding: 0;
+  max-width: 1600px;
+  margin: 0 auto;
+  flex-direction: column;
+
+  @include breakpoint("medium") {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 6rem 4rem;
+  }
+
+  .sidebar-menu {
+    width: 100%;
+    position: relative;
+
+    @include breakpoint("medium") {
+      width: 15%;
+    }
+  }
+
+  .sidebar-item {
+    text-align: center;
+    margin-bottom: 10px;
+  
+    @include breakpoint("medium") {
+      margin-bottom: 0;
+      text-align: left;
+    }
+
+    a {
+      color: stencilColor("grey-2");
+      font-family: stencilFontFamily("sweet-font");
+      font-size: 1.1rem;
+      text-decoration: none;
+
+      &:hover {
+        color: stencilColor("navy");
+      }
+
+      @include breakpoint("medium") {
+        font-size: 1.1rem;
+      }
+    }
+
+    .active, &:hover {
+      color: stencilColor("navy");
+    }
+  }
+
+  .sidebar-options {
+    z-index: 100;
+    margin: 0;
+    visibility: hidden;
+    top: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 2rem 1rem 1rem;
+    background: white;
+    border-bottom: 1px solid #E1D6D3;
+    list-style: none;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    @include breakpoint("medium") {
+      padding: 0;
+      visibility: visible;
+      opacity: 1;
+      height: auto;
+      position: static;
+    }
+  }
+
+  .terms-content {
+    padding: 0 2rem;
+    width: 100%;
+
+    @include breakpoint("medium") {
+      padding: 0;
+      width: 80%;
+    }
+
+    .inner {
+      display: flex;
+      flex-direction: column;
+
+      @include breakpoint("medium") {
+       flex-direction: row;
+      }
+    }
+  }
+
+  .terms-title {
+    color: white;
+    font-size: 28px;
+    font-family: stencilFontFamily("domaine-font");
+    margin: 0;
+    font-weight: normal;
+    text-align: center;
+    padding: 1.1rem;;
+    background: stencilColor("light-pink");
+    position: relative;
+
+    img {
+      position: absolute;
+      right: 50px;
+      top: 33px;
+      transition: .4s;
+      transition: all .3s;
+
+      @include breakpoint("medium") {
+        display: none;
+      }
+    }
+
+    &.active img {
+      transform: rotate(180deg);
+    }
+
+    @include breakpoint("medium") {
+      margin: 0 0 2rem 0;
+      color: stencilColor("navy");
+      background: transparent;
+      padding: 0;
+      text-align: left;
+    }
+
+    &.main {
+      color: stencilColor("navy");
+      font-size: 28px;
+      padding: 0 1.75rem 0.875rem;
+      border-bottom: 1px solid #E5B593;
+      margin-bottom: 0;
+      margin-top: -5px;
+      background: transparent;
+      @include breakpoint("medium") {
+        padding-left: 0;
+        font-size: 40px;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #E5B593;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  
+
+  .terms-paragraph {
+    font-family: stencilFontFamily("sweet-font");
+    font-size: 1rem;
+    color: stencilColor("grey-2");
+    margin: 0 0 2rem 0;
+
+    a {
+      color: stencilColor("navy");
+    }
+
+    @include breakpoint("medium") {
+      font-size: 1.3rem;
+    }
+  }
+
+  .terms-actions {
+    min-width: 250px;
+    border-left: 1px solid;
+    border-color: stencilColor("pink");
+    padding: 2rem;
+    max-height: 400px;
+    display: none;
+
+    @include breakpoint("medium") {
+      display: block;
+    }
+  }
+
+  .terms-actions span {
+    display: block;
+    font-size: 1.25rem;
+    color: stencilColor("grey-2");
+    margin-bottom: 2rem;
+    font-family: stencilFontFamily("sweet-font");
+  }
+
+  .t-button {
+    display: block;
+    // height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: stencilColor("grey");
+    background: stencilColor("navy");
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin: 0 auto 1rem;
+    padding: .5rem 2rem;
+    border: 1px solid transparent;
+    text-decoration: none;
+    transition: all .3s;
+    font-family: stencilFontFamily("sweet-font");
+
+    &:hover {
+      background: transparent;
+      border-color: stencilColor("grey-2");
+      color: stencilColor("navy");
+    }
+
+    &.share {
+      background: transparent;
+      border-color: stencilColor("grey-2");
+      color: stencilColor("grey-2");
+
+      &:hover {
+        color: stencilColor("grey");
+        border-color: transparent;
+        background: stencilColor("navy");
+      }
+    }
+  }
+
+  h3 {
+    font-size: 18px;
+    font-family: stencilFontFamily("sweet-font");
+    color: stencilColor("navy");
+    letter-spacing: 1px;
+    text-transform: capitalize;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .paragraphs-container {
+    padding: 2rem 0 1rem 0;
+
+    @include breakpoint("medium") {
+      padding: 2rem 3rem 1rem 0;
+    }
+  }
+}

@@ -1,3 +1,14 @@
 <h1 class="page-heading">
-    {{lang 'search.results.count' count=result_count search_query=forms.search.query}}
+  We think you'll love these
 </h1>
+<div class="container search-container">
+  {{{ snippet "forms_search"}}}
+  <form class="form" action="{{urls.search}}" id="search-page-form">
+    <fieldset class="form-fieldset">
+      <div class="form-field">
+        <input class="form-input" data-search-quick name="search_query" data-error-message="{{lang 'search.error.empty_field'}}" placeholder="{{lang 'search.quick_search.input_placeholder'}}" autocomplete="off" value="{{forms.search.query}}">
+      </div>
+    </fieldset>
+  </form>
+  <img class="icon-search icon-search-results" src="{{cdn 'icons/search-white.svg'}}" alt="icon search" /> 
+</div>

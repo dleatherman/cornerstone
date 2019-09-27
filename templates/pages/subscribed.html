@@ -1,22 +1,34 @@
+---
+blog:
+recent_posts:
+limit: {{theme_settings.homepage_blog_posts_count}}
+products:
+new:
+limit: {{theme_settings.homepage_new_products_count}}
+---
 {{#partial "page"}}
 
 <section class="page">
-    <div class="page-content page-content--centered">
+    <div class="subscription">
         <h1 class="page-heading">
             {{#if subscription.error}}
-                {{lang 'newsletter.subscribed_heading_error'}}
+            {{lang 'newsletter.subscribed_heading_error'}}
             {{else}}
-                {{lang 'newsletter.subscribed_heading'}}
+            {{lang 'newsletter.subscribed_heading'}}
+            {{subscription.message}}
+            {{newsletter.subscribed_message}}
             {{/if}}
         </h1>
-
-        {{#if subscription.error}}
-            {{> components/common/alert-error subscription.error}}
-        {{else}}
-            {{> components/common/alert-success (lang 'newsletter.subscribed_message')}}
-        {{/if}}
-
     </div>
+    {{!>components/category/featured-by-sense 
+        items=products.new
+        main-title="Shop Recent Products"
+        subtitle="because we know you’re liking what you see"
+        link-text="Shop all products"
+        link-url="/shop-all-products"
+    }}
+    {{>components/common/latest-posts posts=blog.recent_posts}}
+    {{>components/common/connect-more}}
 </section>
 
 {{/partial}}

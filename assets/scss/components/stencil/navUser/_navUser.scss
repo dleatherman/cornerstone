@@ -17,20 +17,39 @@
 // -----------------------------------------------------------------------------
 
 .navUser {
+    &.right-nav {
+        height: 100%;
+        display: flex;
+        align-items: stretch;
+    }
+
+    &:not(.right-nav) {
+        li {
+            margin-left: 0.5em;
+        }
+    }
+
     @include nav($style: "navBar", $wrapper: "nav");
     @include verticalPositionMiddle("absolute");
     right: 0;
     top: 26px; // 2
-    width: 100%; // 4
+    // width: 100%; // 4
     z-index: zIndex("lowest"); // 5.
 
-    @include breakpoint("medium") {
-        padding: 0 spacing("single");
+    &.right-nav {
+        display: none;
+    }
+
+    @include breakpoint($screen-xmedium) {
         position: relative;
         right: auto;
         top: auto;
         transform: none;
         z-index: zIndex("high");
+
+        &.right-nav {
+            display: flex;
+        }
     }
 
     .dropdown-menu {
@@ -64,29 +83,65 @@
             }
         }
     }
+
+    .navProduct {
+        .navPages-products-menu {
+            display: none;
+        }
+
+        &:hover .navPages-products-menu{
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            display: flex;
+        }
+    }
 }
 
 .navUser-section {
-    @include breakpoint("medium") {
+    // height: 100%;
+    // margin: auto 0 !important;
+    @include breakpoint($screen-xmedium) {
         position: relative; // 7
+    }
+    display: flex;
+    flex-wrap: nowrap;
+
+    &.responsive-nav {
+        display: flex;
+        align-items: flex-end;
+
+        svg {
+            fill: white;
+        }
     }
 }
 
 .navUser-action {
-    color: stencilColor("navUser-color");
-    font-weight: fontWeight("bold");
-    padding: spacing("base") spacing("half");
+    color: stencilColor("grey");
+    padding: 1rem 0.5rem;
     text-decoration: none;
     text-transform: uppercase;
+    position: relative;
+    font-family: stencilFontFamily("sweet-font");
+    letter-spacing: 2px;
+    font-size: 17px;
 
-    &:hover,
+    img {
+        max-width: 20px;
+    }
+    @include breakpoint($screen-xmedium) {
+        padding: spacing("base") spacing("half");
+    }
+
     &.is-open {
-        color: stencilColor("navUser-color-hover");
+        color: stencilColor("pink");
 
         // scss-lint:disable NestingDepth
         svg {
-            fill: stencilColor("navUser-color-hover");
-            stroke: stencilColor("navUser-color-hover");
+            fill: stencilColor("pink");
+            stroke: stencilColor("pink");
         }
         // scss-lint:enable NestingDepth
     }
@@ -141,10 +196,41 @@
 }
 
 .navUser-item {
-    display: none;
+    height: 100%;
+    display: flex !important;
+    align-items: center;
+    letter-spacing: 2px;
 
-    @include breakpoint("medium") {
+    &.account-link {
+        display: none !important;
+    }
+
+    @include breakpoint($screen-xmedium) {
         display: block;
+
+        &.account-link {
+            display: flex !important;
+        }
+
+        &:hover {
+            .navUser-action::before {
+                width: 100%;
+                transition: all 0.2s linear;
+            }
+            .navUser-action {
+                color: stencilColor("pink");
+            }
+        }
+
+        &.active {
+            .navUser-action::before {
+                width: 100%;
+                transition: all 0.2s linear;
+            }
+            a {
+                color: stencilColor("pink") !important;
+            }
+        }
 
         &.navUser-item--social {
             margin-top: rem-calc(5px);
@@ -163,12 +249,10 @@
     display: block;
 
     .navUser-action {
-        color: stencilColor("navUser-color");
+        color: stencilColor("grey");
 
-        // scss-lint:disable NestingDepth
-        &:hover,
         &.is-open {
-            color: stencilColor("navUser-color-hover");
+            color: stencilColor("pink");
         }
     }
 
@@ -180,7 +264,7 @@
             top: auto !important; // 7
             left: auto !important; // 7
             right: remCalc(5px); // 7
-            @include breakpoint("medium") {
+            @include breakpoint($screen-xmedium) {
                 right: 0; // 7
             }
 
@@ -191,14 +275,14 @@
 
             &:before {
                 right: spacing("half") - remCalc(5px); // 8
-                @include breakpoint("medium") {
+                @include breakpoint($screen-xmedium) {
                     right: spacing("half"); // 8
                 }
             }
 
             &:after {
                 right: spacing("half") - remCalc(3px); // 8
-                @include breakpoint("medium") {
+                @include breakpoint($screen-xmedium) {
                     right: spacing("half") + remCalc(2px); // 8
                 }
             }
@@ -209,8 +293,8 @@
 .navUser-item-cartLabel {
     display: none;
 
-    @include breakpoint("small") {
-        display: inline;
+    @include breakpoint($screen-xmedium) {
+        display: flex !important;
     }
 }
 
@@ -254,56 +338,107 @@
 //
 // -----------------------------------------------------------------------------
 
-.navUser-action--quickSearch {
+.quickSearch {
+    .navUser-action--quickSearch {
+        display: flex;
+        padding: 17px 0;
+    }
 
-    &.is-open {
-        position: relative;
+    &.active,
+    &:hover {
+        #quickSearch-icon {
+            fill: stencilColor("pink");
+        }
+    }
+}
 
-        // scss-lint:disable NestingDepth
-        &:before {
-            @include css-triangle(
-                $triangle-direction: "bottom",
-                $triangle-size: 10px,
-                $triangle-color: color("greys", "lightest")
-            );
-            bottom: 0;
-            left: 50%;
-            position: absolute;
-            transform: translateX(-50%);
+.navUser-item.shopping-bag-li {
+    margin-right: 10px;
+    
+    @include breakpoint("small") {
+        margin-right: 0;
+    }
+
+    .shopping-bag {
+        display: flex;
+        margin-bottom: 2px;
+        padding: 17px 0;
+    }
+
+    &.active,
+    &:hover {
+        #cart-icon {
+            fill: stencilColor("pink");
         }
     }
 }
 
 .dropdown--quickSearch {
-    background-color: $dropdown--quickSearch-backgroundColor;
-    padding: spacing("single") 0;
+    background-color: transparent;
+    padding: 0!important;
+    top: 90px !important;
 
     @include breakpoint("small") {
         padding: spacing("double");
     }
 
     &.is-open {
-        // scss-lint:disable ImportantRule
-        left: 0 !important; // 1
-        outline: none;
-        right: 0 !important; // 1
-        width: 100% !important;
-        z-index: zIndex("high");
+        @include breakpoint($screen-xmedium) {
+            // scss-lint:disable ImportantRule
+            left: 0 !important; // 1
+            outline: none;
+            right: 0 !important; // 1
+            width: 100% !important;
+            z-index: zIndex("high");
+        }
     }
 
     .form {
-        margin: auto;
-        max-width: 30rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-right: 40px;
+        padding: 27px 40px 27px 22px;
+        background: rgba(46, 53, 63, 0.8);
+        .search-icon {
+            width: 32px;
+            height: 33px;
+            margin-right: 20px;
+            cursor: pointer;
+        }
     }
 
     .form,
     .form-field {
+        width: 100%;
         margin-bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        
+    }
+
+    .form-fieldset {
+        flex-grow: 1 !important;
     }
 
     .form-input {
         font-size: fontSize("small");
         height: unset;
+        background: transparent;
+        font-size: 36px !important;
+        // font-family: stencilFontFamily("avenir-font") !important;
+        border: none;
+        color: stencilColor("white");
+        outline: none !important;
+
+        &:focus {
+            outline: none !important;
+            border: none !important;
+        }
+
+        &::placeholder {
+            color: stencilColor("white");
+        }
     }
 
     .productGrid {
@@ -343,4 +478,62 @@
 .countPill--alt {
     background-color: color("greys", "lighter");
     color: color("greys", "darker");
+}
+
+.navUser-action {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: .5rem;
+
+    @include breakpoint("small") {
+        margin: 0 6rem 0 0;
+    }
+}
+
+.navUser-item {
+    .container {
+        padding: 0;
+        width: 0;
+        transition: all .3s;
+        &.active {
+            transition: all .3s;
+            width: 200px;
+        }
+
+    }
+    .form, .form-field {
+        margin: 0;
+    }
+
+    .form-input {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid #E5B593;
+        font-family: stencilFontFamily("sweet-font");
+        font-size: 1.125rem;
+        padding: 0;
+        color: stencilColor("pink");
+        height: 1.8rem;
+        border-radius: 0;
+        &::placeholder {
+            color: stencilColor("pink");
+        }
+    }
+}
+
+.navUser-item.icon-link {
+    min-width: 30px;
+}
+
+.navUser-right-max-width.search-active .account-link {
+    visibility: hidden;
+
+    @include breakpoint("small") {
+       visibility: visible;
+    }
+}
+
+.navUser-right-max-width {
+    overflow: hidden;
+    z-index: 5;
 }

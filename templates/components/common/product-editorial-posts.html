@@ -1,0 +1,44 @@
+<section class="latest-posts-container">
+  <div class="container">
+    {{#if text}}
+    <span class="text">{{text}}<br />
+      {{text2}}</span>
+      {{else}}
+      <span class="text">your guide to connection, wine, jammies, travel,<br />
+        good eats, love, oh and did we mention wine?</span>
+    {{/if}}
+      
+  </div>
+  <div class="posts-container">
+    {{>components/common/editorial-post
+      url="editorial_blog1_url"
+      author="editorial_blog1_author"
+      date="editorial_blog1_date"
+      tag="editorial_blog1_tag"
+      image="editorial_blog1_image"
+      title="editorial_blog1_title"
+    }}
+    {{>components/common/editorial-post
+      url="editorial_blog2_url"
+      author="editorial_blog2_author"
+      date="editorial_blog2_date"
+      tag="editorial_blog2_tag"
+      image="editorial_blog2_image"
+      title="editorial_blog2_title"
+    }}
+    {{>components/common/editorial-post
+      url="editorial_blog3_url"
+      author="editorial_blog3_author"
+      date="editorial_blog3_date"
+      tag="editorial_blog3_tag"
+      image="editorial_blog3_image"
+      title="editorial_blog3_title"
+    }}
+  </div>
+  <div class="container">
+      <span class="social-text">
+        let’s get social
+        <img src="{{cdn 'icons/social-arrow.svg'}}" class="social-icon" alt="img" />
+      </span>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+<div class="quality">
+  {{#each product.custom_fields}}
+    {{#if name '===' ../quality_title}}
+      {{> components/products/quality-icon image=(concat (concat "img/" value) ".svg") }}
+    {{/if}}
+  {{/each}}
+  <span class="quality-title">
+    {{#each product.custom_fields}}
+      {{#if name '===' ../quality_title}}
+        {{#if value '===' 'her'}}
+          For Her
+        {{else}}
+          {{#if value '===' 'him'}}
+          For him
+          {{else}}
+            {{value}}
+          {{/if}}
+        {{/if}}
+      {{/if}}
+    {{/each}}
+  </span>
+  <span class="quality-description">{{> components/common/search-custom-field product=product custom_field=quality_description}}</span>
+</div>

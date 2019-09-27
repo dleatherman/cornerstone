@@ -1,0 +1,59 @@
+<div class="mobile-menu">
+  <ul class="list-container main-list-container">
+    <li>
+      <a class="menu-link main">My Account</a>
+      <ul class="list-container">
+        
+        {{#if customer}}
+          <li><a href="/account.php?action=address_book" class="menu-link">Address Book</a></li>
+          <li><a href="{{urls.account.index}}" class="menu-link">Account Settings</a></li>
+          <li><a href="{{urls.auth.logout}}" class="menu-link">Logout</a></li>
+        {{else}}
+          <li><a href="{{urls.auth.login}}" class="menu-link">Login</a></li>
+        {{/if}}
+        
+      </ul>
+    </li>
+  </ul>
+  <ul class="list-container main-list-container">
+    <li>
+      <a class="menu-link main">Explore Senses</a>
+      <ul class="list-container">
+        <li><a href="/touch/" class="menu-link">Touch</a></li>
+        <li><a href="/taste/" class="menu-link">Taste</a></li>
+        <li><a href="/aroma/" class="menu-link">Aroma</a></li>
+        <li><a href="/gaze/" class="menu-link">Gaze</a></li>
+        <li><a href="/listen/" class="menu-link">Listen</a></li>
+      </ul>
+    </li>
+  </ul>
+  <ul class="list-container main-list-container">
+    <li>
+      <a class="menu-link main">Shop</a>
+      <ul class="list-container">
+        <li><a class="menu-link">Loungewear</a></li>
+        <li><a class="menu-link">Sleepwear</a></li>
+        <li><a class="menu-link">Lingerie</a></li>
+        <li><a class="menu-link">Body</a></li>
+        <li><a class="menu-link">Scents</a></li>
+        <li><a class="menu-link">Home</a></li>
+        <li><a class="menu-link">Food</a></li>
+        <li><a class="menu-link">For Fun</a></li>
+        <li><a class="menu-link">Toys</a></li>
+        <li><a class="menu-link">Kits</a></li>
+        <li><a class="menu-link">Brands</a></li>
+      </ul>
+    </li>
+  </ul>
+  <ul class="list-container main-list-container">
+    <li>
+      <a class="menu-link main">Stories</a>
+      <ul class="list-container">
+        <li><a href="/about-us/" class="menu-link">About Pepper</a></li>
+        <li><a href="/about-us/" class="menu-link">Our Story</a></li>
+        <li><a href="/about-us/" class="menu-link">Our Dream Team</a></li>
+        <li><a href="/about-us/" class="menu-link">The Senses</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>

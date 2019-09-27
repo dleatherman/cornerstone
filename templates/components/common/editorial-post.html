@@ -1,0 +1,22 @@
+<a href="{{> components/common/search-custom-field product=product custom_field=url}}">
+  <div class="post-box">
+    <div class="post-image-container">
+      <img src="{{> components/common/search-custom-field product=product custom_field=image}}" alt="{{> components/common/search-custom-field product=product custom_field=title}}">
+    </div>
+    <div class="post-detail-container">
+      <div>
+          <div>
+              <span class="post-sense">
+                {{> components/common/search-custom-field product=product custom_field=tag}}
+              </span>
+              <span class="post-date">{{> components/common/search-custom-field product=product custom_field=date}}</span>
+            </div>
+            <span class="post-title">{{> components/common/search-custom-field product=product custom_field=title}}</span>
+      </div>
+      <div>
+        <span class="post-author">{{> components/common/search-custom-field product=product custom_field=author}}</span>
+        <span class="post-length">3 Minute Read</span>
+      </div>
+    </div>
+  </div>
+</a>

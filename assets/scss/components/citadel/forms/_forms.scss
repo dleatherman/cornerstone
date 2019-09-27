@@ -19,6 +19,8 @@
 
 .form-inlineMessage {
     display: block;
+    font-family: stencilFontFamily("sweet-font");
+    font-size: 12px;
 }
 
 
@@ -78,10 +80,14 @@
 
         &::after {
             top: $form-checkRadio-labelAfter-top;
+            background-color: stencilColor("navy") !important;
         }
 
         &::before {
             top: $form-checkRadio-labelBefore-top;
+            background-color: white;
+            border: solid stencilColor("navy");
+            border-width: 1px;
         }
     }
 }
@@ -97,6 +103,23 @@
 
     @include breakpoint("small") {
         margin-top: spacing("single");
+    }
+
+    .button {
+        color: stencilColor("grey");
+        background: stencilColor("navy");
+        font-family: stencilFontFamily("sweet-font");
+        text-transform: uppercase;
+        text-decoration: none;
+        border: 1px solid stencilColor("navy");
+        border-radius: 0;
+        font-weight: 300;
+
+        &:hover {
+            color: stencilColor("navy");
+            background: transparent;
+            border: 1px solid stencilColor("navy");
+        }
     }
 
     .button,
@@ -235,22 +258,52 @@
 // -----------------------------------------------------------------------------
 
 .form-increment {
+    border: 1px solid;
+    border-color: stencilColor("pink");
+    display: flex;
+    max-width: 70px;
+    height: 35px;
+    justify-content: space-between;
+    margin: 0;
+    
     .button {
+        font-family: stencilFontFamily("sweet-font");
+        font-size: 1.25rem;
+        border: none;
         margin: 0;
         padding: remCalc(3px) remCalc(5px);
+        color: stencilColor("navy");
+        flex: 1;
+        font-weight: 300;
+
+        &:disabled {
+            border-radius: 0;
+            background: white;
+            color: stencilColor("navy");
+        }
     }
 }
 
 .form-input--incrementTotal {
+    // flex: 1;
     border: 0;
     display: inline-block;
-    font-size: fontSize("smaller");
     font-weight: fontWeight("bold");
     height: auto;
     padding: 0;
     text-align: center;
     vertical-align: middle;
-    width: remCalc(35px);
+    background-color: white;
+    font-family: stencilFontFamily("sweet-font");
+    font-size: 1rem;
+    color: stencilColor("navy");
+    font-weight: 300;
+    max-width: 30px;
+    &:disabled {
+        border-radius: 0;
+        background: white;
+        color: stencilColor("navy");
+    }
 }
 
 
@@ -264,7 +317,7 @@
 //
 
 .form-option {
-    border: 1px solid stencilColor("input-border-color");
+    border: 1px solid transparent;
     color: stencilColor("form-label-font-color");
     cursor: pointer;
     display: inline-block;
@@ -279,8 +332,17 @@
     }
 
     .form-radio:checked + & {
-        border-color: stencilColor("checkRadio-color");
+        border-color: stencilColor("navy");
         box-shadow: 0 0 0 1px stencilColor("checkRadio-color");
+    }
+
+    .form-radio.rectangle:checked + & {
+        border-color: transparent;
+        background-color: stencilColor("navy");
+
+        .form-option-variant {
+            color: stencilColor("grey");
+        }
     }
 }
 
@@ -307,6 +369,30 @@
 .form-option-variant--pattern {
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.form-option.rectangle {
+    border: 1px solid;
+    background-color: white;
+    border-color: stencilColor("pink");
+    padding: .5rem 1rem;
+    margin-right: 1.1rem;
+
+    .form-option-variant {
+        text-transform: uppercase;
+        color: stencilColor("grey-2");
+        font-size: .8rem;
+        font-family: stencilFontFamily("sweet-font");
+        font-weight: 300;
+    }
+
+    &:hover {
+        background-color: stencilColor("pink");
+
+        .form-option-variant {
+            color: white;
+        }
+    }
 }
 
 

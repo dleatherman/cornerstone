@@ -1,26 +1,249 @@
 // =============================================================================
 // LOGIN (CSS)
 // =============================================================================
+.form-input {
+    background-color: transparent !important;
+    transition: background-color 90000s ease-in-out 0s;
+}
 
 .login {
-    margin: spacing("double") auto spacing("double")*2;
+    margin: spacing("double") 1rem;
     max-width: remCalc(900px);
+
+    @include breakpoint("medium") {
+        margin: 0 auto; 
+    }
+
+    .alertBox--success {
+        margin: 0 0.75em;
+
+        @include breakpoint("medium") {
+            width: 65%;
+            margin: 0 auto;
+        }
+    }
+
+    .error-box span {
+        display: block;
+        text-align: center;
+        color: stencilColor("color-error");
+        font-family: stencilFontFamily("sweet-font");
+    }
+
+    .page-content {
+        .page-heading {
+            text-transform: capitalize;
+            font-weight: 300;
+            font-size: 32px;
+            line-height: 40px;
+            font-family: stencilFontFamily("domaine-font");
+
+            @include breakpoint("medium") {
+                font-size: 50px;
+                line-height: 60px;
+            }
+        }
+    }
+
+    .page-content.account-created .page-heading {
+        text-transform: initial;
+    }
+
+    p {
+        text-align: center;
+        font-family: stencilFontFamily("domaine-font");
+        color: stencilColor("navy");
+
+        &.grey-font {
+            letter-spacing: 1px;
+            color: stencilColor("grey-2");
+
+            &:nth-child(3) {
+                margin-top: 2em;
+            }
+        }
+
+        span, a {
+            color: stencilColor("navy");
+        }
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    a, small {
+        color: stencilColor("grey-2");
+    }
+
+    input, .form-select {
+        background-color: transparent; 
+        border-color: stencilColor("grey-2") !important;
+        border-radius: 0;
+        color: stencilColor("navy");
+        font-family: stencilFontFamily("sweet-font");
+
+        &::placeholder {
+            color: stencilColor("grey-2");
+        }
+    }
+
+    &.create-account,
+    &.forgot-password {
+        .container {
+            padding: 0 1em;
+        }
+    }
+
+    &.create-account {
+        .account--fixed {
+            margin: 1em auto;
+            padding: 0;
+
+            @include breakpoint("small") {
+                margin: 3em auto;
+            }
+        }
+    }
+
+    .form-field {
+        margin: 0 0 1rem;
+
+        .form-field--select label {
+            margin-bottom: 0;
+        }
+    }
+
+    .form-actions {
+        text-align: center;
+        margin-top: 2.5em;
+
+        .forgot-password {
+            color: stencilColor("navy");
+            font-family: stencilFontFamily("sweet-font");
+            font-size: 11px;
+            letter-spacing: 1px;
+            line-height: 14px;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: initial;
+
+            &:hover {
+                border-bottom: 1px solid stencilColor("navy");
+            }
+        }
+    }
+
+    .submit-btn {
+        margin-top: 2em;
+        text-align: center;
+
+        .button {
+            border: 1px solid;
+            border-color: stencilColor("navy") !important;
+            text-transform: uppercase;
+            font-family: stencilFontFamily("sweet-font");
+            background-color: stencilColor("navy");
+            padding: 10px 50px;
+            color: stencilColor("grey");
+
+            &:hover {
+                background-color: transparent;
+                color: stencilColor("navy");
+            }
+        }
+    }
+
+    &.forgot-password {
+        .form-field--input {
+            width: 100%;
+            padding: 0 0.75rem;
+            margin: 0 auto;
+
+            @include breakpoint("small"){
+                width: 90%;
+            }
+        }
+
+        @include breakpoint($screen-xmedium) {
+            p {
+                width: 80%;
+                margin: 1em auto 2em;
+            }
+    
+            .form-field--input {
+                width: 60%;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .new-password-page {
+        padding: 0 1em;
+    }
+
+
+    .new-password-form {
+        .form-row {
+            margin: 0;
+        }
+
+        .form-actions {
+            text-align: center;
+
+            input {
+                border-color: stencilColor("navy") !important;
+                width: auto;
+            }
+        }
+
+        .form-row,
+        .form-actions {
+            width: 100%;
+
+            @include breakpoint("small") {
+                width: 90%;
+                margin: 0 auto;
+            }
+
+            @include breakpoint("medium") {
+                width: 60%;
+            }
+        }
+    }
+}
+
+.page-heading {
+    color: stencilColor("navy");
+    font-family: stencilFontFamily("domaine-font");
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+
+    @include breakpoint("medium") {
+        font-size: 4rem;
+        margin-bottom: 4rem;
+    }
 }
 
 .login-row {
-    @include grid-row();
-    @include breakpoint("medium") {
-        margin-top: spacing("double")*2;
-    }
+    margin: 1em auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .login-form {
     @include grid-column(12);
 
     @include breakpoint("medium") {
-        @include grid-column(6);
-
-        margin-top: spacing("double");
+        @include grid-column(5);
+        margin: 1em 0;
     }
 }
 

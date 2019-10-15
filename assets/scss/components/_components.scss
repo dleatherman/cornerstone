@@ -93,9 +93,6 @@
 // Ribbon
 @import "stencil/ribbon/component";
 
-// User Navigation
-@import "stencil/navUser/component";
-
 // Pages Navigation
 @import "stencil/navPages/component";
 
@@ -207,6 +204,7 @@
 @import "common/ordering-dropdown";
 @import "common/hero";
 @import "common/pullquote";
+@import "common/nav";
 
 // About Us
 @import "stencil/aboutUs/component";

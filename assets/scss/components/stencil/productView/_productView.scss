@@ -719,6 +719,10 @@
         right: 0;
         width: auto;
 
+        .product__container--outer & {
+            display: none;
+        }
+
         @include breakpoint("medium") {
             font-size: 1.25rem;
             padding: 1rem 0;

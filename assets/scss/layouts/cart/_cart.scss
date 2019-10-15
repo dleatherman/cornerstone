@@ -1080,7 +1080,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     }
 
     .custom-cart-item-price-actions {
-        align-items: center;
+        align-items: stretch;
         display: flex;
         justify-content: space-between;
         padding: 1rem 0;

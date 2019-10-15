@@ -211,6 +211,7 @@
       margin: 0 auto;
       padding-bottom: 3rem;
       padding-top: 3rem;
+      position: relative;
       @include breakpoint('large') {
          padding: 4rem 0 6rem 7rem;
       }
@@ -221,12 +222,43 @@
          padding-bottom: 3rem;
       }
 
-      // .btn {
-      //    display: none;
-      //    @include breakpoint('medium') {
-      //       display: block;
-      //    }
-      // }
+      .btn {
+         display: none;
+         @include breakpoint('medium') {
+            display: inline-block;
+         }
+      }
+
+      .vertical-text {
+         @extend .rollerscript;
+         bottom: 25%;
+         display: none;
+         font-size: 1.75rem;
+         left: 0;
+         line-height: 1;
+         position: absolute;
+         transform: rotate(-90deg);
+         transform-origin: 0 0;
+         width: auto;
+         white-space: nowrap;
+         img {
+            display: inline;
+            height: auto;
+            max-width: 30px;
+            vertical-align: top;
+         }
+
+         @include breakpoint('medium') {
+            display: block;
+            bottom: 10%;
+            left: -10%;
+         }
+
+         @include breakpoint('large') {
+            bottom: 25%;
+            left: 0;
+         }
+      }
 
    }
 }

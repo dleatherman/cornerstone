@@ -4,9 +4,9 @@
 <head>
     <title>
         {{#if page_title}}
-        {{page_title}}
+        {{page_title}} | Pepper Together
         {{else}}
-        {{ head.title }}
+        {{ head.title }} | Pepper Together
         {{/if}}
     </title>
     {{{ resourceHints }}}
@@ -67,7 +67,7 @@
     {{{snippet 'j'}}}
 </head>
 
-<body>
+<body class="page__type--{{ page_type }}">
     {{{snippet 'header'}}}
     <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
 
@@ -85,6 +85,9 @@
 
     <script>window.__webpack_public_path__ = "{{cdn 'assets/dist/'}}";</script>
     <script src="{{cdn 'assets/dist/theme-bundle.main.js'}}"></script>
+    {{!-- TODO: Hide this before bundle --}}
+    <script type="text/javascript" async
+        src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=Pkfb6H"></script>
     <script>
         // Exported in app.js
         window.stencilBootstrap("{{page_type}}", {{ jsContext }}).load();

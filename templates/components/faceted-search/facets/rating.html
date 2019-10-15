@@ -1,45 +1,56 @@
-{{#if items}}
-<div class="accordion-block">
-    <div
-        class="accordion-navigation toggleLink {{#unless ../start_collapsed }} is-open {{/unless}}"
-        role="button"
-        data-collapsible="#facetedSearch-content--{{hyphenate facet }}">
-        <h5 class="accordion-title">
-            {{ title }}
-        </h5>
 
-        <div class="accordion-navigation-actions">
-            {{#if selected}}
-                <a href="{{ remove_url }}" class="facetedSearch-clearLink" data-faceted-search-facet>{{lang 'search.faceted.clear'}}</a>
+<ul class="list-filter-container">
+    <li class="list-item main-item"><a class="main-link" href="#">
+        <div>
+            <span>Add Filter by</span><br>
+            {{title}} 
+        </div>
+        <img src="{{cdn 'img/downarrow.svg'}}" width="20px" height="20px" />
+    </a>
+        <ul class="dropdown">
+            {{#if items}}
+                {{#each items}}
+                    <li class="list-item sub-item">
+                        <a href="{{url}}">
+                            <div>{{title}} star & up</div>
+                            <div class="filter-circle {{#if selected }} selected {{/if}}"></div>
+                        </a>
+                    </li>
+                {{/each}}
+            {{else}}
+            <li class="list-item sub-item">
+                <a href="">
+                    <div>NOT AVAILABLE</div>
+                </a>
+            </li>
             {{/if}}
-            <svg class="icon accordion-indicator toggleLink-text toggleLink-text--off">
-                <use xlink:href="#icon-add" />
-            </svg>
-            <svg class="icon accordion-indicator toggleLink-text toggleLink-text--on">
-                <use xlink:href="#icon-remove" />
-            </svg>
+        </ul>
+    </li>
+</ul>
+
+<li class="mobile-filter-title">
+    <div class="name">
+        <span>{{title}}</span>
+        <div class="mobile-filter-icons">
+            <span class="count-selected-filters active">0</span>
+            <span class="add-icon active">{{> components/common/plus-icon }}</span>
+            <span class="minus-icon">{{> components/common/minus-icon }}</span>
         </div>
     </div>
-
-    <div id="facetedSearch-content--{{hyphenate facet }}" class="accordion-content facetedSearch-content--{{hyphenate facet}} {{#unless ../start_collapsed }} is-open {{/unless}}">
-        <ul class="navList">
+    
+    <ul class="mobile-filter-list">
+        {{#if items}}
             {{#each items}}
-                <li class="navList-item">
-                    <a href="{{ url }}"
-                       class="navList-action {{#if selected }} is-selected {{/if}}"
-                       rel="nofollow"
-                       data-faceted-search-facet>
-                        <span class="rating--small">
-                            {{> components/products/ratings rating=title}}
-                        </span>
-                        {{lang 'search.faceted.rating.and-up'}}
-                        {{#if ../show_product_counts}}
-                            <span>({{ count }})</span>
-                        {{/if}}
+                <li class="mobile-filter-item">
+                    <a href="{{url}}">{{title}} star & up
+                        <div class="mobile-filter-circle {{#if selected }} selected {{/if}}"></div>
                     </a>
                 </li>
             {{/each}}
-        </ul>
-    </div>
-</div>
-{{/if}}
+        {{else}}
+            <li class="mobile-filter-item">
+                <a href="">Not Available</a>
+            </li>  
+        {{/if}}
+    </ul>
+</li>

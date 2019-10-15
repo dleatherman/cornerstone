@@ -50,11 +50,24 @@ export default class Product extends PageManager {
         });
 
         this.productReviewHandler();
+        this.productRevealHandlerMobile();
     }
 
     productReviewHandler() {
         if (this.url.indexOf('#write_review') !== -1) {
             this.$reviewLink.trigger('click');
+        }
+    }
+
+    productRevealHandlerMobile() {
+        const $productRevealBtns = $('a.bundle__slide--reveal');
+        // console.log($productRevealBtns);
+        if ($productRevealBtns.length > 0) {
+            $productRevealBtns.on('click', (e) => {
+                e.preventDefault();
+                const $activate = $(e.target.closest('.bundle__slide--outer'));
+                $activate.toggleClass('revealed');
+            });
         }
     }
 }

@@ -3,7 +3,7 @@
         <label class="form-label form-label--alternate"
                for="qty[]"></label>
             <div class="form-increment" data-quantity-change>
-                <button class="button button--icon" data-action="dec">
+                <button class="button button--icon decrease" data-action="dec">
                     <span class="is-srOnly">{{lang 'products.quantity_decrease'}}</span>
                     -
                 </button>
@@ -17,7 +17,7 @@
                        min="1"
                        pattern="[0-9]*"
                        aria-live="polite">
-                <button class="button button--icon" data-action="inc">
+                <button class="button button--icon increase" data-action="inc">
                     <span class="is-srOnly">{{lang 'products.quantity_increase'}}</span>
                     +
                 </button>

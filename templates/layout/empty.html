@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>{{ head.title }}</title>
     {{{ head.meta_tags }}}
     {{{ head.config }}}
 
+    <style type="text/css" media="screen, print">
+        @font-face {
+            font-family: "SweetSansPro";
+            src: url("{{cdn 'fonts/SweetSansPro-Regular.ttf'}}");
+        }
+
+        @font-face {
+            font-family: "DomaineDisp";
+            src: url("{{cdn 'fonts/DomaineDisp-Regular.otf'}}");
+        }
+
+        @font-face {
+            font-family: "RollerscriptSmooth";
+            src: url("{{cdn 'fonts/Rollerscript-Smooth.otf'}}");
+        }
+
+        @font-face {
+            font-family: "Avenir";
+            src: url("{{cdn 'fonts/Avenir.ttc'}}");
+        }
+    </style>
+
     <link href="{{ head.favicon }}" rel="shortcut icon">
     {{#block "head"}}{{/block}}
 </head>
+
 <body>
     {{#block "page"}}{{/block}}
 </body>
+
 </html>

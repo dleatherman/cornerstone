@@ -261,9 +261,8 @@
     border: 1px solid;
     border-color: stencilColor("pink");
     display: flex;
-    max-width: 70px;
-    height: 35px;
-    justify-content: space-between;
+    max-width: 80px;
+    flex: 1;
     margin: 0;
     
     .button {
@@ -275,6 +274,8 @@
         color: stencilColor("navy");
         flex: 1;
         font-weight: 300;
+        text-align: center;
+        width: calc(100%/3);
 
         &:disabled {
             border-radius: 0;
@@ -298,7 +299,7 @@
     font-size: 1rem;
     color: stencilColor("navy");
     font-weight: 300;
-    max-width: 30px;
+    width: calc(100%/3);
     &:disabled {
         border-radius: 0;
         background: white;

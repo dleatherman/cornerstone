@@ -1,4 +1,7 @@
 ---
+blog:
+    recent_posts:
+        limit: {{theme_settings.homepage_blog_posts_count}}
 brand:
     products:
         limit: {{theme_settings.brandpage_products_per_page}}
@@ -14,32 +17,35 @@ brand:
 {{/partial}}
 
 {{#partial "page"}}
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-{{#if brand.image}}
-    <div class="brand-image-container">
-        {{> components/common/responsive-img
-            image=brand.image
-            fallback_size=theme_settings.thumb_size
-            lazyload='disabled'
-        }}
-    </div>
-{{/if}}
-<h1 class="page-heading">{{brand.name}}</h1>
-{{{region name="brand_below_header"}}}
-<div class="page">
-    <aside class="page-sidebar" id="faceted-search-container">
-        {{> components/brand/sidebar}}
-    </aside>
 
-    <main class="page-content" id="product-listing-container">
-        {{#if brand.products}}
-            {{> components/brand/product-listing}}
-        {{else}}
-            <p>{{lang 'brands.no_products'}}</p>
-        {{/if}}
-        {{{region name="brand_below_content"}}}
-    </main>
+{{#if brand.faceted_search_enabled}}
+    <div class="page-sidebar filters-container" id="faceted-search-container">
+            {{> components/products/filter sort=pagination.brand.sort}}
+        {{> components/faceted-search/index brand}}
+    </div>
+    {{> components/faceted-search/filter-selected brand}}
+{{/if}}
+{{> components/brand/mobile-order-sort }}
+
+<div class="category-headline container">
+    <h2>Discover Our Assortment</h2>
+    <div class="favorite-text">
+        <span>skin to skin sparks all the feels</span>
+        <img class="sense-arrow" src="{{cdn 'icons/sense-arrow.svg'}}" alt="sense-arrow" />
+    </div>
 </div>
 
+<div class="page">
+    <main class="page-content" id="product-listing-container">
+        {{#if brand.products}}
+            {{> components/brand/product-listing settings=../settings}}
+        {{else}}
+            <p>{{lang 'brand.no_products'}}</p>
+        {{/if}}
+    </main>
+</div>
+{{> components/brand/mobile-filters}}
+{{>components/common/connect-more}}
+
 {{/partial}}
-{{> layout/base}}
+{{> layout/category category_title=brand.name }}

@@ -1,0 +1,120 @@
+/*
+// :: Description
+// :: Features
+*/
+
+::-moz-selection {
+   color: stencilColor('off-white');
+   background: stencilColor('navy');
+}
+
+::selection {
+   color: stencilColor('off-white');
+   background: stencilColor('navy');
+}
+
+@mixin domaine($color: stencilColor('navy')) {
+   color: $color;
+   font-family: stencilFontFamily('domaine-font');
+}
+
+@mixin freight($color: stencilColor('navy')) {
+   color: $color;
+   font-family: stencilFontFamily('freight-font');
+   letter-spacing: 0.05em;
+}
+
+@mixin sweet-font($color: stencilColor('grey-2')) {
+   color: $color;
+   font-family: stencilFontFamily('sweet-font');
+   letter-spacing: 0.1em;
+   text-transform: uppercase;
+   @include breakpoint('medium') {
+      letter-spacing: 0.2em;
+   }
+}
+
+pre {
+   color: #000;
+}
+
+.domaine-display {
+   font-family: stencilFontFamily("domaine-font");
+   font-weight: normal;
+}
+
+.rollerscript {
+   font-family: stencilFontFamily('rollerscript-font')
+}
+
+.divider {
+   @extend .container;
+   border-top: 1px solid stencilColor('navy');
+}
+
+.btn {
+   display: inline-block;
+   font-family: stencilFontFamily('sweet-font');
+   letter-spacing: 0.1em;
+   padding: 1rem;
+   text-align: center;
+   text-decoration: none;
+   text-transform: uppercase;
+   @include breakpoint('medium') {
+      font-size: 1.1rem;
+      letter-spacing: 0.2em;
+      padding: 1rem 2rem;
+   }
+   &__block {
+      display: block;
+      max-width: 415px;
+      margin: 0 auto;
+   }
+   &__primary {
+      background-color: stencilColor('navy');
+      border: 1px solid stencilColor('navy');
+      color: #fff;
+      &:hover {
+         background-color: #fff;
+         color: stencilColor('navy');
+      }
+   }
+}
+.product__title--helper {
+   @include domaine;
+   font-size: 1.8rem;
+   font-weight: 300;
+   line-height: 1.2;
+   @include breakpoint('large') {
+      font-size: 2rem;
+   }
+}
+
+// :: Description
+.product__description--helper {
+   @include freight();
+   font-size: 1.5rem;
+   letter-spacing: 0.05em;
+   line-height: 1.6;
+   text-align: left;
+   
+   @include breakpoint('medium') {
+      font-size: 1.1rem;
+      line-height: 1.5;
+   }
+}
+
+// :: Features
+.product__features--helper {
+   color: stencilColor('grey-2');
+   font-family: stencilFontFamily('sweet-font');
+   font-size: 1rem;
+   letter-spacing: 0.1em;
+   line-height: 1.7;
+   text-align: left;
+   text-transform: uppercase;
+   
+   @include breakpoint('medium') {
+      letter-spacing: 2px;
+   }
+}

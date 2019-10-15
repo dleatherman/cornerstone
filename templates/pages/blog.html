@@ -13,6 +13,7 @@ blog:
             <div class="senses-explorer-text container">
                 <p class="senses-explorer-title">We believe that the more connected we are, the better we are.</p>
                 <p class="senses-explorer-description">Letting the exploration of the five senses be the guide, we feature editorials that offer tips and tricks for sharing new experiences together.<br />Lifestyle products and toys available soon.</p>
+                {{!-- TODO: Unhide <a href="#" class="btn btn__primary">Buy Now</a> --}}
                 <p class="senses-explorer-prompt">explore the senses</p>
             </div>
         </div>
@@ -75,20 +76,8 @@ blog:
         {{/each}}
         {{> components/common/paginator pagination.blog text="tell me more, tell me more"}}
     </div>
-    <div class="subscription-section">
-        <div class="container">
-            <h2>Everyone loves love letters.</h2>
-            <p class="roller-text">Like what you see? Stay in the know on all things Pepper.</p>
-            <div class="newsletter" data-section-type="newsletterSubscription">
-                {{#if settings.show_newsletter_box}}
-                    {{> components/common/subscription-form}}
-                {{/if}}
-                {{> components/common/payment-icons}}
-            </div>
-        </div>
-        
-    </div>
+    {{>components/common/newsletter-row}}
     {{>components/common/connect-more}}
 </main>
 {{/partial}}
-{{> layout/base page_title="Stories - Pepper" }}
+{{> layout/base page_title="Stories" }}

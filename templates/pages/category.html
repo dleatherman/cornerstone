@@ -1,4 +1,7 @@
 ---
+blog:
+    recent_posts:
+        limit: {{theme_settings.homepage_blog_posts_count}}
 category:
     shop_by_price: true
     products:
@@ -15,46 +18,36 @@ category:
 {{/partial}}
 
 {{#partial "page"}}
+{{{snippet 'categories'}}}
 
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-{{#if category.image}}
-    {{> components/common/responsive-img
-        image=category.image
-        fallback_size=theme_settings.zoom_size
-        lazyload=theme_settings.lazyload_mode
-    }}
+{{#if category.faceted_search_enabled}}
+    <div class="page-sidebar filters-container" id="faceted-search-container">
+        {{> components/products/filter sort=pagination.category.sort}}
+        {{> components/category/sidebar}}
+    </div>
+    {{> components/faceted-search/filter-selected category}}
 {{/if}}
-{{#unless theme_settings.hide_category_page_heading }}
-    <h1 class="page-heading">{{category.name}}</h1>
-    {{{region name="category_below_header"}}}
-{{/unless}}
-{{{category.description}}}
-<div class="page">
-    {{#if category.faceted_search_enabled}}
-        <aside class="page-sidebar" id="faceted-search-container">
-            {{> components/category/sidebar}}
-        </aside>
-    {{else if category.subcategories}}
-        <aside class="page-sidebar" id="faceted-search-container">
-            {{> components/category/sidebar}}
-        </aside>
-    {{else if category.shop_by_price}}
-        {{#if theme_settings.shop_by_price_visibility}}
-             <aside class="page-sidebar" id="faceted-search-container">
-                {{> components/category/sidebar}}
-            </aside>
-        {{/if}}
-    {{/if}}
+{{> components/common/mobile-order-sort }}
 
+<div class="category-headline container">
+    <h2>Discover Our Assortment</h2>
+    <div class="favorite-text">
+        <span>skin to skin sparks all the feels</span>
+        <img class="sense-arrow" src="{{cdn 'icons/sense-arrow.svg'}}" alt="sense-arrow" />
+    </div>
+</div>
+
+<div class="page">
     <main class="page-content" id="product-listing-container">
         {{#if category.products}}
-            {{> components/category/product-listing}}
+            {{> components/category/product-listing settings=../settings}}
         {{else}}
             <p>{{lang 'categories.no_products'}}</p>
         {{/if}}
-        {{{region name="category_below_content"}}}
     </main>
 </div>
+{{> components/category/mobile-filters}}
+{{>components/common/connect-more}}
 
 {{/partial}}
-{{> layout/base}}
+{{> layout/category category_title=category.name }}

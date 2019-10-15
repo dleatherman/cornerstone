@@ -1,13 +1,16 @@
 ---
 cart: true
+products:
+    new:
+        limit: 4
+blog:
+    recent_posts:
+        limit: {{theme_settings.homepage_blog_posts_count}}
 ---
 {{#partial "page"}}
 <div class="page">
 
-    <main class="page-content" data-cart>
-        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-
-        {{> components/cart/page-title}}
+    <main class="" data-cart>
 
         <div data-cart-status>
             {{> components/cart/status-messages}}
@@ -15,42 +18,41 @@ cart: true
 
         {{#if cart.items.length}}
             <div class="loadingOverlay"></div>
-
-            <div data-cart-content>
-                {{> components/cart/content}}
+            <div class="custom-shopping-cart-main">
+                <div class="left" >
+                    <div class="custom-shopping-cart-heading">
+                        <h1 class="custom-shopping-cart-heading-title">My Cart</h1>
+                        <a class="custom-shopping-cart-back" href="/shop/"><img src="{{cdn 'img/back-arrow.svg'}}" alt="Visa Card" width="5" height="9" /> CONTINUE SHOPPING</a>
+                    </div>
+                    <div data-cart-content>
+                        {{> components/cart/content}}
+                    </div>
+                </div>
+    
+                <div class="right" data-cart-totals>
+                    {{> components/cart/totals}}
+                </div>
             </div>
-
-            <div data-cart-totals>
-                {{> components/cart/totals}}
-            </div>
-
-            {{#if cart.show_primary_checkout_button}}
-                <div class="cart-actions">
-                    <a class="button button--primary" href="{{urls.checkout.single_address}}" title="{{lang 'cart.checkout.title'}}">{{lang 'cart.checkout.button'}}</a>
-                    {{#if cart.show_multiple_address_shipping}}
-                        <a class="checkoutMultiple" href="{{urls.checkout.multiple_address}}">
-                            {{lang 'cart.preview.checkout_multiple'}}
-                        </a>
-                    {{/if}}
-                </div>
-            {{else}}
-                <div class="cart-actions">
-                    <a class="button" href="{{urls.home}}" title="{{lang 'cart.continue_shopping'}}">{{lang 'cart.continue_shopping'}}</a>
-                </div>
-            {{/if}}
-
-            {{#if cart.additional_checkout_buttons}}
-                <div class="cart-additionalCheckoutButtons">
-                    {{#each cart.additional_checkout_buttons}}
-                        {{{this}}}
-                    {{/each}}
-                </div>
-            {{/if}}
         {{else}}
-            <h3>{{lang 'cart.checkout.empty_cart'}}</h3>
+        <div class="custom-empty-cart-container empty-cart">
+            <div class="inner">
+                <p class="empty-messsage">Your Cart is Currently Empty.</p>
+                {{!-- <a class="button-shop" href="/shop-all-products">continue shopping</a> --}}
+                <a class="button-shop" href="/">go home</a>
+            </div>
+        </div>
         {{/if}}
-
+        {{!-- {{>components/category/featured-by-sense 
+            items=products.new
+            main-title="Shop All Products"
+            subtitle="because we know you’re liking what you see"
+            link-text="Shop all products"
+            link-url="/shop/"
+        }} --}}
+        {{!-- {{>components/common/latest-posts posts=blog.recent_posts}} --}}
+        {{!-- {{>components/common/connect-more}} --}}
+        {{{snippet 'cart'}}}
     </main>
 </div>
 {{/partial}}
-{{> layout/base}}
+{{> layout/cart}}

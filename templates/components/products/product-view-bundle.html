@@ -1,0 +1,109 @@
+<div class="productView" {{#if settings.data_tag_enabled}} data-event-type="product" data-entity-id="{{product.id}}"
+   data-name="{{product.title}}"
+   data-product-category="{{#each product.category}}{{#if @last}}{{this}}{{else}}{{this}}, {{/if}}{{/each}}"
+   data-product-brand="{{product.brand.name}}"
+   data-product-price="{{#if product.price.with_tax}}{{product.price.with_tax.value}}{{else}}{{product.price.without_tax.value}}{{/if}}"
+   data-product-variant="single-product-option" {{/if}}>
+   {{#each product.reviews.messages}}
+   {{#if error}}
+   {{> components/common/alert-error error}}
+   {{/if}}
+   {{#if success}}
+   {{> components/common/alert-success success}}
+   {{/if}}
+   {{/each}}
+   <section class="productView-images" data-image-gallery>
+
+      <figure class="productView-image" data-image-gallery-main {{#if product.main_image}}
+         data-zoom-image="{{getImage product.main_image 'zoom_size' (cdn theme_settings.default_image_product)}}"
+         {{/if}}>
+         <div class="productView-img-container">
+            {{!-- Remove the surrounding a-element if there is no main image. --}}
+            {{#if product.main_image}}
+            <a href="{{getImage product.main_image 'zoom_size' (cdn theme_settings.default_image_product)}}">
+               {{/if}}
+
+               <img class="productView-image--default lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}"
+                  data-src="{{getImage product.main_image 'large' (cdn theme_settings.default_image_product)}}"
+                  alt="{{product.main_image.alt}}" title="{{product.main_image.alt}}" data-main-image>
+
+               {{#if product.main_image}}
+            </a>
+            {{/if}}
+         </div>
+      </figure>
+   </section>
+
+   <section class="productView-details">
+      <div class="vertical-text">
+         <img src="{{cdn 'img/Arrow9.svg'}}" />
+         <span>{{> components/common/search-custom-field product=product custom_field="product-vertical-text"}}</span>
+      </div>
+      <div class="productView-product">
+         <h1 class="productView-title" {{#if schema}}itemprop="name" {{/if}}>
+            {{product.title}}
+         </h1>
+         {{{region name="product_below_price"}}}
+         {{product.detail_messages}}
+      </div>
+      <div class="productView-options">
+         {{#if product.release_date }}
+         <p>{{product.release_date}}</p>
+         {{/if}}
+         <form class="form" method="post" action="{{product.cart_url}}" enctype="multipart/form-data"
+            data-cart-item-add>
+            <input type="hidden" name="action" value="add">
+            <input type="hidden" name="product_id" value="{{product.id}}" />
+            <div class="product-options-container" data-product-option-change style="display:none;">
+               <div class="product-options-inner">
+                  {{#each product.options}}
+                  {{{dynamicComponent 'components/products/options'}}}
+                  {{/each}}
+               </div>
+            </div>
+            <div class="form-field form-field--stock{{#unless product.stock_level}} u-hiddenVisually{{/unless}}">
+               <label class="form-label form-label--alternate">
+                  {{lang 'products.current_stock'}}
+                  <span data-product-stock>{{product.stock_level}}</span>
+               </label>
+            </div>
+            <div class="add-to-cart-container">
+               <span class="product-price">
+                  {{> components/products/price price=product.price schema_org=schema}}
+               </span>
+               <div class="product-qty-and-purchase">
+                  {{#if product.can_purchase}}
+                  {{> components/products/add-to-cart}}
+                  {{/if}}
+                  {{#if settings.show_wishlist}}
+                        {{> components/common/wishlist-dropdown}}
+                  {{/if}}
+               </div>
+            </div>
+
+            {{#if product.out_of_stock}}
+            {{#if product.out_of_stock_message}}
+            {{> components/common/alert-error product.out_of_stock_message}}
+            {{else}}
+            {{> components/common/alert-error (lang 'products.sold_out')}}
+            {{/if}}
+            {{/if}}
+         </form>
+      </div>
+
+      <div class="product-description">
+         {{{product.description}}}
+      </div>
+      <div class="product-features">
+         {{#each product.custom_fields}}
+         {{#if name '===' 'features'}}
+         {{{value}}}
+         {{/if}}
+         {{/each}}
+      </div>
+      {{!-- TODO: Come back to this --}}
+      {{#if buy}}
+         EXPLORE
+      {{/if}}
+   </section>
+</div>

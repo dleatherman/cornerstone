@@ -1,14 +1,21 @@
 ---
 brands:
+blog:
+    recent_posts:
+        limit: {{theme_settings.homepage_blog_posts_count}}
 ---
 
 {{#partial "page"}}
 
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+<main class="page brands-page">
+    <div class="category-headline container">
+        <h1>{{lang 'brand.label'}}</h1>
+        <div class="favorite-text">
+            <span>we are here to please your deepest desires</span>
+            <img class="sense-arrow" src="{{cdn 'icons/sense-arrow.svg'}}" alt="sense-arrow" />
+        </div>
+    </div>
 
-<main class="page">
-    <h1 class="page-heading">{{lang 'brand.label'}}</h1>
-    {{{region name="brands_below_header"}}}
     <ul class="brandGrid">
         {{#each brands}}
             <li class="brand">
@@ -16,27 +23,15 @@ brands:
                     <figure class="card-figure">
                         <a href="{{url}}">
                             <div class="card-img-container">
-                                {{> components/common/responsive-img
-                                    image=image
-                                    class="card-image"
-                                    fallback_size=../theme_settings.brand_size
-                                    lazyload=../theme_settings.lazyload_mode
-                                    default_image=../theme_settings.default_image_brand
-                                }}
+                                <img class="card-image lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image 'brand_size' (cdn ../theme_settings.default_image_brand)}}" alt="{{name}}" title="{{name}}">
                             </div>
                         </a>
                     </figure>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="{{url}}">{{name}}</a>
-                        </h4>
-                    </div>
                 </article>
             </li>
         {{/each}}
     </ul>
     {{> components/common/paginator pagination.brands}}
-    {{{region name="brands_below_content"}}}
 </main>
 {{/partial}}
-{{> layout/base}}
+{{> layout/base page_title="Pepper - Brands" show_ig_feed="show_ig_feed" }}

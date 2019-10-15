@@ -1,0 +1,38 @@
+{{#partial "page"}}
+   {{>components/common/product-landing/hero
+      subheading=""
+      arrow=false
+   }}
+
+   {{>components/products/landing-pullquote
+      textcolor="navy"
+      background="off-white"
+      heading="Want to spice it up? Here's all you need for a fun night in."
+   }}
+
+    <div class="featured-stories">
+        <div class="container">
+            {{#each blog.recent_posts}}
+                {{#contains (JSONstringify (pluck tags 'name')) 'featured' }}
+                    {{> components/blog/main-blog-post post=this}}
+                {{/contains}}
+            {{/each}}
+        </div>
+    </div>
+
+   <div class="story-archive container">
+      {{#each (limit blog.recent_posts 3)}}
+         {{> components/blog/post post=this sense=true}}
+      {{/each}}
+   </div>
+
+   {{#if products.featured}}
+      {{#each products.featured as |product|}}
+         <section class="product__container--outer" data-product-id="{{product.id}}"></section>
+      {{/each}}
+   {{/if}}
+
+   {{>components/common/newsletter-row}}
+   {{>components/common/connect-more}}
+{{/partial}}
+{{> layout/base }}

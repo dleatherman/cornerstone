@@ -14,6 +14,9 @@
     margin: 0 auto;
     top: 50% !important;
     min-height: 200px;
+    .modal-close {
+        color: stencilColor('grey-4');
+    }
 }
 
 &.previewCart-image {
@@ -85,16 +88,19 @@
 
 
 .productView {
+    @extend .container;
     display: flex;
     padding-bottom: 0;
     flex-direction: column;
-    margin: 0 !important;
+    max-width: 1280px;
 
     @include breakpoint("medium") {
-        padding-bottom: 2rem;
         flex-direction: row;
-        max-width: 1400px !important;
-        margin: 0 auto !important;
+        padding: 2rem;
+    }
+
+    @include breakpoint('large') {
+        padding: 0 1.5rem 3rem;
     }
 }
 
@@ -103,55 +109,27 @@
 // -----------------------------------------------------------------------------
 
 .productView-images {
-    padding: 0 !important;
-    flex: 1;
-    width: 100%;
+    // flex: 1;
+    // width: 100%;
     display: flex;
-    flex-direction: column;
-    position: relative;
-
-    .vertical-text {
-        position: absolute;
-        top: 10%;
-        right: 0;
-        color: stencilColor("navy");
-        height: 100%;
-        transform: rotate(-90deg);
-        font-family: stencilFontFamily("rollerscript-font");
-        font-size: 2rem;
-        transform-origin: 100% 0;
-        width: 600px;
-        display: none;
-        z-index: 0;
-        
-        @include breakpoint("large") {
-            min-height: 366px;
-            min-width: inherit;
-            display: inline-block;
-        }
-
-        img {
-            margin-right: 3rem;
-            width: 300px;
-        }
+    // flex-direction: column;
+    // position: relative;
+    @include breakpoint('medium') {
+        margin-right: 3%;
+        width: 47%;
     }
 }
 
 .productView-image {
     align-items: center;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     margin: auto;
     position: relative;
 
     @include breakpoint("medium") {
-        // min-height: 366px;
         min-width: inherit;
     }
-
-    // + .productView-thumbnails {
-    //     // margin-top: spacing("half");
-    // }
 
     @media (min-width: $screen-xxsmall) and (max-width: $screen-medium) {
         pointer-events: none;
@@ -172,7 +150,7 @@
         // max-height: 700px;
     }
     img {
-        @include lazy-loaded-img;
+        // @include lazy-loaded-img;
         position: relative;
         height: auto;
         min-width: 100%;
@@ -225,7 +203,7 @@
     }
 
     img {
-        @include lazy-loaded-img;
+        // @include lazy-loaded-img;
         min-height: 50px;
         min-width: 50px;
         width: 100%;
@@ -281,48 +259,44 @@
 // -----------------------------------------------------------------------------
 
 .productView-details {
-    z-index: 2;
-    padding: 2em !important;
-    flex: 1;
     display: flex;
+    // flex: 1;
     flex-direction: column;
+    padding: 0;
     position: relative;
+    z-index: 2;
+    
+    @include breakpoint('medium') {
+        margin-left: 1%;
+        padding: 3rem 0 5rem 5rem;
+        width: 47%;
+    }
 
     .vertical-text {
         position: absolute;
-        bottom: -1%;
-        left: -10px;
-        right: 90%;
+        top: 75%;
+        left: -5%;
         color: stencilColor("navy");
         transform: translateX(0) rotate(-90deg);
         font-family: stencilFontFamily("rollerscript-font");
         font-size: 2rem;
-        transform-origin: 15% 100%;
+        transform-origin: 0 0;
         z-index: 499;
         display: none;
-        overflow: hidden;
+        overflow: visible;
         white-space: nowrap;
-        width: 90%;
+        width: 65%;
         
         @include breakpoint("large") {
-            min-width: inherit;
-            display: flex;
+            // min-width: inherit;
+            display: none;
             justify-content: center;
             align-items: center;
         }
 
         img {
-            width: 300px;
-            flex: 1;
+            max-width: 250px;
         }
-    }
-
-    @include breakpoint("medium") {
-        padding: 2rem 2rem 3rem !important;
-    }
-
-    @include breakpoint("large") {
-        padding: 3rem 5rem 1rem !important;
     }
 }
 
@@ -331,13 +305,11 @@
 // -----------------------------------------------------------------------------
 
 .productView-product {
-    padding: 0 1.7rem;
     display: flex;
     flex-direction: column;
     order: 1;
     @include breakpoint("medium") {
-        padding: 0 0 0 1rem;
-        padding-bottom: spacing("single") + spacing("third");
+        padding-bottom: 1rem;
     }
 
     > :last-child {
@@ -346,36 +318,34 @@
 }
 
 .product-description {
+    @extend .product__description--helper;
     order: 2;
-    padding: 1rem 0;
+    padding: 1rem 0 0;
     color: stencilColor("navy");
-    font-family: stencilFontFamily("sweet-font");
-    font-size: 1rem;
-    text-align: justify;
+    font-family: stencilFontFamily("freight-font");
+    text-align: left;
 
     @include breakpoint("medium") {
-        text-align: left;
-        font-size: 1.12rem;
         max-width: 580px;
-        padding: 1rem 1rem 0;
-        order: 3;
+        padding: 1rem 0;
+    }
+
+    @include breakpoint('large') {
+        padding: 2.5rem 0 0.5rem;
     }
 }
 
 .product-features {
-    order: 4;
-    display: none;
+    @extend .product__features--helper;
+    display: flex;
     flex-direction: column;
-    padding: 0 1rem 1rem;
-    color: stencilColor("grey-2");
-    font-family: stencilFontFamily("sweet-font");
     max-width: 580px;
-    font-size: 1.12rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-
+    order: 2;
+    padding-bottom: 1rem;
+    
     @include breakpoint("medium") {
         display: flex;
+        padding: 0 0 1rem;
     }
 }
 
@@ -405,9 +375,17 @@
 }
 
 .wishlist-dropdown-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    .button.dropdown-menu-button {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        padding: 0 0.5rem 0 1rem;
+    }
     .icon {
         float: none;
-        margin: 0 5px 0 0;
 
         svg {
             height: 21px;
@@ -418,6 +396,10 @@
     .dropdown-menu-button {
         border: none;
         padding: 0.5em 1em 0 1em;
+
+        .icon {
+            margin-left: 0;
+        }
 
         @include breakpoint("small") {
             padding:  0.5em 1em 0 0.5em;
@@ -455,26 +437,30 @@
     }
 
     @include breakpoint("medium") {
-        margin: 0
+        display: flex;
+        margin: 0;
     }
 }
 
 .productView-title {
+    border-bottom: 1px solid stencilColor('pink');
+    color: stencilColor("navy");
     font-family: stencilFontFamily("domaine-font");
-    color: stencilColor("pink");
-    font-size: 1.8rem !important;
+    font-size: 2.1618rem;
     font-weight: 300;
-    text-align: center;
-    display: inline-block;
-    margin: 0 auto;
-    display: block;
-    max-width: 400px;
+    margin: 0;
+    padding-bottom: 0.5rem;
+    @include breakpoint('small') {
+    }
     @include breakpoint("medium") {
-        max-width: 100%;
-        margin: 0;
+        border: 0;
         display: block;
-        text-align: left;
-        font-size: 3.2rem !important;
+        font-size: 3rem;
+        line-height: 1.2;
+        max-width: 400px;
+        max-width: 300px;
+        margin: 0;
+        padding-bottom: 0;
     }
 }
 
@@ -505,19 +491,12 @@
     }
 }
 
-.responsive-brand {
-    display: block;
-    text-align: right;
-    @include breakpoint("medium") {
-        display: none;
-    }
-}
-
 // Details - Product price
 // -----------------------------------------------------------------------------
 
 .productView-price {
     font-size: fontSize("smaller");
+    letter-spacing: 0.05em;
     margin-bottom: spacing("third");
 
     @include breakpoint("medium") {
@@ -626,9 +605,9 @@
 
 .productView-options {
     order: 3;
-    padding: 0;
-    border-bottom: 1px solid #e5b593;
-    margin-bottom: 2rem;
+    padding: 0 0 1.5rem;
+    // border-bottom: 1px solid #e5b593;
+    max-width: 580px;
     position: relative;
     z-index: 800;
     
@@ -639,7 +618,7 @@
     }
 
     @include breakpoint("medium") {
-        margin: 0 1em;
+        padding: 0;
         order: 2;
     }
 
@@ -710,8 +689,10 @@
     }
 
     .product-options-container {
-        border-bottom: 1px solid;
         border-color: stencilColor("pink");
+        @include breakpoint('medium') {
+            border-bottom: 1px solid;
+        }
     }
 
     .product-options-inner {
@@ -725,37 +706,55 @@
     }
 
     .add-to-cart-container {
+        align-items: center;
+        background-color: #fff;
+        border-top: 1px solid stencilColor('pink');
+        border-bottom: 1px solid stencilColor('pink');
+        bottom: 0;
         display: flex;
         justify-content: space-between;
-        border-bottom: 1px solid;
-        // border-color: stencilColor("pink");
-        padding: 1rem 0;
-        align-items: center;
+        left: 0;
+        padding: 1rem;
+        position: fixed;
+        right: 0;
+        width: auto;
 
         @include breakpoint("medium") {
             font-size: 1.25rem;
+            padding: 1rem 0;
+            position: static;
         }
         
         
         .product-price {
             color: stencilColor("navy");
             font-family: stencilFontFamily("sweet-font");
-            font-size: 1rem;
+            font-size: 1.5rem;
+            line-height: 1;
+            letter-spacing: 0.05em;
+            padding-right: 1rem;
 
             @include breakpoint("medium") {
                 font-size: 1.25rem;
             }
         }
 
-        .inner {
+        .product-qty-and-purchase {
             display: flex;
             position: relative;
+            flex: 1;
+            justify-content: flex-end;
 
             .form-field, 
             .form-action,
             .form-label,
             .button {
                 margin: 0;
+            }
+
+            .form-field--increments {
+                display: flex;
+                flex: 1;
             }
 
             .form-action {
@@ -767,7 +766,8 @@
             }
 
             .form-increment {
-                margin-right: 9px;
+                display: flex;
+                margin-right: 10px;
             }
 
             .form-action .button {
@@ -775,22 +775,30 @@
                 border-color: stencilColor("navy");
                 background-color: stencilColor("navy");
                 font-family: stencilFontFamily("sweet-font");
-                font-size: 0.8rem;
+                font-size: 1rem;
                 border-radius: 0;
-                height: 35px;
-                color: stencilColor("grey");
+                color: #fff;
+                line-height: 1;
+                letter-spacing: 0.1em;
                 text-transform: uppercase;
-                padding: 0 1rem;
+                padding: 1rem 1rem;
                 transition: all .3s;
                 &:hover {
-                    background-color: white;
+                    background-color: #fff;
                     color: stencilColor("navy");
                 }
-                
-                @include breakpoint("medium") {
-                    padding: 0 1.5rem;
-                    font-size: 1rem;
+
+                @include breakpoint('large') {
+                    font-size: 1.25rem;
+                    padding: 1rem 2rem;
                 }
+
+                &.decrease,
+                &.increase {
+                    text-align: center;
+                    width: calc(100%/3);
+                }
+                
             }
         }
     }
@@ -844,10 +852,6 @@
 
 // EasyZoom settings for zoomable product image
 // 
-
-.productView-image {
-    margin: 0 !important;
-}
 
 .productView-image .easyzoom-flyout {
     overflow: hidden;
@@ -1026,52 +1030,23 @@
 .product-qualities {
     display: flex;
     flex-direction: column;
+    max-width: 1680px;
+    margin: 0 auto;
 
     @include breakpoint("medium") {
         flex-direction: row;
     }
 
     .product-quality-image {
-        padding-left: 4rem;
-        margin-top: 3rem;
-        padding-bottom: 3rem;
-        padding-right: 2rem;
+        background-color: stencilColor('color-gaze');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
         position: relative;
-        z-index: 2;
-        display: none;
-        @include breakpoint("medium") {
-            display: block;
-        }
-
-        img {
-            z-index: 800;
-            min-width: 100%;
-        }
-
-        span {
-            z-index: 801;
-            position: absolute;
-            top: 0;
-            right: 6.5rem;
-            left: 1rem;
-            color: stencilColor("navy");
-            font-family: stencilFontFamily("rollerscript-font");
-            font-size: 3.5rem;
-            transform-origin: 100% 0;
-            transform: rotate(-90deg);
-            display: none;
-            @include breakpoint("large") {
-                display: block;
-            }
-
-            @include breakpoint("xlarge") {
-                right: 8rem;
-                font-size: 4.5rem;
-            }
-        }
     }
 
     .product-quality-image, .qualities {
+        display: flex;
         width: 100%;
 
         @include breakpoint("medium") {
@@ -1081,24 +1056,28 @@
 
     .qualities {
         border-left: 1px solid;
+        border-top: 1px solid;
         border-color: stencilColor("gray-4");
         flex-wrap: wrap;
         display: flex;
     }
-
+    
     .quality {
-        width: 50%;
+        height: auto;
+        width: 100vw;
         display: flex;
         flex-direction: column;
-        padding: 3rem 1.6rem;
+        padding: 3rem 1rem;
         justify-content: center;
         align-items: center;
         border-bottom: 1px solid;
         border-color: stencilColor("gray-4");
+        width: 50%;
 
         @include breakpoint("medium") {
+            height: auto;
             justify-content: flex-start;
-            padding: 3rem 3.5rem;
+            padding: 7rem 3.5rem;
         }
 
         @include breakpoint("xlarge") {
@@ -1112,29 +1091,19 @@
     }
 
     .quality-icon {
-        width: 47px;
-        height: 47px;
-
-        @include breakpoint("medium") {
-            width: 87px;
-            height: 87px;
-        }
+        width: 87px;
+        height: 87px;
     }
 
     .quality-title, .quality-description {
         font-family: stencilFontFamily("sweet-font");
-        font-size: 0.7rem;
+        font-size: 1rem;
         color: stencilColor("navy");
         text-align: center;
-
-        @include breakpoint("medium") {
-            font-size: 1rem;
-        }
     }
 
     .quality-description {
         flex: 1;
-
         @include breakpoint("medium") {
             flex: inherit;
         }
@@ -1153,100 +1122,19 @@
 }
 
 .product-post-container {
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
 
-    @include breakpoint("medium") {
-        flex-direction: row;
+    // @include breakpoint("medium") {
+    //     flex-direction: row;
+    // }
+
+    .btn {
+        margin-bottom: 1rem;
     }
 
-    .product-blog-post {
-        background-color: stencilColor("gray-3");
-        padding: 2rem 1.7rem;
-        display: flex;
-        flex-direction: column;
-        order: 2;
-
-        @include breakpoint("medium") {
-            order: 1;
-            padding: 5rem 6rem;
-        }
-
-        @include breakpoint("xlarge") {
-            padding: 7rem 8rem;
-        }
-    }
-
-    .product-post-image {
-        padding: 3rem 1.7rem;
-        align-self: center;
-        order: 1;
-
-        @include breakpoint("medium") {
-            padding: 3rem 4rem;
-            order: 2;
-        }
-
-        img {
-            min-width: 100%;
-            min-height: 100%;
-        }
-    }
-
-    .product-blog-post, .product-post-image {
-        width: 100%;
-
-        @include breakpoint("medium") {
-            width: 50%;
-        }
-    }
-
-    .product-blog-text {
-        color: stencilColor("navy");
-        font-family: stencilFontFamily("sweet-font");
-        font-size: 1rem;
-        font-weight: 300;
-    }
-
-    .product-blog-post-title {
-        font-family: stencilFontFamily("domaine-font");
-        font-size: 1.8rem;
-        margin: 0 0 2rem 0;
-        line-height: 2.2rem;
-        font-weight: 300;
-
-        @include breakpoint("medium") {
-            line-height: 4rem;
-            font-size: 3.7rem;
-        }
-    }
-
-    .product-blog-post-author {
-        text-transform: uppercase;
-        display: none;
-
-        @include breakpoint("medium") {
-            display: block;
-        }
-    }
-
-    .follow {
-        border: 1px solid;
-        border-color: stencilColor("navy");
-        font-size: 0.8rem;
-        max-width: 60px;
-        text-align: center;
-        display: none;
-        cursor: pointer;
-
-        &:hover {
-            background-color: stencilColor("navy");
-            color: stencilColor("grey");
-        }
-
-        @include breakpoint("medium") {
-            display: block;
-        }
+    .story-meta {
+        @extend .product__features--helper;
     }
 
     .product-blog-post-details {
@@ -1292,12 +1180,16 @@
     }
 
     .product-blog-post-actions {
-        display: flex;
-        justify-content: space-between;
-        margin-top:1rem;
+        // display: flex;
+        // justify-content: space-between;
+        padding-top: 1rem;
+        .btn {
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
 
         @include breakpoint("medium") {
-            margin-top:6rem;
+            padding-top: 3rem;
         }
     }
 }

@@ -612,6 +612,7 @@
         "sweet-font": "SweetSansPro",
         "domaine-font": "DomaineDisp",
         "freight-font": "FreightText",
+        "brand": "#626262",
         "navy": "#2E353F",
         "grey": "#C7C8C7",
         "grey-2": "#939393",
@@ -626,7 +627,7 @@
         "color-touch": "#dfd0cd",
         "color-taste": "#aa7949",
         "color-aroma": "#c8c8c8",
-        "color-gaze": "#e3b196",
+        "color-gaze": "#e5b593",
         "color-listen": "#787c83"
       }
     }

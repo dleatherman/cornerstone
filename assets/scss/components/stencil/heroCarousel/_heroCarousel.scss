@@ -20,15 +20,12 @@
 .heroCarousel {
     width: 1px;
     min-width: 100%;
-    margin-bottom: (spacing("double") + spacing("single"));
-    margin-top: -(spacing("single")); // 3
 
-    @include breakpoint("medium") {
+    @include breakpoint($screen-xmedium) {
         margin-top: -(spacing("single") + spacing("base")); // 3
     }
 
     &.slick-initialized { // 2
-        max-height: remCalc(1000);
         opacity: 1;
     }
 
@@ -36,42 +33,21 @@
         display: none;
     }
 
-    a {
-        text-decoration: none;
-    }
-
     .slick-next,
     .slick-prev {
-        top: 50%;
+        background: none;
+        border: 0;
+        padding: 0;
+        top: 100px;
+        width: 20px;
     }
 
     .slick-next {
-        right: 15px;
-
-        @include breakpoint("medium") {
-            right: 25px;
-        }
+        right: 2rem;
     }
 
     .slick-prev {
-        left: 15px;
-
-        @include breakpoint("medium") {
-            left: 25px;
-        }
-    }
-
-    .slick-dots {
-        bottom: spacing("third");
-
-        @include breakpoint("medium") {
-            bottom: spacing("single");
-        }
-
-        // scss-lint:disable SelectorDepth, NestingDepth
-        li {
-            @include carouselOpaqueBackgrounds($slick-dot-bgColor);
-        }
+        left: 2rem;
     }
 }
 
@@ -82,15 +58,15 @@
     }
 
     .heroCarousel-image {
-        @include breakpoint("medium") {
+        @include breakpoint($screen-xmedium) {
             object-fit: cover; // 1
-            max-height: remCalc(600px);
+            max-height: remCalc(400px);
             width: 100%;
         }
     }
 
     .heroCarousel-image-wrapper {
-        @include breakpoint("medium") {
+        @include breakpoint($screen-xmedium) {
             max-height: remCalc(600px);
         }
     }
@@ -113,16 +89,15 @@
 }
 
 .heroCarousel-content {
-    background-color: rgba($carousel-bgColor, 1);
-    padding: spacing("half") spacing("single") (spacing("double"));
+    font-family: stencilFontFamily("domaine-font");
+    margin: spacing("double") auto 0;
     text-align: center;
+    width: 72%;
 
-    @include breakpoint("medium") {
+    @include breakpoint($screen-xmedium) {
         @include carouselOpaqueBackgrounds;
         background-color: rgba($carousel-bgColor, 0.9);
         left: 0;
-        margin: 0 auto;
-        padding: spacing("single") * 1.5;
         position: absolute;
         right: 0;
         top: 50%;
@@ -137,31 +112,21 @@
 
 .heroCarousel-title {
     color: $carousel-title-color;
-    font-size: fontSize("small");
-    margin-top: 0;
-
-    @include breakpoint("medium") {
-        font-size: fontSize("hero");
-    }
+    font-size: 3rem;
+    line-height: 1.1;
+    margin: 0 0 2.5rem;
 }
 
 .heroCarousel-description {
     color: $carousel-description-color;
-    font-size: fontSize("tiny");
-
-    @include breakpoint("small") {
-        font-size: fontSize("smallest");
-    }
-
-    @include breakpoint("medium") {
-        font-size: fontSize("smaller");
-    }
+    font-size: 1.3rem;
+    margin-bottom: 0;
 }
 
 .heroCarousel-action {
     margin: 0;
 
-    @include breakpoint("medium") {
+    @include breakpoint($screen-xmedium) {
         margin-top: spacing("single");
     }
 }

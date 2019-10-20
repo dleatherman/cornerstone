@@ -1,4 +1,5 @@
 import $ from 'jquery';
+
 export default function () {
     $(window).click(() => {
         $('body').removeClass('body-change');
@@ -7,7 +8,7 @@ export default function () {
         $('.home-title-container').removeClass('home-title-container-index');
     });
 
-    $('.sub-item').click(function () {
+    $('.sub-item').click(() => {
         const value = $(this).data('value');
         $('#sort').val(value);
         $('#sortForm').submit();
@@ -15,7 +16,7 @@ export default function () {
 
     $('.sort-container').click((event) => {
         event.stopPropagation();
-        if($('.sort-container').hasClass("active")) {
+        if ($('.sort-container').hasClass('active')) {
             $('.sort-container').removeClass('active');
         } else {
             $('.sort-container').addClass('active');

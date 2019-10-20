@@ -1,4 +1,5 @@
 import $ from 'jquery';
+
 export default function () {
     $('.mobile-filter-container').on('click', () => {
         $('body').addClass('no-padding');
@@ -11,7 +12,7 @@ export default function () {
         $('.page, .footer-sm, .header, .instagram-section, .category-title, .category-headline, .mobile-order-sort-container').removeClass('hide-element');
     });
 
-    $('.mobile-filter-title').on('click', function () {
+    $('.mobile-filter-title').on('click', () => {
         $(this).find('.mobile-filter-list').toggleClass('active');
         $(this).find('.count-selected-filters').toggleClass('active');
         $(this).find('.add-icon').toggleClass('active');
@@ -19,7 +20,7 @@ export default function () {
     });
 
     const filters = $('.mobile-filters');
-    filters.children('.mobile-filter-title').each(function () {
+    filters.children('.mobile-filter-title').each(() => {
         const selectedNumber = $(this).find('.selected').length;
         $(this).find('.count-selected-filters').text(selectedNumber);
     });

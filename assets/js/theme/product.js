@@ -7,7 +7,6 @@ import collapsibleFactory from './common/collapsible';
 import ProductDetails from './common/product-details';
 import videoGallery from './product/video-gallery';
 import { classifyForm } from './common/form-utils';
-import utils from '@bigcommerce/stencil-utils';
 
 export default class Product extends PageManager {
     constructor(context) {
@@ -52,8 +51,6 @@ export default class Product extends PageManager {
 
         this.productReviewHandler();
         this.productRevealHandlerMobile();
-
-        this.getFeaturedBlogPost();
     }
 
     productReviewHandler() {
@@ -72,16 +69,5 @@ export default class Product extends PageManager {
                 $activate.toggleClass('revealed');
             });
         }
-    }
-
-    getFeaturedBlogPost() {
-        // TODO: COME BACK TO THIS FOR FEATURED BLOG
-        const featuredPostContainer = document.getElementById('featured-blog__container--outer');
-
-        utils.api.getPage('stories/tag/featured', { template: 'blog/featured-blog-post' }, (err, response) => {
-            // eslint-disable-next-line no-console
-            // console.log(response);
-            // featuredPostContainer.innerHTML = response;
-        });
     }
 }

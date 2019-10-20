@@ -194,7 +194,8 @@ export default class Cart extends PageManager {
         }
 
         utils.api.cart.getContent(options, (err, response) => {
-            const numberOfItems = parseInt($(response.content).data("cart-quantity") || 0);
+            // eslint-disable-next-line radix
+            const numberOfItems = parseInt($(response.content).data('cart-quantity') || 0);
             if (numberOfItems > 0) {
                 this.$cartContent.html(response.content);
                 this.$cartTotals.html(response.totals);
@@ -208,6 +209,7 @@ export default class Cart extends PageManager {
 
                 $('body').trigger('cart-quantity-update', quantity);
             } else {
+                // eslint-disable-next-line no-restricted-globals
                 location.reload();
             }
         });
@@ -250,7 +252,7 @@ export default class Cart extends PageManager {
                 showCancelButton: true,
                 confirmButtonText: 'delete',
                 reverseButtons: true,
-                showCloseButton: true
+                showCloseButton: true,
             }).then(() => {
                 // remove item from cart
                 cartRemoveItem(itemId);
@@ -301,7 +303,7 @@ export default class Cart extends PageManager {
                     title: 'Error',
                     showCancelButton: false,
                     confirmButtonText: 'Try Again',
-                    showCloseButton: true
+                    showCloseButton: true,
                 });
             }
 
@@ -314,7 +316,7 @@ export default class Cart extends PageManager {
                         title: 'Error on coupon',
                         showCancelButton: false,
                         confirmButtonText: 'Try Again',
-                        showCloseButton: true
+                        showCloseButton: true,
                     });
                 }
             });

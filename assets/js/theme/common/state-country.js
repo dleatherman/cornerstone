@@ -60,7 +60,7 @@ function makeStateOptional(stateElement) {
         class: 'form-input',
         name: attrs.name,
         'data-field-type': attrs['data-field-type'],
-        placeholder: `${attrs['data-label']}*`
+        placeholder: `${attrs['data-label']}*`,
     };
 
     stateElement.replaceWith($('<input />', replacementAttributes));

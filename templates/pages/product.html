@@ -10,7 +10,8 @@ product:
         limit: {{theme_settings.productpage_similar_by_views_count}}
 blog:
     recent_posts:
-        limit: {{theme_settings.homepage_blog_posts_count}}
+        limit: 12
+        summary: 250
 ---
 {{#partial "page"}}
     <!-- {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}} -->

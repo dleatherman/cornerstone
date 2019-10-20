@@ -32,6 +32,25 @@
             {{/if}}
          </div>
       </figure>
+      <ul class="productView-thumbnails" {{#gt product.images.length 10}} data-slick='{
+                      "infinite": false,
+                      "mobileFirst": true,
+                      "slidesToShow": 4,
+                      "slidesToScroll": 1
+                  }' {{/gt}}>
+         {{#each product.images}}
+         <li class="productView-thumbnail">
+            <a class="productView-thumbnail-link"
+               href="{{getImage this 'product_size' (cdn ../theme_settings.default_image_product)}}" data-image-gallery-item
+               data-image-gallery-new-image-url="{{getImage this 'product_size' (cdn ../theme_settings.default_image_product)}}"
+               data-image-gallery-zoom-image-url="{{getImage this 'zoom_size' (cdn ../theme_settings.default_image_product)}}">
+               <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}"
+                  data-src="{{getImage this 'large' (cdn ../theme_settings.default_image_product)}}" alt="{{this.alt}}"
+                  title="{{this.alt}}">
+            </a>
+         </li>
+         {{/each}}
+      </ul>
    </section>
 
    <section class="productView-details">
@@ -101,9 +120,8 @@
          {{/if}}
          {{/each}}
       </div>
-      {{!-- TODO: Come back to this --}}
-      {{#if buy}}
-         EXPLORE
-      {{/if}}
+      <div class="product-explore">
+         <a href="{{product.url}}" class="btn btn__primary">Explore The Kit</a>
+      </div>
    </section>
 </div>

@@ -31,6 +31,7 @@
          z-index: 1;
          @include breakpoint('large') {
             font-size: $fontSize-hero;
+            max-width: 350px;
          }
       }
       .page__hero--subheading {

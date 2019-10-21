@@ -6,6 +6,13 @@
 // Container
 // -----------------------------------------------------------------------------
 
+.page__type--product iframe {
+    bottom: 90px !important;
+    @include breakpoint('medium') {
+        bottom: 0 !important;
+    }
+}
+
 .preview-product-modal {
     max-width: 800px;
     width: 90%;

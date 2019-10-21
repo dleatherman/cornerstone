@@ -989,6 +989,10 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
         justify-content: stretch;
         width: 100%;
 
+        @include breakpoint('medium') {
+            border: 0;
+        }
+
         @include breakpoint("large") {
             width: 30%;
             max-width: 300px;

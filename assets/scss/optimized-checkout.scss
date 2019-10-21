@@ -15,6 +15,25 @@
 // Background, Logo Position
 // -----------------------------------------------------------------------------
 
+@font-face {
+    font-family: "SweetSansPro";
+    src: url("{{cdn 'fonts/SweetSansPro-Regular.ttf'}}");
+}
+
+@font-face {
+    font-family: "DomaineDisp";
+    src: url("{{cdn 'fonts/DomaineDisp-Regular.otf'}}");
+}
+
+@font-face {
+    font-family: "RollerscriptSmooth";
+    src: url("{{cdn 'fonts/Rollerscript-Smooth.otf'}}");
+}
+
+@font-face {
+    font-family: "Avenir";
+    src: url("{{cdn 'fonts/Avenir.ttc'}}");
+}
 
 body {
     background-color: white !important;

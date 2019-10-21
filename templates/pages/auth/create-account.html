@@ -1,7 +1,16 @@
+---
+blog:
+    recent_posts:
+        limit: {{theme_settings.homepage_blog_posts_count}}
+---
 {{inject 'passwordRequirements' settings.password_requirements}}
 {{#partial "page"}}
-    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
     <h1 class="page-heading">{{lang 'create_account.heading' }}</h1>
+    <p>Create a Pepper account and get all the goods:<br />
+    Quick Check Out, Subscription Changes, Wish Lists and More!</p>
+    <p>
+        <i>Already have an account? <a href="/login.php">Login</a> here.</i>
+    </p>
 
     <div class="account account--fixed">
         <div class="account-body">
@@ -9,7 +18,7 @@
                 {{> components/common/alert-error forms.create_account.error}}
             {{/if}}
             {{#if settings.account_creation_enabled}}
-                <form action="{{urls.auth.save_new_account}}" data-create-account-form method="post" class="form">
+                <form action="{{urls.auth.save_new_account}}" class="create-account-form" data-create-account-form method="post" class="form">
                     <div class="form-row form-row--half">
                         {{#each forms.create_account.account_fields }}
                             {{{dynamicComponent 'components/common/forms'}}}
@@ -21,7 +30,7 @@
                         {{inject 'state_error' (lang 'errors.state_error')}}
                     </div>
                     {{{ forms.create_account.recaptcha.markup}}}
-                    <div class="form-actions">
+                    <div class="submit-btn">
                         <input type="submit" class="button button--primary" value="{{lang 'forms.create_account.submit_value' }}" />
                     </div>
                 </form>
@@ -29,4 +38,4 @@
         </div>
     </div>
 {{/partial}}
-{{> layout/base}}
+{{> layout/base page_content="login create-account" show_ig_feed="yes" page_title="Sign Up"}}

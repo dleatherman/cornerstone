@@ -186,6 +186,15 @@
     width: 4.5rem;
 }
 
+.form-select {
+    background-color: #fff;
+    border-color: #999999;
+    color: #444;
+    option {
+        color: #444;
+    }
+}
+
 .form-file {
     margin-bottom: spacing("third");
 }

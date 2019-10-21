@@ -3,12 +3,14 @@
 // =============================================================================
 .form-input {
     background-color: transparent !important;
+    color: #444;
     transition: background-color 90000s ease-in-out 0s;
 }
 
 .login {
     margin: spacing("double") 1rem;
     max-width: remCalc(900px);
+    width: 100%;
 
     @include breakpoint("medium") {
         margin: 0 auto; 

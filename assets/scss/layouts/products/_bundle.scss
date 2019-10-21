@@ -7,7 +7,8 @@
 
 .product__hero--outer {
    align-items: flex-end;
-   background: url('/assets/img/hero-bundle-play-date.png') no-repeat center center;
+   background-repeat: no-repeat;
+   background-position: center center;
    background-size: cover;
    display: flex;
    font-family: stencilFontFamily('domaine-font');
@@ -29,7 +30,6 @@
    }
    .product__hero--inner {
       @extend .container;
-      // padding: $container-padding-large 1rem;
       h1 {
          color: stencilColor("off-white");
          font-size: $fontSize-root * 2.5;

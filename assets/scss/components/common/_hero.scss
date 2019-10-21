@@ -1,6 +1,7 @@
 .page__hero--outer {
    align-items: flex-end;
-   background: url('/assets/img/hero-bundle-play-date.png') no-repeat center center;
+   background-repeat: no-repeat;
+   background-position: center top;
    background-size: cover;
    display: flex;
    font-family: stencilFontFamily('domaine-font');

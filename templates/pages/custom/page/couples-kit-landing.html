@@ -1,12 +1,8 @@
----
-blog:
-  recent_posts:
-    limit: 20
----
 {{#partial "page"}}
    {{>components/common/product-landing/hero
-      subheading=""
+      title=false
       arrow=false
+      brand=true
    }}
 
    {{>components/products/landing-pullquote

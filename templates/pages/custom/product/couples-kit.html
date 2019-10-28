@@ -29,7 +29,10 @@ blog:
     <div itemscope itemtype="http://schema.org/Product">
         <main class="product__hero product__hero--outer" style="background-image: url({{cdn 'img/hero-couples-kit-product.jpg'}});">
             <div class="container product__hero--inner product__{{#replace "/" ""}}{{product.url}}{{/replace}}">
-                <h1 class="product__hero--heading domaine-display">{{ product.title }}</h1>
+                <!-- Branding -->
+                <div class="product__hero--branding">
+                    <img src="{{cdn 'img/brand-couples-kit.png'}}" alt="">
+                </div>
             </div>
         </main>
 
@@ -167,7 +170,7 @@ blog:
                                 <img src="{{cdn '/img/playlist.jpg' }}" alt="">
                             </div>
                             <div class="bundle__slide--title">
-                                The Couples Kit Playlist
+                                The Couple&rsquo;s Kit Playlist
                             </div>
                             <div class="bundle__slide--brand">
                                 Pepper
@@ -177,7 +180,7 @@ blog:
                             </div>
                             <a href="#" class="bundle__slide--reveal reveal__more">Product Info</a>
                             <p class="bundle__slide--description">
-                                Tune into the sweet, sultry and sexy vibes we’ve channeled to create our Pepper Couples Playlist. Turn up the volume to get into the groove or let it drift in the background lending the right amount of mood to your one-on-one time. Either way, this soundtrack is all about connection, romance, and fun–so, all you have to do is press play...
+                                Tune into the sweet, sultry and sexy vibes we’ve channeled to create our Pepper Couple&rsquo;s Playlist. Turn up the volume to get into the groove or let it drift in the background lending the right amount of mood to your one-on-one time. Either way, this soundtrack is all about connection, romance, and fun–so, all you have to do is press play...
                             </p>
                             <div class="bundle__slide--features">
                                 Spotify playlist<br>
@@ -208,7 +211,7 @@ blog:
                 <div class="why__heading domaine-display">
                     Built for Two, Created for Pleasure
                 </div>
-                <p>We’re not saying we need an excuse to connect—but, we’re also not saying that a little help never hurt. The Pepper Couples Kit is about dialing up the heat and exploration in a simple and accessible way—so we’ve pulled together a sweet assortment of fun first base products that take the guesswork out of planning a night (or day) in of pleasure. Have we mentioned how we feel about pleasure? We’re 100% all for it!</p>
+                <p>We’re not saying we need an excuse to connect—but, we’re also not saying that a little help never hurt. The Pepper Couple&rsquo;s Kit is about dialing up the heat and exploration in a simple and accessible way—so we’ve pulled together a sweet assortment of fun first base products that take the guesswork out of planning a night (or day) in of pleasure. Have we mentioned how we feel about pleasure? We’re 100% all for it!</p>
                 <a href="/cart.php?action=add&product_id={{product.id}}" class="btn btn__primary">Buy Now</a>
                 <div class="vertical-text">
                     what’s with all the hype

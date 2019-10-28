@@ -32,8 +32,8 @@
          margin: 0 auto;
          z-index: 1;
          @include breakpoint('medium') {
-         font-size: $fontSize-root * 3;
-            max-width: 60%;
+            font-size: $fontSize-root * 3;
+            max-width: 70%;
          }
          @include breakpoint('large') {
             font-size: $fontSize-hero;

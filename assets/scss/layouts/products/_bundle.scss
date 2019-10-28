@@ -6,7 +6,7 @@
 }
 
 .product__hero--outer {
-   align-items: flex-end;
+   align-items: center;
    background-repeat: no-repeat;
    background-position: center center;
    background-size: cover;
@@ -15,6 +15,7 @@
    height: 50vh;
    justify-content: center;
    position: relative;
+   text-align: center;
    &:before {
       background-color: rgba(#000, 0.2);
       bottom: 0;
@@ -27,9 +28,15 @@
    }
    @include breakpoint('large') {
       height: 60vh;
+      min-height: 650px;
    }
    .product__hero--inner {
       @extend .container;
+      .product__hero--branding {
+         img {
+            max-width: 250px;
+         }
+      }
       h1 {
          color: stencilColor("off-white");
          font-size: $fontSize-root * 2.5;

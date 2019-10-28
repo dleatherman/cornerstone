@@ -31,8 +31,9 @@
         {{> components/common/navigation-right}}
         {{!-- {{{region name="header_bottom"}}} --}}
         
-        {{> components/common/shop-menu posts=blog.recent_posts secondary_posts=blog.posts}}
-        {{> components/common/stories-menu posts=blog.recent_posts secondary_posts=blog.posts}}
+        {{!-- TODO: Come back to this, looks like it needs some code love (extra padding on the whole page) --}}
+        {{!> components/common/shop-menu posts=blog.recent_posts secondary_posts=blog.posts}}
+        {{!> components/common/stories-menu posts=blog.recent_posts secondary_posts=blog.posts}}
         
         {{!> components/common/mobile-menu}}
         <div class="mobile-menu">

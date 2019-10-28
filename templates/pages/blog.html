@@ -64,7 +64,7 @@ blog:
     <div class="featured-stories">
         <div class="container">
             {{#each blog.posts}}
-                {{#contains (join (pluck tags 'name') ', ') 'featured' }}
+                {{#contains (join (pluck tags 'name') ', ') 'featured-home' }}
                     {{> components/blog/main-blog-post post=this}}
                 {{/contains}}
             {{/each}}

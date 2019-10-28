@@ -19,10 +19,8 @@ blog:
     <div class="featured-stories">
         <div class="container">
             {{#each blog.recent_posts}}
-                {{#contains (JSONstringify (pluck tags 'name')) 'featured' }}
-                  {{#contains (join (pluck tags 'name') ', ') 'kit' }}
-                    {{> components/blog/main-blog-post post=this}}
-                  {{/contains}}
+                {{#contains (JSONstringify (pluck tags 'name')) 'featured-kit' }}
+                  {{> components/blog/main-blog-post post=this}}
                 {{/contains}}
             {{/each}}
         </div>

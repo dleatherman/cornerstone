@@ -2,7 +2,7 @@
 carousel: {{theme_settings.homepage_show_carousel}}
 blog:
     posts:
-        limit: 9
+        limit: 20
         pages: 3
         summary: 90
 ---
@@ -64,18 +64,20 @@ blog:
     <div class="featured-stories">
         <div class="container">
             {{#each blog.posts}}
-                {{#contains (JSONstringify (pluck tags 'name')) 'featured' }}
+                {{#contains (join (pluck tags 'name') ', ') 'featured' }}
                     {{> components/blog/main-blog-post post=this}}
                 {{/contains}}
             {{/each}}
         </div>
     </div>
     <div class="story-archive container">
-        <h1>Today's Top Stories</h1>
+        <h1>Today&rsquo;s Top Stories</h1>
         {{#each blog.posts}}
-            {{> components/blog/post post=this sense=true}}
+            {{#contains (join (pluck tags 'name') ', ') 'homepage' }}
+                {{> components/blog/post post=this sense=true}}
+            {{/contains}}
         {{/each}}
-        {{> components/common/paginator pagination.blog text="tell me more, tell me more"}}
+        {{!> components/common/paginator pagination.blog text="tell me more, tell me more"}}
     </div>
     {{>components/common/newsletter-row}}
     {{>components/common/connect-more}}

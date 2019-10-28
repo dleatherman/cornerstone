@@ -28,7 +28,7 @@ blog:
 
    <div class="story-archive container">
       {{#each blog.recent_posts}}
-         {{#contains (join (pluck tags 'name') ', ') 'kit' }}
+         {{#contains (join (pluck tags 'name') ', ') 'couples' }}
             {{> components/blog/post post=this sense=true}}
          {{/contains}}
       {{/each}}

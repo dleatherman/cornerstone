@@ -26,9 +26,12 @@
       top: 0;
       z-index: 0;
    }
-   @include breakpoint('large') {
-      height: 60vh;
+   @include breakpoint('medium') {
+      height: 70vh;
       min-height: 650px;
+   }
+   @include breakpoint($screen-xlarge) {
+      min-height: 700px;
    }
    .product__hero--inner {
       @extend .container;

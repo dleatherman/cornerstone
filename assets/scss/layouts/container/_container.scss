@@ -10,7 +10,7 @@
     position: relative;
     width: layout("fixed");
     @include breakpoint('large') {
-        max-width: 960px;
+        max-width: 1040px;
     }
     @media (min-width: $screen-xlarge) {
         max-width: 1140px;

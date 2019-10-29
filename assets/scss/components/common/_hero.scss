@@ -5,7 +5,7 @@
    background-size: cover;
    display: flex;
    font-family: stencilFontFamily('domaine-font');
-   min-height: 50vh;
+   height: 50vh;
    justify-content: center;
    position: relative;
    text-align: center;
@@ -19,9 +19,13 @@
       top: 0;
       z-index: 0;
    }
-   @include breakpoint('large') {
+   @include breakpoint('medium') {
       height: 70vh;
       min-height: 650px;
+   }
+   @include breakpoint($screen-xlarge) {
+      height: 70vh;
+      min-height: 700px;
    }
    .page__hero--inner {
       @extend .container;

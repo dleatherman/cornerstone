@@ -167,7 +167,9 @@ blog:
                     <div class="bundle__slide bundle__slide--outer">
                         <div class="bundle__slide--inner">
                             <div class="bundle__slide--img">
-                                <img src="{{cdn '/img/playlist.jpg' }}" alt="">
+                                <a href="https://open.spotify.com/playlist/6o3IqbEf4JH3T012WaiwmQ" target="_blank">
+                                    <img src="{{cdn '/img/playlist.jpg' }}" alt="">
+                                </a>
                             </div>
                             <div class="bundle__slide--title">
                                 The Couple&rsquo;s Kit Playlist
@@ -220,15 +222,17 @@ blog:
             </div>
         </section>
 
-        {{#each blog.recent_posts}}
-            {{#contains (JSONstringify (pluck tags 'name')) 'kit' }}
+        {{#each (limit blog.recent_posts 5)}}
+            {{#contains (join (pluck tags 'name') ', ') 'featured-home' }}
                 {{> components/blog/featured-blog-post post=this}}
             {{/contains}}
         {{/each}}
 
         <div class="story-archive container">
-            {{#each (limit blog.recent_posts 3)}}
-                {{> components/blog/post post=this sense=true}}
+            {{#each (limit blog.recent_posts 10)}}
+                {{#contains (join (pluck tags 'name') ', ') 'homepage' }}
+                    {{> components/blog/post post=this sense=true}}
+                {{/contains}}
             {{/each}}
         </div>
 

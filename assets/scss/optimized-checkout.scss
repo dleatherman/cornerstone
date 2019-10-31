@@ -17,12 +17,17 @@
 
 @font-face {
     font-family: "SweetSansPro";
-    src: url("{{cdn 'fonts/SweetSansPro-Regular.ttf'}}");
+    src: url("{{cdn 'fonts/SweetSansPro-Regular.otf'}}");
 }
 
 @font-face {
     font-family: "DomaineDisp";
     src: url("{{cdn 'fonts/DomaineDisp-Regular.otf'}}");
+}
+
+@font-face {
+    font-family: "FreightText";
+    src: url("{{cdn 'fonts/FreightText-Book.otf'}}");
 }
 
 @font-face {

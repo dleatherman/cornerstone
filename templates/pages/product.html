@@ -10,7 +10,7 @@ product:
         limit: {{theme_settings.productpage_similar_by_views_count}}
 blog:
     recent_posts:
-        limit: 12
+        limit: 14
         summary: 90
 ---
 {{#partial "page"}}
@@ -20,82 +20,39 @@ blog:
         {{> components/common/alert-info message}}
     {{/each}}
 
-    <div itemscope itemtype="http://schema.org/Product">
-        {{> components/products/product-view settings=../settings schema=true  }}
-        <div class="product-poster">
-            <div class="inner">
-                <div class="post">
-                        <img class="right-image" src="{{> components/common/search-custom-field product=product custom_field='story_left_image_url'}}" alt="story image"/>
-                    {{#each product.custom_fields}}
-                        {{#if name '===' 'story_paragraph'}}  
-                            <p>{{{value}}}</p>
-                        {{/if}}
-                    {{/each}}
-                    
-                    <div class="post-footer">
-                        <div class="gold-line"></div>
-                        <div class="icons">
-                            <span class="icon"><img src="{{cdn 'img/like-icon.svg'}}" alt="like icon" /></span>
-                            <span class="icon"><img src="{{cdn 'img/email-icon.svg'}}" alt="email icon" /></span>
-                            <span class="icon"><img src="{{cdn 'img/post-flag.svg'}}" alt="post flag" /></span>
-                            <span class="icon"><img src="{{cdn 'img/pinterest-icon.svg'}}" alt="pinterest flag" /></span>
-                        </div>
-                        <div class="button-read">
-                            <a href="{{> components/common/search-custom-field product=product custom_field='story_button_link'}}" target="_blank">
-                                {{> components/common/search-custom-field product=product custom_field="story_button_text"}}
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="post-image">
-                    <img src="{{> components/common/search-custom-field product=product custom_field='story_right_image_url'}}" alt="story image"/>
-                </div>
-            </div>
-        </div>
-        <div class="product-qualities">
-            <div class="product-quality-image">
-                <span>What’s the hype?</span>
-                <img src="{{> components/common/search-custom-field product=product custom_field='hype_image_url'}}"/>
-            </div>
+    <div itemscope itemtype="http://schema.org/Product" class="product__single">
+        {{> components/products/product-view settings=../settings schema=true  }}<div class="product-qualities">
             <div class="qualities">
                 {{> components/products/quality product=product quality_title="custom_quality_title_1" quality_description="custom_quality_description_1" }}
                 {{> components/products/quality product=product quality_title="custom_quality_title_2" quality_description="custom_quality_description_2" }}
                 {{> components/products/quality product=product quality_title="custom_quality_title_3" quality_description="custom_quality_description_3" }}
                 {{> components/products/quality product=product quality_title="custom_quality_title_4" quality_description="custom_quality_description_4" }}
             </div>
-        </div>
-        <div class="product-post-container">
-            <div class="product-blog-post">
-                <h4 class="product-blog-text product-blog-post-title">{{> components/common/search-custom-field product=product custom_field="post_title"}}</h4>
-                <span class=" product-blog-text product-blog-post-author">{{> components/common/search-custom-field product=product custom_field="post_author"}}</span>
-                <span class="product-blog-text follow">FOLLOW</span>
-                <div class="product-blog-post-details">
-                    <span class="product-blog-text product-blog-post-date">{{> components/common/search-custom-field product=product custom_field="post_date"}}</span>
-                    <span class="product-blog-text product-blog-post-read">{{> components/common/search-custom-field product=product custom_field="post_read_length"}}</span>
-                </div>
-                <div class="product-blog-post-content">
-                    {{#each product.custom_fields}}
-                        {{#if name '===' 'post_paragraph'}}  
-                            <p class="product-blog-text product-blog-post-paragraph">{{{value}}}</p>
-                        {{/if}}
-                    {{/each}}
-                </div>
-                <div class="product-blog-post-actions">
-                    <div class="button-read">
-                        <a href="{{> components/common/search-custom-field product=product custom_field='post_url'}}" target="_blank">READ MORE</a>
-                    </div>
-                    <div class="icons">
-                        <span class="icon"><img src="{{cdn 'img/like-icon.svg'}}" alt="like icon" /></span>
-                        <span class="icon"><img src="{{cdn 'img/email-icon.svg'}}" alt="email icon" /></span>
-                        <span class="icon"><img src="{{cdn 'img/post-flag.svg'}}" alt="post flag" /></span>
-                        <span class="icon"><img src="{{cdn 'img/pinterest-icon.svg'}}" alt="pinterest flag" /></span>
-                    </div>
-                </div>
-            </div>
-            <div class="product-post-image">
-                <img src="{{> components/common/search-custom-field product=product custom_field='post-image_url'}}"/>
+            <div class="product-quality-image" style="background-image: url({{> components/common/search-custom-field product=product custom_field="features_image"}})">
             </div>
         </div>
+        
+        <section class="why__wrapper--outer">
+            <div class="why__wrapper--inner">
+                <div class="why__heading domaine-display">
+                    {{> components/common/search-custom-field product=product custom_field="product-vertical-text" multiple="1"}}
+                </div>
+                <p>{{> components/common/search-custom-field product=product custom_field="story_paragraph"}}</p>
+                {{!-- <a href="/cart.php?action=add&product_id={{product.id}}" class="btn btn__primary">Buy Now</a> --}}
+                <div class="vertical-text">
+                    what’s with all the hype
+                    <img src="{{cdn 'img/arrow-why.svg'}}" alt="">
+                </div>
+            </div>
+        </section>
+        
+        {{#each (limit blog.recent_posts 1)}}
+        {{#contains (join (pluck tags 'name') ', ') 'featured-home' }}
+        {{> components/blog/featured-blog-post post=this}}
+        {{/contains}}
+        {{/each}}
+        
+        
         {{>components/category/featured-by-sense 
             items=product.related_products
             main-title="Shop Related Products"
@@ -103,7 +60,14 @@ blog:
             link-text="Shop all touch"
             link-url="/shop-all-touch"
         }}
-        {{>components/common/product-editorial-posts product=product}}
+        <div class="story-archive container">
+            {{#each (limit blog.recent_posts 14)}}
+            {{#contains (join (pluck tags 'name') ', ') 'homepage' }}
+            {{> components/blog/post post=this sense=true}}
+            {{/contains}}
+            {{/each}}
+        </div>
+        {{!-- {{>components/common/product-editorial-posts product=product}} --}}
         {{>components/common/connect-more}}
     </div>
 {{/partial}}

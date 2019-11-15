@@ -13,6 +13,10 @@
     }
 }
 
+.product__single {
+    padding: 3rem 0;
+}
+
 .preview-product-modal {
     max-width: 800px;
     width: 90%;
@@ -482,38 +486,33 @@
         display: block;
         font-size: 3rem;
         line-height: 1.2;
-        max-width: 400px;
-        max-width: 300px;
+        max-width: 350px;
         margin: 0;
         padding-bottom: 0;
     }
 }
 
-.productView-brand, .responsive-brand {
-    color: stencilColor("grey-2");
-    font-family: stencilFontFamily("sweet-font");
-    font-size: 1rem;
-    margin: 0 0 spacing("half");
-
-    @include breakpoint("medium") {
-        text-align: left;
-    }
-
-    a {
-        color: stencilColor("grey-2");
-        text-decoration: none;
-        text-transform: uppercase;
-        font-weight: 300;
-    }
-}
-
 .productView-brand {
-    display: none;
+   color: stencilColor('grey-2');
+   font-family: stencilFontFamily('sweet-font');
+   font-size: 1rem;
+   font-weight: 300;
+   letter-spacing: 0.1em;
+   line-height: 1.7;
+   text-align: left;
+   text-transform: uppercase;
 
     @include breakpoint("medium") {
-        display: block;
+        letter-spacing: 2px;
         text-align: left;
     }
+
+    // a {
+    //     color: stencilColor("grey-2");
+    //     text-decoration: none;
+    //     text-transform: uppercase;
+    //     font-weight: 300;
+    // }
 }
 
 // Details - Product price

@@ -211,25 +211,21 @@ blog:
         <section class="why__wrapper--outer">
             <div class="why__wrapper--inner">
                 <div class="why__heading domaine-display">
-                    Built for Two, Created for Pleasure
+                    {{> components/common/search-custom-field product=product custom_field="product_poster_heading"}}
                 </div>
                 <p>We’re not saying we need an excuse to connect—but, we’re also not saying that a little help never hurt. The Pepper Couple&rsquo;s Kit is about dialing up the heat and exploration in a simple and accessible way—so we’ve pulled together a sweet assortment of fun first base products that take the guesswork out of planning a night (or day) in of pleasure. Have we mentioned how we feel about pleasure? We’re 100% all for it!</p>
                 <a href="/cart.php?action=add&product_id={{product.id}}" class="btn btn__primary">Buy Now</a>
                 <div class="vertical-text">
-                    what’s with all the hype
+                    {{> components/common/search-custom-field product=product custom_field="product_poster_vt-sent"}}
                     <img src="{{cdn 'img/arrow-why.svg'}}" alt="">
                 </div>
             </div>
         </section>
 
-        {{#each (limit blog.recent_posts 5)}}
-            {{#contains (join (pluck tags 'name') ', ') 'featured-home' }}
-                {{> components/blog/featured-blog-post post=this}}
-            {{/contains}}
-        {{/each}}
+        {{> components/blog/featured-blog-post product=product}}
 
         <div class="story-archive container">
-            {{#each (limit blog.recent_posts 10)}}
+            {{#each (limit blog.recent_posts 20)}}
                 {{#contains (join (pluck tags 'name') ', ') 'homepage' }}
                     {{> components/blog/post post=this sense=true}}
                 {{/contains}}

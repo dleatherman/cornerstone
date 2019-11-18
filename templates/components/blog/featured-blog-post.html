@@ -1,18 +1,15 @@
 <div class="product-post-container story">
    <div class="story-header">
-      <div
-         class="story-header-text sense_touch{{#if post.tags}}{{#withFirst post.tags}} sense_{{name}}{{/withFirst}}{{/if}}">
+      <div class="story-header-text sense_touch{{#if post.tags}}{{#withFirst post.tags}} sense_{{name}}{{/withFirst}}{{/if}}">
          <p class="story-meta">
-            {{#if post.tags}}
-            {{#withFirst post.tags}}<a href="{{url}}">{{name}}</a> &nbsp;|&nbsp;{{/withFirst}}
-            {{/if}}
-            {{post.date_published}}
+            {{> components/common/search-custom-field product=product custom_field='post_sense'}}&nbsp;|&nbsp;
+            {{> components/common/search-custom-field product=product custom_field='post_date'}}
          </p>
          </p>
-         <h1>{{title}}</h1>
-         {{#if post.author}}<p class="story-meta">{{post.author}}</p>{{/if}}
-         <p class="story-preview-summary">{{{post.summary}}}...</p>
-         <a href="{{post.url}}" class="btn btn__primary">Read More</a>
+         <h1>{{> components/common/search-custom-field product=product custom_field='post_title'}}</h1>
+         <p class="story-meta">{{> components/common/search-custom-field product=product custom_field='post_author'}}</p>
+         <p class="story-preview-summary">{{> components/common/search-custom-field product=product custom_field='post_paragraph'}}</p>
+         <a href="{{> components/common/search-custom-field product=product custom_field='post_url'}}" class="btn btn__primary">Read More</a>
          <div class="icons story-share">
             <p class="icon">
                <a href="https://www.facebook.com/sharer/sharer.php?u={{post.url}}" target="_blank">
@@ -54,10 +51,7 @@
          </div>
       </div>
       <div class="story-figure">
-         {{!-- <div class="lazyload img" style="background-image: url('http://placehold.it/500x500')"></div> --}}
-         {{#if post.thumbnail}}
-         <div class="lazyload img" style="background-image: url('{{getImage post.thumbnail}}')"></div>
-         {{/if}}
+         <div class="lazyload img" style="background-image: url({{> components/common/search-custom-field product=product custom_field='post-image_url'}})"></div>
       </div>
    </div>
 </div>

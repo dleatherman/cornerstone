@@ -1,0 +1,21 @@
+<div class="bundle__slide--inner">
+   <div class="bundle__slide--img">
+      <img src="{{getImage product.main_image 'large' (cdn theme_settings.default_image_product)}}" alt="">
+   </div>
+   <div class="bundle__slide--title">
+      {{product.title}}
+   </div>
+   <div class="bundle__slide--brand">
+      {{product.brand.name}}
+   </div>
+   <div class="bundle__slide--callout">
+      {{> components/common/search-custom-field product=product custom_field="product-vertical-text"}}
+   </div>
+   <a href="#" class="bundle__slide--reveal reveal__more">Product Info</a>
+   <p class="bundle__slide--description">
+      {{> components/common/search-custom-field product=product custom_field="bundle_description"}}
+   </p>
+   <div class="bundle__slide--features">
+      {{> components/common/search-custom-field product=product custom_field="features"}}
+   </div>
+</div>

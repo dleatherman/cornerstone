@@ -13,9 +13,10 @@
    background: stencilColor('navy');
 }
 
-@mixin domaine($color: stencilColor('navy')) {
+@mixin domaine($color: stencilColor('navy'), $weight: 400) {
    color: $color;
    font-family: stencilFontFamily('domaine-font');
+   font-weight: $weight;
 }
 
 @mixin freight($color: stencilColor('navy')) {
@@ -24,9 +25,10 @@
    letter-spacing: 0.05em;
 }
 
-@mixin sweet-font($color: stencilColor('grey-2')) {
+@mixin sweet-font($color: stencilColor('grey-2'), $weight: 400) {
    color: $color;
    font-family: stencilFontFamily('sweet-font');
+   font-weight: $weight;
    letter-spacing: 0.1em;
    text-transform: uppercase;
    @include breakpoint('medium') {

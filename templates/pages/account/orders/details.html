@@ -1,16 +1,25 @@
+---
+blog:
+    recent_posts:
+        limit: {{theme_settings.homepage_blog_posts_count}}
+---
 {{#partial "page"}}
 {{inject 'selectItem' (lang 'forms.validate.account.reorder.select_item')}}
 
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-<h2 class="page-heading title">{{lang 'account.orders.details.heading' number=order.id}}</h2>
 {{> components/account/navigation account_page='orders'}}
 
-<div class="account">
-    <div class="account-body">
+<main class="account account--fixed">
+    <h2 class="page-heading title">
+        <a class="go-back-link" href="/account.php?action=order_status">
+            <img src="{{cdn 'icons/back-arrow.svg'}}" />
+        </a>
+        {{lang 'account.orders.details.heading' number=order.id}}
+    </h2>
+    <div class="account-body orders-body">
         {{#each order.status_messages}}
             {{> components/common/alert-info message}}
         {{/each}}
-        <div class="account-content account-content--fixedSmall">
+        <div class="account-content account-content--fixedSmall orders-container">
             {{> components/account/order-contents order=order}}
 
             <dl class="account-orderTotal">
@@ -22,7 +31,6 @@
                 {{/each}}
             </dl>
         </div>
-
         <aside class="account-sidebar">
             <section class="account-sidebar-block">
                 <h3 class="account-heading">{{lang 'account.orders.details.order_details'}}</h3>
@@ -122,29 +130,9 @@
                     <p>{{order.comments}}</p>
                 </section>
             {{/if}}
-
-            <section class="account-sidebar-block">
-                <h3 class="account-heading">{{lang 'account.orders.details.actions'}}</h3>
-                <div class="order-details-info">
-                    <form class="account-reorder-form" action="{{order.reorder_url}}" method="post" data-account-reorder-form>
-                        <input type="hidden" name="orderid" value="{{order.id}}">
-                        {{#each order.items}}
-                            {{#if show_reorder}}
-                                <input type="hidden" name="reorderitem[{{order_product_id}}]">
-                            {{/if}}
-                        {{/each}}
-                        <input type="submit" class="button" value="{{lang 'account.orders.details.reorder'}}">
-                    </form>
-                    {{#if settings.returns_enabled}}
-                        {{#if order.is_complete}}
-                            <a href="{{order.return_url}}" class="button">{{lang 'account.orders.details.return'}}</a>
-                        {{/if}}
-                    {{/if}}
-                </div>
-            </section>
         </aside>
 
     </div>
-</div>
+</main>
 {{/partial}}
-{{> layout/base}}
+{{> layout/base page_content="account"}}

@@ -1,3 +1,8 @@
+---
+blog:
+    recent_posts:
+        limit: {{theme_settings.homepage_blog_posts_count}}
+---
 {{#partial "page"}}
 
 {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
@@ -20,4 +25,4 @@
 </main>
 
 {{/partial}}
-{{> layout/base}}
+{{> layout/base }}

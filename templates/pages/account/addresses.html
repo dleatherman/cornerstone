@@ -1,12 +1,15 @@
+---
+blog:
+    recent_posts:
+        limit: {{theme_settings.homepage_blog_posts_count}}
+---
 {{#partial "page"}}
-    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-    <h2 class="page-heading">{{lang 'account.addresses.heading' }}</h2>
     {{> components/account/navigation account_page='addresses'}}
-
-    <div class="account account--fixedLarge">
-        <div class="account-body">
+    <div class="account account--fixed addresses-page">
+        <h2 class="page-heading">{{lang 'account.addresses.heading' }}</h2>
+        <div class="account-body addresses-container">
             {{> components/account/address-list }}
         </div>
     </div>
 {{/partial}}
-{{> layout/base}}
+{{> layout/base page_content="account"}}

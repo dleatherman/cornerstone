@@ -316,7 +316,7 @@
             "order_placed": "Order Placed",
             "last_update": "Last Update",
             "list": {
-                "order_number": "Order #{number}",
+                "order_number": "Order: #{number}",
                 "product_details": "{num_products, plural, one {1 product} other {# products}} totaling {cost}"
             },
             "details": {

@@ -2,33 +2,37 @@
 customer:
     orders:
         limit: 10
+blog:
+        recent_posts:
+            limit: {{theme_settings.homepage_blog_posts_count}}
 ---
 
 {{#partial "page"}}
-
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-<h1 class="page-heading">{{lang 'account.orders.heading' }}</h1>
 {{> components/account/navigation account_page='orders'}}
 
 <main class="account account--fixed">
+    <h1 class="page-heading">{{lang 'account.orders.heading' }}</h1>
+    {{#if customer.store_credit.value '>' 0}}
     <div class="account-head">
-        {{#if customer.store_credit.value '>' 0}}
-            <div class="alertBox alertBox--storeCredit">
-                {{{lang 'common.store_credit' store_credit=customer.store_credit.formatted}}}
-            </div>
-        {{/if}}
+        <div class="alertBox alertBox--storeCredit">
+            {{{lang 'common.store_credit' store_credit=customer.store_credit.formatted}}}
+        </div>
     </div>
+    {{/if}}
     <div class="account-body">
         <section class="account-content">
             {{#if customer.orders.length}}
                 {{> components/account/orders-list orders=customer.orders}}
                 {{> components/common/small-paginator pagination.orders}}
             {{else}}
-                {{> components/common/alert-info (lang 'account.orders.none')}}
+                <div class="no-info">
+                    <p>{{lang 'account.orders.none' }}</p>
+                    <a class="button button--primary" href="/shop-all-products">{{lang 'create_account.created.continue'}}</a>
+                </div>
             {{/if}}
         </section>
     </div>
+    {{{snippet 'account'}}}
 </main>
-
 {{/partial}}
-{{> layout/base}}
+{{> layout/base page_content="account" page_title="Pepper - Orders" }}

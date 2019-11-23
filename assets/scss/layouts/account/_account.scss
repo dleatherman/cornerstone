@@ -7,6 +7,7 @@
 // -----------------------------------------------------------------------------
 
 .account {
+    color: stencilColor('navy');
     margin-bottom: spacing("single");
 }
 
@@ -73,5 +74,48 @@
         .account-content--fixedSmall + & {
             float: right;
         }
+    }
+}
+
+.account-listItem {
+    @include freight;
+    border-bottom: 0;
+    border-top: 1px solid stencilColor('light-pink');
+    a {
+        @include domaine(stencilColor('navy'), 300);
+        font-size: 2rem;
+    }
+}
+
+.account-product-detail-heading {
+    @include sweet-font(stencilColor('grey'), 300);
+}
+
+.account-product-description {
+    @include freight;
+    font-size: 1.25rem;
+}
+
+.account-orderStatus-label {
+    @include sweet-font(#fff, 300);
+    padding: 0.5rem;
+}
+
+/*
+    EDIT ACCOUNT
+*/
+
+.page__type--editaccount .form-label {
+    color: stencilColor('navy');
+}
+
+/*
+    ADDRESS BOOK
+*/
+
+.page__type--account_addressbook {
+    .panel-body {
+        @include freight;
+        background-color: #fff;
     }
 }

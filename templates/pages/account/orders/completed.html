@@ -1,19 +1,25 @@
 ---
 customer:
-orders:
-limit: 3
+    orders:
+        limit: 3
+blog:
+    recent_posts:
+        limit: {{theme_settings.homepage_blog_posts_count}}
 ---
+
 {{#partial "page"}}
-<div class="account">
-    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-    <h2 class="account-heading title">{{lang 'account.orders.heading' }}</h2>
-    {{> components/account/navigation account_page='orders'}}
+
+{{> components/account/navigation account_page='orders'}}
+
+<main class="account account--fixed">
+    <h1 class="page-heading">{{lang 'account.orders.heading' }}</h1>
+    
     <div class="account-row orders-row">
         <section class="orders">
             {{> components/account/orders-list orders=customer.orders}}
             {{> components/common/small-paginator pagination.orders}}
         </section>
     </div>
-</div>
+</main>
 {{/partial}}
-{{> layout/base}}
+{{> layout/base page_content="account"}}

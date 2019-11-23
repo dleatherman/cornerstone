@@ -169,7 +169,7 @@
     color: stencilColor("navy");
     cursor: pointer;
     font-family: stencilFontFamily("sweet-font");
-    font-size: 1.7rem;
+    font-size: 1.25rem;
     letter-spacing: 2px;
     padding: 2rem 0;
     text-align: center;
@@ -514,8 +514,13 @@
     padding: 0 5%;
 
     a {
+        border-bottom: 1px solid stencilColor('navy');
         color: stencilColor('navy');
+        display: inline-block;
+        text-decoration: none;
+        line-height: 0.7;
         &:hover {
+            border-bottom: 1px solid stencilColor('pink');
             color: stencilColor('pink');
         }
     }

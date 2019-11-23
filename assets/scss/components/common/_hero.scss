@@ -1,5 +1,5 @@
 .page__hero--outer {
-   align-items: center;
+   align-items: flex-end;
    background-repeat: no-repeat;
    background-position: center top;
    background-size: cover;
@@ -21,17 +21,23 @@
    }
    @include breakpoint('medium') {
       height: 70vh;
-      min-height: 650px;
+      min-height: 750px;
    }
    @include breakpoint($screen-xlarge) {
-      min-height: 700px;
+      min-height: 850px;
    }
    .page__hero--inner {
-      @extend .container;
-      padding-bottom: 3rem;
+      // @extend .container;
+      align-items: flex-start;
+      display: flex;
+      justify-content: flex-start;
+      @include breakpoint('large') {
+         max-width: 1400px;
+      }
       .page__hero--branding {
+         padding-bottom: 3rem;
          img {
-            max-width: 250px;
+            max-width: 350px;
          }
       }
       h1 {

@@ -6,7 +6,7 @@
 }
 
 .product__hero--outer {
-   align-items: center;
+   align-items: flex-end;
    background-repeat: no-repeat;
    background-position: center center;
    background-size: cover;
@@ -28,16 +28,23 @@
    }
    @include breakpoint('medium') {
       height: 70vh;
-      min-height: 650px;
+      min-height: 750px;
    }
    @include breakpoint($screen-xlarge) {
-      min-height: 700px;
+      min-height: 850px;
    }
    .product__hero--inner {
-      @extend .container;
+      // @extend .container;
+      align-items: flex-start;
+      display: flex;
+      justify-content: flex-start;
+      @include breakpoint('large') {
+         max-width: 1400px;
+      }
       .product__hero--branding {
+         padding-bottom: 3rem;
          img {
-            max-width: 250px;
+            max-width: 350px;
          }
       }
       h1 {
@@ -228,6 +235,7 @@
 
       p {
          @include freight;
+         font-size: 1.1rem;
          line-height: 1.7;
          padding-bottom: 3rem;
       }

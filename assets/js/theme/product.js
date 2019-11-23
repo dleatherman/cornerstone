@@ -7,6 +7,7 @@ import collapsibleFactory from './common/collapsible';
 import ProductDetails from './common/product-details';
 import videoGallery from './product/video-gallery';
 import { classifyForm } from './common/form-utils';
+import utils from '@bigcommerce/stencil-utils';
 
 export default class Product extends PageManager {
     constructor(context) {
@@ -51,6 +52,9 @@ export default class Product extends PageManager {
 
         this.productReviewHandler();
         this.productRevealHandlerMobile();
+
+
+        this.getProductViewById();
     }
 
     productReviewHandler() {
@@ -67,6 +71,27 @@ export default class Product extends PageManager {
                 e.preventDefault();
                 const $activate = $(e.target.closest('.bundle__slide--outer'));
                 $activate.toggleClass('revealed');
+            });
+        }
+    }
+
+    getProductViewById() {
+        // eslint-disable-next-line no-console
+        console.log('--bundle-product--');
+        const $productsToLoad = $('.bundle__slide[data-product-id]');
+
+        if ($productsToLoad.length > 0) {
+            $.each($productsToLoad, (i, prod) => {
+                const productId = $(prod).data('product-id');
+
+                if (productId) {
+                    utils.api.product.getById(productId, { template: 'products/bundle-slide' }, (err, response) => {
+                        // eslint-disable-next-line no-console
+                        // console.log(response);
+                        $productsToLoad[i].innerHTML = response;
+                        return new ProductDetails($productsToLoad[i]);
+                    });
+                }
             });
         }
     }

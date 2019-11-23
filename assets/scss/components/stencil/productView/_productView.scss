@@ -1060,6 +1060,7 @@
     flex-direction: column;
     max-width: 1680px;
     margin: 0 auto;
+    // min-height: 850px;
 
     @include breakpoint("medium") {
         flex-direction: row;
@@ -1102,14 +1103,17 @@
         border-color: stencilColor("gray-4");
         width: 50%;
 
-        @include breakpoint("medium") {
-            height: auto;
+        @include breakpoint('medium') {
             justify-content: flex-start;
+            padding: 3.5rem;
+        }
+        @include breakpoint('large') {
             padding: 7rem 3.5rem;
         }
 
-        @include breakpoint("xlarge") {
+        @include breakpoint('xlarge') {
             justify-content: center;
+            padding: 9rem 3.5rem;
         }
     }
 
@@ -1162,9 +1166,15 @@
     }
 
     .story-meta {
-        @extend .product__features--helper;
+        margin-bottom: 1rem;
+        @include breakpoint('medium') {
+            font-size: 1.25rem;
+        }
     }
     .story-header-text {
+        order: 3;
+        padding-bottom: 6rem;
+        padding-top: 6rem;
         &.sense_taste .story-meta {
             color: #fff;
         }

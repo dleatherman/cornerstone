@@ -39,9 +39,6 @@ blog:
         {{>components/products/product-view-bundle
             buy=true
         }}
-
-        {{!-- TODO: CONNECT THIS TO RELATED PRODUCTS
-              SECTION: BUNDLE ITEMS --}}
         <section class="bundle__items--outer">
             <div class="bundle__items--inner">
                 <h4 class="bundle__heading domaine-display">What's Inside</h4>
@@ -55,141 +52,11 @@ blog:
                         "responsive": [{"breakpoint":600,"settings":{"slidesToShow": 2}}]
                     }'
                 >
-                    <div class="bundle__slide bundle__slide--outer">
-                        <div class="bundle__slide--inner">
-                            <div class="bundle__slide--img">
-                                <img src="{{ cdn '/img/afterglow.jpg'}}" alt="">
-                            </div>
-                            <div class="bundle__slide--title">
-                                Afterglow Massage Candle
-                            </div>
-                            <div class="bundle__slide--brand">
-                                JimmyJane
-                            </div>
-                            <div class="bundle__slide--callout">
-                                give and you shall receive
-                            </div>
-                            <a href="#" class="bundle__slide--reveal reveal__more">Product Info</a>
-                            <p class="bundle__slide--description">
-                                AfterGlow JimmyJayne Massage Candle sets the mood with a soft glow, gives off a subtle yet intoxicating scent of vanilla
-                                and sandalwood and melts at body temperature so giving some loving touch is right at your fingertips.
-                            </p>
-                            <div class="bundle__slide--features">
-                                100% cotton, lead-free wick<br>
-                                Cruelty-free, vegan<br>
-                                Lightly Scented<br>
-                                32-hour burn time<br>
-                                Travel-Friendly<br>
-                                Safe Temp, body-safe<br>
-                                Contains Soy<br>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bundle__slide bundle__slide--outer">
-                        <div class="bundle__slide--inner">
-                            <div class="bundle__slide--img">
-                                <img src="{{ cdn '/img/crave.jpg' }}" alt="">
-                            </div>
-                            <div class="bundle__slide--title">
-                                Pocket Vibe
-                            </div>
-                            <div class="bundle__slide--brand">
-                                Crave
-                            </div>
-                            <div class="bundle__slide--callout">
-                                vroom vroom, this baby purrrs
-                            </div>
-                            <a href="#" class="bundle__slide--reveal reveal__more">Product Info</a>
-                            <p class="bundle__slide--description">
-                                Pocket Vibe by Crave is kinda tiny, but totally mighty and is a perfect way to play together. With multiple settings and three different silicone tips, you can switch up sensations until you two just can’t take any more fun.
-                            </p>
-                            <div class="bundle__slide--features">
-                                Body-Safe<br>
-                                Nickel Free<br>
-                                Waterproof<br>
-                                Stays charged up to 2.5 hours<br>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bundle__slide bundle__slide--outer">
-                        <div class="bundle__slide--inner">
-                            <div class="bundle__slide--img">
-                                <img src="{{cdn '/img/coconu.jpg' }}" alt="">
-                            </div>
-                            <div class="bundle__slide--title">
-                                Coconut-Based Lube
-                            </div>
-                            <div class="bundle__slide--brand">
-                                Coconu
-                            </div>
-                            <div class="bundle__slide--callout">
-                                take a trip to the tropics
-                            </div>
-                            <a href="#" class="bundle__slide--reveal reveal__more">Product Info</a>
-                            <p class="bundle__slide--description">
-                                Coconu Lube is a coconut water-based lubricant that lasts as long as you two do. Providing moisture with a silky smooth texture, it’s a little bit of an overachiever, really. Both your bodies will love it.
-                            </p>
-                            <div class="bundle__slide--features">
-                                100% natural ingredients<br>
-                                100% cruelty-free<br>
-                                100% edible<br>
-                                Hypoallergenic<br>
-                                No genetically modified organisms<br>
-                                No alcohol, petroleum, parabens, gluten, phylates, fragrances & dyes<br>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bundle__slide bundle__slide--outer">
-                        <div class="bundle__slide--inner">
-                            <div class="bundle__slide--img">
-                                <img src="{{cdn '/img/watermelon.jpg' }}" alt="">
-                            </div>
-                            <div class="bundle__slide--title">
-                                Teeny-Tiny Watermelon Slices
-                            </div>
-                            <div class="bundle__slide--brand">
-                                Wes Candy Co
-                            </div>
-                            <div class="bundle__slide--callout">
-                                a sweet treat for two
-                            </div>
-                            <a href="#" class="bundle__slide--reveal reveal__more">Product Info</a>
-                            <p class="bundle__slide--description">
-                                Watermelons are an aphrodisiac which means you should replace your favorite sweets from the bins with the highest quality gummies out of a beautiful glass jar on your bedside table.
-                            </p>
-                            <div class="bundle__slide--features">
-                                All-Natural<br>
-                                Fat-Free<br>
-                                Made Without Gluten<br>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bundle__slide bundle__slide--outer">
-                        <div class="bundle__slide--inner">
-                            <div class="bundle__slide--img">
-                                <a href="https://open.spotify.com/playlist/6o3IqbEf4JH3T012WaiwmQ" target="_blank">
-                                    <img src="{{cdn '/img/playlist.jpg' }}" alt="">
-                                </a>
-                            </div>
-                            <div class="bundle__slide--title">
-                                The Couple&rsquo;s Kit Playlist
-                            </div>
-                            <div class="bundle__slide--brand">
-                                Pepper
-                            </div>
-                            <div class="bundle__slide--callout">
-                                get in the mood
-                            </div>
-                            <a href="#" class="bundle__slide--reveal reveal__more">Product Info</a>
-                            <p class="bundle__slide--description">
-                                Tune into the sweet, sultry and sexy vibes we’ve channeled to create our Pepper Couple&rsquo;s Playlist. Turn up the volume to get into the groove or let it drift in the background lending the right amount of mood to your one-on-one time. Either way, this soundtrack is all about connection, romance, and fun–so, all you have to do is press play...
-                            </p>
-                            <div class="bundle__slide--features">
-                                Spotify playlist<br>
-                                Can play offline<br>
-                            </div>
-                        </div>
-                    </div>
+                    {{#each product.custom_fields}}{{#if name '===' 'bundle_product_ids'}}
+                        {{#each (split value ', ')}}
+                        <div class="bundle__slide bundle__slide--outer" data-product-id="{{{this}}}"></div>
+                        {{/each}}
+                    {{/if}}{{/each}}
                 </section>{{!-- carousel --}}
                 <a href="/cart.php?action=add&product_id={{product.id}}" class="btn btn__primary btn__block">
                     Purchase PlayDate Kit
@@ -204,7 +71,7 @@ blog:
                 {{> components/products/quality product=product quality_title="custom_quality_title_3" quality_description="custom_quality_description_3" }}
                 {{> components/products/quality product=product quality_title="custom_quality_title_4" quality_description="custom_quality_description_4" }}
             </div>
-            <div class="product-quality-image" style="background-image: url({{ cdn '/img/couples-kit-qualities-collage.png'}})">
+            <div class="product-quality-image" style="background-image: url({{> components/common/search-custom-field product=product custom_field="hype_image_url"}})">
             </div>
         </div>
 
@@ -213,10 +80,10 @@ blog:
                 <div class="why__heading domaine-display">
                     {{> components/common/search-custom-field product=product custom_field="product_poster_heading"}}
                 </div>
-                <p>We’re not saying we need an excuse to connect—but, we’re also not saying that a little help never hurt. The Pepper Couple&rsquo;s Kit is about dialing up the heat and exploration in a simple and accessible way—so we’ve pulled together a sweet assortment of fun first base products that take the guesswork out of planning a night (or day) in of pleasure. Have we mentioned how we feel about pleasure? We’re 100% all for it!</p>
+                <p>{{> components/common/search-custom-field product=product custom_field="story_paragraph"}}</p>
                 <a href="/cart.php?action=add&product_id={{product.id}}" class="btn btn__primary">Buy Now</a>
                 <div class="vertical-text">
-                    {{> components/common/search-custom-field product=product custom_field="product_poster_vt-sent"}}
+                    {{> components/common/search-custom-field product=product custom_field="product-vertical-text"}}
                     <img src="{{cdn 'img/arrow-why.svg'}}" alt="">
                 </div>
             </div>
@@ -225,10 +92,8 @@ blog:
         {{> components/blog/featured-blog-post product=product}}
 
         <div class="story-archive container">
-            {{#each (limit blog.recent_posts 20)}}
-                {{#contains (join (pluck tags 'name') ', ') 'homepage' }}
-                    {{> components/blog/post post=this sense=true}}
-                {{/contains}}
+            {{#each (limit blog.recent_posts 3)}}
+                {{> components/blog/post post=this sense=true}}
             {{/each}}
         </div>
 

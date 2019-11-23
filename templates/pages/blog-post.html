@@ -49,20 +49,8 @@ blog:
   </div>
   <div class="story-content container">
     {{{blog.post.body}}}
-    <div id="disqus_thread"></div>
-    <script>
-        var disqus_config = function () {
-        this.page.url = '{{blog.post.url}}';
-        this.page.identifier = '{{blog.post.url}}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-        (function () { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://peppertogether.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the comments</noscript>
+    {{!-- <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script> --}}
   </div>
   {{!>components/category/featured-by-sense 
     items=products.new

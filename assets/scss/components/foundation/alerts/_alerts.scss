@@ -3,7 +3,7 @@
 // =============================================================================
 
 .alertBox {
-    border-radius: $alert-radius;
+    border-radius: 0;
     color: stencilColor("alert-color");
 }
 
@@ -13,14 +13,17 @@
     }
 }
 
-.alertBox--info {
-    color: stencilColor("alert-color-alt");
+.alertBox--info, 
+.alertBox--success {
+    color: stencilColor("navy");
+    background-color: stencilColor("pink");
 
-    .alertBox-close {
+    span {
+        color: stencilColor("navy");
+        
+    }
 
-        // scss-lint:disable SelectorDepth, NestingDepth
-        svg {
-            fill: $color-infoLight;
-        }
+    svg {
+        fill: stencilColor("navy");
     }
 }

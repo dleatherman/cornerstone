@@ -13,6 +13,7 @@ export default class PageProduct extends PageManager {
 
     onReady() {
         this.getProductViewById();
+        this.testGetPage();
     }
 
     getProductViewById() {
@@ -30,5 +31,12 @@ export default class PageProduct extends PageManager {
                 });
             });
         }
+    }
+
+    testGetPage() {
+        // utils.api.getPage('/stories/tag/featured-home', { }, (err, response) => {
+        //     // eslint-disable-next-line no-console
+        //     console.log(response);
+        // });
     }
 }

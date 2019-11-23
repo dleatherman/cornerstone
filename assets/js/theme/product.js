@@ -76,8 +76,6 @@ export default class Product extends PageManager {
     }
 
     getProductViewById() {
-        // eslint-disable-next-line no-console
-        console.log('--bundle-product--');
         const $productsToLoad = $('.bundle__slide[data-product-id]');
 
         if ($productsToLoad.length > 0) {

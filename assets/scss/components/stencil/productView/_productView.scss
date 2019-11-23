@@ -298,10 +298,8 @@
         top: 75%;
         left: -5%;
         color: stencilColor("navy");
-        transform: translateX(0) rotate(-90deg);
         font-family: stencilFontFamily("rollerscript-font");
         font-size: 2rem;
-        transform-origin: 0 0;
         z-index: 499;
         display: none;
         overflow: visible;
@@ -310,9 +308,12 @@
         
         @include breakpoint("large") {
             // min-width: inherit;
-            display: none;
-            justify-content: center;
-            align-items: center;
+            // align-items: center;
+            display: block;
+            float: left;
+            // justify-content: center;
+            transform: translateY(75px) rotate(-90deg);
+            transform-origin: left top 0;
         }
 
         img {

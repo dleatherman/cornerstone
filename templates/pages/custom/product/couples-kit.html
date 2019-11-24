@@ -81,12 +81,12 @@ blog:
                 <div class="why__heading domaine-display">
                     {{> components/common/search-custom-field product=product custom_field="product_poster_heading"}}
                 </div>
-                <p>{{> components/common/search-custom-field product=product custom_field="story_paragraph"}}</p>
-                <a href="/cart.php?action=add&product_id={{product.id}}" class="btn btn__primary">Buy Now</a>
                 <div class="vertical-text">
                     {{> components/common/search-custom-field product=product custom_field="product-vertical-text"}}
                     <img src="{{cdn 'img/arrow-why.svg'}}" alt="">
                 </div>
+                <p>{{> components/common/search-custom-field product=product custom_field="story_paragraph"}}</p>
+                <a href="/cart.php?action=add&product_id={{product.id}}" class="btn btn__primary">Buy Now</a>
             </div>
         </section>
 

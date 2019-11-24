@@ -28,7 +28,8 @@ blog:
                 {{> components/products/quality product=product quality_title="custom_quality_title_3" quality_description="custom_quality_description_3" }}
                 {{> components/products/quality product=product quality_title="custom_quality_title_4" quality_description="custom_quality_description_4" }}
             </div>
-            <div class="product-quality-image" style="background-image: url({{> components/common/search-custom-field product=product custom_field="features_image"}})">
+            <div class="product-quality-image">
+                <img src="{{> components/common/search-custom-field product=product custom_field="hype_image_url"}}" alt="">
             </div>
         </div>
         
@@ -37,12 +38,12 @@ blog:
                 <div class="why__heading domaine-display">
                     {{> components/common/search-custom-field product=product custom_field="product-vertical-text" multiple="1"}}
                 </div>
-                <p>{{> components/common/search-custom-field product=product custom_field="story_paragraph"}}</p>
-                {{!-- <a href="/cart.php?action=add&product_id={{product.id}}" class="btn btn__primary">Buy Now</a> --}}
                 <div class="vertical-text">
                     what’s with all the hype
                     <img src="{{cdn 'img/arrow-why.svg'}}" alt="">
                 </div>
+                <p>{{> components/common/search-custom-field product=product custom_field="story_paragraph"}}</p>
+                {{!-- <a href="/cart.php?action=add&product_id={{product.id}}" class="btn btn__primary">Buy Now</a> --}}
             </div>
         </section>
         

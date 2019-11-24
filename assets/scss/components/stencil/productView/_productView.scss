@@ -281,7 +281,6 @@
 
 .productView-details {
     display: flex;
-    // flex: 1;
     flex-direction: column;
     padding: 0;
     position: relative;
@@ -1061,18 +1060,16 @@
     flex-direction: column;
     max-width: 1680px;
     margin: 0 auto;
-    // min-height: 850px;
 
     @include breakpoint("medium") {
         flex-direction: row;
     }
 
     .product-quality-image {
-        background-color: stencilColor('color-gaze');
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
+        img {
+            height: auto;
+            max-width: 100%;
+        }
     }
 
     .product-quality-image, .qualities {
@@ -1105,16 +1102,7 @@
         width: 50%;
 
         @include breakpoint('medium') {
-            justify-content: flex-start;
             padding: 3.5rem;
-        }
-        @include breakpoint('large') {
-            padding: 7rem 3.5rem;
-        }
-
-        @include breakpoint('xlarge') {
-            justify-content: center;
-            padding: 9rem 3.5rem;
         }
     }
 

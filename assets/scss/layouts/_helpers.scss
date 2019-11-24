@@ -36,6 +36,11 @@
    }
 }
 
+@mixin rollerscript() {
+   font-family: stencilFontFamily('rollerscript-font');
+   text-transform: lowercase;
+}
+
 pre {
    color: #000;
 }

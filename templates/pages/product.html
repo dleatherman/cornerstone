@@ -46,13 +46,8 @@ blog:
                 {{!-- <a href="/cart.php?action=add&product_id={{product.id}}" class="btn btn__primary">Buy Now</a> --}}
             </div>
         </section>
-        
-        {{#each (limit blog.recent_posts 1)}}
-        {{#contains (join (pluck tags 'name') ', ') 'featured-home' }}
-        {{> components/blog/featured-blog-post post=this}}
-        {{/contains}}
-        {{/each}}
-        
+
+        {{> components/blog/featured-blog-post product=product}}
         
         {{>components/category/featured-by-sense 
             items=product.related_products

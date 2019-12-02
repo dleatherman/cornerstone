@@ -234,6 +234,9 @@
         display: flex;
         flex-wrap: wrap;
         padding-top: 4rem;
+        .page__type--product & {
+            padding-bottom: 4rem;
+        }
     }
   
     h1 {
@@ -303,6 +306,7 @@
     display: flex;
     font-family: stencilFontFamily("freight-font");
     font-size: 1.1rem;
+    letter-spacing: 0.05em;
     line-height: 1.5;
     margin-bottom: 0;
     .product-post-container & {

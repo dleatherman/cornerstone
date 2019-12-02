@@ -13,6 +13,14 @@
    background: stencilColor('navy');
 }
 
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
 @mixin domaine($color: stencilColor('navy'), $weight: 400) {
    color: $color;
    font-family: stencilFontFamily('domaine-font');

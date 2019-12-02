@@ -104,11 +104,6 @@
     &.create-account {
         .account--fixed {
             margin: 1em auto;
-            padding: 0;
-
-            @include breakpoint("small") {
-                margin: 3em auto;
-            }
         }
     }
 
@@ -244,8 +239,23 @@
 
     @include breakpoint("medium") {
         @include grid-column(5);
-        margin: 1em 0;
     }
+}
+
+.create-account-form {
+    @include clearfix;
+
+    @include breakpoint("medium") {
+        margin: 1em auto;
+        max-width: 400px;
+    }
+
+    .form-row {
+        .form-field {
+            float: none;
+        }
+    }
+
 }
 
 .new-customer {

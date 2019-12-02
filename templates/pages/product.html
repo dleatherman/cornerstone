@@ -53,14 +53,12 @@ blog:
             items=product.related_products
             main-title="Shop Related Products"
             subtitle="because we know you’re liking what you see"
-            link-text="Shop all touch"
-            link-url="/shop-all-touch"
+            link-text="Shop all"
+            link-url="/shop"
         }}
         <div class="story-archive container">
-            {{#each (limit blog.recent_posts 14)}}
-            {{#contains (join (pluck tags 'name') ', ') 'homepage' }}
+            {{#each (limit blog.recent_posts 3)}}
             {{> components/blog/post post=this sense=true}}
-            {{/contains}}
             {{/each}}
         </div>
         {{!-- {{>components/common/product-editorial-posts product=product}} --}}

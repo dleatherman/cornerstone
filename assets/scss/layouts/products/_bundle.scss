@@ -6,17 +6,18 @@
 }
 
 .product__hero--outer {
-   align-items: flex-end;
+   align-items: center;
    background-repeat: no-repeat;
    background-position: center center;
    background-size: cover;
    display: flex;
    font-family: stencilFontFamily('domaine-font');
-   height: 30vh;
+   height: 85vh;
    justify-content: center;
    position: relative;
    text-align: center;
    @include breakpoint('medium') {
+      align-items: flex-end;
       height: 70vh;
       min-height: 750px;
    }

@@ -1,10 +1,9 @@
 <div class="product-post-container story">
-   <div class="story-header">
+   <div class="story-header story-header-preview">
       <div class="story-header-text sense_touch{{#if post.tags}}{{#withFirst post.tags}} sense_{{name}}{{/withFirst}}{{/if}}">
          <p class="story-meta">
             {{> components/common/search-custom-field product=product custom_field='post_sense'}}&nbsp;|&nbsp;
             {{> components/common/search-custom-field product=product custom_field='post_date'}}
-         </p>
          </p>
          <h1>{{> components/common/search-custom-field product=product custom_field='post_title'}}</h1>
          <p class="story-meta">{{> components/common/search-custom-field product=product custom_field='post_author'}}</p>

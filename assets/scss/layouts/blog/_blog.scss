@@ -445,6 +445,26 @@
     @include breakpoint("medium") {
         display: flex;
     }
+    &.story-header-preview {
+        .story-header-text {
+            padding: 3rem 2rem;
+            @include breakpoint("medium") {
+                padding: 8rem 10%;
+            }
+
+            @include breakpoint("large") {
+                padding: 16rem 10%;
+            }
+        }
+        h1 {
+            font-size: 2rem;
+            margin: 1rem 0;
+
+            @include breakpoint("medium") {
+                font-size: 3rem;
+            }
+        }
+    }
 }
 
 .story-header-text {

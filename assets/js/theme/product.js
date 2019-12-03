@@ -51,8 +51,6 @@ export default class Product extends PageManager {
         });
 
         this.productReviewHandler();
-        
-        
         this.getProductViewById();
     }
 

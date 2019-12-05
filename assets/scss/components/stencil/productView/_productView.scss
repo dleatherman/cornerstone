@@ -1072,14 +1072,13 @@
     .product-quality-image {
         img {
             height: auto;
-            max-width: 100%;
+            width: 100%;
         }
     }
 
     .product-quality-image, .qualities {
-        display: flex;
         width: 100%;
-
+        
         @include breakpoint("medium") {
             width: 50%;
         }
@@ -1106,6 +1105,10 @@
         width: 50%;
 
         @include breakpoint('medium') {
+            padding: 2.5rem;
+        }
+
+        @include breakpoint('large') {
             padding: 3.5rem;
         }
     }

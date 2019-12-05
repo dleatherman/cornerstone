@@ -5,7 +5,7 @@ blog:
 ---
 {{inject 'passwordRequirements' settings.password_requirements}}
 {{#partial "page"}}
-{{> components/account/navigation account_page='settings'}}
+{{!> components/account/navigation account_page='settings'}}
 <div class="account account--fixed account-settings">
     <h2 class="page-heading">{{lang 'account.settings.heading' }}</h2>
     {{#if forms.edit_account.error}}

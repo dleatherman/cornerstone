@@ -44,6 +44,15 @@
              <li>
               <a class="menu-link main" href="/about-us/">About Pepper</a>
              </li>
+            {{#if customer}}
+            <li><hr></li>
+            <li>
+                <a class="menu-link main" href="{{urls.account.index}}">{{lang 'common.account'}}</a>
+            </li>
+            <li>
+                <a class="menu-link main" href="{{urls.auth.logout}}">{{lang 'common.logout'}}</a>
+            </li>
+            {{/if}}
           </ul>
         </div>
         <div class="dropdown dropdown--quickSearch" id="quickSearch" aria-hidden="true" tabindex="-1" data-prevent-quick-search-close></div>

@@ -3,13 +3,42 @@
 
   <ul class="navUser-section">
       {{#if customer}}
-          <li class="navUser-item icon-link" id="my-account">
+          <li class="navUser-item" id="my-account">
               <a class="navUser-action is-text " href="{{urls.account.index}}">{{lang 'common.account'}}</a>
-          </li>
-      {{/if}}
-      {{#if customer}}
-          <li class="navUser-item icon-link">
-              <a class="navUser-action is-text" href="{{urls.auth.logout}}">{{lang 'common.logout'}}</a>
+              <div class="dropdown-menu">
+                  <ul>
+                    <li class="navUser-item">
+                        <a class="navUser-action is-text" href="{{urls.account.orders.all}}">{{lang 'account.nav.orders'}}</a>
+                    </li>
+                    {{#if settings.returns_enabled}}
+                    <li class="navUser-item">
+                        <a class="navUser-action is-text" href="{{urls.account.returns}}">{{lang 'account.nav.returns'}}</a>
+                    </li>
+                    {{/if}}
+                    <li class="navUser-item">
+                        <a class="navUser-action is-text" href="{{urls.account.addresses}}">{{lang 'account.nav.addresses'}}</a>
+                    </li>
+                    {{#if settings.show_payment_methods}}
+                    <li class="navUser-item">
+                        <a class="navUser-action is-text" href="{{urls.account.payment_methods.all}}">{{lang 'account.nav.payment_methods'}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if settings.show_wishlist}}
+                    <li class="navUser-item">
+                        <a class="navUser-action is-text" href="{{urls.account.wishlists.all}}">{{lang 'account.nav.wishlists' num_wishlists=customer.num_wishlists}}</a>
+                    </li>
+                    {{/if}}
+                    <li class="navUser-item">
+                        <a class="navUser-action is-text" href="{{urls.account.recent_items}}">{{lang 'account.nav.recently_viewed'}}</a>
+                    </li>
+                    <li class="navUser-item">
+                        <a class="navUser-action is-text" href="{{urls.account.details}}">{{lang 'account.nav.settings'}}</a>
+                    </li>
+                      <li class="navUser-item">
+                          <a class="navUser-action is-text" href="{{urls.auth.logout}}">{{lang 'common.logout'}}</a>
+                      </li>
+                  </ul>
+              </div>
           </li>
       {{/if}}
       {{!-- {{#unless customer}}

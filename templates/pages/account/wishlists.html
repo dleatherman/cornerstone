@@ -5,7 +5,7 @@ blog:
 ---
 {{#partial "page"}}
 {{#if settings.show_wishlist}}
-    {{> components/account/navigation account_page='wishlists'}}
+    {{!> components/account/navigation account_page='wishlists'}}
     <div class="account account--fixed wishlist-page">
         <h2 class="page-heading">{{lang 'account.wishlists.heading' }}</h2>
         {{> components/account/wishlist-list}}

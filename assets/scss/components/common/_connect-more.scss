@@ -2,7 +2,7 @@
   &.container {
       padding: 3rem $container-padding;
       @include breakpoint("medium") {
-          padding: 7rem $container-padding 4rem;
+          padding: 5rem $container-padding 4rem;
       }
   }
   

@@ -451,10 +451,6 @@
             @include breakpoint("medium") {
                 padding: 8rem 10%;
             }
-
-            @include breakpoint("large") {
-                padding: 16rem 10%;
-            }
         }
         h1 {
             font-size: 2rem;

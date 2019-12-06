@@ -12,7 +12,7 @@
    @include breakpoint('medium') {
       align-items: flex-end;
       height: 70vh;
-      min-height: 750px;
+      max-height: 870px;
    }
    .page__hero--inner {
       align-items: flex-start;

@@ -27,7 +27,7 @@ blog:
     {{/each}}
 
     <div itemscope itemtype="http://schema.org/Product">
-        <main class="product__hero product__hero--outer" style="background-image: url({{cdn 'img/hero-couples-kit-product.jpg'}});">
+        <main class="product__hero product__hero--outer">
             <div class="container product__hero--inner product__{{#replace "/" ""}}{{product.url}}{{/replace}}">
                 <!-- Branding -->
                 <div class="product__hero--branding">
@@ -79,13 +79,15 @@ blog:
         <section class="why__wrapper--outer">
             <div class="why__wrapper--inner">
                 <div class="why__heading domaine-display">
-                    {{> components/common/search-custom-field product=product custom_field="product_poster_heading"}}
+                    {{#filter product.custom_fields 'product_poster_heading' property='name' }}{{{value}}}{{/filter}}
                 </div>
                 <div class="vertical-text">
                     {{> components/common/search-custom-field product=product custom_field="product-vertical-text"}}
                     <img src="{{cdn 'img/arrow-why.svg'}}" alt="">
                 </div>
-                <p>{{> components/common/search-custom-field product=product custom_field="story_paragraph"}}</p>
+                <p>
+                    {{#filter product.custom_fields 'story_paragraph' property='name' }}{{{value}}}{{/filter}}
+                </p>
                 <a href="/cart.php?action=add&product_id={{product.id}}" class="btn btn__primary">Buy Now</a>
             </div>
         </section>

@@ -1,1 +1,1 @@
-{{#each product.custom_fields}}{{#if name '===' ../custom_field}}{{{value}}}{{/if}}{{/each}}
+{{#filter product.custom_fields custom_field property='name' }}{{{value}}}{{/filter}}

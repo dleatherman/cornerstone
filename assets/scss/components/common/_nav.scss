@@ -22,13 +22,6 @@
       @include breakpoint('medium') {
          align-items: stretch;
          display: flex;
-         height: 100%;
-      }
-   }
-   
-   &:not(.right-nav) {
-      li {
-         margin-left: 0.5em;
       }
    }
    
@@ -46,7 +39,7 @@
    @include breakpoint($screen-xmedium) {
       position: relative;
       right: auto;
-      top: auto;
+      top: 25px;
       transform: none;
       z-index: zIndex("high");
       
@@ -122,14 +115,14 @@
    font-size: 1rem;
 
    @include breakpoint('medium') {
-      font-size: 1.25rem;
+      font-size: 1rem;
    }
 
    img {
       max-width: 20px;
    }
    @include breakpoint($screen-xmedium) {
-      padding: spacing("base") spacing("half");
+      padding: 1.6rem spacing("half");
    }
    
    &.is-open {
@@ -522,7 +515,7 @@
 
    .left-nav & {
       @include breakpoint("small") {
-         margin: 0 6rem 0 0;
+         margin: 0 2.5rem 0 0;
       }
    }
    
@@ -560,7 +553,7 @@
 }
 
 .navUser-item.icon-link {
-   padding: 0 1.5rem;
+   padding: 0 0 0 1.5rem;
 }
 
 .navUser-right-nav.search-active .account-link {

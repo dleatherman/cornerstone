@@ -7,6 +7,7 @@
 
 .product__hero--outer {
    align-items: center;
+   background-image: url('../img/hero-couples-kit-product-mobile.jpg');
    background-repeat: no-repeat;
    background-position: center center;
    background-size: cover;
@@ -18,8 +19,9 @@
    text-align: center;
    @include breakpoint('medium') {
       align-items: flex-end;
+      background-image: url('../img/hero-couples-kit-product.jpg');
       height: 70vh;
-      min-height: 750px;
+      max-height: 870px;
    }
    .product__hero--inner {
       align-items: flex-start;

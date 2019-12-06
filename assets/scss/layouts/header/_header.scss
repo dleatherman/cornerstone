@@ -176,14 +176,15 @@
         text-decoration: none;
         z-index: zIndex("low");
         justify-content: center;
+        height: 55px;
         align-items: center;
-        height: 70px;
         margin: 0 10px;
         // scss-lint:disable NestingDepth
         
         @include breakpoint($screen-xmedium) {
             background: none;
             border-bottom: 0;
+            height: 70px;
             padding: 0;
             width: 100%;
 

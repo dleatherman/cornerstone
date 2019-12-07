@@ -114,7 +114,7 @@
     }
 
     @include breakpoint('large') {
-        padding: 0 1.5rem 3rem;
+        padding: 3rem 1.5rem;
     }
 }
 
@@ -148,7 +148,7 @@
     align-items: center;
     display: flex;
     justify-content: flex-start;
-    margin: auto;
+    margin: 0 auto;
     position: relative;
 
     @include breakpoint("medium") {
@@ -165,13 +165,9 @@
     width: 100%;
     height: auto;
     width: 100%;
-
+    
     @include breakpoint("medium") {
-        // max-height: 550px;
-    }
-
-    @include breakpoint("xlarge") {
-        // max-height: 700px;
+        padding: 0 5rem 5rem;
     }
     img {
         // @include lazy-loaded-img;

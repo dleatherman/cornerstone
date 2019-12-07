@@ -64,7 +64,10 @@
             justify-content: space-between;
         }
         @include breakpoint('medium') {
-            max-width: 1320px;
+            max-width: 1050px;
+        }
+        @include breakpoint($screen-xlarge) {
+            max-width: 1140px;
         }
     }
 
@@ -146,11 +149,11 @@
         padding: 0;
         margin: 0;
         position: absolute;
-        left: calc(50% - 140px); // half the width
+        left: calc(50% - 100px); // half the width
         // top: 18px;
 
         img {
-            width: 280px;
+            width: 200px;
             max-width: initial;
         }
 
@@ -161,6 +164,13 @@
             position: absolute;
             top: 0;
             width: 100%;
+        }
+    }
+
+    @include breakpoint($screen-xlarge) {
+        left: calc(50% - 125px);
+        img {
+            width: 250px;
         }
     }
 

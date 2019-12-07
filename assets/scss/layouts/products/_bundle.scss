@@ -20,8 +20,8 @@
    @include breakpoint('medium') {
       align-items: flex-end;
       background-image: url('../img/hero-couples-kit-product.jpg');
-      height: 70vh;
-      max-height: 870px;
+      height: 75vh;
+      // max-height: 870px;
    }
    .product__hero--inner {
       align-items: flex-start;

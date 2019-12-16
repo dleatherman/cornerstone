@@ -20,14 +20,17 @@
    @include breakpoint('medium') {
       align-items: flex-end;
       background-image: url('../img/hero-couples-kit-product.jpg');
-      height: 75vh;
+      height: 80vh;
       // max-height: 870px;
+   }
+   @include breakpoint('large') {
+      // height: px;
    }
    .product__hero--inner {
       align-items: flex-start;
       display: flex;
       justify-content: center;
-      @include breakpoint('small') {
+      @include breakpoint('medium') {
          justify-content: flex-start;
       }
       @include breakpoint('large') {
@@ -213,6 +216,9 @@
       background-color: #f8f5ef;
       color: stencilColor('navy');
       font-family: stencilFontFamily('freight-font');
+      @include breakpoint('medium') {
+         min-height: 70vh;
+      }
    }
    &--inner {
       @extend .container;

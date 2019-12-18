@@ -240,7 +240,7 @@
       }
 
       .btn {
-         display: none;
+         display: block;
          @include breakpoint('medium') {
             display: inline-block;
          }

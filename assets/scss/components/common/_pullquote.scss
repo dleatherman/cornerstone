@@ -27,16 +27,13 @@
    .page__pullquote--inner {
       @extend .container;
       h1 {
-         font-size: $fontSize-root * 2.5;
+         font-size: $fontSize-root * 1.5;
          line-height: 1.4;
          margin: 0 auto;
          z-index: 1;
          @include breakpoint('medium') {
-            font-size: $fontSize-root * 3;
-            max-width: 70%;
-         }
-         @include breakpoint('large') {
-            font-size: $fontSize-hero;
+            font-size: $fontSize-root * 2.5;
+            max-width: 80%;
          }
       }
       .page__pullquote--subheading {

@@ -52,6 +52,11 @@
             <li>
                 <a class="menu-link main" href="{{urls.auth.logout}}">{{lang 'common.logout'}}</a>
             </li>
+            {{else}}
+            <li>
+                <hr>
+                <a class="menu-link main" href="{{urls.auth.login}}">{{lang 'common.login'}}</a>
+            </li>
             {{/if}}
           </ul>
         </div>

@@ -11,9 +11,12 @@ blog:
     <div class="senses-explorer-wrapper">
         <div class="senses-explorer">
             <div class="senses-explorer-text container">
-                <p class="senses-explorer-title">We believe that the more connected we are, the better we are.</p>
-                <p class="senses-explorer-description">Letting the exploration of the five senses be the guide, we feature editorials that offer tips and tricks for sharing new experiences together.<br />Lifestyle products and toys available soon.</p>
-                {{!-- TODO: Unhide <a href="#" class="btn btn__primary">Buy Now</a> --}}
+                <div class="senses-explorer--branding">
+                    <img src="{{cdn 'img/brand-couples-kit.png'}}" alt="">
+                </div>
+                <div class="senses-explorer--cta">
+                    <a href="/kit/" class="btn btn__primary">Shop Now</a>
+                </div>
                 <p class="senses-explorer-prompt">explore the senses</p>
             </div>
         </div>
@@ -61,6 +64,13 @@ blog:
         {{> components/carousel arrows=theme_settings.homepage_show_carousel_arrows}}
     </div>
     {{!-- TODO: Hide this on pages other than 1 --}}
+
+   {{>components/products/landing-pullquote
+      textcolor="navy"
+      background="off-white"
+      heading="Letting the exploration of the ﬁve senses be the
+      guide, we feature editorials that oﬀer tips and tricks for sharing new experiences together."
+   }}
     <div class="featured-stories">
         <div class="container">
             {{#each blog.posts}}

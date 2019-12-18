@@ -120,11 +120,13 @@
 
 .product__container--outer {
     padding-bottom: 3rem;
-    @include breakpoint('medium') {
-        padding-bottom: 6rem;
-    }
     .productView-thumbnails {
         display: none;
+    }
+    .productView-details .vertical-text {
+        @include breakpoint('large') {
+            transform: translateY(125px) rotate(-90deg);
+        }
     }
 }
 
@@ -961,24 +963,6 @@
                 display: block;
             }
         }
-
-        // &::before {
-        //     content: "";
-        //     position: absolute;
-        //     bottom: 0;
-        //     left: -140px;
-        //     height: 264px;
-        //     width: 195px;
-        //     background-image: url("../img/product-post-line.png");
-        //     background-size: contain;
-        //     background-position: bottom;
-        //     background-repeat: no-repeat;
-        //     display: none;
-
-        //     @include breakpoint("medium") {
-        //         display: block;
-        //     }
-        // }
     }
 
     .post-image {
@@ -1172,7 +1156,7 @@
         }
         &.sense_touch .story-meta,
         &.sense_gaze .story-meta {
-            color: #000;
+            color: stencilColor('navy');
         }
     }
 

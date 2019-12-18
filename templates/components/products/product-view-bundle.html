@@ -60,7 +60,9 @@
       </div>
       <div class="productView-product">
          <h1 class="productView-title" {{#if schema}}itemprop="name" {{/if}}>
-            {{product.title}}
+            {{#replace 'r C' product.title}}r<br>C{{else}}
+               {{product.title}}
+            {{/replace}}
          </h1>
          {{{region name="product_below_price"}}}
          {{product.detail_messages}}
@@ -121,7 +123,7 @@
          {{/each}}
       </div>
       <div class="product-explore">
-         <a href="{{product.url}}" class="btn btn__primary">Explore The Kit</a>
+         <a href="{{product.url}}" class="btn btn__primary">Pre-Order</a>
       </div>
    </section>
 </div>

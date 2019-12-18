@@ -21,10 +21,6 @@
       align-items: flex-end;
       background-image: url('../img/hero-couples-kit-product.jpg');
       height: 80vh;
-      // max-height: 870px;
-   }
-   @include breakpoint('large') {
-      // height: px;
    }
    .product__hero--inner {
       align-items: flex-start;

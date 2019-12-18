@@ -71,14 +71,14 @@ pre {
    display: inline-block;
    font-family: stencilFontFamily('sweet-font');
    letter-spacing: 0.1em;
-   padding: 1rem;
+   padding: 0.75rem 1rem;
    text-align: center;
    text-decoration: none;
    text-transform: uppercase;
    @include breakpoint('medium') {
       font-size: 1.1rem;
       letter-spacing: 0.2em;
-      padding: 1rem 2rem;
+      padding: rem 2rem;
    }
    &__block {
       display: block;

@@ -31,7 +31,7 @@ blog:
             <div class="container product__hero--inner product__{{#replace "/" ""}}{{product.url}}{{/replace}}">
                 <!-- Branding -->
                 <div class="product__hero--branding">
-                    <img src="{{cdn 'img/brand-couples-kit.png'}}" alt="">
+                    <img src="{{cdn 'img/brand-couples-kit.png'}}" alt="The Pepper Couple’s Kit">
                 </div>
             </div>
         </main>
@@ -59,7 +59,7 @@ blog:
                     {{/if}}{{/each}}
                 </section>{{!-- carousel --}}
                 <a href="/cart.php?action=add&product_id={{product.id}}" class="btn btn__primary btn__block">
-                    Purchase Couple’s Kit
+                    Pre-Order Couple’s Kit
                 </a>
             </div>
         </section>
@@ -86,7 +86,7 @@ blog:
                     <img src="{{cdn 'img/arrow-why.svg'}}" alt="">
                 </div>
                 <p>
-                    {{#filter product.custom_fields 'story_paragraph' property='name' }}{{{value}}}{{/filter}}
+                    {{#filter product.custom_fields 'story_paragraph' property='name' }}{{{value}}} {{/filter}}
                 </p>
                 <a href="/experience/" class="btn btn__primary">explore the experience</a>
                 {{!-- <a href="/cart.php?action=add&product_id={{product.id}}" class="btn btn__primary">Buy Now</a> --}}

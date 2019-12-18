@@ -1,5 +1,7 @@
 .page__hero--outer {
    align-items: center;
+   background-image: url('../img/hero-couples-kit-experience-mobile.jpg');
+   background-color: stencilColor('navy');
    background-repeat: no-repeat;
    background-position: center top;
    background-size: cover;
@@ -11,6 +13,7 @@
    text-align: center;
    @include breakpoint('medium') {
       align-items: flex-end;
+      background-image: url('../img/hero-couples-kit-experience.png');
       height: 75vh;
       max-height: 870px;
    }

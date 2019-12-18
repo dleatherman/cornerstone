@@ -53,7 +53,10 @@
 }
 
 .senses-explorer {
-    background: stencilColor("pink") url('../img/hero-homepage-kit-mobile.jpg') no-repeat center;
+    background-color: stencilColor("navy");
+    background-image: url('../img/hero-homepage-kit-mobile.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
     background-size: cover;
     padding: 4rem 0;
     position: relative;

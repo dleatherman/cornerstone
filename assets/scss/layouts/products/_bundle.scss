@@ -29,13 +29,10 @@
       @include breakpoint('medium') {
          justify-content: flex-start;
       }
-      @include breakpoint('large') {
-         max-width: 1400px;
-      }
       .product__hero--branding {
          padding-bottom: 3rem;
          img {
-            max-width: 250px;
+            max-width: 225px;
          }
       }
       h1 {

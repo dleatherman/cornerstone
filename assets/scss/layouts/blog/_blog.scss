@@ -64,9 +64,9 @@
     &--branding {
         height: auto;
         margin: 13rem auto 5rem;
-        max-width: 200px;
+        max-width: 170px;
         @include breakpoint('medium') {
-            margin: 0 0 1rem;
+            margin: 0 0 1.5rem;
         }
     }
 
@@ -88,7 +88,7 @@
         background-image: url('../img/hero-homepage-kit.png');
         display: flex;
         min-height: calc(100vh - 165px);
-        padding: 6rem 0;
+        padding: 6rem 0 4rem;
     }
 }
 

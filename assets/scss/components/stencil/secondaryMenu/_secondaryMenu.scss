@@ -27,15 +27,12 @@
   }
 
   .secondary-menu-item {
-      height: 80px;
       cursor: pointer;
-      background-color: white;
 
       .secondary-menu-item-link {
           display: flex;
           flex-direction: column;
           justify-content: space-around;
-        //   padding: 25px 0;
           text-align: center;
           align-items: center;
           height: 100%;
@@ -52,13 +49,14 @@
   
           .secondary-menu-name {
             margin: 0;
-            font-size: 25px;
-            letter-spacing: 3px;
+            font-size: 1.25rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
             font-family: stencilFontFamily("sweet-font");
             text-decoration: none;
             color: stencilColor("navy");
-            font-weight: 200;
+            font-weight: 300;
+            padding: 2rem 0;
             position: relative;
             transition: all .3s;
           }
@@ -111,6 +109,7 @@
 }
 
 .touch-texture {
+  background-color: stencilColor('light-pink');
   background-image: url('../img/touch-texture.jpg');
 
   &:hover {
@@ -120,6 +119,7 @@
 }
 
 .taste-texture {
+  background-color: stencilColor('desert-tan');
   background-image: url('../img/taste-texture.jpg');
 
   &:hover {
@@ -129,6 +129,7 @@
 }
 
 .aroma-texture {
+  background-color: stencilColor('color-aroma');
   background-image: url('../img/aroma-texture.jpg');
 
   &:hover {
@@ -138,6 +139,7 @@
 }
 
 .gaze-texture {
+  background-color: stencilColor('color-gaze');
   background-image: url('../img/gaze-texture.jpg');
 
   &:hover {
@@ -147,6 +149,7 @@
 }
 
 .listen-texture {
+  background-color: stencilColor('color-listen');
   background-image: url('../img/listen-texture.jpg');
 
   &:hover {

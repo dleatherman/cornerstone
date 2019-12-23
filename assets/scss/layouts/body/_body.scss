@@ -663,31 +663,19 @@ body {
         &.sense-title {
             width: 100%;
             font-size: 32px;
-            color: stencilColor("navy");
+            color: stencilColor("white");
             text-transform: capitalize;
             text-align: center;
             display: none;
             
             @include breakpoint("medium") {
                 text-align: left;
-                font-size: 60px;
+                font-size: 4rem;
+                line-height: 1.2;
                 display: block;
             }
         }
 
-        &.sense-description {
-            display: none;
-            font-size: 17px;
-            letter-spacing: 0;
-            color: stencilColor("navy");
-            margin: 1em 0;
-            line-height: 25px;
-            font-family: stencilFontFamily("sweet-font");
-
-            @include breakpoint("medium") {
-                display: block;
-            }
-        }
     }
 
     .home-description {

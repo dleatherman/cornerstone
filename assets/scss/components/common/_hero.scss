@@ -7,15 +7,14 @@
    background-size: cover;
    display: flex;
    font-family: stencilFontFamily('domaine-font');
-   height: 80vh;
+   height: 85vh;
    justify-content: center;
    position: relative;
    text-align: center;
    @include breakpoint('medium') {
       align-items: flex-end;
       background-image: url('../img/hero-couples-kit-experience.png');
-      height: 75vh;
-      max-height: 870px;
+      height: 80vh;
    }
    .page__hero--inner {
       align-items: flex-start;
@@ -24,13 +23,10 @@
       @include breakpoint('small') {
          justify-content: flex-start;
       }
-      @include breakpoint('large') {
-         max-width: 1400px;
-      }
       .page__hero--branding {
          padding-bottom: 3rem;
          img {
-            max-width: 250px;
+            max-width: 225px;
          }
       }
       h1 {

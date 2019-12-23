@@ -11,15 +11,15 @@
   h2 {
     color: stencilColor("navy");
     font-family: stencilFontFamily("domaine-font");
-    font-size: 28px;
+    font-size: 1.5rem;
     font-weight: normal;
     margin: 0.5em auto 1em;
 
     @include breakpoint("medium") {
-      font-size: 42px;
-      line-height: 48px;
+      font-size: 3.75rem;
+      line-height: 1.2;
       margin: 0 auto 0.5em;
-      width: 70%;
+      width: 60%;
     }
   }
 
@@ -331,6 +331,71 @@
         background-size: cover;
         background-image: url('../icon/moon.svg');
       }
+    }
+  }
+}
+
+.senses--category__outer {
+  background-color: stencilColor('pink');
+  color: stencilColor('navy');
+  padding: 2rem 0;
+  @include breakpoint('medium') {
+    padding: 5rem 0;
+  }
+  &.senses--category__taste {
+    background-color: stencilColor('color-taste');
+    color: #fff;
+  }
+  &.senses--category__aroma {
+    background-color: stencilColor('color-aroma');
+  }
+  &.senses--category__gaze {
+    background-color: stencilColor('color-gaze');
+    color: #fff;
+  }
+  &.senses--category__listen {
+    background-color: stencilColor('color-listen');
+    color: #fff;
+  }
+  .senses--category__inner {
+    @extend .container;
+    align-items: flex-start;
+    display: flex;
+    flex-flow: column nowrap;
+    @include breakpoint('medium') {
+      flex-flow: row nowrap;
+    }
+  }
+  .senses--category__image {
+    @include breakpoint('medium') {
+      width: 50%;
+    }
+  }
+  .senses--category__content {
+    h3 {
+      @include domaine;
+      font-size: 2.5rem;
+      color: inherit;
+      line-height: 1.2;
+      margin: 1rem 0;
+      @include breakpoint('medium') {
+        font-size: 3rem;
+        margin: 0 0 1rem 0;
+      }
+    }
+    p {
+      @include freight;
+      color: inherit;
+      font-size: 1.5rem;
+      line-height: 1.6;
+      @include breakpoint('medium') {
+        font-size: 1.1rem;
+        line-height: 1.5;
+      }
+    }
+    @include breakpoint('medium') {
+      padding: 0 0 0 5rem;
+      width: 50%;
     }
   }
 }

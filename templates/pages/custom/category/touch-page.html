@@ -21,53 +21,37 @@ blog:
   <main class="page-content senses-page" id="product-listing-container">
     {{>components/category/featured-by-sense 
       main-title="Because touch is the shortest distance between us"
-      subtitle="here are a few of our favorite things"
+      subtitle="Skin to skin sparks all the feels,
+      deepen your experience together through touch"
       link-text="Shop all touch"
       link-url="/shop-all-touch"
-      products="touch-main"
+      items=category.products
     }}
-    
-    <section class="senses-post">
-      <div class="sense-post-container">
-        <div class="images-container">
-          <img src="{{cdn 'img/touch-post.png'}}" alt="img" />
-        </div>
-        <div class="post-container">
-          <h2>Massage me in all the Right Places</h2>
-          <div class="post-detail">
-            <span class="author">ali lawrence</span>
-            <a class="follow">follow</a>
-            <span class="date">January 23, 2019  •  3 Minute Read</span>
-          </div>
-          <p>For the first time as a couple, he had figured out the way 
-            to touch me and give me what I needed - a relaxing massage 
-            with no strings attached. I was actually shocked that he enjoyed 
-            it just as much as I did. We didn’t have to be pros (and god knows, 
-            we’re not) to deliver our own sublime massage session right in our own bed...
-          </p>
-          <a class="read-more-btn" href="/">Read More</a>
-          <!-- <div class="share-box-text">
-            <img src="{{cdn 'icons/sense-post-arrow.svg'}}" alt="arrow" />
-            <span>girls night worthy? share with a friend</span>
-          </div>
-          <div class="share-box">
-            <img src="{{cdn 'img/like-icon.svg'}}" alt="icon" />
-            <img src="{{cdn 'img/email-icon.svg'}}" alt="icon" />
-            <img src="{{cdn 'img/post-flag.svg'}}" alt="icon" />
-            <img src="{{cdn 'img/pinterest-icon.svg'}}" alt="icon" />
-          </div> -->
-        </div>
-      </div>
-    </section>
+
+    {{> components/category/senses-section
+      sense="touch"
+      image="/assets/img/category-touch.jpg"
+      heading="Get a little closer..."
+      content="Sometimes you have to forget the laundry, the to-do list, dishes, and the whole routine and just grab the one you love like you really, really mean it. Sure, a date out on the town can be fun, but staying indoors can be even better.
+      
+      Ok, the water’s warm so we’re diving in...
+      
+      Toys aren’t just for kids—we’re just sayin’. You two can have a lot of fun (and make each other feel really great) with all kinds of good vibes—even the toys that don’t buzz bring on the good vibes, too.
+      
+      We’re wired for touch, and sometimes creating that space for each other is all it takes to feel connected. And yeah, having sex helps. So, skip the lines, the reservations (in every sense of the word), and get dressed up (or down) and create an experience for two that is all about connection." }}
 
     {{>components/category/featured-by-sense
       main-title="Turn it up a Notch"
       subtitle="our pepper faves just got a little spicier"
       link-text="Shop all touch"
       link-url="/shop-all-touch"
-      products="touch-turn-up"
+      items=(after category.products 4)
     }}
-    {{>components/common/latest-posts posts=blog.recent_posts}}
+    {{>components/common/latest-posts
+      posts=blog.recent_posts
+      text="Like what you see?"
+      text2="Dive into some further reading"
+    }}
     {{>components/common/connect-more}}
   </main>
 </div>

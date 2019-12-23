@@ -2,10 +2,6 @@
 blog:
     recent_posts:
         limit: {{theme_settings.homepage_blog_posts_count}}
-category:
-    shop_by_price: true
-    products:
-        limit: 4
 ---
 {{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
 
@@ -24,54 +20,36 @@ category:
 <div class="page">
   <main class="page-content senses-page" id="product-listing-container">
     {{>components/category/featured-by-sense 
-      items=category.products
-      main-title="Because aroma is the shortest distance between us"
-      subtitle="here are a few of our favorite things"
+      main-title="Aroma is a chemical reaction, let it spark something between you"
+      subtitle="Ideas and products to transcend your
+      mind and body to all kinds of places."
       link-text="Shop all aroma"
       link-url="/shop-all-aroma"
-    }}
-    
-    <section class="senses-post">
-      <div class="sense-post-container">
-        <div class="images-container">
-          <img src="{{cdn 'img/touch-post.png'}}" alt="img" />
-        </div>
-        <div class="post-container">
-          <h2>Massage me in all the Right Places</h2>
-          <div class="post-detail">
-            <span class="author">ali lawrence</span>
-            <a class="follow">follow</a>
-            <span class="date">January 23, 2019  •  3 Minute Read</span>
-          </div>
-          <p>For the first time as a couple, he had figured out the way 
-            to aroma me and give me what I needed - a relaxing massage 
-            with no strings attached. I was actually shocked that he enjoyed 
-            it just as much as I did. We didn’t have to be pros (and god knows, 
-            we’re not) to deliver our own sublime massage session right in our own bed...
-          </p>
-          <a class="read-more-btn" href="/">Read More</a>
-          <!-- <div class="share-box-text">
-            <img src="{{cdn 'icons/sense-post-arrow.svg'}}" alt="arrow" />
-            <span>girls night worthy? share with a friend</span>
-          </div>
-          <div class="share-box">
-            <img src="{{cdn 'img/like-icon.svg'}}" alt="icon" />
-            <img src="{{cdn 'img/email-icon.svg'}}" alt="icon" />
-            <img src="{{cdn 'img/post-flag.svg'}}" alt="icon" />
-            <img src="{{cdn 'img/pinterest-icon.svg'}}" alt="icon" />
-          </div> -->
-        </div>
-      </div>
-    </section>
-
-    {{>components/category/featured-by-sense 
       items=category.products
+    }}
+
+    {{> components/category/senses-section
+      sense="aroma"
+      image="/assets/img/category-aroma.jpg"
+      heading="The power of scent..."
+      content="Fresh baked cookies, pine trees in winter, a crackling fireplace, your love’s neck, their side of the bed or a whiff of their scent—aroma inextricably ties our memory to our emotions, and we’re into it.
+      
+      When it comes to creating moods and experiences, there are so many ways to make memory (and dare we say love) making fun. Some of our favorites are lighting the perfect candle, diffusers, and drawing a bath enhanced with your favorite fragrance...we’re excited for you to find yours.
+      
+      Whether you like your love au natural or with a splash of aftershave or perfume, we love the way a subtle smell can shift us in the most primal of ways." }}
+
+    {{>components/category/featured-by-sense
       main-title="Turn it up a Notch"
       subtitle="our pepper faves just got a little spicier"
-      link-text="Shop all aroma"
-      link-url="/shop-all-aroma"
+      link-text="Shop all touch"
+      link-url="/shop-all-touch"
+      items=(after category.products 4)
     }}
-    {{>components/common/latest-posts posts=blog.recent_posts}}
+    {{>components/common/latest-posts
+      posts=blog.recent_posts
+      text="Like what you see?"
+      text2="Dive into some further reading"
+    }}
     {{>components/common/connect-more}}
   </main>
 </div>

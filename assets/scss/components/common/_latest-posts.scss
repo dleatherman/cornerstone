@@ -32,20 +32,12 @@
   .button-wrapper {
       margin: 0 auto;
       max-width: 86%;
+      .btn {
+        color: #fff;
+      }
       
      @include breakpoint("medium") {
           display: none;
       }
-  }
-  
-  .button {
-      background-color: stencilColor("color-primary");
-      border-radius: 0;
-      color: white !important;
-      font-family: stencilFontFamily("sweet-font");
-      letter-spacing: 2px;
-      margin: 0;
-      text-transform: uppercase;
-      width: 100%;
   }
 }

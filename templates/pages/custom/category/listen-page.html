@@ -2,10 +2,6 @@
 blog:
     recent_posts:
         limit: {{theme_settings.homepage_blog_posts_count}}
-category:
-    shop_by_price: true
-    products:
-        limit: 4
 ---
 {{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
 
@@ -24,54 +20,37 @@ category:
 <div class="page">
   <main class="page-content senses-page" id="product-listing-container">
     {{>components/category/featured-by-sense 
-      items=category.products
-      main-title="Because listen is the shortest distance between us"
-      subtitle="here are a few of our favorite things"
+      main-title="To truly listen is an invitation
+      into the mind as much as the body"
+      subtitle="What we hear has the power to shift us
+      and bring us closer than ever before"
       link-text="Shop all listen"
       link-url="/shop-all-listen"
-    }}
-    
-    <section class="senses-post">
-      <div class="sense-post-container">
-        <div class="images-container">
-          <img src="{{cdn 'img/touch-post.png'}}" alt="img" />
-        </div>
-        <div class="post-container">
-          <h2>Massage me in all the Right Places</h2>
-          <div class="post-detail">
-            <span class="author">ali lawrence</span>
-            <a class="follow">follow</a>
-            <span class="date">January 23, 2019  •  3 Minute Read</span>
-          </div>
-          <p>For the first time as a couple, he had figured out the way 
-            to listen me and give me what I needed - a relaxing massage 
-            with no strings attached. I was actually shocked that he enjoyed 
-            it just as much as I did. We didn’t have to be pros (and god knows, 
-            we’re not) to deliver our own sublime massage session right in our own bed...
-          </p>
-          <a class="read-more-btn" href="/">Read More</a>
-          <!-- <div class="share-box-text">
-            <img src="{{cdn 'icons/sense-post-arrow.svg'}}" alt="arrow" />
-            <span>girls night worthy? share with a friend</span>
-          </div>
-          <div class="share-box">
-            <img src="{{cdn 'img/like-icon.svg'}}" alt="icon" />
-            <img src="{{cdn 'img/email-icon.svg'}}" alt="icon" />
-            <img src="{{cdn 'img/post-flag.svg'}}" alt="icon" />
-            <img src="{{cdn 'img/pinterest-icon.svg'}}" alt="icon" />
-          </div> -->
-        </div>
-      </div>
-    </section>
-
-    {{>components/category/featured-by-sense 
       items=category.products
+    }}
+
+    {{> components/category/senses-section
+      sense="listen"
+      image="/assets/img/category-listen.jpg"
+      heading="Hey, listen up and then snuggle up..."
+      content="Communication is key and definitely keeps us close (even when we’re far apart) and connected (and you know how we feel about connection!)—and, listening is a big part of that equation.
+      
+      Since we like to draw a little outside of the lines (it’s kind of our thing), we like to use what we hear as a way to tap into our turn-ons. Think, podcasts, playlists, and all kinds of new ways of sending messages from the heart.
+      
+      We believe that what we hear activates our senses in such a powerfully emotional way, and because of that, we think we can put that sensory experience to some really fun (sexy) use..." }}
+
+    {{>components/category/featured-by-sense
       main-title="Turn it up a Notch"
       subtitle="our pepper faves just got a little spicier"
       link-text="Shop all listen"
       link-url="/shop-all-listen"
+      items=(after category.products 4)
     }}
-    {{>components/common/latest-posts posts=blog.recent_posts}}
+    {{>components/common/latest-posts
+      posts=blog.recent_posts
+      text="Like what you see?"
+      text2="Dive into some further reading"
+    }}
     {{>components/common/connect-more}}
   </main>
 </div>

@@ -69,17 +69,18 @@ export default class Product extends PageManager {
 
                 if (productId) {
                     utils.api.product.getById(productId, { template: 'products/bundle-slide' }, (err, response) => {
-                        // eslint-disable-next-line no-console
-                        // console.log(response);
                         $productsToLoad[i].innerHTML = response;
-                        const $productRevealBtns = $('a.bundle__slide--reveal');
-                        if ($productRevealBtns.length > 0) {
-                            $productRevealBtns.on('click', (e) => {
+
+                        const revealBtn = $($productsToLoad[i]).find('a.bundle__slide--reveal');
+
+                        if (revealBtn) {
+                            revealBtn.on('click', (e) => {
                                 e.preventDefault();
                                 const $activate = $(e.target.closest('.bundle__slide--outer'));
                                 $activate.toggleClass('revealed');
                             });
                         }
+
                         return new ProductDetails($productsToLoad[i]);
                     });
                 }

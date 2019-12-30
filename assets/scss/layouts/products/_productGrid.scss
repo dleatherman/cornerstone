@@ -25,14 +25,14 @@
         display: inline-block;
         font-size: fontSize("base"); // 1
         vertical-align: top;
-        padding: 0 0.75rem 1rem;
+        padding: 0 1rem;
 
         @include breakpoint("small") {
             width: calc((100% - 3rem) / 2);
         }
 
         @include breakpoint("large") {
-            padding: 0 0.75rem;
+            padding: 0 3rem;
             width: calc((100% - 3rem) / 4);
         }
 

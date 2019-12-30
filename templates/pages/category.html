@@ -22,20 +22,12 @@ category:
 
 {{#if category.faceted_search_enabled}}
     <div class="page-sidebar filters-container" id="faceted-search-container">
-        {{> components/products/filter sort=pagination.category.sort}}
+        {{!> components/products/filter sort=pagination.category.sort}}
         {{> components/category/sidebar}}
     </div>
     {{> components/faceted-search/filter-selected category}}
 {{/if}}
-{{> components/common/mobile-order-sort }}
-
-<div class="category-headline container">
-    <h2>Discover Our Assortment</h2>
-    <div class="favorite-text">
-        <span>skin to skin sparks all the feels</span>
-        <img class="sense-arrow" src="{{cdn 'icons/sense-arrow.svg'}}" alt="sense-arrow" />
-    </div>
-</div>
+{{!> components/common/mobile-order-sort }}
 
 <div class="page">
     <main class="page-content" id="product-listing-container">
@@ -46,7 +38,7 @@ category:
         {{/if}}
     </main>
 </div>
-{{> components/category/mobile-filters}}
+{{!> components/category/mobile-filters}}
 {{>components/common/connect-more}}
 
 {{/partial}}

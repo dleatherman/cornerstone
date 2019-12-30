@@ -11,6 +11,13 @@
 //
 // -----------------------------------------------------------------------------
 
+.card {
+    margin-bottom: 1rem;
+    @include breakpoint('small') {
+        margin-bottom: 3rem;
+    }
+}
+
 
 .card-figure {
     background-color: white;
@@ -54,10 +61,15 @@
 }
 
 .card-title {
-    font-size: 23px;
+    font-size: 1.25rem;
     font-weight: 300;
     font-family: stencilFontFamily("domaine-font");
     margin: 0;
+
+    @include breakpoint('medium') {
+        font-size: 1.4375rem;
+        // font-size: 23px;
+    }
 
     > a {
         color: stencilColor("navy");
@@ -71,11 +83,17 @@
 }
 
 .card-body .card-text {
-    font-family: stencilFontFamily("sweet-font");
-    font-size: 17px;
-    text-transform: uppercase;
-    color: stencilColor("grey-2");
-    margin-bottom: $card-text-marginBottom;
+   color: stencilColor('grey-2');
+   font-family: stencilFontFamily('sweet-font');
+   font-size: 1rem;
+   letter-spacing: 0.1em;
+   line-height: 1.7;
+   margin-bottom: $card-text-marginBottom;
+   text-transform: uppercase;
+   
+    @include breakpoint('medium') {
+        letter-spacing: 2px;
+    }
 
     &.brand {
         color: #bfbfbf;

@@ -13,8 +13,11 @@ blog:
    {{>components/products/landing-pullquote
       textcolor="navy"
       background="off-white"
-      heading="Want to spice it up? Here's all you need for a fun time in."
+      heading="Want to spice it up?
+      Here's all you need for a fun time in."
    }}
+
+   <div id="blogpost"></div>
 
     <div class="featured-stories">
         <div class="container">
@@ -28,7 +31,7 @@ blog:
 
    <div class="story-archive container">
       {{#each blog.recent_posts}}
-         {{#contains (join (pluck tags 'name') ', ') 'couples' }}
+         {{#contains (JSONstringify (pluck tags 'name')) 'couples' }}
             {{> components/blog/post post=this sense=true}}
          {{/contains}}
       {{/each}}

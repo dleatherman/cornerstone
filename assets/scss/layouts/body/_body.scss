@@ -356,7 +356,7 @@ body {
         position: relative;
         height: 200px;
         @include breakpoint("medium") {
-            height: 80vh;
+            height: 95vh;
         }
 
         .home-title-container { 
@@ -373,25 +373,47 @@ body {
 }
 
 .category-title {
-    height: 100px;
+    // height: 100px;
     background-color: stencilColor("light-pink");
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-flow: column nowrap;
+    padding: 2rem 1rem;
 
     @include breakpoint("small") {
-        height: 250px;
+        // height: 250px;
     }
 
     h1 {
-        color: white;
+        color: #2e353f;
         font-family: stencilFontFamily("domaine-font");
-        font-size: 32px;
+        font-size: 1.75rem;
         font-weight: 300;
         margin: 0;
 
         @include breakpoint("small") {
-            font-size: 60px;
+            font-size: 2.75rem;
+        }
+    }
+
+    p {
+        color: #2e353f;
+        font-size: 1.25rem;
+        margin-bottom: 0;
+        position: relative;
+        img {
+            display: none;
+            position: absolute;
+            right: -50px;
+            top: 15px;
+            z-index: 1;
+            @include breakpoint('medium') {
+                display: inline-block;
+            }
+        }
+        @include breakpoint('medium') {
+            font-size: 1.75rem;
         }
     }
 }

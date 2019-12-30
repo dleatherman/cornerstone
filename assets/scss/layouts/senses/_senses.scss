@@ -11,15 +11,15 @@
   h2 {
     color: stencilColor("navy");
     font-family: stencilFontFamily("domaine-font");
-    font-size: 1.5rem;
+    font-size: $fontSize-root * 1.5;
     font-weight: normal;
     margin: 0.5em auto 1em;
 
     @include breakpoint("medium") {
-      font-size: 3.75rem;
+      font-size: $fontSize-root * 2.5;
       line-height: 1.2;
       margin: 0 auto 0.5em;
-      width: 60%;
+      width: 85%;
     }
   }
 
@@ -60,10 +60,6 @@
       margin: 3em 0;
       border-bottom: 1px solid stencilColor("pink");
     }
-  }
-
-  .product {
-    padding: 0;
   }
 
   .card {
@@ -341,6 +337,9 @@
   padding: 2rem 0;
   @include breakpoint('medium') {
     padding: 5rem 0;
+  }
+  &.senses--category__touch {
+    background-color: stencilColor('color-touch');
   }
   &.senses--category__taste {
     background-color: stencilColor('color-taste');

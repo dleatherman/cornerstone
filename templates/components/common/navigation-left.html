@@ -2,6 +2,11 @@
   {{> components/common/currency-selector}}
 
   <ul class="navUser-section navUser-section--alt">
+      {{#if customer}}
+      <li class="navUser-item navUser-item--cart">
+          <a class="navUser-action is-text" href="/shop/">Shop</a>
+      </li>
+      {{/if}}
       <li class="navUser-item navUser-item--cart">
           <a class="navUser-action is-text" href="/stories">Stories</a>
       </li>

@@ -34,9 +34,10 @@ export default class PageProduct extends PageManager {
     }
 
     testGetPage() {
-        // utils.api.getPage('/stories/tag/featured-home', { }, (err, response) => {
+        // utils.api.getPage('/stories/tag/featured-home', { template: 'blog/featured-blog-post' }, (err, response) => {
         //     // eslint-disable-next-line no-console
-        //     console.log(response);
+        //     // console.log(response);
+        //     document.getElementById('blogpost').innerHTML = response;
         // });
     }
 }

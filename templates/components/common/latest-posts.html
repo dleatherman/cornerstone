@@ -10,9 +10,17 @@
         {{/if}}
     </h2>
     <div class="posts-container">
-        {{#each posts}}
-            {{> components/blog/post post=this}}
-        {{/each}}
+        {{#if sense}}
+          {{#each posts}}
+              {{!-- {{#contains (join (pluck tags 'name') ', ') 'touch' }} --}}
+                {{> components/blog/post post=this}}
+              {{!-- {{/contains}} --}}
+          {{/each}}
+        {{else}}
+          {{#each posts}}
+              {{> components/blog/post post=this}}
+          {{/each}}
+        {{/if}}
         <p class="button-wrapper">
           <a class="btn btn__primary btn__block" href="/stories">Explore more stories</a>
         </p>

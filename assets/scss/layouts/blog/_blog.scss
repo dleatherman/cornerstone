@@ -511,8 +511,8 @@
 
 .story-meta {
     font-family: stencilFontFamily("sweet-font");
-    -webkit-font-variant: common-ligatures all-small-caps;
-    font-variant: common-ligatures all-small-caps;
+    -webkit-font-variant-numeric: lining-nums;
+    font-variant-numeric: lining-nums;
     font-weight: 300;
     letter-spacing: 2px;
     margin-bottom: 2rem;

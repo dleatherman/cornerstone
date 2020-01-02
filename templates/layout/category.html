@@ -61,16 +61,7 @@
     
             {{> components/common/header }}
             
-            <div class="category-title">
-                {{#if category_title '==' 'Shop'}}
-                    <h1>Discover Our Assortment</h1>
-                    <p class="rollerscript">skin to skin sparks all the feels<img class="sense-arrow" src="{{cdn 'icons/sense-arrow.svg'}}" alt="sense-arrow" /></p>
-                {{else if category_title '==' 'Shop All'}}
-                    <h1>Discover Our Assortment</h1>
-                    <p class="rollerscript">skin to skin sparks all the feels<img class="sense-arrow" src="{{cdn 'icons/sense-arrow.svg'}}" alt="sense-arrow" /></p>
-                {{else}}
-                    <h1>{{category_title}}</h1>
-                {{/if}}
+            <div class="category-title category-{{#replace ' ' (lowercase category_title)}}-{{else}}{{lowercase category_title}}{{/replace}}">
                 {{#block "ordering"}} {{/block}}
             </div>
           

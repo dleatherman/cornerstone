@@ -115,7 +115,11 @@
     display: none;
 
     @include breakpoint("medium") {
-        display: block; // 1
+        align-content: flex-start;
+        clear: left;
+        display: flex; // 1
+        justify-content: flex-start;
+        padding: 0.75rem;
     }
 }
 

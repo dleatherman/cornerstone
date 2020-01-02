@@ -1,7 +1,6 @@
 <ul class="list-filter-container">
     <li class="list-item main-item"><a class="main-link" href="#">
         <div>
-            <span>Add Filter by</span><br>
             {{title}}
         </div>
         <img src="{{cdn 'img/downarrow.svg'}}" width="20px" height="20px" />
@@ -10,8 +9,9 @@
             {{#if items}}
                 {{#each items}}
                     <li class="list-item sub-item">
-                        <a href="{{url}}">{{ title }}
+                        <a href="{{url}}">
                             <div class="filter-circle {{#if selected }} selected {{/if}}"></div>
+                            {{ title }}
                         </a>
                     </li>
                 {{/each}}

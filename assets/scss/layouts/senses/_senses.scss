@@ -1,35 +1,32 @@
-.senses-container {
-  text-align: center;
-  padding: 1em;
-
-  @include breakpoint("medium") {
-    max-width: 1400px;
-    width: 100%;
-    margin: 4em auto;
+.senses-page {
+  background: white;
+  .secondary-menu {
+    position: relative;
   }
 
-  h2 {
+  .senses-main-title {
     color: stencilColor("navy");
     font-family: stencilFontFamily("domaine-font");
     font-size: $fontSize-root * 1.5;
     font-weight: normal;
-    margin: 0.5em auto 1em;
+    margin: 1rem auto;
+    text-align: center;
 
     @include breakpoint("medium") {
       font-size: $fontSize-root * 2.5;
       line-height: 1.2;
-      margin: 0 auto 0.5em;
+      margin: 3.5rem auto 1rem;
       width: 85%;
+      br {
+        display: none;
+      }
     }
-  }
-
-  .actionBar {
-    display: none;
   }
 
   .favorite-text {
     position: relative;
     display: none;
+    text-align: center;
     
     span {
       font-family: stencilFontFamily("rollerscript-font");
@@ -51,15 +48,79 @@
   }
 
   .items-container {
-    padding: 1em 0;
-    margin: 0;  
+    padding: 1rem 0;
+    margin: 0 1rem;
     border-top: 1px solid stencilColor("pink");
 
     @include breakpoint("medium") {
-      padding: 4em 0 2em;
-      margin: 3em 0;
+      padding: 2rem 0;
+      margin: 3rem 1rem;
       border-bottom: 1px solid stencilColor("pink");
     }
+  }
+} // .senses-page
+
+.senses-container {
+  align-items: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  height: 50vh;
+  min-height: 400px;
+  padding: 1em;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  &:before {
+      background-color: rgba(0, 0, 0, 0.15);
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+  }
+
+  @include breakpoint('medium') {
+    height: 70vh;
+    &:before {
+      background-color: transparent;
+    }
+  }
+
+  .sense-title {
+    font-size: 2rem;
+    line-height: 1.4;
+    letter-spacing: 1px;
+    font-family: stencilFontFamily("domaine-font");
+    margin: 0;
+    text-align: center;
+    color: white;
+    font-weight: 300;
+    position: relative;
+    text-transform: capitalize;
+    z-index: 1;
+
+    @include breakpoint("small") {
+        font-size: 2.8125rem;
+        line-height: 1.4;
+    }
+
+    @include breakpoint("medium") {
+        font-size: 3.125rem;
+        text-align: left;
+    }
+
+    @include breakpoint("xlarge") {
+        font-size: 3.4375rem;
+    }
+  }
+
+  .actionBar {
+    display: none;
   }
 
   .card {
@@ -385,8 +446,8 @@
     p {
       @include freight;
       color: inherit;
-      font-size: 1.5rem;
-      line-height: 1.6;
+      font-size: 1.1rem;
+      line-height: 1.8;
       @include breakpoint('medium') {
         font-size: 1.1rem;
         line-height: 1.5;

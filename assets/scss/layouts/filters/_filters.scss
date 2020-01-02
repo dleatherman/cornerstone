@@ -47,7 +47,7 @@ nav {
   padding: 0;
 
   &:hover {
-      background: stencilColor("light-pink");
+      background: #fff;
 
       img {
         transition: .7s;
@@ -103,7 +103,7 @@ nav {
 }
 
 .main-item {
-    padding: 20px;
+    padding: 30px;
 
     &:hover .main-link {
       color: stencilColor("navy");
@@ -129,18 +129,21 @@ nav {
 
 .sub-item a {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 }
 
 .filter-circle {
-  border-radius: 50%;
+  border-radius: 0;
   width: 10px;
   height: 10px;
-  background-color: stencilColor("grey");
+  margin: -1px 10px 0 0;
+  background-color: #fff;
+  border: 1px solid stencilColor("grey");
 
   &.selected {
-      background-color: stencilColor("navy");
+    border-color: stencilColor('navy');
+    background-color: stencilColor("navy");
   }
 }
 
@@ -151,16 +154,15 @@ nav {
   position: absolute;
   transition: all 0.3s;
   left: 0;
-  width: 100%;
-  margin: 0;
-  margin-top: 20px;
+  width: calc(100% + 2px);
+  margin: 0 0 0 -1px;
+  margin-top: 30px;
   max-height: 400px;
   overflow-y: auto;
   overflow-x: hidden;
   padding: 20px !important;
   z-index: 1000;
-  border-bottom: 1px solid #f4f4f0;
-  border-top: 1px solid stencilColor("light-pink");
+  border: 1px solid stencilColor("light-pink");
 }
 
 .list-filter-container .list-item:hover > ul,
@@ -349,20 +351,54 @@ nav {
 }
 
 .filter-clear-all {
-  font-size: 12px;
-  font-family: stencilFontFamily("sweet-font");
+  border: 1px solid #e6e6e6;
   color: stencilColor("grey-2");
-  text-transform: uppercase;
-  margin-right: 20px;
-  border-right: 1px solid #e6e6e6;
-  padding: 10px 5px 10px 20px;
   display: flex;
-  justify-content: space-between;
-  width: 100px;
-
-  svg {
-      fill: #515151;
+  font-family: stencilFontFamily("sweet-font");
+  font-size: 12px;
+  padding: 0;
+  text-transform: uppercase;
+  width: auto;
+  
+  a {
+    color: stencilColor('navy');
+    display: flex;
+    letter-spacing: 0.1em;
+    padding: 10px 20px;
+    text-decoration: none;
+    &:hover {
+      background-color: stencilColor('navy');
+      color: stencilColor('off-white');
+    }
   }
 }
 
+.facetedSearch-refineFilters {
+  .inlineList {
+    > li {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.facetLabel {
+  background: stencilColor('grey');
+  border: 1px solid stencilColor('grey');
+  border-radius: 0;
+  color: stencilColor('navy');
+  font-family: stencilFontFamily("sweet-font");
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  .icon {
+    fill: stencilColor('navy');
+  }
+  &:hover {
+    color: #fff;
+    .icon {
+      fill: #fff;
+    }
+  }
+}
 

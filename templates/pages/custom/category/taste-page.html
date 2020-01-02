@@ -20,12 +20,13 @@ blog:
 <div class="page">
   <main class="page-content senses-page" id="product-listing-container">
     {{>components/category/featured-by-sense 
-      main-title="Taste is an adventure that can take us anywhere"
+      main-title="Taste is an adventure<br> that can take us anywhere"
       subtitle="Sure, there’s chocolate, but there’s
       so much more to explore..."
       link-text="Shop all taste"
       link-url="/shop-all-taste"
       items=category.products
+      sense="taste"
     }}
 
     {{> components/category/senses-section

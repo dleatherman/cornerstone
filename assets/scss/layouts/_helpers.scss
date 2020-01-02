@@ -30,7 +30,7 @@
 @mixin freight($color: stencilColor('navy')) {
    color: $color;
    font-family: stencilFontFamily('freight-font');
-   letter-spacing: 0.05em;
+   letter-spacing: 0.01em;
 }
 
 @mixin sweet-font($color: stencilColor('grey-2'), $weight: 400) {

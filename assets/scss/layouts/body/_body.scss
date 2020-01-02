@@ -272,27 +272,8 @@ body {
     margin: 0;
 }
 
-.sense-title-sm {
-    width: 100%;
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: stencilColor("navy");
-    text-transform: uppercase;
-    font-family: stencilFontFamily("sweet-font");
-    text-align: center;
-    display: block;
-    margin: 0.7em 0 0;
-    letter-spacing: 2px;
-    border-bottom: 1px solid stencilColor("pink");
-    padding-bottom: 0.5em;
-    
-    @include breakpoint("medium") {
-        display: none;
-    }
-}
-
 .home-container {
-    position: fixed;
+    // position: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-image: url('../img/landingBackgroundSm.jpg');
@@ -354,7 +335,7 @@ body {
 
     &.senses-page {
         position: relative;
-        height: 200px;
+        height: 80vh;
         @include breakpoint("medium") {
             height: 95vh;
         }
@@ -373,16 +354,25 @@ body {
 }
 
 .category-title {
-    // height: 100px;
     background-color: stencilColor("light-pink");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-flow: column nowrap;
-    padding: 2rem 1rem;
 
-    @include breakpoint("small") {
-        // height: 250px;
+    &.category-shop,
+    &.category-shop-all {
+        // TODO: Change this
+        background-image: url('../img/hero-shop-mobile.jpg');
+        height: 60vh;
+        min-height: 400px;
+        @include breakpoint('medium') {
+            background-image: url('../img/hero-shop.jpg');
+            height: 80vh;
+        }
     }
 
     h1 {
@@ -642,18 +632,6 @@ body {
         }
     }
 
-    &.senses-container {
-        top: 50%;
-        width: 300px;
-        padding: 1em;
-        transform: translateY(-50%);
-        
-        @include breakpoint("medium") {
-            margin: 0;
-            width: 450px;
-        }
-    }
-
     .home-title {
         font-size: 28px;
         line-height: 42px;
@@ -688,13 +666,14 @@ body {
             color: stencilColor("white");
             text-transform: capitalize;
             text-align: center;
-            display: none;
+            display: block;
+            position: relative;
+            z-index: 2;
             
             @include breakpoint("medium") {
                 text-align: left;
                 font-size: 4rem;
                 line-height: 1.2;
-                display: block;
             }
         }
 
@@ -815,23 +794,38 @@ body {
 }
 
 .touch-background, .touch {
-    background-image: url('../img/touch.jpg');
+    background-image: url('../img/touch-mobile.jpg');
+    @include breakpoint('small') {
+        background-image: url('../img/touch.jpg');
+    }
 }
 
 .taste-background, .taste  {
-    background-image: url('../img/taste.jpg');
+    background-image: url('../img/taste-mobile.jpg');
+    @include breakpoint('small') {
+        background-image: url('../img/taste.jpg');
+    }
 }
 
 .aroma-background, .aroma {
-    background-image: url('../img/aroma.jpg');
+    background-image: url('../img/aroma-mobile.jpg');
+    @include breakpoint('small') {
+        background-image: url('../img/aroma.jpg');
+    }
 }
 
 .gaze-background, .gaze {
-    background-image: url('../img/gaze.jpg');
+    background-image: url('../img/gaze-mobile.jpg');
+    @include breakpoint('small') {
+        background-image: url('../img/gaze.jpg');
+    }
 }
 
 .listen-background, .listen {
-    background-image: url('../img/listen.jpg');
+    background-image: url('../img/listen-mobile.jpg');
+    @include breakpoint('small') {
+        background-image: url('../img/listen.jpg');
+    }
 }
 
 .body-background {

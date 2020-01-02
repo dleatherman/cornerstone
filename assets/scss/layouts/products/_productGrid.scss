@@ -31,7 +31,7 @@
             width: calc((100% - 3rem) / 2);
         }
 
-        @include breakpoint("large") {
+        @include breakpoint("medium") {
             padding: 0 3rem;
             width: calc((100% - 3rem) / 4);
         }

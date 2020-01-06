@@ -87,6 +87,8 @@
 
 .account-content {
     @include grid-column(12);
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .account-content--fixed {
@@ -168,7 +170,6 @@
     .btn {
         font-size: 1rem;
         margin-bottom: 1rem;
-        padding: 0.5rem;
     }
 }
 
@@ -240,8 +241,36 @@
 */
 
 .page__type--account_addressbook {
-    .panel-body {
-        @include freight;
-        background-color: #fff;
+
+    .addresses__page {
+        .form-actions {
+            text-align: left;
+        }
     }
+    
+    .addresses__heading {
+        @include sweet-font;
+        margin: 0;
+        padding: 1rem 0;
+    }
+
+    .page-heading {
+        border-bottom: 1px solid stencilColor('light-pink');
+        padding-bottom: 1rem;
+    }
+
+    .addresses__header {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .addressList {
+        margin-left: 0;
+        margin-right: 0;
+        > li {
+            padding: 1rem 0 0;
+        }
+    }
+
 }

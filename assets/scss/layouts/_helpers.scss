@@ -104,6 +104,23 @@ pre {
          color: #fff;
       }
    }
+   &__account {
+      padding: 0.5rem;
+   }
+   &__text {
+      color: stencilColor('grey-2');
+      border-bottom: 1px solid stencilColor('grey-2');
+      line-height: 1.2;
+      padding: 0;
+      text-decoration: none;
+      &:hover {
+         border-bottom: 1px solid stencilColor('grey-4');
+         color: stencilColor('grey-4');
+      }
+      + .btn__text {
+         margin-left: 2rem;
+      }
+   }
 }
 .product__title--helper {
    @include domaine;

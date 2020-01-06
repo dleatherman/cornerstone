@@ -6,10 +6,16 @@ blog:
 {{#partial "page"}}
 <div class="container">
     {{> components/account/navigation account_page='addresses'}}
-    <div class="account account--fixed addresses-page">
-        <h2 class="page-heading">{{lang 'account.addresses.heading' }}</h2>
+    <main class="account account--fixed addresses__page">
+        <h1 class="page-heading">{{lang 'account.addresses.heading' }}</h1>
         <div class="account-body addresses-container">
-            {{> components/account/address-list }}
+            <div class="account-content">
+                <div class="addresses__header">
+                    <div class="addresses__heading">Shipping</div>
+                    <a class="btn btn__primary btn__account" href="{{urls.account.add_address}}">{{lang 'account.addresses.new_address' }}</a>
+                </div>
+                {{> components/account/address-list }}
+            </div>
         </div>
     </div>
 </div>

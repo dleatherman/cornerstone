@@ -4,12 +4,14 @@ blog:
         limit: {{theme_settings.homepage_blog_posts_count}}
 ---
 {{#partial "page"}}
-    {{!> components/account/navigation account_page='addresses'}}
+<div class="container">
+    {{> components/account/navigation account_page='addresses'}}
     <div class="account account--fixed addresses-page">
         <h2 class="page-heading">{{lang 'account.addresses.heading' }}</h2>
         <div class="account-body addresses-container">
             {{> components/account/address-list }}
         </div>
     </div>
+</div>
 {{/partial}}
 {{> layout/base page_content="account"}}

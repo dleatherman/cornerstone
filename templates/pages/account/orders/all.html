@@ -8,31 +8,35 @@ blog:
 ---
 
 {{#partial "page"}}
-{{!> components/account/navigation account_page='orders'}}
 
-<main class="account account--fixed">
-    <h1 class="page-heading">{{lang 'account.orders.heading' }}</h1>
-    {{#if customer.store_credit.value '>' 0}}
-    <div class="account-head">
-        <div class="alertBox alertBox--storeCredit">
-            {{{lang 'common.store_credit' store_credit=customer.store_credit.formatted}}}
+<div class="container">
+    {{> components/account/navigation account_page='orders'}}
+
+    <main class="account account--fixed">
+        <h1 class="page-heading">{{lang 'account.orders.heading' }}</h1>
+        {{#if customer.store_credit.value '>' 0}}
+        <div class="account-head">
+            <div class="alertBox alertBox--storeCredit">
+                {{{lang 'common.store_credit' store_credit=customer.store_credit.formatted}}}
+            </div>
         </div>
-    </div>
-    {{/if}}
-    <div class="account-body">
-        <section class="account-content">
-            {{#if customer.orders.length}}
-                {{> components/account/orders-list orders=customer.orders}}
-                {{> components/common/small-paginator pagination.orders}}
-            {{else}}
-                <div class="no-info">
-                    <p>{{lang 'account.orders.none' }}</p>
-                    <a class="button button--primary" href="/shop-all-products">{{lang 'create_account.created.continue'}}</a>
-                </div>
-            {{/if}}
-        </section>
-    </div>
-    {{{snippet 'account'}}}
-</main>
+        {{/if}}
+        <div class="account-body">
+            <section class="account-content">
+                {{#if customer.orders.length}}
+                    {{> components/account/orders-list orders=customer.orders}}
+                    {{> components/common/small-paginator pagination.orders}}
+                {{else}}
+                    <div class="no-info">
+                        <p>{{lang 'account.orders.none' }}</p>
+                        <a class="button button--primary" href="/shop-all-products">{{lang 'create_account.created.continue'}}</a>
+                    </div>
+                {{/if}}
+            </section>
+        </div>
+        {{{snippet 'account'}}}
+    </main>
+</div>
+
 {{/partial}}
 {{> layout/base page_content="account" page_title="Pepper - Orders" }}

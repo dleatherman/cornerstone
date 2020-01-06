@@ -5,16 +5,18 @@ blog:
 ---
 {{inject 'passwordRequirements' settings.password_requirements}}
 {{#partial "page"}}
-{{!> components/account/navigation account_page='settings'}}
-<div class="account account--fixed account-settings">
-    <h2 class="page-heading">{{lang 'account.settings.heading' }}</h2>
-    {{#if forms.edit_account.error}}
-    {{> components/common/alert-error forms.edit_account.error}}
-    {{/if}}
-    {{#if forms.edit_account.success}}
-    {{> components/common/alert-success forms.edit_account.success}}
-    {{/if}}
-    {{> components/account/edit-account}}
+<div class="container">
+    {{> components/account/navigation account_page='settings'}}
+    <div class="account account--fixed account-settings">
+        <h2 class="page-heading">{{lang 'account.settings.heading' }}</h2>
+        {{#if forms.edit_account.error}}
+        {{> components/common/alert-error forms.edit_account.error}}
+        {{/if}}
+        {{#if forms.edit_account.success}}
+        {{> components/common/alert-success forms.edit_account.success}}
+        {{/if}}
+        {{> components/account/edit-account}}
+    </div>
 </div>
 {{/partial}}
 {{> layout/base page_content="account" }}

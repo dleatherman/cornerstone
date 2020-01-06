@@ -4,12 +4,14 @@ blog:
         limit: {{theme_settings.homepage_blog_posts_count}}
 ---
 {{#partial "page"}}
-{{#if settings.show_wishlist}}
-    {{!> components/account/navigation account_page='wishlists'}}
-    <div class="account account--fixed wishlist-page">
-        <h2 class="page-heading">{{lang 'account.wishlists.heading' }}</h2>
-        {{> components/account/wishlist-list}}
-    </div>
-{{/if}}
+<div class="container">
+    {{#if settings.show_wishlist}}
+        {{> components/account/navigation account_page='wishlists'}}
+        <div class="account account--fixed wishlist-page">
+            <h2 class="page-heading">{{lang 'account.wishlists.heading' }}</h2>
+            {{> components/account/wishlist-list}}
+        </div>
+    {{/if}}
+</div>
 {{/partial}}
 {{> layout/base page_title="Pepper - Wish List" page_content="account" }}

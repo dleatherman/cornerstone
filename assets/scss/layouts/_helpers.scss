@@ -78,7 +78,7 @@ pre {
    @include breakpoint('medium') {
       font-size: 1.1rem;
       letter-spacing: 0.2em;
-      padding: rem 2rem;
+      padding: 0.75rem 2rem;
    }
    &__block {
       display: block;
@@ -92,6 +92,16 @@ pre {
       &:hover {
          background-color: #fff;
          color: stencilColor('navy');
+      }
+   }
+   &__outline {
+      background: #fff;
+      border: 1px solid stencilColor('navy');
+      color: stencilColor('navy');
+      &:hover {
+         background-color: stencilColor('navy');
+         border: 1px solid stencilColor('navy');
+         color: #fff;
       }
    }
 }

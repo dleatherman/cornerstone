@@ -268,13 +268,13 @@
         "breadcrumb": "Your Account",
         "nav": {
             "overview": "Overview",
-            "orders": "Orders",
+            "orders": "Order History",
             "returns": "Returns",
             "messages": "Messages ({num_new_messages})",
-            "wishlists": "Wish Lists ({num_wishlists})",
+            "wishlists": "Wish Lists",
             "recently_viewed": "Recently Viewed",
             "settings": "My Details",
-            "addresses": "Addresses",
+            "addresses": "Address Book",
             "payment_methods": "Payment Methods"
         },
         "mobile_nav": {
@@ -282,7 +282,7 @@
             "wishlists": "Wish Lists"
         },
         "addresses": {
-            "heading": "Addresses",
+            "heading": "Address Book",
             "add_heading": "Add New Address",
             "primary": "Primary",
             "phone": "Phone:",
@@ -295,7 +295,7 @@
             "merchant_said": "{store_name} said:"
         },
         "orders": {
-            "heading": "Orders",
+            "heading": "Order History",
             "none": "You haven't placed any orders with us. When you do, their status will appear on this page.",
             "return": {
                 "already_returned": "This order contains no products that can be returned. Have you already returned all of the items within this order?",
@@ -316,8 +316,8 @@
             "order_placed": "Order Placed",
             "last_update": "Last Update",
             "list": {
-                "order_number": "Order: #{number}",
-                "product_details": "{num_products, plural, one {1 product} other {# products}} totaling {cost}"
+                "order_number": "Order #{number}",
+                "product_details": "{cost}"
             },
             "details": {
                 "heading": "Order #{number}",
@@ -329,7 +329,7 @@
                 "how_to_pay": "Here's how to pay for your order:",
                 "order_details": "Order Details",
                 "order_total": "Order total:",
-                "order_status": "Order status:",
+                "order_status": "Status",
                 "payment_date": "Order date:",
                 "payment_method": "Payment method:",
                 "comments": "Order Comments",

@@ -4,25 +4,27 @@ blog:
         limit: {{theme_settings.homepage_blog_posts_count}}
 ---
 {{#partial "page"}}
-{{!> components/account/navigation account_page='recent_items'}}
-<div class="account account--fixed">
-    <h2 class="page-heading">{{lang 'account.recent_items.heading' }}</h2>
+<div class="container">
+    {{> components/account/navigation account_page='recent_items'}}
+    <div class="account account--fixed">
+        <h2 class="page-heading">{{lang 'account.recent_items.heading' }}</h2>
+        
+        {{#unless customer.recently_viewed_products.items}}
+            <div class="no-info">
+                <p>{{lang 'account.recent_items.no_items' }}</p>
+                <a class="button button--primary" href="/shop-all-products">{{lang 'create_account.created.continue'}}</a>
+            </div>
+        {{/unless}}
     
-    {{#unless customer.recently_viewed_products.items}}
-        <div class="no-info">
-            <p>{{lang 'account.recent_items.no_items' }}</p>
-            <a class="button button--primary" href="/shop-all-products">{{lang 'create_account.created.continue'}}</a>
+        {{#if customer.recently_viewed_products.items}}
+        <div class="recent-items">
+            <form action="{{urls.compare}}" method="post" class="items-grid">
+                {{> components/products/grid products=customer.recently_viewed_products.items show_compare=customer.recently_viewed_products.show_compare}}
+            </form>
         </div>
-    {{/unless}}
-
-    {{#if customer.recently_viewed_products.items}}
-    <div class="recent-items">
-        <form action="{{urls.compare}}" method="post" class="items-grid">
-            {{> components/products/grid products=customer.recently_viewed_products.items show_compare=customer.recently_viewed_products.show_compare}}
-        </form>
+        {{/if}}
+    
     </div>
-    {{/if}}
-
 </div>
 {{/partial}}
 {{> layout/base page_content="account"}}

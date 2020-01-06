@@ -5,6 +5,7 @@ blog:
 ---
 {{#partial "page"}}
 {{#if settings.show_wishlist}}
+<div class="container">
     {{> components/account/navigation account_page='wishlists'}}
     <div class="account account--fixed">
         <h2 class="page-heading">
@@ -30,10 +31,11 @@ blog:
             <div class="no-info">
                 <p>Your wish list is empty.<br />
                     When you add items to your wish list they will appear here.</p>
-                <a class="button button--primary" href="/shop-all-products">{{lang 'create_account.created.continue'}}</a>
+                <a class="btn btn__primary btn__account" href="/shop-all-products">{{lang 'create_account.created.continue'}}</a>
             </div>
         {{/if}}
     </div>
+</div>
 {{/if}}
 {{/partial}}
 {{> layout/base page_content="account" }}

@@ -21,6 +21,9 @@
         margin: 0 auto;
         width: grid-calc(10, $total-columns);
     }
+    p {
+        @include freight;
+    }
 }
 
 .account--fixedSmall {
@@ -273,4 +276,56 @@
         }
     }
 
+}
+
+/*
+    WISH LISTs
+*/
+
+.page__type--wishlists {
+    .page-heading {
+        border-bottom: 1px solid stencilColor('light-pink');
+        padding-bottom: 1rem;
+    }
+    .wishlists-table {
+        @include domaine;
+    }
+    .table--line .table-thead {
+        border-color: stencilColor('grey-2');
+    }
+    .table thead tr th,
+    .table thead tr td {
+        font-weight: 400;
+    }
+    .table a:not(.btn) {
+        color: stencilColor('grey-2');
+    }
+
+    .table {
+        input[type="submit"] {
+            -webkit-appearance: none;
+            appearance: none;
+            line-height: 1.5;
+        }
+    }
+
+    .alertBox--info {
+        @include freight;
+    }
+
+    .modal {
+        transform: translate(-50%, -50%);
+        h1 {
+            @include domaine;
+            color: stencilColor('navy');
+        }
+        p,
+        .form-label {
+            @include freight;
+            color: stencilColor('navy');
+        }
+        small {
+            @include sweet-font;
+        }
+    }
 }

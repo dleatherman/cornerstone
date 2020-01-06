@@ -23,11 +23,11 @@
                 <form method="post" action="{{delete_url}}" class="form">
                     <fieldset class="form-fieldset">
                         {{#if is_public}}
-                            <a href="{{share_url}}" class="button button--primary button--small"
+                            <a href="{{share_url}}" class="btn btn__primary btn__account"
                            role="button">{{lang 'common.share'}}</a>
                         {{/if}}
-                        <a href="{{edit_url}}" class="button button--small" data-wishlist>{{lang 'common.edit'}}</a>
-                        <input type="submit" value="{{lang 'common.delete'}}" class="button button--small" data-wishlist-delete>
+                        <a href="{{edit_url}}" class="btn btn__outline btn__account" data-wishlist>{{lang 'common.edit'}}</a>
+                        <input type="submit" value="{{lang 'common.delete'}}" class="btn btn__outline btn__account" data-wishlist-delete>
                     </fieldset>
                 </form>
             </td>

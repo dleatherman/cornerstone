@@ -5,6 +5,7 @@
             <div class="account-order-body">
                 <div class="account-order-heading">
                     <h5 class="account-product-order-title">
+                        {{!-- <p>{{lang 'account.orders.list.order_number' number=this.id}}</p> --}}
                         <a href="{{this.details_url}}">{{lang 'account.orders.list.order_number' number=this.id}}</a>
                     </h5>
 
@@ -29,7 +30,21 @@
                 <div class="account-product-info">
                     <h5 class="account-product-title">{{name}}</h5>
                     <div class="account-product-qty">Qty. {{quantity}}</div>
-                    <div class="account-product-price">{{price.formatted}}</div>
+                    {{#if shipments}}
+                        {{#if shipping_track.url}}
+                        <a href="{{shipping_track.url}}">
+                            {{/if}}
+
+                            {{#if show_shipping_method}}
+                            {{shipping_track.number}} &mdash; {{shipping_method}}
+                            {{else}}
+                            {{shipping_track.number}}
+                            {{/if}}
+
+                            {{#if shipping_track.url}}
+                        </a>
+                        {{/if}}
+                    {{/if}}
                 </div>
                 {{/each}}
 

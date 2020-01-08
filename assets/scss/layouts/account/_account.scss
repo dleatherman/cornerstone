@@ -120,6 +120,10 @@
     }
 }
 
+.account-list {
+    @include clearfix;
+}
+
 .account-listItem {
     @include freight;
     border-bottom: 0;
@@ -177,7 +181,7 @@
 }
 
 .account-product-figure {
-    flex: 1;
+    // flex: 1;
     margin: 0 2rem 2rem 0;
     max-width: 175px;
     width: 25%;
@@ -196,6 +200,18 @@
         font-size: 1.5rem;
         font-weight: 300;
         line-height: 1.2;
+    }
+    .account-product-price {
+        float: none;
+    }
+}
+
+.body.account .container .go-back-link {
+    float: left;
+    position: relative;
+    top: 0;
+    @include breakpoint('medium') {
+        top: -7px;
     }
 }
 
@@ -219,7 +235,7 @@
     @include sweet-font(stencilColor('grey-2'), 300);
 }
 
-.account-product-description {
+p.account-product-description {
     @include sweet-font(stencilColor('grey'), 300);
     font-size: 1.25rem;
     margin-bottom: 0;
@@ -229,6 +245,10 @@
     @include sweet-font(stencilColor('grey'), 300);
     background: transparent;
     padding: 0;
+}
+
+.account-orderTotal {
+    clear: both;
 }
 
 /*

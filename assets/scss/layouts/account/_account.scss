@@ -16,6 +16,12 @@
     }
 }
 
+.forgot-password {
+    .account .page-heading {
+        text-align: center;
+    }
+}
+
 .account--fixed {
     @include breakpoint("medium") {
         margin: 0 auto;

@@ -48,14 +48,16 @@ blog:
         </section>
 
         {{> components/blog/featured-blog-post product=product}}
-        
-        {{>components/category/featured-by-sense 
-            items=product.related_products
-            main-title="You might also like"
-            subtitle="because we know you’re liking what you see"
-            link-text="Shop all"
-            link-url="/shop"
-        }}
+
+        {{#if product.related_products}}
+            {{>components/category/featured-by-sense 
+                items=product.related_products
+                main-title="You might also like"
+                subtitle="because we know you’re liking what you see"
+                link-text="Shop all"
+                link-url="/shop"
+            }}
+        {{/if}}
         <div class="story-archive container">
             {{#each (limit blog.recent_posts 3)}}
             {{> components/blog/post post=this sense=true}}

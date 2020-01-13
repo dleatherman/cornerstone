@@ -5,7 +5,7 @@
         line-height: 1.2;
     }
     
-    h1 {
+    h1:not(.page__pullquote--heading) {
         font-size: 3rem;
         margin: 0 0 4rem;
     }
@@ -16,23 +16,23 @@
     }
     
     .hero {
-        background: stencilColor("colored-bg") url('https://cdn11.bigcommerce.com/s-t82b4z0jtn/product_images/uploaded_images/beach-mobile-crop.jpg?t=1567028451') no-repeat;
-        background-position: center;
+        background: stencilColor("colored-bg") url('../img/hero-about.png') no-repeat;
+        background-position: center center;
         background-size: cover;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        min-height: 400px;
         padding: 4rem 0;
         text-align: center;
         
-        @include breakpoint($screen-xmedium) {
-            background-image: url('https://cdn11.bigcommerce.com/s-t82b4z0jtn/product_images/uploaded_images/beach-darker-crop.jpg?t=1567018811');
-        }
-    
         @include breakpoint("medium") {
-            padding: 8rem 0;
+            align-items: flex-end;
             text-align: left;
         }
     
         @include breakpoint("large") {
-            padding: 16rem 0;
+            height: calc(100vh - 165px);
         }
         
         .container {
@@ -93,7 +93,7 @@
                 order: 5;
             }
             @include breakpoint("large") {
-                padding: 0 14%;
+                padding: 3rem 7% 0;
             }
         }
     }

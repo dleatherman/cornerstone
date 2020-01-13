@@ -1,4 +1,5 @@
-.senses-page {
+.senses-page,
+.page__type--product {
   background: white;
   .secondary-menu {
     position: relative;
@@ -85,7 +86,7 @@
   }
 
   @include breakpoint('medium') {
-    height: 70vh;
+    height: calc(100vh - 165px);
     &:before {
       background-color: transparent;
     }

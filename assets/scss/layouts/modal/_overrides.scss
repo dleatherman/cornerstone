@@ -22,7 +22,12 @@
     transform: none;
 }
 
-.swal2-modal {
+.modal.modal--alert {
+    transform: translate(-50%, -50%);
+}
+
+.swal2-modal,
+.modal--alert {
     background-color: white !important;
     border-radius: $alert-modal-borderRadius;
     font-family: stencilFontFamily("sweet-font");
@@ -30,10 +35,15 @@
     width: 100% !important;
     border-radius: 0;
     padding: 4rem 2rem 3rem !important;
-    // min-height: 350px;
+
+    .modal-header {
+        border: 0;
+        padding: 0;
+    }
 
 
-    .swal2-title {
+    .swal2-title,
+    .modal-header-title {
         color: stencilColor("navy");
         font-size: 1.5rem;
         font-family: stencilFontFamily("domaine-font");
@@ -49,7 +59,8 @@
         }
     }
 
-    .swal2-content {
+    .swal2-content,
+    .modal-content {
         @include freight(stencilColor('grey-2'));
         font-size: 1rem;
 

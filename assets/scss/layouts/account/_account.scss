@@ -305,6 +305,24 @@ p.account-product-description {
 }
 
 /*
+    RECENTLY VIEWED
+*/
+
+.account .recent-items {
+    .productGrid {
+        justify-content: flex-start;
+    }
+    .product {
+        @include breakpoint('medium') {
+            padding: 0 1rem 0 0;
+            &:nth-child(4n+4) {
+                clear: both;
+            }
+        }
+    }
+}
+
+/*
     WISH LISTs
 */
 

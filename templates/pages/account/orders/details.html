@@ -11,7 +11,7 @@ blog:
     <main class="account account--fixed">
         <h2 class="page-heading title">
             <a class="go-back-link" href="/account.php?action=order_status">
-                <img src="{{cdn 'icons/back-arrow.svg'}}" />
+                &larr; Return to order history
             </a>
         </h2>
         <div class="account-body account-orders-body">
@@ -19,15 +19,13 @@ blog:
                 {{> components/common/alert-info message}}
             {{/each}}
 
-            <div class="account-order-heading">
-                <h5 class="account-product-order-title">
-                    {{lang 'account.orders.details.heading' number=order.id}}
-                </h5>
-            
-                <p class="account-product-description">{{lang 'account.orders.list.product_details' cost=order.total.formatted}}</p>
-            </div>
-
             <div class="account-content orders-container">
+
+                <div class="account-order-heading">
+                    <h5 class="account-product-order-title">
+                        {{lang 'account.orders.details.heading' number=order.id}}
+                    </h5>
+                </div>
                 {{> components/account/order-contents order=order}}
 
                 <ul class="account-list">
@@ -43,7 +41,7 @@ blog:
 
             </div>
             <aside class="account-sidebar">
-                <section class="account-sidebar-block">
+                <!-- <section class="account-sidebar-block">
                     <h3 class="account-heading">{{lang 'account.orders.details.order_details'}}</h3>
                     <dl class="definitionList">
                         <dt class="definitionList-key">{{lang 'account.orders.details.order_status'}}</dt>
@@ -69,12 +67,12 @@ blog:
 
                     <button data-print-invoice="{{order.invoice_url}}"
                         class="button">{{lang 'account.orders.details.print_invoice'}}</button>
-                </section>
+                </section> -->
 
                 {{#if order.shipping_address}}
                 <section class="account-sidebar-block">
-                    <h3 class="account-heading">{{lang 'account.orders.details.ship_to'}}</h3>
-                    <ul class="account-order-address">
+                    <p class="addresses__heading">{{lang 'account.orders.details.ship_to'}}</p>
+                    <ul class="address-details">
                         <li>{{order.shipping_address.full_name}}</li>
                         <li>{{order.shipping_address.company}}</li>
                         <li>{{order.shipping_address.address_lines.[0]}}</li>
@@ -87,17 +85,45 @@ blog:
                 {{else}}
                 {{#if order.has_multiple_shipping_addresses}}
                 <section class="account-sidebar-block">
-                    <h3 class="account-heading">{{lang 'account.orders.details.ship_to'}}</h3>
-                    <div class="account-order-address">
+                    <p class="addresses__heading">{{lang 'account.orders.details.ship_to'}}</p>
+                    <div class="address-details">
                         {{lang 'account.orders.details.ship_to_multi_text'}}
                     </div>
                 </section>
                 {{/if}}
+                {{/if}}{{#if shipments}}
+                <section class="account-sidebar-block">
+                    <p class="addresses__heading">{{lang 'account.orders.details.shipments.header'}}</p>
+                    {{#each shipments}}
+                    <dl class="definitionList address-details">
+                        <dt class="definitionList-key">{{lang 'account.orders.details.shipments.date'}}:</dt>
+                        <dd class="definitionList-value">{{date_shipped}}</dd>
+                        <dt class="definitionList-key">{{lang 'account.orders.details.shipments.method'}}:</dt>
+                        <dd class="definitionList-value">{{shipping_provider}}</dd>
+                        <dt class="definitionList-key">{{lang 'account.orders.details.shipments.link'}}:</dt>
+                        <dd class="definitionList-value">
+                            {{#if shipping_track.url}}
+                            <a href="{{shipping_track.url}}">
+                                {{/if}}
+                
+                                {{#if show_shipping_method}}
+                                {{shipping_track.number}} &mdash; {{shipping_method}}
+                                {{else}}
+                                {{shipping_track.number}}
+                                {{/if}}
+                
+                                {{#if shipping_track.url}}
+                            </a>
+                            {{/if}}
+                        </dd>
+                    </dl>
+                    {{/each}}
+                </section>
                 {{/if}}
 
                 <section class="account-sidebar-block">
-                    <h3 class="account-heading">{{lang 'account.orders.details.bill_to'}}</h3>
-                    <ul class="account-order-address">
+                    <p class="addresses__heading">{{lang 'account.orders.details.bill_to'}}</p>
+                    <ul class="address-details">
                         <li>{{order.billing_address.full_name}}</li>
                         <li>{{order.billing_address.company}}</li>
                         <li>{{order.billing_address.address_lines.[0]}}</li>
@@ -108,39 +134,9 @@ blog:
                     </ul>
                 </section>
 
-                {{#if shipments}}
-                <section class="account-sidebar-block">
-                    <h3 class="account-heading">{{lang 'account.orders.details.shipments.header'}}</h3>
-                    {{#each shipments}}
-                    <dl class="definitionList">
-                        <dt class="definitionList-key">{{lang 'account.orders.details.shipments.date'}}:</dt>
-                        <dd class="definitionList-value">{{date_shipped}}</dd>
-                        <dt class="definitionList-key">{{lang 'account.orders.details.shipments.method'}}:</dt>
-                        <dd class="definitionList-value">{{shipping_provider}}</dd>
-                        <dt class="definitionList-key">{{lang 'account.orders.details.shipments.link'}}:</dt>
-                        <dd class="definitionList-value">
-                            {{#if shipping_track.url}}
-                            <a href="{{shipping_track.url}}">
-                                {{/if}}
-
-                                {{#if show_shipping_method}}
-                                {{shipping_track.number}} &mdash; {{shipping_method}}
-                                {{else}}
-                                {{shipping_track.number}}
-                                {{/if}}
-
-                                {{#if shipping_track.url}}
-                            </a>
-                            {{/if}}
-                        </dd>
-                    </dl>
-                    {{/each}}
-                </section>
-                {{/if}}
-
                 {{#if order.comments}}
                 <section class="account-sidebar-block">
-                    <h3 class="account-heading">{{lang 'account.orders.details.comments'}}</h3>
+                    <p class="addresses__heading">{{lang 'account.orders.details.comments'}}</p>
                     <p>{{order.comments}}</p>
                 </section>
                 {{/if}}

@@ -15,6 +15,10 @@ body {
     padding-top: 0;
 }
 
+.form-input {
+    @include freight;
+}
+
 .body {
     background: white;
     // margin-top: spacing("single"); // 1

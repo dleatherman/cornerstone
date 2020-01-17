@@ -98,6 +98,17 @@
     @include grid-column(12);
     padding-left: 0;
     padding-right: 0;
+    &.orders-container {
+        @include breakpoint('medium') {
+            @include grid-column(8);
+            padding-left: 0;
+        }
+        + .account-sidebar {
+            @include breakpoint('medium') {
+                @include grid-column(4);
+            }
+        }
+    }
 }
 
 .account-content--fixed {
@@ -213,11 +224,11 @@
 }
 
 .body.account .container .go-back-link {
-    float: left;
-    position: relative;
-    top: 0;
+    @include sweet-font;
+    display: block;
+    font-size: 1.1rem;
     @include breakpoint('medium') {
-        top: -7px;
+        letter-spacing: 0.1em;
     }
 }
 
@@ -258,6 +269,25 @@ p.account-product-description {
 }
 
 /*
+    ORDER DETAILS
+*/
+
+.page__type--account_order {
+    .addresses__heading {
+        @include sweet-font;
+        font-size: 1.1;
+        margin: 0;
+        padding: 1rem 0;
+    }
+
+    .address-details,
+    .definitionList-key {
+        @include freight;
+        color: stencilColor('navy');
+    }
+}
+
+/*
     EDIT ACCOUNT
 */
 
@@ -281,6 +311,10 @@ p.account-product-description {
         @include sweet-font;
         margin: 0;
         padding: 1rem 0;
+    }
+
+    .address-details {
+        @include freight;
     }
 
     .page-heading {

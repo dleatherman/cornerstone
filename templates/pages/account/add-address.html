@@ -5,13 +5,13 @@ blog:
 ---
 {{#partial "page"}}
     
-
+<div class="container">
     {{> components/account/navigation account_page='addresses'}}
 
-    <div class="account account--fixed add-address">
+    <main class="account account--fixed add-address">
         <h2 class="page-heading title">
             <a class="go-back-link" href="{{urls.account.addresses}}">
-                <img src="{{cdn 'icons/back-arrow.svg'}}" />
+                &larr; Return to address book
             </a>
             {{#if forms.address.address_id}}
                 {{lang 'forms.address.edit.heading'}}
@@ -47,7 +47,9 @@ blog:
                 </div>
             </form>
         </div>
-    </div>
+    </main>
+
+</div>
 
 {{/partial}}
 {{> layout/base page_content="account" }}

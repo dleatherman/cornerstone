@@ -169,14 +169,14 @@
         "sorter": {
             "relevance": "Relevance",
             "sort_by": "Sort By:",
-            "featured": "Featured Items",
+            "featured": "Featured",
             "top_sellers": "Best Selling",
-            "newest": "Newest Items",
+            "newest": "Just in",
             "alpha_asc": "A to Z",
             "alpha_desc": "Z to A",
             "reviews": "By Review",
-            "price_asc": "Price: Ascending",
-            "price_desc": "Price: Descending"
+            "price_asc": "Price (Low to High)",
+            "price_desc": "Price (High to Low)"
         },
         "loading": "Loading",
         "month": "Month",

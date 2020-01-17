@@ -160,6 +160,17 @@ body {
     font-weight: stencilFontWeight("optimizedCheckout-buttonPrimary-font");
     letter-spacing: 0.1em;
 
+    -webkit-appearance: none;
+    appearance: none;
+    display: inline-block;
+    font-family: stencilFontFamily('sweet-font');
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+    padding: 0.75rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
     &:focus,
     &:hover,
     &:active {
@@ -188,13 +199,16 @@ body {
 
 .optimizedCheckout-buttonSecondary {
     text-transform: uppercase;
-    background-color: stencilColor("navy");
-    border: 1px solid stencilColor("navy");
-    color: stencilColor("grey");
+    // background-color: stencilColor("navy");
+    // border: 1px solid stencilColor("navy");
+    border: 0;
+    border-bottom: 1px solid stencilColor('grey-2');
+    color: stencilColor("grey-2");
     font-family: stencilFontFamily("sweet-font");
     font-weight: stencilFontWeight("optimizedCheckout-buttonPrimary-font");
     border-radius: 0;
     letter-spacing: 0.1em;
+    padding: 0;
     
     &:focus,
     &:hover,
@@ -320,6 +334,7 @@ $optimizedCheckout-input--error-boxShadow: 0 0 3px transparentize(stencilColor("
     border-radius: 0;
     background-color: white;
     border-color: stencilColor("grey");
+    box-shadow: none;
     color: stencilColor("navy");
     max-height: 44px;
 

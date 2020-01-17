@@ -365,3 +365,15 @@
 
     }
 }
+
+
+.banners {
+    @include sweet-font;
+    background-color: #c6c7c6;
+    color: stencilColor('navy');
+    padding: 0.5rem;
+    text-transform: uppercase;
+    a {
+        color: stencilColor('navy');
+    }
+}

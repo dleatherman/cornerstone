@@ -19,11 +19,50 @@
 
 .modal {
     top: 0;
-    transform: none;
+    // transform: none;
 }
 
 .modal.modal--alert {
     transform: translate(-50%, -50%);
+}
+
+.modal .wishlist-add {
+    h1 {
+        @include domaine;
+        color: stencilColor('navy');
+    }
+    p,
+    .form-label {
+        @include freight;
+        color: stencilColor('navy');
+    }
+    small {
+        @include sweet-font;
+    }
+}
+
+.modal-header {
+    border: 0;
+}
+
+.modal-header-title {
+    color: stencilColor("navy");
+    font-size: 1.5rem;
+    font-family: stencilFontFamily("domaine-font");
+    font-weight: 300;
+    border-bottom: 1px solid #F2E0D3;
+    padding-bottom: .8rem;
+    width: 100%;
+    margin: 0 auto;
+
+    @include breakpoint("small") {
+        // width: 80%;
+        font-size: 2.1618rem;
+    }
+}
+
+.modal-body {
+    text-align: center;
 }
 
 .swal2-modal,
@@ -42,8 +81,7 @@
     }
 
 
-    .swal2-title,
-    .modal-header-title {
+    .swal2-title {
         color: stencilColor("navy");
         font-size: 1.5rem;
         font-family: stencilFontFamily("domaine-font");

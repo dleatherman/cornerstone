@@ -76,7 +76,6 @@
         .btn {
             padding: .35rem 1.25rem;
             position: relative;
-            z-index: 2;
         }
         @include breakpoint('medium') {
             text-align: left;
@@ -88,17 +87,21 @@
         background-image: url('../img/hero-homepage-kit.png');
         display: flex;
         min-height: calc(100vh - 165px);
-        padding: 6rem 0 4rem;
+        padding: 4rem 0;
     }
 }
 
 .senses-explorer-feature {
+    align-items: center;
+    display: flex;
     height: 100%;
+    justify-content: flex-start;
     opacity: 0;
     position: absolute;
     transition: all 0.2s ease-in-out;
     top: 0;
     width: 100%;
+    z-index: -1;
     
     &.active {
         opacity: 1;
@@ -107,18 +110,31 @@
 }
 
 .senses-explorer-title {
+    font-size: 2rem;
+    line-height: 1.4;
+    letter-spacing: 1px;
     font-family: stencilFontFamily("domaine-font");
-    font-size: 2.75rem;
-    line-height: 1.1;
-    
-    @include breakpoint($screen-xmedium) {
-        font-size: 2rem;
-        max-width: 500px;
+    margin: 0;
+    text-align: center;
+    color: white;
+    font-weight: 300;
+    position: relative;
+    text-transform: capitalize;
+    z-index: 1;
+    word-spacing: 100vw;
+
+    @include breakpoint("small") {
+        font-size: 2.8125rem;
+        line-height: 1.4;
     }
-    
-    @include breakpoint($screen-xlarge) {
-        font-size: 2.75rem;
-        max-width: 600px;
+
+    @include breakpoint("medium") {
+        font-size: 3.125rem;
+        text-align: left;
+    }
+
+    @include breakpoint("xlarge") {
+        font-size: 3.4375rem;
     }
 }
 
@@ -189,10 +205,18 @@
     font-size: 1.25rem;
     letter-spacing: 2px;
     line-height: 1;
-    padding: 2rem 0;
+    padding: 0;
     text-align: center;
     text-transform: uppercase;
+    transition: all .2s ease-in-out;
     width: 20%;
+    a {
+        color: inherit;
+        display: block;
+        padding: 2rem 0;
+        text-align: center;
+        text-decoration: none;
+    }
 }
 
 .featured-stories {

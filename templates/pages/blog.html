@@ -23,18 +23,19 @@ blog:
         <div class="senses-explorer senses-explorer-feature" style="background-image: url({{image}});">
             <div class="senses-explorer-text container">
                 <p class="senses-explorer-title">{{{heading}}}</p>
+                {{!-- 
                 <p class="senses-explorer-description">{{{text}}}</p>
-                {{!-- <p class="senses-explorer-prompt">explore the senses</p> --}}
+                --}}
             </div>
         </div>
         {{/each}}
     </div>
     <ul class="senses-menu">
-        <li class="senses-menu-item touch-texture texture">touch</li>
-        <li class="senses-menu-item taste-texture texture">taste</li>
-        <li class="senses-menu-item aroma-texture texture">aroma</li>
-        <li class="senses-menu-item gaze-texture texture">gaze</li>
-        <li class="senses-menu-item listen-texture texture">listen</li>
+        <li class="senses-menu-item touch-texture texture"><a href="/touch/">touch</a></li>
+        <li class="senses-menu-item taste-texture texture"><a href="/taste/">taste</a></li>
+        <li class="senses-menu-item aroma-texture texture"><a href="/aroma/">aroma</a></li>
+        <li class="senses-menu-item gaze-texture texture"><a href="/gaze/">gaze</a></li>
+        <li class="senses-menu-item listen-texture texture"><a href="/listen/">listen</a></li>
     </ul>
     <script>
         function indexInParent(node) {
@@ -51,10 +52,10 @@ blog:
             senseFeatures = document.querySelectorAll('.senses-explorer-feature');
         for (var s = 0; s < senses.length; s++) {
             senses[s].addEventListener('mouseover', function() {
-                senseFeatures[indexInParent(event.target)].classList.add('active');
+                senseFeatures[indexInParent(event.target.parentNode)].classList.add('active');
             });
             senses[s].addEventListener('mouseout', function() {
-                senseFeatures[indexInParent(event.target)].classList.remove('active');
+                senseFeatures[indexInParent(event.target.parentNode)].classList.remove('active');
             });
         }
     </script>

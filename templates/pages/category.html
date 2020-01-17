@@ -21,10 +21,10 @@ category:
 {{{snippet 'categories'}}}
 
 {{#if category.faceted_search_enabled}}
-    <div class="page-sidebar filters-container" id="faceted-search-container">
-        {{!> components/products/filter sort=pagination.category.sort}}
+    <aside class="page-sidebar filters-container" id="faceted-search-container">
+        {{> components/products/filter sort=pagination.category.sort}}
         {{> components/category/sidebar}}
-    </div>
+    </aside>
     {{> components/faceted-search/filter-selected category}}
 {{/if}}
 {{!> components/common/mobile-order-sort }}

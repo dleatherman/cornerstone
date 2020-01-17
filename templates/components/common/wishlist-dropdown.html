@@ -23,7 +23,11 @@
             </li>
             {{/if}}
             <li>
-                <a data-wishlist class="button" href="/wishlist.php?action=addwishlist&product_id={{product.id}}">{{lang 'account.wishlists.create_new'}}</a>
+                {{#if customer}}
+                    <a data-wishlist class="button" href="/wishlist.php?action=addwishlist&product_id={{product.id}}">{{lang 'account.wishlists.create_new'}}</a>
+                {{else}}
+                    <a data-wishlist class="button" href="/wishlist.php?action=addwishlist&product_id={{product.id}}">Sign in to Add Items to Your Wish List</a>
+                {{/if}}
             </li>
         </ul>
     </form>

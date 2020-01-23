@@ -6,8 +6,7 @@ blog:
 {{inject 'passwordRequirements' settings.password_requirements}}
 {{#partial "page"}}
     <h1 class="page-heading">{{lang 'create_account.heading' }}</h1>
-    <p>Create a Pepper account and get all the goods:<br />
-    Quick Check Out, Subscription Changes, Wish Lists and More!</p>
+    <p>Create a Pepper account and get all the goods.</p>
     <p>
         <i>Already have an account? <a href="/login.php">Login</a> here.</i>
     </p>
@@ -23,9 +22,9 @@ blog:
                         {{#each forms.create_account.account_fields }}
                             {{{dynamicComponent 'components/common/forms'}}}
                         {{/each}}
-                        {{!-- {{#each forms.create_account.address_fields }}
+                        {{#each forms.create_account.address_fields }}
                             {{{dynamicComponent 'components/common/forms'}}}
-                        {{/each}} --}}
+                        {{/each}}
                         {{inject 'required' (lang 'common.required')}}
                         {{inject 'state_error' (lang 'errors.state_error')}}
                     </div>

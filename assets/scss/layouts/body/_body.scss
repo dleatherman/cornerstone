@@ -50,7 +50,8 @@ body {
         align-items: center;
 
         @include breakpoint("small"){
-            height: calc(100vh - 90px);
+            height: auto;
+            min-height: calc(100vh - 90px);
         }
     }
 
@@ -127,7 +128,8 @@ body {
     }
 
     &.create-account {
-        height: calc(100vh - 90px);
+        height: auto;
+        min-height: calc(100vh - 90px);
         padding: 40px 0 20px;
     }
 

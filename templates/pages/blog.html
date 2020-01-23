@@ -15,7 +15,7 @@ blog:
                     <img src="{{cdn 'img/brand-couples-kit.png'}}" alt="">
                 </div>
                 <div class="senses-explorer--cta">
-                    <a href="/kit/" class="btn btn__primary">Pre-Order</a>
+                    <a href="/kit/" class="btn btn__primary">Buy now</a>
                 </div>
             </div>
         </div>
@@ -81,7 +81,7 @@ blog:
         </div>
     </div>
     <div class="story-archive container">
-        <h1>Today&rsquo;s Top Stories</h1>
+        <h1>More Stories</h1>
         {{#each blog.posts}}
             {{#contains (join (pluck tags 'name') ', ') 'featured-home' }}
             {{else}}

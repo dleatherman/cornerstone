@@ -17,27 +17,22 @@
 
 @font-face {
     font-family: "SweetSansPro";
-    src: url("{{cdn 'fonts/SweetSansPro-Regular.otf'}}");
+    src: url("../fonts/SweetSansPro-Regular.otf");
 }
 
 @font-face {
     font-family: "DomaineDisp";
-    src: url("{{cdn 'fonts/DomaineDisp-Regular.otf'}}");
+    src: url("../fonts/DomaineDisp-Regular.otf");
 }
 
 @font-face {
     font-family: "FreightText";
-    src: url("{{cdn 'fonts/FreightText-Book.otf'}}");
+    src: url("../fonts/FreightText-Book.otf");
 }
 
 @font-face {
     font-family: "RollerscriptSmooth";
-    src: url("{{cdn 'fonts/Rollerscript-Smooth.otf'}}");
-}
-
-@font-face {
-    font-family: "Avenir";
-    src: url("{{cdn 'fonts/Avenir.ttc'}}");
+    src: url("../fonts/Rollerscript-Smooth.otf");
 }
 
 body {

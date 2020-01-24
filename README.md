@@ -1,3 +1,15 @@
+### Cornerstone Base with Pepper Customizations
+
+You may need to use node version manager 8.16 to run the `stencil-cli` required to develop locally.
+
+### Starting local dev with stencil-cli
+
+- Install NVM with shell script: `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash`
+- Verify install: `nvm --version`
+- Install and switch to 8.16 for `stencil-cli` by running `nvm install 8.16` and `nvm use 8.16`
+- Copy the stencil sample config for custom templates: `cp SAMPLE-stencil .stencil`, adding an accessToken and normalStoreUrl if needed
+- Run `stencil start` and open `http://localhost:3000/`
+
 # Cornerstone
 [![Build Status](https://travis-ci.org/bigcommerce/cornerstone.svg?branch=master)](https://travis-ci.org/bigcommerce/cornerstone)
 

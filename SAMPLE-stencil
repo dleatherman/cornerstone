@@ -1,0 +1,25 @@
+{
+  "normalStoreUrl": "https://peppertogether.com",
+  "accessToken": "",
+  "port": 3000,
+  "customLayouts": {
+    "brand": {},
+    "category": {
+      "touch-page.html": "/touch/",
+      "taste-page.html": "/taste/",
+      "aroma-page.html": "/aroma/",
+      "gaze-page.html": "/gaze/",
+      "listen-page.html": "/listen/"
+    },
+    "page": {
+      "about-us.html": "/about-us/",
+      "terms-and-services.html": "/terms-of-service/",
+      "privacy.html": "/privacy-policy/",
+      "contact-us.html": "/contact-us/",
+      "couples-kit-landing.html": "/experience/"
+    },
+    "product": {
+      "couples-kit.html": "/kit/"
+    }
+  }
+}

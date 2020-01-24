@@ -1,52 +1,77 @@
-<ul class="list-filter-container">
+{{#if items}}
+<ul data-facet="{{facet}}" class="navList list-filter-container" data-has-more-results="{{ has_more_results }}" data-dropdown-menu>
     <li class="list-item main-item"><a class="main-link" href="#">
-        <div>
-            {{title}}
-        </div>
-        <img src="{{cdn 'img/downarrow.svg'}}" width="20px" height="20px" />
-    </a>
-        <ul class="dropdown">
-            {{#if items}}
-                {{#each items}}
-                    <li class="list-item sub-item">
-                        <a href="{{url}}">
-                            <div class="filter-circle {{#if selected }} selected {{/if}}"></div>
-                            {{ title }}
-                        </a>
-                    </li>
-                {{/each}}
-            {{else}}
-                <li class="list-item sub-item">
-                    <a href="{{url}}">Not Available
-                    </a>
-                </li>   
+            <div>
+                {{ title }}
+            </div>
+            <img src="{{cdn 'img/downarrow.svg'}}" width="20px" height="20px" />
+        </a>
+
+        </a>
+        <ul class="navList dropdown" data-facet="{{facet}}">
+            {{#each items}}
+            <li class="list-item sub-item">
+                <a href="{{ url }}" class="navList-action navList-action--checkbox {{#if selected }} is-selected {{/if}}" rel="nofollow" data-faceted-search-facet>
+                    {{ sanitize title }}
+                    {{#if ../show_product_counts}}
+                    &nbsp;<span>({{ count }})</span>
+                    {{/if}}
+                </a>
+            </li>
+            {{/each}}
+
+            {{#if show_more_toggle}}
+            <!-- TODO: Modal not working -->
+            <a href="#facetedSearch-navList--{{hyphenate facet }}" role="button" class="toggleLink">
+                <span class="toggleLink-text toggleLink-text--off">{{lang 'search.faceted.show-more'}}</span>
+            </a>
             {{/if}}
         </ul>
     </li>
 </ul>
-<li class="mobile-filter-title">
-    <div class="name">
-        <span>{{title}}</span>
-        <div class="mobile-filter-icons">
-            <span class="count-selected-filters active">0</span>
-            <span class="add-icon active">{{> components/common/plus-icon }}</span>
-            <span class="minus-icon">{{> components/common/minus-icon }}</span>
+
+
+<!-- <div class="accordion-block">
+    <div class="accordion-navigation toggleLink {{#unless ../start_collapsed }} is-open {{/unless}}" role="button"
+        data-collapsible="#facetedSearch-content--{{hyphenate facet }}">
+        <h5 class="accordion-title">
+            {{ title }}
+        </h5>
+
+        <div class="accordion-navigation-actions">
+            <img src="{{cdn 'img/downarrow.svg'}}" width="20px" height="20px" />
         </div>
     </div>
-    
-    <ul class="mobile-filter-list">
-        {{#if items}}
+
+    <div id="facetedSearch-content--{{hyphenate facet }}"
+        class="accordion-content {{#unless ../start_collapsed }} is-open {{/unless}}">
+        <ul id="facetedSearch-navList--{{hyphenate facet }}" data-facet="{{facet}}" class="navList"
+            data-has-more-results="{{ has_more_results }}">
             {{#each items}}
-                <li class="mobile-filter-item">
-                    <a href="{{url}}">{{title}}
-                        <div class="mobile-filter-circle {{#if selected }} selected {{/if}}"></div>
-                    </a>
-                </li>
+            <li class="navList-item">
+                <a href="{{ url }}"
+                    class="navList-action navList-action--checkbox {{#if selected }} is-selected {{/if}}" rel="nofollow"
+                    data-faceted-search-facet>
+                    {{ sanitize title }}
+                    {{#if ../show_product_counts}}
+                    <span>({{ count }})</span>
+                    {{/if}}
+
+                    <span class="navList-action-close" aria-hidden="true">
+                        <svg class="icon">
+                            <use xlink:href="#icon-close" />
+                        </svg>
+                    </span>
+                </a>
+            </li>
             {{/each}}
-        {{else}}
-            <li class="mobile-filter-item">
-                <a href="">Not Available</a>
-            </li>  
+        </ul>
+
+        {{#if show_more_toggle}}
+        <a href="#facetedSearch-navList--{{hyphenate facet }}" role="button" class="toggleLink">
+            <span class="toggleLink-text toggleLink-text--off">{{lang 'search.faceted.show-more'}}</span>
+        </a>
         {{/if}}
-    </ul>
-</li>
+    </div>
+</div> -->
+{{/if}}

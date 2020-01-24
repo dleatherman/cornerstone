@@ -22,10 +22,8 @@ category:
 
 {{#if category.faceted_search_enabled}}
     <aside class="page-sidebar filters-container" id="faceted-search-container">
-        {{> components/products/filter sort=pagination.category.sort}}
         {{> components/category/sidebar}}
     </aside>
-    {{> components/faceted-search/filter-selected category}}
 {{/if}}
 {{!> components/common/mobile-order-sort }}
 

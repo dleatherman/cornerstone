@@ -30,7 +30,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 .page__type--cart .page,
 .page__type--cart .page main,
 .page__type--cart .page .custom-shopping-cart-main {
-    height: calc(100vh - 100px);
+    min-height: calc(100vh - 100px);
 }
 
 .cart {
@@ -663,12 +663,12 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
         padding: 2rem 1.25rem;
 
         @include breakpoint("medium") {
-            padding: 4rem 1.25rem 0;
+            padding: 4rem 1.25rem;
             width: 65%;
         }
 
         @include breakpoint("large") {
-            padding: 4rem 5.5rem 0;
+            padding: 4rem 5.5rem;
         }
 
         .custom-shopping-cart-heading {

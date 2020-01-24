@@ -1,3 +1,4 @@
+{{> components/products/filter sort=pagination.category.sort}}
 {{#if category.subcategories}}
     <ul class="list-filter-container">
         <li class="list-item main-item"><a class="main-link" href="#">
@@ -5,41 +6,25 @@
                 Category
             </div>
             <img src="{{cdn 'img/downarrow.svg'}}" width="20px" height="20px" />
-        </a>
 
-        </a>
-            <ul class="dropdown">
+            <ul class="navList dropdown" data-facet="category">
                 {{#each category.subcategories}}
                     <li class="list-item sub-item">
-                        <a href="{{url}}" alt="{{name}}" title="{{name}}">
-                            <div class="filter-circle {{#if selected }} selected {{/if}}"></div>
-                            <div>{{name}}</div>
+                        <a href="{{url}}" alt="{{name}}" title="{{name}}" data-category-id="{{id}}">
+                            <div class="filter-circle{{#if selected }} selected {{/if}}"></div>
+                            <div>
+                                {{name}}&nbsp;<span>({{ product_count }})</span>
+                            </div>
                         </a>
                     </li>
                 {{/each}}
             </ul>
         </li>
     </ul>
-    <li class="mobile-filter-title">
-        <div class="name">
-            <span>Category</span>
-            <span class="add-icon active">{{> components/common/plus-icon }}</span>
-            <span class="minus-icon">{{> components/common/minus-icon }}</span>
-        </div>
-        
-        <ul class="mobile-filter-list">
-            {{#each category.subcategories}}
-                <li class="mobile-filter-item">
-                    <a href="{{url}}">{{name}}
-                        <div class="mobile-filter-circle {{#if selected }} selected {{/if}}"></div>
-                    </a>
-                </li>
-            {{/each}}
-        </ul>
-    </li>
 {{/if}}
 {{#if category.faceted_search_enabled}}
     {{> components/faceted-search/index category}}
+    {{> components/faceted-search/filter-selected category}}
 {{else}}
     {{> components/category/shop-by-price shop_by_price=category.shop_by_price category_url=category.url}}
 {{/if}}

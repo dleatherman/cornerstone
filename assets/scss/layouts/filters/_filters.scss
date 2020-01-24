@@ -44,7 +44,8 @@
   padding: 0 !important;
 
   @include breakpoint("medium") {
-      display: flex !important;
+      display: flex;
+      flex-flow: row wrap;
   }
 
   .list-filter-container {
@@ -156,17 +157,28 @@ nav {
     align-items: center;
 }
 
+.navList-action--checkbox:before,
 .filter-circle {
   border-radius: 0;
   width: 10px;
   height: 10px;
-  margin: -1px 10px 0 0;
+  margin: -2px 10px 0 0;
+  top: 35%;
   background-color: #fff;
   border: 1px solid stencilColor("grey");
 
   &.selected {
     border-color: stencilColor('navy');
     background-color: stencilColor("navy");
+  }
+}
+.navList-action--checkbox.is-selected {
+  &:before {
+    border: 1px solid stencilColor('navy');
+    background-color: stencilColor("navy");
+  }
+  &:after {
+    display: none;
   }
 }
 

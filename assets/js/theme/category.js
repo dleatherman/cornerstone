@@ -40,7 +40,7 @@ export default class Category extends CatalogPage {
             $facetedSearchContainer.html(content.sidebar);
 
             $('html, body').animate({
-                scrollTop: 0,
+                scrollTop: $('.page-sidebar').offset().top,
             }, 100);
         });
     }

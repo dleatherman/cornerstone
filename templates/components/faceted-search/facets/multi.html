@@ -1,46 +1,10 @@
 {{#if items}}
-<ul data-facet="{{facet}}" class="navList list-filter-container" data-has-more-results="{{ has_more_results }}" data-dropdown-menu>
-    <li class="list-item main-item"><a class="main-link" href="#">
-            <div>
-                {{ title }}
-            </div>
-            <img src="{{cdn 'img/downarrow.svg'}}" width="20px" height="20px" />
-        </a>
-
-        </a>
-        <ul class="navList dropdown" data-facet="{{facet}}">
-            {{#each items}}
-            <li class="list-item sub-item">
-                <a href="{{ url }}" class="navList-action navList-action--checkbox {{#if selected }} is-selected {{/if}}" rel="nofollow" data-faceted-search-facet>
-                    {{ sanitize title }}
-                    {{#if ../show_product_counts}}
-                    &nbsp;<span>({{ count }})</span>
-                    {{/if}}
-                </a>
-            </li>
-            {{/each}}
-
-            {{#if show_more_toggle}}
-            <!-- TODO: Modal not working -->
-            <a href="#facetedSearch-navList--{{hyphenate facet }}" role="button" class="toggleLink">
-                <span class="toggleLink-text toggleLink-text--off">{{lang 'search.faceted.show-more'}}</span>
-            </a>
-            {{/if}}
-        </ul>
-    </li>
-</ul>
-
-
-<!-- <div class="accordion-block">
+<div class="accordion-block">
     <div class="accordion-navigation toggleLink {{#unless ../start_collapsed }} is-open {{/unless}}" role="button"
         data-collapsible="#facetedSearch-content--{{hyphenate facet }}">
         <h5 class="accordion-title">
             {{ title }}
         </h5>
-
-        <div class="accordion-navigation-actions">
-            <img src="{{cdn 'img/downarrow.svg'}}" width="20px" height="20px" />
-        </div>
     </div>
 
     <div id="facetedSearch-content--{{hyphenate facet }}"
@@ -56,12 +20,6 @@
                     {{#if ../show_product_counts}}
                     <span>({{ count }})</span>
                     {{/if}}
-
-                    <span class="navList-action-close" aria-hidden="true">
-                        <svg class="icon">
-                            <use xlink:href="#icon-close" />
-                        </svg>
-                    </span>
                 </a>
             </li>
             {{/each}}
@@ -73,5 +31,5 @@
         </a>
         {{/if}}
     </div>
-</div> -->
+</div>
 {{/if}}

@@ -98,6 +98,10 @@ nav {
   text-transform: uppercase;
   font-size: 14px;
 
+  select {
+    text-transform: none;
+  }
+
   &.main-item {
     color: #fff;
     background: transparent;

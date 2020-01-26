@@ -19,7 +19,7 @@
 .navUser {
    &.right-nav {
       display: none;
-      @include breakpoint('medium') {
+      @include breakpoint($screen-xmedium) {
          align-items: stretch;
          display: flex;
       }

@@ -1,40 +1,40 @@
 {{#if items}}
-<div class="accordion-block">
-    <div class="accordion-navigation toggleLink {{#unless ../start_collapsed }} is-open {{/unless}}" role="button"
-        data-collapsible="#facetedSearch-content--{{hyphenate facet }}">
-        <h5 class="accordion-title">
-            {{ title }}
-        </h5>
-    </div>
-
-    <div id="facetedSearch-content--{{hyphenate facet }}"
-        class="accordion-content {{#unless ../start_collapsed }} is-open {{/unless}}">
-        <ul id="facetedSearch-navList--{{hyphenate facet }}" class="navList" data-facet="{{facet}}"
-            data-has-more-results="{{ has_more_results }}">
-            {{#each items}}
-            <li class="navList-item">
-                <a href="{{ url }}"
-                    class="navList-action navList-action--checkbox {{#if selected }} is-selected {{/if}} {{#if has_sub_categories }} has-children {{/if}}"
-                    rel="nofollow" data-id="{{ id }}" data-faceted-search-facet>
-                    {{ title }}
-                    {{#if ../show_product_counts}}
-                    {{#if count}}
-                    <span>({{ count }})</span>
-                    {{/if}}
-                    {{/if}}
-                </a>
-                {{#if children}}
-                {{> components/faceted-search/facets/hierarchy-children children}}
-                {{/if}}
-            </li>
-            {{/each}}
-        </ul>
-
-        {{#if show_more_toggle}}
-        <a href="#facetedSearch-navList--{{hyphenate facet }}" role="button" class="toggleLink">
-            <span class="toggleLink-text toggleLink-text--off">{{lang 'search.faceted.show-more'}}</span>
+<ul class="list-filter-container">
+    <li class="list-item main-item">
+        <a href="#" class="main-link">
+            <div>
+                {{title}}
+            </div>
+            <img src="{{cdn 'img/downarrow.svg'}}" width="20px" height="20px" />
         </a>
-        {{/if}}
-    </div>
-</div>
+
+        <ul id="facetedSearch-content--{{hyphenate facet }}" class="dropdown">
+            <li id="facetedSearch-navList--{{hyphenate facet }}" class="navList" data-facet="{{facet}}"
+                data-has-more-results="{{ has_more_results }}">
+                {{#each items}}
+                <div class="navList-item">
+                    <a href="{{ url }}"
+                        class="navList-action navList-action--checkbox{{#if selected }} is-selected{{/if}}" rel="nofollow" data-faceted-search-facet>
+                        {{ sanitize title }}
+                        {{#if ../show_product_counts}}
+                        <span>({{ count }})</span>
+                        {{/if}}
+                    </a>
+                    {{#if children}}
+                    {{> components/faceted-search/facets/hierarchy-children children}}
+                    {{/if}}
+                </div>
+                {{/each}}
+            </li>
+
+            {{#if show_more_toggle}}
+            <li class="navList">
+                <a href="#facetedSearch-navList--{{hyphenate facet }}" role="button" class="toggleLink">
+                    <span class="toggleLink-text toggleLink-text--off">{{lang 'search.faceted.show-more'}}</span>
+                </a>
+            </li>
+            {{/if}}
+        </ul>
+    </li>
+</ul>
 {{/if}}

@@ -42,6 +42,8 @@ export default class Category extends CatalogPage {
             $('html, body').animate({
                 scrollTop: $('.page-sidebar').offset().top,
             }, 100);
-        }, {});
+        }, {
+            showMoreToggleSelector: '#facetedSearch .dropdown .toggleLink',
+        });
     }
 }

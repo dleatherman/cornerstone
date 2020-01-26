@@ -38,10 +38,9 @@ blog:
 <section class="page search-page">
     {{#if product_results.products}}
         {{#if product_results.faceted_search_enabled}}
-            <div class="page-sidebar filters-container" id="faceted-search-container">
-                {{> components/products/filter sort=pagination.product_results.sort}}
+            <aside class="page-sidebar filters-container" id="faceted-search-container">
                 {{> components/faceted-search/index product_results}}
-            </div>
+            </aside>
         {{/if}}
     {{/if}}
     {{#if product_results.products}}
@@ -61,13 +60,6 @@ blog:
                 </div>
             </div>
         {{/if}}
-        {{!>components/category/featured-by-sense 
-            items=products.new
-            main-title="Shop Recent Products"
-            subtitle="search and you shall receive"
-            link-text="Shop all products"
-            link-url="/shop-all-products"
-        }}
     {{/if}}
 
     <div class="page">
@@ -81,6 +73,5 @@ blog:
     {{>components/common/latest-posts posts=blog.recent_posts}}
     {{>components/common/connect-more}}
 </section>
-{{> components/search/mobile-filters}}
 {{/partial}}
 {{> layout/base}}

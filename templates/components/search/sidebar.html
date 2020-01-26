@@ -1,5 +1,4 @@
-<nav>
-    {{#if product_results.faceted_search_enabled}}
-        {{> components/faceted-search/index product_results}}
-    {{/if}}
-</nav>
+{{> components/products/filter sort=pagination.category.sort}}
+{{#if product_results.faceted_search_enabled}}
+    {{> components/faceted-search/index product_results}}
+{{/if}}

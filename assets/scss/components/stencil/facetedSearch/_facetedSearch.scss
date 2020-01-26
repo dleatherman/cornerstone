@@ -9,6 +9,9 @@
 // 1. Do not show if viewport is over "medium" breakpoint
 //
 // -----------------------------------------------------------------------------
+.facetedSearch {
+    flex: 1;
+}
 .facetedSearch-toggle {
     @include grid-row;
     border: $facetedSearch-toggle-border;
@@ -61,7 +64,7 @@
 
     @include breakpoint("medium") {
         // scss-lint:disable ImportantRule
-        display: block !important; // 1
+        // display: block !important; // 1
     }
 
     &.is-open {
@@ -95,13 +98,18 @@
     }
 }
 
-.facet-quick-heading {
-    text-transform: capitalize;
-}
-
 .facetedSearch-optionColumns {
     column-count: 3;
     column-gap: 20px;
+    .navList-item a {
+      text-transform: uppercase;
+      color: stencilColor("grey-2");
+      font-family: stencilFontFamily("sweet-font");
+      text-align: left;
+      &:hover {
+          color: stencilColor('navy');
+      }
+    }
 }
 
 
@@ -128,5 +136,14 @@
 .facetedSearch-content--rating {
     .is-selected {
         font-weight: bold;
+    }
+}
+
+.facets-modal {
+    .form-input {
+        border-radius: 0;
+        box-shadow: none;
+        font-family: stencilFontFamily('freight-font');
+        letter-spacing: 0.01em;
     }
 }

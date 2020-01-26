@@ -81,40 +81,5 @@
             {{{snippet 'footer'}}}
         </div>
         {{> components/common/mobile-home-senses }}
-        <script type="text/javascript">
-            if (!document.querySelector('script[src=\'https://cdn.reamaze.com/assets/reamaze.js\']')) {
-              var rmzScript = document.createElement('script');
-              rmzScript.async = true;
-              rmzScript.setAttribute('src', 'https://cdn.reamaze.com/assets/reamaze.js');
-              document.head.appendChild(rmzScript);
-            }
-          
-            var _support = _support || { 'ui': {}, 'user': {} };
-            _support['account'] = 'parrolabs';
-            _support['ui']['contactMode'] = 'mixed';
-            _support['ui']['enableKb'] = 'true';
-            _support['ui']['styles'] = {
-              widgetColor: 'rgb(46, 53, 63)',
-            };
-            _support['ui']['widget'] = {
-              img: 'https://s3.amazonaws.com/peppertogether.com/peach-moon.png',
-              label: {
-                text: 'Let us know if you have any questions! &#128522;',
-                mode: "notification",
-                delay: 3,
-                duration: 30,
-                sound: true,
-              },
-              position: {
-                bottom: '150px',
-                right: '100px'
-              }
-            };
-            _support['apps'] = {
-              faq: {"enabled":true},
-              recentConversations: {},
-              orders: {}
-            };
-        </script>
     </body>
 </html>

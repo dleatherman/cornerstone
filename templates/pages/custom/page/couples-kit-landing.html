@@ -31,7 +31,7 @@ blog:
 
    <div class="story-archive container">
       {{#each blog.recent_posts}}
-         {{#contains (JSONstringify (pluck tags 'name')) 'couples' }}
+         {{#contains (JSONstringify (pluck tags 'name')) 'couples-kit' }}
             {{> components/blog/post post=this sense=true}}
          {{/contains}}
       {{/each}}

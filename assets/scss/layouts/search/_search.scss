@@ -97,18 +97,6 @@
 .search-page {
     display: flex;
     flex-direction: column;
-
-    .list-item.main-item, .list-filter-container {
-        border-color: stencilColor("pink") !important;
-    }
-    
-    .list-filter-container .list-item ul {
-        border-top: 1px solid stencilColor("pink");
-    }
-
-    .list-item.main-item:hover {
-        background-color: stencilColor("pink");
-    }
 }
 
 #search-results-heading {

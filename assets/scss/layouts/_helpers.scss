@@ -103,6 +103,19 @@ pre {
          border: 1px solid stencilColor('navy');
          color: #fff;
       }
+      &--false {
+         background: rgba(#fff, 0.75);
+         border: 1px solid stencilColor('grey-2');
+         color: stencilColor('grey-2');
+         @include breakpoint('medium') {
+            border: 0;
+         }
+         &:hover {
+            background: #fff;
+            border: 0;
+            color: stencilColor('grey-4');
+         }
+      }
    }
    &__account {
       padding: 0.5rem;

@@ -21,10 +21,10 @@
     flex-wrap: wrap;
 
     .product {
+        display: flex;
+        flex-wrap: wrap;
         width: 50%;
-        display: inline-block;
         font-size: fontSize("base"); // 1
-        vertical-align: top;
         padding: 0 1rem;
 
         @include breakpoint("small") {
@@ -56,6 +56,47 @@
 
     @include breakpoint("medium") {
         margin-bottom: spacing("single");
+    }
+
+    .card {
+        align-items: stretch;
+        display: flex;
+        flex-flow: column nowrap;
+        flex: 1;
+        justify-content: space-between;
+        @include breakpoint('medium') {
+            position: relative;
+        }
+        .card-body {
+            flex-grow: 1;
+            padding-bottom: 0.5rem;
+        }
+    }
+
+    .card:hover {
+        .card-actions {
+            visibility: visible;
+        }
+    }
+
+    .card-actions {
+        text-align: center;
+        visibility: visible;
+        @include breakpoint('medium') {
+            left: 0;
+            margin: 0 auto;
+            position: absolute;
+            right: 0;
+            top: 33%;
+            transition: visibility 0.2s ease-in-out;
+            visibility: hidden;
+        }
+        .btn {
+            width: 100%;
+            @include breakpoint('medium') {
+                width: auto;
+            }
+        }
     }
 }
 

@@ -1,0 +1,28 @@
+// =============================================================================
+// ALERTS
+// =============================================================================
+
+.alertBox,
+.alertBox p {
+   color: stencilColor('navy');
+   font-family: stencilFontFamily('sweet-font');
+   font-weight: 400;
+   // letter-spacing: 0.1em;
+   border-radius: 0;
+   color: stencilColor("alert-color");
+}
+
+.alertBox--info, 
+.alertBox--success {
+    color: stencilColor("navy");
+    background-color: transparent;
+
+    span {
+        color: stencilColor("navy");
+        
+    }
+
+    svg {
+        fill: stencilColor("navy");
+    }
+}

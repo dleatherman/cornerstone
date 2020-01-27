@@ -62,6 +62,15 @@
 
 .modal-body {
     text-align: center;
+    &.quickView {
+        text-align: left;
+    }
+}
+
+.quickView {
+    .productView-title {
+        max-width: none;
+    }
 }
 
 .swal2-modal,

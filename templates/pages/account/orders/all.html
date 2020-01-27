@@ -13,6 +13,7 @@ blog:
     {{> components/account/navigation account_page='orders'}}
 
     <main class="account account--fixed">
+        <a class="btn btn__primary" href="/shop/">{{lang 'create_account.created.continue'}}</a>
         <h1 class="page-heading">{{lang 'account.orders.heading' }}</h1>
         {{#if customer.store_credit.value '>' 0}}
         <div class="account-head">
@@ -29,7 +30,7 @@ blog:
                 {{else}}
                     <div class="no-info">
                         <p>{{lang 'account.orders.none' }}</p>
-                        <a class="btn btn__primary" href="/shop-all-products">{{lang 'create_account.created.continue'}}</a>
+                        <a class="btn btn__primary" href="/shop/">{{lang 'create_account.created.continue'}}</a>
                     </div>
                 {{/if}}
             </section>

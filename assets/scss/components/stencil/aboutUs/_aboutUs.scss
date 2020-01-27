@@ -261,10 +261,10 @@
                 margin-bottom: 0;
             }
 
-            @include breakpoint($screen-xmedium) {
-                font-size: 1.7rem;
-                line-height: 1.8;
-            }
+            // @include breakpoint($screen-xmedium) {
+            //     font-size: 1.7rem;
+            //     line-height: 1.8;
+            // }
         }
         
         blockquote {
@@ -276,7 +276,7 @@
             text-align: center;
             @include breakpoint("medium") {
                 font-size: 2.75rem;
-                max-width: 60%;
+                max-width: 70%;
             }
         }
         
@@ -458,7 +458,7 @@
         
         h2 {
             @include breakpoint("medium") {
-                font-size: 4rem;
+                font-size: 3rem;
             }
         }
         

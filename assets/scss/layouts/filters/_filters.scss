@@ -217,6 +217,17 @@ nav {
     width: 100%;
 }
 
+.filters-container-mobile {
+  display: none;
+  flex-flow: row nowrap;
+  .list-filter-container {
+    // display: block;
+    // width: 50%;
+  }
+}
+
+// TODO: Come back and delete these unnecessary styles
+
 .mobile-filter-title {
   cursor: pointer;
   padding: 15px 10% 5px;

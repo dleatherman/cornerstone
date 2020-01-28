@@ -1,11 +1,96 @@
+<ul class="list-filter-trigger">
+    <li class="list-item main-item">
+        <a class="main-link" href="#" data-reveal-id="filtersModal">
+            <div>
+                Filter
+            </div>
+            <img src="{{cdn 'img/downarrow.svg'}}" width="20px" height="20px" />
+        </a>
+    </li>
+</ul>
+<ul class="list-filter-trigger">
+    <li class="list-item main-item">
+        <a class="main-link" href="#" data-reveal-id="filtersModal">
+            <div>
+                Sort
+            </div>
+            <img src="{{cdn 'img/downarrow.svg'}}" width="20px" height="20px" />
+        </a>
+    </li>
+</ul>
+
+<div id="filtersModal" class="modal" data-reveal data-prevent-quick-search-close>
+    <a href="#" class="modal-close" aria-label="{{lang 'common.close'}}" role="button">
+        <span aria-hidden="true">&#215;</span>
+    </a>
+    <div class="modal-content">
+        {{> components/products/filter sort=pagination.category.sort}}
+        {{#if category.subcategories}}
+            <ul class="list-filter-container">
+                <li class="list-item main-item">
+                    <a class="main-link" href="#">
+                        <div>
+                            Category
+                        </div>
+                        <img src="{{cdn 'img/downarrow.svg'}}" width="20px" height="20px" />
+                    </a>
+
+                    <ul class="navList dropdown" data-facet="category">
+                        {{#each categories}}
+                            {{#if this.is_active '==' true}}
+                                {{#each this.children as |child|}}
+                                    <li class="list-item sub-item child-item">
+                                        <a href="{{child.url}}" alt="{{child.name}}" title="{{child.name}}" data-category-id="{{child.id}}">
+                                            <div class="filter-circle{{#if this.is_active }} selected{{/if}}"></div>
+                                            <div>
+                                                {{child.name}}&nbsp;<span>({{ child.count }})</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    {{#if child.children}}
+                                        {{#each children as |grandchild|}}
+                                            {{#if grandchild.count '>' 0}}
+                                            <li class="list-item sub-item grandchild-item">
+                                                <a href="{{grandchild.url}}" alt="{{grandchild.name}}" title="{{grandchild.name}}" data-category-id="{{grandchild.id}}">
+                                                    <div class="filter-circle{{#if this.is_active }} selected{{/if}}"></div>
+                                                    <div>
+                                                        {{grandchild.name}}&nbsp;<span>({{ grandchild.count }})</span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            {{/if}}
+                                        {{/each}}
+                                    {{/if}}
+                                {{/each}}
+                                
+                            {{/if}}
+                        {{/each}}
+                    </ul>
+                </li>
+            </ul>
+        {{/if}}
+        {{#if category.faceted_search_enabled}}
+            {{> components/faceted-search/index category}}
+            {{> components/faceted-search/filter-selected category}}
+        {{else}}
+            {{> components/category/shop-by-price shop_by_price=category.shop_by_price category_url=category.url}}
+        {{/if}}
+
+    </div>
+    <div class="loadingOverlay"></div>
+</div>
+
+
 {{> components/products/filter sort=pagination.category.sort}}
 {{#if category.subcategories}}
     <ul class="list-filter-container">
-        <li class="list-item main-item"><a class="main-link" href="#">
-            <div>
-                Category
-            </div>
-            <img src="{{cdn 'img/downarrow.svg'}}" width="20px" height="20px" />
+        <li class="list-item main-item">
+            <a class="main-link" href="#">
+                <div>
+                    Category
+                </div>
+                <img src="{{cdn 'img/downarrow.svg'}}" width="20px" height="20px" />
+            </a>
 
             <ul class="navList dropdown" data-facet="category">
                 {{#each categories}}

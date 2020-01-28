@@ -153,6 +153,10 @@ body {
         background: stencilColor("secondary-gray");
         padding: 40px 5% 0;
     }
+
+    &.page__category {
+        padding-bottom: 4rem;
+    }
     
     .styled-link {
         font-family: stencilFontFamily("sweet-font");

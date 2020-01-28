@@ -46,7 +46,11 @@
   @include breakpoint("medium") {
       display: flex;
       flex-flow: row wrap;
+      .list-filter-trigger {
+        display: none;
+      }
   }
+
 
   .list-filter-container {
     flex-basis: 0;
@@ -218,11 +222,35 @@ nav {
 }
 
 .filters-container-mobile {
-  display: none;
+  display: flex;
   flex-flow: row nowrap;
   .list-filter-container {
-    // display: block;
-    // width: 50%;
+    display: none;
+  }
+  .list-filter-trigger {
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    @include breakpoint('medium') {
+      display: none;
+    }
+    + .list-filter-trigger {
+      border-left: 1px solid stencilColor('light-pink');
+    }
+  }
+}
+
+#filtersModal {
+  color: stencilColor('navy');
+  height: 100vh;
+  max-height: none;
+  max-width: none;
+  width: 100%;
+  .modal-content .list-filter-container {
+    display: flex;
+  }
+  a {
+    text-decoration: none;
   }
 }
 

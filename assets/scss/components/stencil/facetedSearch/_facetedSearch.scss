@@ -99,8 +99,11 @@
 }
 
 .facetedSearch-optionColumns {
-    column-count: 3;
+    column-count: 1;
     column-gap: 20px;
+    @include breakpoint('medium') {
+        column-count: 3;
+    }
     .navList-item a {
       text-transform: uppercase;
       color: stencilColor("grey-2");
@@ -143,7 +146,7 @@
     .form-input {
         border-radius: 0;
         box-shadow: none;
-        font-family: stencilFontFamily('freight-font');
+        font-family: stencilFontFamily('sweet-font');
         letter-spacing: 0.01em;
     }
 }

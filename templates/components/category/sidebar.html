@@ -8,23 +8,19 @@
         </a>
     </li>
 </ul>
-<ul class="list-filter-trigger">
-    <li class="list-item main-item">
-        <a class="main-link" href="#" data-reveal-id="filtersModal">
-            <div>
-                Sort
-            </div>
-            <img src="{{cdn 'img/downarrow.svg'}}" width="20px" height="20px" />
-        </a>
-    </li>
-</ul>
 
-<div id="filtersModal" class="modal" data-reveal data-prevent-quick-search-close>
-    <a href="#" class="modal-close" aria-label="{{lang 'common.close'}}" role="button">
-        <span aria-hidden="true">&#215;</span>
-    </a>
+<div id="filtersModal" class="modal" data-reveal>
     <div class="modal-content">
-        {{> components/products/filter sort=pagination.category.sort}}
+        <ul class="list-filter-container">
+            <li class="list-item main-item">
+                <a class="main-link modal-close" href="#" role="button">
+                    <div>
+                        Filter
+                    </div>
+                    <img src="{{cdn 'img/closex.svg'}}" width="20px" height="20px" />
+                </a>
+            </li>
+        </ul>
         {{#if category.subcategories}}
             <ul class="list-filter-container">
                 <li class="list-item main-item">
@@ -43,24 +39,24 @@
                                         <a href="{{child.url}}" alt="{{child.name}}" title="{{child.name}}" data-category-id="{{child.id}}">
                                             <div class="filter-circle{{#if this.is_active }} selected{{/if}}"></div>
                                             <div>
-                                                {{child.name}}&nbsp;<span>({{ child.count }})</span>
+                                                {{child.name}}
                                             </div>
                                         </a>
                                     </li>
-                                    {{#if child.children}}
+                                    {{!-- {{#if child.children}}
                                         {{#each children as |grandchild|}}
                                             {{#if grandchild.count '>' 0}}
                                             <li class="list-item sub-item grandchild-item">
                                                 <a href="{{grandchild.url}}" alt="{{grandchild.name}}" title="{{grandchild.name}}" data-category-id="{{grandchild.id}}">
                                                     <div class="filter-circle{{#if this.is_active }} selected{{/if}}"></div>
                                                     <div>
-                                                        {{grandchild.name}}&nbsp;<span>({{ grandchild.count }})</span>
+                                                        {{grandchild.name}}
                                                     </div>
                                                 </a>
                                             </li>
                                             {{/if}}
                                         {{/each}}
-                                    {{/if}}
+                                    {{/if}} --}}
                                 {{/each}}
                                 
                             {{/if}}
@@ -100,7 +96,7 @@
                                 <a href="{{child.url}}" alt="{{child.name}}" title="{{child.name}}" data-category-id="{{child.id}}">
                                     <div class="filter-circle{{#if this.is_active }} selected{{/if}}"></div>
                                     <div>
-                                        {{child.name}}&nbsp;<span>({{ child.count }})</span>
+                                        {{child.name}}
                                     </div>
                                 </a>
                             </li>
@@ -111,7 +107,7 @@
                                         <a href="{{grandchild.url}}" alt="{{grandchild.name}}" title="{{grandchild.name}}" data-category-id="{{grandchild.id}}">
                                             <div class="filter-circle{{#if this.is_active }} selected{{/if}}"></div>
                                             <div>
-                                                {{grandchild.name}}&nbsp;<span>({{ grandchild.count }})</span>
+                                                {{grandchild.name}}
                                             </div>
                                         </a>
                                     </li>

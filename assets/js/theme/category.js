@@ -39,6 +39,11 @@ export default class Category extends CatalogPage {
             $productListingContainer.html(content.productListing);
             $facetedSearchContainer.html(content.sidebar);
 
+            if ($('#filtersModal').length > 0) {
+                $('#filtersModal').foundation('reveal', 'close');
+                $('body').removeClass('has-activeModal');
+            }
+
             $('html, body').animate({
                 scrollTop: $('.page-sidebar').offset().top,
             }, 100);

@@ -224,8 +224,25 @@ nav {
 .filters-container-mobile {
   display: flex;
   flex-flow: row nowrap;
+  @include breakpoint('medium') {
+    display: none;
+  }
   .list-filter-container {
     display: none;
+    &.sort-container {
+      border-left: 1px solid stencilColor('light-pink');
+      border-color: stencilColor('light-pink');
+    }
+    &.sortForm {
+      display: block;
+      width: 50%;
+      fieldset {
+        border: 0;
+      }
+    }
+    &.sort-container {
+      display: flex;
+    }
   }
   .list-filter-trigger {
     margin: 0;
@@ -251,6 +268,22 @@ nav {
   }
   a {
     text-decoration: none;
+  }
+  .modal-close {
+    @include sweet-font;
+    color: stencilColor('navy');
+    height: auto;
+    margin: 0;
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+  }
+  .facetedSearch-navList {
+    display: flex;
+    .list-filter-container {
+      width: 100%;
+    }
   }
 }
 

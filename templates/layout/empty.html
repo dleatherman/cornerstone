@@ -2,7 +2,13 @@
 <html>
 
 <head>
-    <title>{{ head.title }}</title>
+    <title>
+        {{#if page_title}}
+        {{page_title}} | Pepper Together
+        {{else}}
+        {{ head.title }} | Pepper Together
+        {{/if}}
+    </title>
     {{{ head.meta_tags }}}
     {{{ head.config }}}
 

@@ -35,31 +35,7 @@
         {{!> components/common/shop-menu posts=blog.recent_posts secondary_posts=blog.posts}}
         {{!> components/common/stories-menu posts=blog.recent_posts secondary_posts=blog.posts}}
         
-        {{!> components/common/mobile-menu}}
-        <div class="mobile-menu">
-          <ul class="list-container main-list-container">
-            <li>
-              <a class="menu-link main" href="/stories/">Stories</a>
-             </li>
-             <li>
-              <a class="menu-link main" href="/about-us/">About Pepper</a>
-             </li>
-            {{#if customer}}
-            <li><hr></li>
-            <li>
-                <a class="menu-link main" href="{{urls.account.index}}">{{lang 'common.account'}}</a>
-            </li>
-            <li>
-                <a class="menu-link main" href="{{urls.auth.logout}}">{{lang 'common.logout'}}</a>
-            </li>
-            {{else}}
-            <li>
-                <hr>
-                <a class="menu-link main" href="{{urls.auth.login}}">{{lang 'common.login'}}</a>
-            </li>
-            {{/if}}
-          </ul>
-        </div>
+        {{> components/common/mobile-menu}}
         <div class="dropdown dropdown--quickSearch" id="quickSearch" aria-hidden="true" tabindex="-1" data-prevent-quick-search-close></div>
     </div>
 </header>

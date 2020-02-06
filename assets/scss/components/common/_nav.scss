@@ -37,7 +37,6 @@
    }
    
    @include breakpoint($screen-xmedium) {
-      position: relative;
       right: auto;
       z-index: zIndex("high");
       
@@ -107,7 +106,6 @@
    padding: 1rem 0.5rem;
    text-decoration: none;
    text-transform: uppercase;
-   position: relative;
    font-family: stencilFontFamily("sweet-font");
    letter-spacing: 2px;
    font-size: 1rem;
@@ -183,12 +181,71 @@
    text-decoration: none;
 }
 
+.shop__menu--child {
+   background: #fff;
+   box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+   left: 0;
+   margin: 0 auto;
+   opacity: 0;
+   padding: 3.5rem;
+   position: absolute;
+   right: 0;
+   top: 100%;
+   transition: opacity .2s ease-in-out;
+   visibility: hidden;
+   .category__menu--list {
+      column-count: 2;
+      column-fill: auto;
+      column-gap: remCalc(20px);
+      margin: 0 auto;
+      @include breakpoint("medium") {
+         column-count: 4;
+      }
+      .child-item {
+         page-break-inside: avoid;
+      }
+   }
+   .child-item a {
+      color: stencilColor('navy');
+      font-family: stencilFontFamily("domaine-font");
+      font-size: 1.5rem;
+      font-weight: normal;
+      text-decoration: none;
+      text-transform: capitalize;
+   }
+   .grandchild-item a {
+      color: stencilColor('navy');
+      font-family: stencilFontFamily('sweet-font');
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      padding: 0.1rem 0;
+      text-decoration: none;
+      text-transform: capitalize;
+      &:hover {
+         color: stencilColor('pink');
+      }
+   }
+   .grandchild-item:last-child {
+      padding-bottom: 1rem;
+   }
+}
+
 .navUser-item {
    height: 100%;
    display: flex !important;
    align-items: center;
    letter-spacing: 0.05em;
    position: relative;
+
+   &.shop__menu--parent {
+      position: static;
+      &:hover .shop__menu--child {
+         opacity: 1;
+         visibility: visible;
+         z-index: 100;
+      }
+   }
    
    &.account-link {
       display: none !important;

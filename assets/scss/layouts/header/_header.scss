@@ -28,6 +28,10 @@
     z-index: 999999;
     // transition: all 0.1s ease-in-out;
     height: 55px;
+    // position: fixed;
+    @include breakpoint($screen-xmedium) {
+        position: static;
+    }
 
     &.fixed {
         position: fixed;
@@ -57,6 +61,7 @@
     }
     
     .container {
+        position: static;
         @include breakpoint($screen-xmedium) {
             align-items: center;
             display: flex;

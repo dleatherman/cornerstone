@@ -3,8 +3,54 @@
 
   <ul class="navUser-section navUser-section--alt">
       {{#if customer}}
-      <li class="navUser-item navUser-item--cart">
+      <li class="navUser-item shop__menu--parent">
           <a class="navUser-action is-text" href="/shop/">Shop</a>
+          <div class="shop__menu--child">
+            <ul class="category__menu--list">
+              {{#withSort categories 'name' reverse='true'}}
+                {{!-- Only Shop sub-categories --}}
+                {{#if name '==' 'Shop'}}
+                  {{#each children as |child|}}
+                    <li class="list-item sub-item child-item">
+                      <a href="{{child.url}}">{{child.name}}</a>
+                      {{#if child.children}}
+                        <ul class="subcategory__menu--list">
+                        {{#each children as |grandchild|}}
+                        {{#if grandchild.count '>' 0}}
+                          <li class="list-item sub-item grandchild-item">
+                            <a href="{{grandchild.url}}" title="{{grandchild.name}}">
+                              <div>
+                                {{grandchild.name}}
+                              </div>
+                            </a>
+                          </li>
+                        {{/if}}
+                        {{/each}}
+                        </ul>
+                      {{/if}}
+                    </li>
+                  {{/each}}
+                {{/if}}
+                {{!-- Only Brand children --}}
+                {{#if name '==' 'Brands'}}
+                    <li class="list-item sub-item child-item brand-list">
+                      <a href="#">Brands</a>
+                      {{#if this.children}}
+                        <ul class="subcategory__menu--list">
+                          {{#each this.children as |child|}}
+                            {{#if child.count '>' 1}}
+                              <li class="list-item sub-item grandchild-item">
+                                <a href="{{child.url}}">{{child.name}}</a>
+                              </li>
+                            {{/if}}
+                          {{/each}}
+                        </ul>
+                      {{/if}}
+                  </li>
+                {{/if}}
+              {{/withSort}}
+            </ul>
+          </div>
       </li>
       {{/if}}
       <li class="navUser-item navUser-item--cart">

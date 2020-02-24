@@ -261,7 +261,7 @@
     },
     "reset_password": {
         "heading": "Reset Password",
-        "intro": "Fill in your email below to request a new password. An email will be sent to the address below containing a link to verify your email address.",
+        "intro": "Fill in your email below to request a new password. An email will be sent to the address below containing a link to verify your email address.<br><br>If you do not receive an email, we don't have an account associated with the email you entered in our system.",
         "reset_button": "Reset Password"
     },
     "account": {

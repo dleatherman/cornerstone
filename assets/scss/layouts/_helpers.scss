@@ -53,9 +53,17 @@ pre {
    color: #000;
 }
 
-.domaine-display {
+.domaine-display,
+.domaine {
    font-family: stencilFontFamily("domaine-font");
    font-weight: normal;
+}
+
+.sweet-sans {
+   font-family: stencilFontFamily('sweet-font');
+   font-weight: normal;
+   letter-spacing: 0.05em;
+   text-transform: uppercase;
 }
 
 .rollerscript {

@@ -27,8 +27,7 @@ limit: {{theme_settings.homepage_blog_posts_count}}
                 <input class="form-input" id="login_pass" placeholder="{{lang 'login.field_password'}}" type="password"
                     name="login_pass">
             </div>
-            {{!-- TODO: Come back to this when registration opens<p class="grey-font">Don’t have one? <span><a href="{{urls.auth.create_account}}">Sign Up</a> here to
-                    join the party.</span></p> --}}
+            <p class="grey-font">Don’t have one? <a href="{{urls.auth.create_account}}">Sign Up</a> here to join the party.</p>
             <div class="form-actions">
                 <a class="forgot-password" href="{{urls.auth.forgot_password}}">{{lang 'login.forgot_password' }}</a>
             </div>
@@ -39,4 +38,4 @@ limit: {{theme_settings.homepage_blog_posts_count}}
     </div>
 </div>
 {{/partial}}
-{{> layout/base page_content="login" show_ig_feed="yes" page_title="Login"}}
+{{> layout/base page_content="login" show_ig_feed="yes" page_title="Login | Pepper"}}

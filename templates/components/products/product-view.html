@@ -14,6 +14,22 @@
     {{/each}}
     <section class="productView-images" data-image-gallery>
 
+        <div class="product__slideshow--mobile"
+            data-list-name="bundle__items"
+            data-slick='{
+                "dots": false,
+                "infinite": true,
+                "mobileFirst": true,
+                "slidesToScroll": 1,
+            }'
+        >
+            {{#each product.images}}
+                <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}"
+                    data-src="{{getImage this 'large' (cdn ../theme_settings.default_image_product)}}"
+                    alt="{{this.alt}}" title="{{this.alt}}">
+            {{/each}}
+        </div>
+
         <figure class="productView-image" data-image-gallery-main {{#if product.main_image}}
             data-zoom-image="{{getImage product.main_image 'zoom_size' (cdn theme_settings.default_image_product)}}"
             {{/if}}>

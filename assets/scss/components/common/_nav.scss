@@ -201,6 +201,9 @@
       @include breakpoint("medium") {
          column-count: 4;
       }
+      .shop-link {
+         margin-bottom: 1rem;
+      }
       .child-item {
          page-break-inside: avoid;
       }
@@ -212,6 +215,9 @@
       font-weight: normal;
       text-decoration: none;
       text-transform: capitalize;
+      &:hover {
+         color: stencilColor('pink');
+      }
    }
    .grandchild-item a {
       color: stencilColor('navy');
@@ -302,6 +308,7 @@
       left: 0;
       opacity: 1;
       top: 100%;
+      padding: 1rem 0;
       position: absolute;
       z-index: 100;
       width: 200px;
@@ -314,15 +321,15 @@
       }
       a {
          color: stencilColor('navy');
-         flex: 1;
+         font-family: stencilFontFamily('sweet-font');
          font-size: 1rem;
-         letter-spacing: 0;
-         line-height: 1;
-         margin: 0;
-         padding: 1rem;
-         text-transform: none;
+         font-weight: 400;
+         letter-spacing: 0.05em;
+         padding: 0.5rem 1rem;
+         text-decoration: none;
+         text-transform: capitalize;
          &:hover {
-            font-weight: bold;
+            color: stencilColor('pink');
          }
       }
    }

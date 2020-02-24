@@ -54,11 +54,13 @@
 
 .senses-explorer {
     background-color: stencilColor("navy");
-    background-image: url('../img/hero-homepage-kit-mobile.jpg');
+    // background-image: url('../img/hero-homepage-val-mobile.png');
+    background-image: url('../img/hero-homepage-kit-mobile.jpg'); //kit
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    padding: 4rem 0;
+    padding: 4rem 0; //kit
+    // padding: 12rem 0;
     position: relative;
 
     &--branding {
@@ -82,9 +84,24 @@
         }
     }
 
+    p {
+        font-size: 1.1rem;
+        margin: 0;
+    }
+
+    h3 {
+        color: #fff;
+        font-size: 2rem;
+        margin: 1rem 0;
+        @include breakpoint($screen-xmedium) {
+            font-size: 4rem;
+        }
+    }
+
     @include breakpoint($screen-xmedium) {
-        align-items: flex-end;
-        background-image: url('../img/hero-homepage-kit.png');
+        align-items: flex-end; //kit
+        background-image: url('../img/hero-homepage-kit.png'); //kit
+        // background-image: url('../img/hero-homepage-val.png');
         display: flex;
         min-height: calc(100vh - 165px);
         padding: 4rem 0;
@@ -98,7 +115,6 @@
     justify-content: flex-start;
     opacity: 0;
     position: absolute;
-    transition: all 0.2s ease-in-out;
     top: 0;
     width: 100%;
     z-index: -1;

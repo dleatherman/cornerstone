@@ -2,7 +2,6 @@
   {{> components/common/currency-selector}}
 
   <ul class="navUser-section navUser-section--alt">
-      {{#if customer}}
       <li class="navUser-item shop__menu--parent">
           <a class="navUser-action is-text" href="/shop/">Shop</a>
           <div class="shop__menu--child">
@@ -10,6 +9,9 @@
               {{#withSort categories 'name' reverse='true'}}
                 {{!-- Only Shop sub-categories --}}
                 {{#if name '==' 'Shop'}}
+                  <li class="list-item sub-item child-item shop-link">
+                    <a href="/shop/">Shop All</a>
+                  </li>
                   {{#each children as |child|}}
                     <li class="list-item sub-item child-item">
                       <a href="{{child.url}}">{{child.name}}</a>
@@ -52,7 +54,6 @@
             </ul>
           </div>
       </li>
-      {{/if}}
       <li class="navUser-item navUser-item--cart">
           <a class="navUser-action is-text" href="/stories">Stories</a>
       </li>

@@ -4,9 +4,17 @@
 <head>
     <title>
         {{#if page_title}}
-        {{page_title}} | Pepper Together
+
+            {{#replace ' - ' page_title}} | {{else}}
+            {{page_title}}
+            {{/replace}}
+
         {{else}}
-        {{ head.title }} | Pepper Together
+
+            {{#replace ' - ' head.title}} | {{else}}
+            {{head.title}}
+            {{/replace}}
+
         {{/if}}
     </title>
     {{{ resourceHints }}}

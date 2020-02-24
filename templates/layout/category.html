@@ -2,11 +2,19 @@
 <html class="no-js" lang="{{ locale_name }}">
     <head>
         <title>
-            {{#if page_title}}
-            {{page_title}} | Pepper Together
-            {{else}}
-            {{ head.title }} | Pepper Together
-            {{/if}}
+        {{#if page_title}}
+
+            {{#replace ' - ' page_title}} | {{else}}
+            {{page_title}}
+            {{/replace}}
+
+        {{else}}
+
+            {{#replace ' - ' head.title}} | {{else}}
+            {{head.title}}
+            {{/replace}}
+
+        {{/if}}
         </title>
         {{{ resourceHints }}}
         {{{ head.meta_tags }}}

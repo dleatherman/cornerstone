@@ -13,9 +13,11 @@
 }
 
 .alertBox--info, 
-.alertBox--success {
+.alertBox--success,
+.alertBox--error {
     color: stencilColor("navy");
     background-color: transparent;
+    text-align: left;
 
     span {
         color: stencilColor("navy");

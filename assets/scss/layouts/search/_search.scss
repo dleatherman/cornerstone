@@ -97,6 +97,9 @@
 .search-page {
     display: flex;
     flex-direction: column;
+    .instagram-section {
+        margin-top: 5rem;
+    }
 }
 
 #search-results-heading {

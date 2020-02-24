@@ -65,6 +65,10 @@
   }
 }
 
+.page.search-page .filters-container .list-filter-container {
+  flex-grow: 0.5;
+}
+
 nav {
     font-family: monospace;
 }

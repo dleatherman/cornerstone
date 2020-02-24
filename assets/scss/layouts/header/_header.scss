@@ -301,6 +301,20 @@
 // 1. Animate lines from 'x' to hamburger
 // -----------------------------------------------------------------------------
 
+.mobileCart {
+    @include square($header-toggle-width);
+    display: inline-block;
+    font-size: 0;
+    right: 0;
+    overflow: hidden;
+    padding: remCalc(18);
+    position: absolute;
+    z-index: 2;
+    @include breakpoint($screen-xmedium) {
+        display: none;
+    }
+}
+
 .mobileMenu-toggle, .mobileMenu-toggle-senses {
     @include square($header-toggle-width);
     display: inline-block;

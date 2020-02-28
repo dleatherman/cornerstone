@@ -1,0 +1,21 @@
+<section class="half__callout--outer background__{{background}} text__{{textcolor}} image__side--{{imageside}}">
+   <div class="half__callout--inner">
+
+      <div class="image__wrapper">
+         <img src="{{cdn image}}">
+      </div>
+
+      <div class="content__wrapper">
+         {{#if intro_statement}}
+            <p class="sweet-sans">{{{intro_statement}}}</p>
+         {{/if}}
+         {{#if main_statement}}
+            <h3 class="domaine-display">{{{nl2br main_statement}}}</h3>
+         {{/if}}
+         {{#if cta_link}}
+            <a href="{{cta_link}}" class="btn btn__primary">{{cta_text}}</a>
+         {{/if}}
+      </div>
+
+   </div>
+</section>

@@ -11,6 +11,10 @@
       padding-top: 5rem;
    }
 
+   + .page__pullquote--outer {
+      padding-top: 0;
+   }
+
    &.background-light-pink {
       background: stencilColor('light-pink');
    }
@@ -24,7 +28,7 @@
       background: #f7f3ed;
    }
 
-   &.color-navy {
+   &.text-navy {
       color: stencilColor('navy');
    }
    .page__pullquote--inner {
@@ -34,16 +38,25 @@
          line-height: 1.4;
          margin: 0 auto;
          z-index: 1;
+         br {
+            display: none;
+         }
          @include breakpoint('medium') {
             font-size: $fontSize-root * 2.5;
             max-width: 80%;
+            br {
+               display: inline-block;
+            }
          }
       }
       .page__pullquote--subheading {
-         font-size: $fontSize-root * 2.5;
+         font-size: $fontSize-root * 1.75;
          line-height: 1;
          padding: 2rem 0 0;
          z-index: 1;
+         @include breakpoint('medium') {
+            font-size: $fontSize-root * 2.5;
+         }
          @include breakpoint('large') {
             font-size: $fontSize-hero - 10;
          }

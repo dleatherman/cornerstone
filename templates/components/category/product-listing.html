@@ -3,7 +3,12 @@
         {{#if settings.data_tag_enabled}}
             {{> components/products/grid products=category.products show_compare=category.show_compare theme_settings=theme_settings event="list" }}
         {{else}}
-            {{> components/products/grid products=category.products show_compare=category.show_compare theme_settings=theme_settings}}
+            <!-- TODO: to pull from products.featured -->
+            {{#if category.products}}
+                {{> components/products/grid products=category.products show_compare=category.show_compare theme_settings=theme_settings}}
+            {{else}}
+                {{> components/products/grid products=products.featured theme_settings=theme_settings}}
+            {{/if}}
         {{/if}}
     {{else}}
         {{#if settings.data_tag_enabled}}

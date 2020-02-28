@@ -1,0 +1,93 @@
+
+.half__callout--outer {
+   clear: both;
+   margin: 3rem -0.75rem;
+   &.background__off-white {
+      background-color: stencilColor('off-white');
+   }
+   &.background__nude {
+      background-color: stencilColor('light-pink');
+   }
+   &.background__navy {
+      background-color: stencilColor('navy');
+   }
+   &.text__navy {
+      color: stencilColor('navy');
+   }
+   &.text__white {
+      color: stencilColor('white');
+   }
+   &.text__nude {
+      color: stencilColor('light-pink');
+   }
+   &.text__pink {
+      color: stencilColor('pink');
+   }
+
+   &.image__side--left {
+      .image__wrapper {
+         order: 1;
+      }
+      .content__wrapper {
+         order: 2;
+      }
+   }
+   &.image__side--right {
+      .image__wrapper {
+         order: 2;
+      }
+      .content__wrapper {
+         order: 1;
+      }
+   }
+
+   .half__callout--inner {
+      display: flex;
+      flex-flow: column wrap;
+      @include breakpoint('medium') {
+         flex-flow: row nowrap;
+      }
+   }
+
+   .image__wrapper,
+   .content__wrapper {
+      align-items: flex-start;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      @include breakpoint('medium') {
+         width: 50%;
+      }
+   }
+
+   .image__wrapper {
+      img {
+         height: auto;
+         width: 100%;
+      }
+   }
+
+   .content__wrapper {
+      padding: 6rem 3rem;
+      text-align: left;
+      br {
+         display: none;
+      }
+      @include breakpoint('medium') {
+         padding: 5rem;
+         br {
+            display: inline-block;
+         }
+      }
+   }
+
+   h3 {
+      font-size: 2.5rem;
+      line-height: 1.3;
+      margin: 0 0 1.5rem;
+      @include breakpoint('medium') {
+         font-size: 3.5rem;
+      }
+   }
+
+}

@@ -6,7 +6,6 @@
         "slidesToShow": 1,
         "slidesToScroll": 1,
         "autoplay": false,
-        "adaptiveHeight": true,
         "autoplaySpeed": {{carousel.swap_frequency}}
     }'>
     <div class="heroCarousel-slide mobile {{#if ../theme_settings.homepage_stretch_carousel_images}}stretch{{/if}} {{#if @first}}heroCarousel-slide--first{{/if}}">
@@ -14,7 +13,7 @@
          <img class="heroCarousel-image" src="{{ cdn 'img/touch-mobile.jpg'}}" alt="{{alt_text}}" title="{{alt_text}}" />
          <div class="overlay">
             <h3 class="domaine-display">{{#replace 'Explore ' carousel.slides.0.heading}}{{/replace}}</h3>
-            <a href="/touch/" class="btn btn__outline--false">Explore</a>
+            <a href="/touch/" class="btn btn__primary">Explore</a>
          </div>
          <p class="touch-texture domaine-display">{{{carousel.slides.0.text}}}</p>
         </div>
@@ -24,7 +23,7 @@
             <img class="heroCarousel-image" src="{{cdn 'img/taste-mobile.jpg'}}" alt="{{alt_text}}" title="{{alt_text}}" />
             <div class="overlay">
                <h3 class="domaine-display">{{#replace 'Explore ' carousel.slides.1.heading}}{{/replace}}</h3>
-               <a href="/taste/" class="btn btn__outline--false">Explore</a>
+               <a href="/taste/" class="btn btn__primary">Explore</a>
             </div>
             <p class="taste-texture domaine-display">{{{carousel.slides.1.text}}}</p>
         </div>
@@ -34,7 +33,7 @@
          <img class="heroCarousel-image" src="{{cdn 'img/aroma-mobile.jpg'}}" alt="{{alt_text}}" title="{{alt_text}}" />
          <div class="overlay">
             <h3 class="domaine-display">{{#replace 'Explore ' carousel.slides.2.heading}}{{/replace}}</h3>
-            <a href="/aroma/" class="btn btn__outline--false">Explore</a>
+            <a href="/aroma/" class="btn btn__primary">Explore</a>
          </div>
          <p class="aroma-texture domaine-display">{{{carousel.slides.2.text}}}</p>
         </div>
@@ -44,7 +43,7 @@
         <img class="heroCarousel-image" src="{{cdn 'img/gaze-mobile.jpg'}}" alt="{{alt_text}}" title="{{alt_text}}" />
         <div class="overlay">
            <h3 class="domaine-display">{{#replace 'Explore ' carousel.slides.3.heading}}{{/replace}}</h3>
-           <a href="/gaze/" class="btn btn__outline--false">Explore</a>
+           <a href="/gaze/" class="btn btn__primary">Explore</a>
         </div>
          <p class="gaze-texture domaine-display">{{{carousel.slides.3.text}}}</p>
         </div>
@@ -54,7 +53,7 @@
         <img class="heroCarousel-image" src="{{cdn 'img/listen-mobile.jpg'}}" alt="{{alt_text}}" title="{{alt_text}}" />
         <div class="overlay">
            <h3 class="domaine-display">{{#replace 'Explore ' carousel.slides.4.heading}}{{/replace}}</h3>
-           <a href="/listen/" class="btn btn__outline--false">Explore</a>
+           <a href="/listen/" class="btn btn__primary">Explore</a>
         </div>
          <p class="listen-texture domaine-display">{{{carousel.slides.4.text}}}</p>
         </div>

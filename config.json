@@ -1,6 +1,6 @@
 {
-  "name": "PepperTogether-Permalight-20200224",
-  "version": "2.5.11",
+  "name": "PepperTogether-Permalight-20200227",
+  "version": "2.5.12",
   "meta": {
     "price": 0,
     "documentation_url": "https://support.bigcommerce.com/articles/Public/Cornerstone-Theme-Manual",
@@ -23,8 +23,8 @@
     "hide_category_page_heading": false,
     "hide_blog_page_heading": false,
     "hide_contact_us_page_heading": false,
-    "homepage_new_products_count": 5,
-    "homepage_featured_products_count": 4,
+    "homepage_new_products_count": 4,
+    "homepage_featured_products_count": 8,
     "homepage_top_products_count": 4,
     "homepage_show_carousel": true,
     "homepage_show_carousel_arrows": true,

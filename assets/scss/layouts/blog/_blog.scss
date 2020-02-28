@@ -39,7 +39,7 @@
 .senses-explorer-summary {
     color: stencilColor("navy");
     font-family: stencilFontFamily("sweet-font");
-    font-size: 1.1;
+    font-size: 1.1rem;
     letter-spacing: 2px;
     line-height: 1.8;
     margin: 4rem auto;
@@ -50,6 +50,32 @@
 
 .senses-explorer-wrapper {
     position: relative;
+}
+
+.home .senses-explorer {
+    background-image: url('../img/hero-homepage.jpg');
+    padding: 12rem 0;
+    @include breakpoint('medium') {
+        background-image: url('../img/hero-homepage.jpg');
+    }
+    @include breakpoint($screen-xmedium) {
+        align-items: center;
+    }
+    .senses-explorer-title,
+    p.senses-explorer-title {
+        font-size: 4rem;
+        word-spacing: 0;
+    }
+    .senses-explorer-description {
+        font-family: stencilFontFamily('sweet-font');
+        font-size: 1.1rem;
+        letter-spacing: 0.1em;
+        margin: 0.5rem 0 1.5rem;
+        text-align: center;
+        @include breakpoint('medium') {
+            text-align: left;
+        }
+    }
 }
 
 .senses-explorer {

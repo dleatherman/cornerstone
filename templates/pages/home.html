@@ -3,45 +3,162 @@ products:
     new:
         limit: {{theme_settings.homepage_new_products_count}}
     featured:
-        limit: {{theme_settings.homepage_featured_products_count}}
+        limit: 8
     top_sellers:
         limit: {{theme_settings.homepage_top_products_count}}
 carousel: {{theme_settings.homepage_show_carousel}}
 blog:
     recent_posts:
-        limit: {{theme_settings.homepage_blog_posts_count}}
+        limit: 3
+        summary: 90
 ---
 <!--redirect to stories landing page-->
 <script type="text/javascript">
     // TODO: uncomment this
-    window.location.replace(window.location.href + "stories");
+    function getUrlVars() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+            vars[key] = value;
+        });
+        return vars;
+    }
+    var preview = getUrlVars()['preview'];
+    if (!preview) {
+        window.location.replace(window.location.href + 'stories');
+    }
 </script>
-
-{{#partial "hero"}}
-    {{#if carousel}}
-        {{> components/carousel arrows=theme_settings.homepage_show_carousel_arrows}}
-    {{/if}}
-    {{{snippet 'home_content'}}}
-{{/partial}}
-
 {{#partial "page"}}
+<main class="page stories-landing home">
+    <div class="senses-explorer-wrapper">
+        <div class="senses-explorer">
+            <div class="senses-explorer-text container">
+                <p class="senses-explorer-title">Connect More</p>
+                <p class="senses-explorer-description">Ingredients for spicing it up</p>
+                <div class="senses-explorer--cta">
+                    <a href="/shop/" class="btn btn__primary">Shop now</a>
+                </div>
+            </div>
+        </div>
+        {{#each carousel.slides}}
+        <div class="senses-explorer senses-explorer-feature" style="background-image: url({{image}});">
+            <div class="senses-explorer-text container">
+                <p class="senses-explorer-title">{{{heading}}}</p>
+                {{!-- 
+                <p class="senses-explorer-description">{{{text}}}</p>
+                --}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <ul class="senses-menu">
+        <li class="senses-menu-item touch-texture texture"><a href="/touch/">touch</a></li>
+        <li class="senses-menu-item taste-texture texture"><a href="/taste/">taste</a></li>
+        <li class="senses-menu-item aroma-texture texture"><a href="/aroma/">aroma</a></li>
+        <li class="senses-menu-item gaze-texture texture"><a href="/gaze/">gaze</a></li>
+        <li class="senses-menu-item listen-texture texture"><a href="/listen/">listen</a></li>
+    </ul>
+    <script>
+        function indexInParent(node) {
+            var children = node.parentNode.childNodes;
+            var num = 0;
+            for (var i = 0; i < children.length; i++) {
+                if (children[i] == node) return num;
+                if (children[i].nodeType == 1) num++;
+            }
+            return -1;
+        }
 
-    {{#each shipping_messages}}
-        {{> components/common/alert-info message}}
-    {{/each}}
+        var senses = document.querySelectorAll('.senses-menu li'),
+            senseFeatures = document.querySelectorAll('.senses-explorer-feature');
+        for (var s = 0; s < senses.length; s++) {
+            senses[s].addEventListener('mouseover', function () {
+                senseFeatures[indexInParent(event.target.parentNode)].classList.add('active');
+            });
+            senses[s].addEventListener('mouseout', function () {
+                senseFeatures[indexInParent(event.target.parentNode)].classList.remove('active');
+            });
+        }
+    </script>
+    <div class="senses-explorer-carousel">
+        <p class="senses-explorer-summary">Tips, tricks and toys for a deeper connection with your person through the exploration of all five senses.</p>
+        {{> components/mobile-carousel arrows=theme_settings.homepage_show_carousel_arrows}}
+    </div>
 
-<div class="main full">
-    {{#if products.featured}}
-        {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
-    {{/if}}
+    <main class="page page__home page-content">
 
-    {{#if products.top_sellers}}
-        {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
-    {{/if}}
+        {{> components/products/landing-pullquote
+            textcolor="navy"
+            background="white"
+            heading="Valentine's Day is over,
+            this is how you keep the vibe alive"
+            subheading="there's fun for two"
+        }}
 
-    {{#if products.new}}
-        {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
-    {{/if}}
-</div>
+        {{#if products.featured}}
+            {{> components/common/product-featured-listings products=(before products.featured 4) settings=../settings}}
+            <div class="btn__wrapper">
+                <a href="/shop/" class="btn btn__primary">Shop the Edit</a>
+            </div>
+        {{else}}
+            <p>{{lang 'categories.no_products'}}</p>
+        {{/if}}
+
+        {{> components/common/half-page-callout
+            imageside="left"
+            background="nude"
+            textcolor="navy"
+            image="img/hero-homepage-mobile.jpg"
+            intro_statement="Pepper is all about connection."
+            main_statement="We believe in making
+            pleasure a priority."
+            cta_link="/about-us/"
+            cta_text="About Pepper"
+        }}
+
+        {{> components/products/landing-pullquote
+            textcolor="navy"
+            background="white"
+            heading="Our Best Sellers"
+            subheading="for good reason"
+        }}
+
+        {{#if products.featured}}
+            {{> components/common/product-featured-listings products=(after products.featured 4) settings=../settings}}
+            <div class="btn__wrapper">
+                <a href="/shop/" class="btn btn__primary">Shop All</a>
+            </div>
+        {{else}}
+            <p>{{lang 'categories.no_products'}}</p>
+        {{/if}}
+    </main>
+
+    {{> components/products/landing-pullquote
+        textcolor="navy"
+        background="off-white"
+        heading="Our Editorials"
+    }}
+
+    {{> components/products/landing-pullquote
+        textcolor="navy"
+        background="off-white"
+        heading="Discover tips, tricks, inspo and info
+        on sexual wellness from our team of experts
+        and indulge in our stories on real people."
+        divider="false"
+    }}
+
+    <div class="story__archive--outer">
+        <div class="story-archive container">
+            {{#each blog.recent_posts}}
+                {{> components/blog/post post=this sense=true}}
+            {{/each}}
+            <div class="btn__wrapper">
+                <a href="/stories/" class="btn btn__primary">View Editorials</a>
+            </div>
+        </div>
+    </div>
+    {{>components/common/newsletter-row}}
+    {{>components/common/connect-more}}
+</main>
 {{/partial}}
-{{> layout/home}}
+{{> layout/base page_title="Home | Pepper" }}

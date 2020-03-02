@@ -12,21 +12,6 @@ blog:
         limit: 3
         summary: 90
 ---
-<!--redirect to stories landing page-->
-<script type="text/javascript">
-    // TODO: uncomment this
-    function getUrlVars() {
-        var vars = {};
-        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-            vars[key] = value;
-        });
-        return vars;
-    }
-    var preview = getUrlVars()['preview'];
-    if (!preview) {
-        window.location.replace(window.location.href + 'stories');
-    }
-</script>
 {{#partial "page"}}
 <main class="page stories-landing home">
     <div class="senses-explorer-wrapper">
@@ -107,7 +92,7 @@ blog:
             imageside="left"
             background="nude"
             textcolor="navy"
-            image="img/hero-homepage-mobile.jpg"
+            image="img/about-homepage.jpg"
             intro_statement="Pepper is all about connection."
             main_statement="We believe in making
             pleasure a priority."

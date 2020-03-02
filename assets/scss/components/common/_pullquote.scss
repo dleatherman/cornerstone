@@ -13,6 +13,9 @@
 
    + .page__pullquote--outer {
       padding-top: 0;
+      @include breakpoint('medium') {
+         padding-top: 5rem;
+      }
    }
 
    &.background-light-pink {

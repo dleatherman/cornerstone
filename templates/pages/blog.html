@@ -8,68 +8,15 @@ blog:
 ---
 {{#partial "page"}}
 <main class="page stories-landing">
-    <div class="senses-explorer-wrapper">
-        <div class="senses-explorer">
-            <div class="senses-explorer-text container">
-                <div class="senses-explorer--branding">
-                    <img src="{{cdn 'img/brand-couples-kit.png'}}" alt="">
-                </div>
-                <div class="senses-explorer--cta">
-                    <a href="/kit" class="btn btn__primary">Buy now</a>
-                </div>
-            </div>
-        </div>
-        {{#each carousel.slides}}
-        <div class="senses-explorer senses-explorer-feature" style="background-image: url({{image}});">
-            <div class="senses-explorer-text container">
-                <p class="senses-explorer-title">{{{heading}}}</p>
-                {{!-- 
-                <p class="senses-explorer-description">{{{text}}}</p>
-                --}}
-            </div>
-        </div>
-        {{/each}}
-    </div>
-    <ul class="senses-menu">
-        <li class="senses-menu-item touch-texture texture"><a href="/touch/">touch</a></li>
-        <li class="senses-menu-item taste-texture texture"><a href="/taste/">taste</a></li>
-        <li class="senses-menu-item aroma-texture texture"><a href="/aroma/">aroma</a></li>
-        <li class="senses-menu-item gaze-texture texture"><a href="/gaze/">gaze</a></li>
-        <li class="senses-menu-item listen-texture texture"><a href="/listen/">listen</a></li>
-    </ul>
-    <script>
-        function indexInParent(node) {
-            var children = node.parentNode.childNodes;
-            var num = 0;
-            for (var i=0; i<children.length; i++) {
-               if (children[i]==node) return num;
-               if (children[i].nodeType==1) num++;
-            }
-            return -1;
-        }
-        
-        var senses = document.querySelectorAll('.senses-menu li'),
-            senseFeatures = document.querySelectorAll('.senses-explorer-feature');
-        for (var s = 0; s < senses.length; s++) {
-            senses[s].addEventListener('mouseover', function() {
-                senseFeatures[indexInParent(event.target.parentNode)].classList.add('active');
-            });
-            senses[s].addEventListener('mouseout', function() {
-                senseFeatures[indexInParent(event.target.parentNode)].classList.remove('active');
-            });
-        }
-    </script>
-    <div class="senses-explorer-carousel">
-        <p class="senses-explorer-summary">Tips, tricks and toys for a deeper connection with your person through the exploration of all five senses.</p>
-        {{> components/mobile-carousel arrows=theme_settings.homepage_show_carousel_arrows}}
-    </div>
-    {{!-- TODO: Hide this on pages other than 1 --}}
-
-   {{>components/products/landing-pullquote
-      textcolor="navy"
-      background="off-white"
-      heading="Letting the exploration of the ﬁve senses be the guide, we feature editorials that oﬀer tips and tricks for sharing new experiences together."
-   }}
+    {{#each (limit blog.posts 1) as |post|}}
+    {{> components/blog/sticky-blog-post
+        imageside="right"
+        background="nude"
+        textcolor="navy"
+        cta_text="Read More"
+        post=post
+    }}
+    {{/each}}
     <div class="featured-stories">
         <div class="container">
             {{#each blog.posts}}

@@ -1,0 +1,25 @@
+<section class="blog__post--sticky half__callout--outer background__{{background}} text__{{textcolor}} image__side--{{imageside}}">
+   <div class="half__callout--inner">
+
+      <div class="image__wrapper" style="background-image: url({{getImage post.thumbnail}});">
+      </div>
+
+      <div class="content__wrapper">
+         <p class="story-meta">{{#if post.tags}}{{#withFirst post.tags}}{{name}} | {{/withFirst}}{{/if}}{{post.date_published}}
+         </p>
+         {{#if post.title}}
+            <h3 class="domaine-display">{{{post.title}}}</h3>
+         {{/if}}
+         {{#if post.author}}
+            <p class="sweet-sans">{{{post.author}}}</p>
+         {{/if}}
+         {{#if post.summary}}
+            <p class="freight-text">{{post.summary}}</p>
+         {{/if}}
+         {{#if post.url}}
+            <a href="{{post.url}}" class="btn btn__primary">{{cta_text}}</a>
+         {{/if}}
+      </div>
+
+   </div>
+</section>

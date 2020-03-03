@@ -207,6 +207,33 @@
       .child-item {
          page-break-inside: avoid;
       }
+      &.stories__menu--list {
+         // max-height: 300px;
+         .child-item.read-more {
+            margin-top: 38%;
+         }
+         .stories-column {
+            page-break-inside: auto;
+            break-after: always;
+            a {
+               display: block;
+               &:hover img {
+                  opacity: 0.9;
+               }
+            }
+            img,
+            span {
+               display: block;
+               transition: opacity 0.2s ease-in-out;
+            }
+            .story__title {
+               overflow: hidden;
+               padding-top: 0.5rem;
+               text-overflow: ellipsis;
+               white-space: nowrap;
+            }
+         }
+      }
    }
    .child-item a {
       color: stencilColor('navy');
@@ -244,7 +271,8 @@
    letter-spacing: 0.05em;
    position: relative;
 
-   &.shop__menu--parent {
+   &.shop__menu--parent,
+   &.stories__menu--parent {
       position: static;
       &:hover .shop__menu--child {
          opacity: 1;

@@ -5,18 +5,22 @@ blog:
         limit: 14
         pages: 3
         summary: 90
+    recent_posts:
+        limit: 2
 ---
 {{#partial "page"}}
 <main class="page stories-landing">
     {{#each (limit blog.posts 1) as |post|}}
     {{> components/blog/sticky-blog-post
         imageside="right"
-        background="nude"
-        textcolor="navy"
+        background="auto"
+        textcolor="auto"
         cta_text="Read More"
         post=post
     }}
     {{/each}}
+    {{#if pagination.blog '===' null}}
+    {{else if pagination.blog.current '===' 1}}
     <div class="featured-stories">
         <div class="container">
             {{#each blog.posts}}
@@ -26,6 +30,7 @@ blog:
             {{/each}}
         </div>
     </div>
+    {{/if}}
     <div class="story-archive container">
         <h1>More Stories</h1>
         {{#each blog.posts}}

@@ -3,7 +3,7 @@
     <a href="{{post.url}}"{{#if sense}}{{#if post.tags}}{{#withFirst post.tags}} class="sense_{{name}}"{{/withFirst}}{{/if}}{{/if}}>
         {{#if post.thumbnail}}<div class="story-thumbnail lazyload img" style="background-image: url('{{getImage post.thumbnail}}')" ></div>{{/if}}
         <div class="story-preview-text">
-            <p class="story-meta">{{#if post.tags}}{{#withFirst post.tags}}{{name}}&nbsp;|&nbsp;{{/withFirst}}{{/if}}{{post.date_published}}</p>
+            <p class="story-meta">{{#if post.tags}}{{#withFirst post.tags}}{{name}}{{/withFirst}}{{/if}}</p>
             <p class="story-preview-title">{{post.title}}</p>
             <p class="story-preview-summary">{{{summary}}}...</p>
         </div>

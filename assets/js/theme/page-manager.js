@@ -1,3 +1,6 @@
+/* eslint-disable func-names */
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-unused-expressions */
 export default class PageManager {
     constructor(context) {
         this.context = context;
@@ -15,6 +18,9 @@ export default class PageManager {
 
         $(document).ready(() => {
             page.onReady.bind(page)();
+            /mobi/i.test(navigator.userAgent) && !location.hash && setTimeout(() => {
+                if (!pageYOffset) window.scrollTo(0, 1);
+            }, 1000);
         });
     }
 }

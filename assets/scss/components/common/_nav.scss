@@ -210,7 +210,9 @@
       &.stories__menu--list {
          // max-height: 300px;
          .child-item.read-more {
-            margin-top: 38%;
+            position: absolute;
+            bottom: 3.5rem;
+            width: auto;
          }
          .stories-column {
             page-break-inside: auto;

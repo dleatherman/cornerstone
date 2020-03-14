@@ -531,6 +531,7 @@ p.senses-explorer-title {
 .story-header {
     @include breakpoint("medium") {
         display: flex;
+        min-height: 80vh;
     }
     &.story-header-preview {
         .story-header-text {
@@ -554,6 +555,9 @@ p.senses-explorer-title {
     padding: 3rem 10% 4rem;
 
     @include breakpoint("medium") {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
         padding-bottom: 8rem;
         padding-top: 8rem;
         width: 50%;
@@ -562,6 +566,7 @@ p.senses-explorer-title {
     @include breakpoint("large") {
         padding-top: 10rem;
         padding-bottom: 10rem;
+        width: 50%;
     }
 
     h1 {
@@ -724,7 +729,45 @@ p.senses-explorer-title {
 .blog__post--sticky {
     margin: 0;
     .half__callout--inner {
-        // min-height: 65vh;
+        min-height: 80vh;
+        .content__wrapper {
+            padding: 3rem 10% 4rem;
+
+            @include breakpoint("medium") {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                padding-bottom: 8rem;
+                padding-top: 8rem;
+                width: 50%;
+            }
+
+            @include breakpoint("large") {
+                padding-top: 10rem;
+                padding-bottom: 10rem;
+                width: 50%;
+            }
+            h3 {
+                color: inherit;
+                font-family: stencilFontFamily("domaine-font");
+                font-size: 2.75rem;
+                font-weight: 300;
+                line-height: 1.2;
+                margin-bottom: 2rem;
+
+                @include breakpoint("medium") {
+                    font-size: 3rem;
+                }
+            }
+            .sweet-sans {
+                font-size: 1.1rem;
+                letter-spacing: 0.05em;
+                line-height: 1.5;
+                @include breakpoint("medium") {
+                    font-size: 1.25rem;
+                }
+            }
+        }
         .image__wrapper {
             background-position: center center;
             background-repeat: no-repeat;

@@ -1,8 +1,7 @@
 <section class="blog__post--sticky half__callout--outer background__{{background}} text__{{textcolor}} image__side--{{imageside}} sense_{{#if post.tags}}{{#withFirst post.tags}}{{name}}{{/withFirst}}{{/if}}">
    <div class="half__callout--inner">
 
-      <div class="image__wrapper" style="background-image: url();">
-         <img src="{{getImage post.thumbnail}}">
+      <div class="image__wrapper" style="background-image: url({{getImage post.thumbnail}});">
       </div>
 
       <div class="content__wrapper">

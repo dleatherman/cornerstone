@@ -12,12 +12,12 @@ blog:
         <div class="story-header-text {{#if blog.post.tags}}{{#withFirst blog.post.tags}} sense_{{name}}{{/withFirst}}{{/if}}">
             <p class="story-meta">
                 {{#if blog.post.tags}}
-                    {{#withFirst blog.post.tags}}<a href="{{url}}">{{name}}</a> &nbsp;|&nbsp;{{/withFirst}}
+                    {{#withFirst blog.post.tags}}<a href="{{url}}">{{name}}</a>{{/withFirst}}
                 {{/if}}
-                {{blog.post.date_published}}
             </p>
             <h1>{{blog.post.title}}</h1>
             {{#if blog.post.author}}<p class="story-meta">{{blog.post.author}}</p>{{/if}}
+            <p class="story-meta">{{blog.post.date_published}}</p>
             <div class="icons story-share">
                 <p class="icon">
                     <a href="https://www.facebook.com/sharer/sharer.php?u={{blog.post.url}}" target="_blank">
@@ -49,8 +49,6 @@ blog:
   </div>
   <div class="story-content container">
     {{{blog.post.body}}}
-    {{!-- <div id="commento"></div>
-    <script src="https://cdn.commento.io/js/commento.js"></script> --}}
   </div>
   {{!>components/category/featured-by-sense 
     items=products.new

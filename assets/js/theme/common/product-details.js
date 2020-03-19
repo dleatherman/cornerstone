@@ -382,6 +382,11 @@ export default class ProductDetails {
                 this.previewModal.open();
 
                 this.updateCartContent(this.previewModal, response.data.cart_item.id);
+                // eslint-disable-next-line no-undef
+                gtag('event', 'conversion', {
+                    // eslint-disable-next-line quote-props
+                    'send_to': 'AW-661202794/gZGQCI2n4ckBEOrOpLsC',
+                });
             } else {
                 this.$overlay.show();
                 // if no modal, redirect to the cart page

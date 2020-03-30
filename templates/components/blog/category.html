@@ -1,0 +1,17 @@
+{{!--
+Experts
+Inspiration
+Lovescopes
+Meet The Makers
+Real Couples
+Tips + Tricks
+Travel
+Wellness
+--}}
+{{!-- {{#contains (join (pluck tags 'name') ', ') 'featured-home' }} --}}
+{{#each tags as |tag|}}
+   {{#inArray (split "experts,inspiration,lovescopes,meet the makers,real couples,tips + tricks,travel,wellness" ",") tag.name}}
+      | {{ tag.name }}
+   {{/inArray}}
+{{/each}}
+{{!-- {{json (split "experts,inspiration,lovescopes,meet the makers,real couples,tips + tricks,travel,wellness" ",")}} --}}

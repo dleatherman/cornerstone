@@ -9,6 +9,7 @@
 
 .sense_touch {
     background-color: stencilColor("light-pink");
+    color: stencilColor('navy');
 }
 
 .sense_taste {
@@ -18,10 +19,12 @@
 
 .sense_gaze {
     background-color: stencilColor("pink");
+    color: stencilColor('navy');
 }
 
 .sense_aroma {
     background-color: stencilColor("grey");
+    color: stencilColor('navy');
 }
             
 .img {
@@ -766,6 +769,10 @@ p.senses-explorer-title {
                 @include breakpoint("medium") {
                     font-size: 1.25rem;
                 }
+            }
+            .story-meta,
+            p {
+                color: inherit;
             }
         }
         .image__wrapper {

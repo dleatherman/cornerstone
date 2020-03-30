@@ -5,7 +5,7 @@
       </div>
 
       <div class="content__wrapper">
-         <p class="story-meta">{{#if post.tags}}{{#withFirst post.tags}}{{name}}{{/withFirst}}{{/if}}
+         <p class="story-meta">{{#if post.tags}}{{#withFirst post.tags}}{{name}}{{/withFirst}}{{/if}}{{> components/blog/category tags=post.tags}}
          </p>
          {{#if post.title}}
             <h3 class="domaine-display">{{{post.title}}}</h3>
@@ -17,7 +17,7 @@
             <p class="sweet-sans">{{{post.date_published}}}</p>
          {{/if}}
          {{#if post.summary}}
-            <p class="freight-text">{{post.summary}}</p>
+            <p class="freight-text">{{post.summary}}&hellip;</p>
          {{/if}}
          {{#if post.url}}
             <a href="{{post.url}}" class="btn btn__primary">{{cta_text}}</a>

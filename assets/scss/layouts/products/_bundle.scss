@@ -231,8 +231,7 @@
       }
 
       p {
-         @include freight;
-         font-size: 1.1rem;
+         @extend .product__description--helper;
          line-height: 1.5;
       }
 
@@ -268,10 +267,11 @@
 
 .why__heading {
    color: stencilColor('pink');
-   font-size: 1.8rem;
+   font-size: 2.1618rem;
+   padding-bottom: 1rem;
    @include breakpoint('medium') {
       font-size: 2.6rem;
       line-height: 1.3;
-      padding-bottom: 1rem;
+      // padding-bottom: 1rem;
    }
 }

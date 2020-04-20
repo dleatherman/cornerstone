@@ -33,19 +33,11 @@ blog:
             </div>
         </div>
         
-        <section class="why__wrapper--outer">
-            <div class="why__wrapper--inner">
-                <div class="why__heading domaine-display">
-                    {{> components/common/search-custom-field product=product custom_field="product-vertical-text" multiple="1"}}
-                </div>
-                <div class="vertical-text">
-                    what’s with all the hype
-                    <img src="{{cdn 'img/arrow-why.svg'}}" alt="">
-                </div>
-                <p>{{> components/common/search-custom-field product=product custom_field="story_paragraph"}}</p>
-                {{!-- <a href="/cart.php?action=add&product_id={{product.id}}" class="btn btn__primary">Buy Now</a> --}}
-            </div>
-        </section>
+        {{#contains (join (pluck product.custom_fields 'name') ', ') 'hide_why'}}
+            {{!-- doesn't have the hide_why custom field --}}
+        {{else}}
+            {{> components/common/product-why product=product}}
+        {{/contains}}
 
         {{> components/blog/featured-blog-post product=product}}
 

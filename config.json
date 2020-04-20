@@ -1,6 +1,6 @@
 {
-  "name": "PepperTogether-Permalight-20200407",
-  "version": "2.7.0",
+  "name": "PepperTogether-Permalight-20200420",
+  "version": "2.8.0",
   "meta": {
     "price": 0,
     "documentation_url": "https://support.bigcommerce.com/articles/Public/Cornerstone-Theme-Manual",
@@ -309,7 +309,7 @@
     "/assets/scss/vendor"
   ],
   "resources": {
-    "cart": false,
+    "cart": true,
     "bulk_discount_rates": false,
     "shop_by_brand": {
       "limit": 10

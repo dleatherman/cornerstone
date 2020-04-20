@@ -391,10 +391,16 @@
 
 .banners {
     @include sweet-font;
+    -webkit-font-variant-numeric: lining-nums;
+    font-variant-numeric: lining-nums;
     background-color: #c6c7c6;
     color: stencilColor('navy');
+    font-size: 0.9rem;
     padding: 0.5rem;
     text-transform: uppercase;
+    @include breakpoint('medium') {
+        font-size: 1rem;
+    }
     a {
         color: stencilColor('navy');
     }

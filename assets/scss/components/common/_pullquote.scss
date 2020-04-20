@@ -35,7 +35,19 @@
       color: stencilColor('navy');
    }
    .page__pullquote--inner {
-      @extend .container;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1140px;
+      padding: 0;
+      position: relative;
+      width: layout("fixed");
+      @include breakpoint('large') {
+         max-width: 1040px;
+         padding: 0 1.5rem;
+      }
+      @media (min-width: $screen-xlarge) {
+         max-width: 1140px;
+      }
       h1 {
          font-size: $fontSize-root * 1.5;
          line-height: 1.4;

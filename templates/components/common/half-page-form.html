@@ -1,0 +1,26 @@
+<section class="half__callout--outer background__{{background}} text__{{textcolor}} image__side--{{imageside}} text__align--{{textalign}} half__callout--giveaway">
+   <div class="half__callout--inner">
+
+      <div class="image__wrapper" style="background-image: url({{cdn image}});">
+      </div>
+
+      <div class="content__wrapper">
+         {{#if intro_statement}}
+            <p class="sweet-sans">{{{intro_statement}}}</p>
+         {{/if}}
+         {{#if main_statement}}
+            <h3 class="domaine-display">{{{nl2br main_statement}}}</h3>
+         {{/if}}
+         {{#if giveaway_content}}
+           <p class="freight-text giveaway__content">{{{nl2br giveaway_content}}}</p>
+         {{/if}}
+         <div class="klaviyo-form-{{{formID}}}"></div>
+          {{#if giveaway_terms}}
+          <p class="freight-text giveaway__terms">
+            {{{nl2br giveaway_terms}}}
+          </p>
+          {{/if}}
+      </div>
+
+   </div>
+</section>

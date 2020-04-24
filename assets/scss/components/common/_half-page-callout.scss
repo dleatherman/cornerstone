@@ -2,6 +2,35 @@
 .half__callout--outer {
    clear: both;
    margin: 3rem -0.75rem;
+   overflow: hidden;
+   &.half__callout--giveaway {
+      margin: 0;
+      .image__wrapper {
+         background-size: cover;
+         background-position: center center;
+         flex: 1;
+         min-height: 60vh;
+      }
+      h3 {
+         font-size: 2rem;
+         @include breakpoint('medium') {
+            font-size: 3rem;
+            width: 80%;
+         }
+      }
+      .giveaway__content {
+         font-size: 1.1rem;
+         @include breakpoint('medium') {
+            max-width: 85%;
+         }
+      }
+      .giveaway__terms {
+         font-size: 0.9rem;
+         @include breakpoint('medium') {
+            max-width: 450px;
+         }
+      }
+   }
    &.background__off-white {
       background-color: stencilColor('off-white');
    }
@@ -22,6 +51,13 @@
    }
    &.text__pink {
       color: stencilColor('pink');
+   }
+
+   &.text__align--center {
+      .content__wrapper {
+         align-items: center;
+         text-align: center;
+      }
    }
 
    &.image__side--left {
@@ -68,7 +104,7 @@
    }
 
    .content__wrapper {
-      padding: 6rem 3rem;
+      padding: 6rem 1.5rem;
       text-align: left;
       br {
          display: none;

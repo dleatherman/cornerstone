@@ -1,0 +1,22 @@
+<section class="blog__post--sticky home__featured half__callout--outer background__{{background}} text__{{textcolor}} image__side--{{imageside}} sense_{{sense}}">
+   <div class="half__callout--inner">
+
+      <div class="image__wrapper" style="background-image: url({{cdn image}});">
+      </div>
+
+      <div class="content__wrapper">
+         <p class="story-meta">{{sense}}
+         </p>
+         {{#if title}}
+            <h3 class="domaine-display">{{{title}}}</h3>
+         {{/if}}
+         {{#if author}}
+            <p class="sweet-sans">{{{author}}}</p>
+         {{/if}}
+         {{#if cta_link}}
+            <a href="{{cta_link}}" class="btn btn__primary">{{cta_text}}</a>
+         {{/if}}
+      </div>
+
+   </div>
+</section>

@@ -17,10 +17,10 @@ blog:
     <div class="senses-explorer-wrapper">
         <div class="senses-explorer">
             <div class="senses-explorer-text container">
-                <p class="senses-explorer-title">Connect More</p>
-                <p class="senses-explorer-description">Ingredients for spicing it up</p>
+                <p class="senses-explorer-title">Workout from home</p>
+                <p class="senses-explorer-description">This dynamic duo is all it takes to<br>make your kegel workout mind-blowing.</p>
                 <div class="senses-explorer--cta">
-                    <a href="/shop/" class="btn btn__primary">Shop now</a>
+                    <a href="/touch/product/we-vibe-bloom-vibrating-kegel-balls/" class="btn btn__primary">Buy now</a>
                 </div>
             </div>
         </div>
@@ -74,14 +74,43 @@ blog:
         {{> components/products/landing-pullquote
             textcolor="navy"
             background="white"
-            heading="We're making pleasure a priority"
-            subheading="Discover, shop, enjoy"
+            heading="Did you know Kegels can intensify your orgasms?"
+            subheading="Shop everything you need to
+            up your O-game"
         }}
 
         {{#if products.featured}}
-            {{> components/common/product-featured-listings products=(before products.featured 4) settings=../settings}}
+            {{> components/common/product-featured-category featured_category=true products=products.featured order="first" settings=../settings}}
             <div class="btn__wrapper">
-                <a href="/shop/" class="btn btn__primary">Shop the Edit</a>
+                <a href="/shop/toys/kegel/" class="btn btn__primary">Shop Trainers</a>
+            </div>
+        {{else}}
+            <p>{{lang 'categories.no_products'}}</p>
+        {{/if}}
+
+        {{> components/common/home-featured-blog
+            imageside="right"
+            background="nude"
+            textcolor="navy"
+            image="img/kegels.png"
+            sense="Touch"
+            title="A Practical Guide to Kegels For All of Us"
+            author="KAISHA-DYAN MCMILLAN"
+            cta_link="/stories/a-practical-guide-to-kegels-for-all-of-us/"
+            cta_text="Read more"
+        }}
+
+        {{> components/products/landing-pullquote
+            textcolor="navy"
+            background="white"
+            heading="Enhance the experience"
+            subheading="Get in the mood"
+        }}
+
+        {{#if products.featured}}
+            {{> components/common/product-featured-category featured_category=true products=products.featured settings=../settings}}
+            <div class="btn__wrapper">
+                <a href="/shop/" class="btn btn__primary">Shop All</a>
             </div>
         {{else}}
             <p>{{lang 'categories.no_products'}}</p>
@@ -98,22 +127,6 @@ blog:
             cta_link="/about-us/"
             cta_text="About Pepper"
         }}
-
-        {{> components/products/landing-pullquote
-            textcolor="navy"
-            background="white"
-            heading="Our Best Sellers"
-            subheading="for good reason"
-        }}
-
-        {{#if products.featured}}
-            {{> components/common/product-featured-listings products=(after products.featured 4) settings=../settings}}
-            <div class="btn__wrapper">
-                <a href="/shop/" class="btn btn__primary">Shop All</a>
-            </div>
-        {{else}}
-            <p>{{lang 'categories.no_products'}}</p>
-        {{/if}}
     </main>
 
     {{> components/products/landing-pullquote

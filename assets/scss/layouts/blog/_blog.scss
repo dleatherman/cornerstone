@@ -56,10 +56,10 @@
 }
 
 .home .senses-explorer {
-    background-image: url('../img/hero-homepage-mobile.jpg');
+    background-image: url('../img/hero-bloom-mobile.jpg');
     padding: 12rem 0;
     @include breakpoint('medium') {
-        background-image: url('../img/hero-homepage.jpg');
+        background-image: url('../img/hero-bloom.jpg');
     }
     @include breakpoint($screen-xmedium) {
         align-items: center;
@@ -739,6 +739,9 @@ p.senses-explorer-title {
 
 .blog__post--sticky {
     margin: 0;
+    &.home__featured {
+        margin: 0 -0.75rem
+    }
     .half__callout--inner {
         min-height: 80vh;
         .content__wrapper {

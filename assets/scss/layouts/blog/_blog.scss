@@ -57,26 +57,47 @@
 
 .home .senses-explorer {
     background-image: url('../img/hero-bloom-mobile.jpg');
-    padding: 12rem 0;
+    padding: 4rem 0;
     @include breakpoint('medium') {
         background-image: url('../img/hero-bloom.jpg');
+        padding: 12rem 0;
     }
     @include breakpoint($screen-xmedium) {
-        align-items: center;
+        // align-items: center;
     }
     .senses-explorer-title,
     p.senses-explorer-title {
-        font-size: 4rem;
+        font-size: 2.25rem;
+        line-height: 1.2;
+        text-align: left;
         word-spacing: 0;
+        @include breakpoint($screen-xmedium) {
+            font-size: 4rem;
+        }
     }
     .senses-explorer-description {
         font-family: stencilFontFamily('sweet-font');
         font-size: 1.1rem;
         letter-spacing: 0.1em;
         margin: 0.5rem 0 1.5rem;
-        text-align: center;
-        @include breakpoint('medium') {
-            text-align: left;
+        text-align: left;
+        width: 85%;
+        br {
+            display: none;
+            @include breakpoint('small') {
+                display: inline-block;
+            }
+
+        }
+        // // :kegels
+        // @include breakpoint('medium') {
+        //     text-align: left;
+        // }
+    }
+    .senses-explorer--cta {
+        margin: 18rem 0 0;
+        @include breakpoint('small') {
+            margin: 0 auto;
         }
     }
 }

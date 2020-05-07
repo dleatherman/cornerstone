@@ -56,10 +56,10 @@
 }
 
 .home .senses-explorer {
-    background-image: url('../img/hero-bloom-mobile.jpg');
+    background-image: url('../img/hero-mothersday-mobile.jpg');
     padding: 4rem 0;
     @include breakpoint('medium') {
-        background-image: url('../img/hero-bloom.jpg');
+        background-image: url('../img/hero-mothersday.jpg');
         padding: 12rem 0;
     }
     @include breakpoint($screen-xmedium) {
@@ -185,7 +185,6 @@ p.senses-explorer-title {
     color: white;
     font-weight: 300;
     position: relative;
-    text-transform: capitalize;
     z-index: 1;
     word-spacing: 100vw;
 

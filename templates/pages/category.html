@@ -20,16 +20,6 @@ category:
 {{#partial "page"}}
 {{{snippet 'categories'}}}
 
-{{#if category.name '===' 'Shop'}}
-<ul class="senses-menu">
-    <li class="senses-menu-item touch-texture texture"><a href="/touch/">touch</a></li>
-    <li class="senses-menu-item taste-texture texture"><a href="/taste/">taste</a></li>
-    <li class="senses-menu-item aroma-texture texture"><a href="/aroma/">aroma</a></li>
-    <li class="senses-menu-item gaze-texture texture"><a href="/gaze/">gaze</a></li>
-    <li class="senses-menu-item listen-texture texture"><a href="/listen/">listen</a></li>
-</ul>
-{{/if}}
-
 {{#if category.faceted_search_enabled}}
     <aside class="page-sidebar filters-container" id="faceted-search-container">
         {{> components/category/sidebar}}

@@ -15,9 +15,12 @@
       height: auto;
    }
    .btn__wrapper {
-      padding: 0 0 2rem;
+      padding: 1rem 0 2rem;
       text-align: center;
       width: 100%;
+      @include breakpoint('medium') {
+         padding: 0 0 2rem;
+      }
    }
    .story__archive--outer {
       background: stencilColor('off-white');

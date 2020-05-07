@@ -17,56 +17,13 @@ blog:
     <div class="senses-explorer-wrapper">
         <div class="senses-explorer">
             <div class="senses-explorer-text container">
-                <p class="senses-explorer-title">Workout from home</p>
-                <p class="senses-explorer-description">This dynamic duo is all it takes to<br>make your kegel workout mind-blowing.</p>
+                <p class="senses-explorer-title">Better than<br>breakfast in bed</p>
+                <p class="senses-explorer-description">Fill Mother's Day with good vibes.</p>
                 <div class="senses-explorer--cta">
-                    <a href="/touch/product/we-vibe-bloom-vibrating-kegel-balls/" class="btn btn__primary">Buy now</a>
-                </div>
+                    <a href="#" class="btn btn__primary bundle-products" data-bundle-products="[195, 179]">Buy now</a>
+                </>
             </div>
         </div>
-        {{#each carousel.slides}}
-        <div class="senses-explorer senses-explorer-feature" style="background-image: url({{image}});">
-            <div class="senses-explorer-text container">
-                <p class="senses-explorer-title">{{{heading}}}</p>
-                {{!-- 
-                <p class="senses-explorer-description">{{{text}}}</p>
-                --}}
-            </div>
-        </div>
-        {{/each}}
-    </div>
-    <ul class="senses-menu">
-        <li class="senses-menu-item touch-texture texture"><a href="/touch/">touch</a></li>
-        <li class="senses-menu-item taste-texture texture"><a href="/taste/">taste</a></li>
-        <li class="senses-menu-item aroma-texture texture"><a href="/aroma/">aroma</a></li>
-        <li class="senses-menu-item gaze-texture texture"><a href="/gaze/">gaze</a></li>
-        <li class="senses-menu-item listen-texture texture"><a href="/listen/">listen</a></li>
-    </ul>
-    <script>
-        function indexInParent(node) {
-            var children = node.parentNode.childNodes;
-            var num = 0;
-            for (var i = 0; i < children.length; i++) {
-                if (children[i] == node) return num;
-                if (children[i].nodeType == 1) num++;
-            }
-            return -1;
-        }
-
-        var senses = document.querySelectorAll('.senses-menu li'),
-            senseFeatures = document.querySelectorAll('.senses-explorer-feature');
-        for (var s = 0; s < senses.length; s++) {
-            senses[s].addEventListener('mouseover', function () {
-                senseFeatures[indexInParent(event.target.parentNode)].classList.add('active');
-            });
-            senses[s].addEventListener('mouseout', function () {
-                senseFeatures[indexInParent(event.target.parentNode)].classList.remove('active');
-            });
-        }
-    </script>
-    <div class="senses-explorer-carousel">
-        <p class="senses-explorer-summary">Tips, tricks and toys for a deeper connection with your person through the exploration of all five senses.</p>
-        {{> components/mobile-carousel arrows=theme_settings.homepage_show_carousel_arrows}}
     </div>
 
     <main class="page page__home page-content">
@@ -74,15 +31,15 @@ blog:
         {{> components/products/landing-pullquote
             textcolor="navy"
             background="white"
-            heading="Did you know Kegels can intensify your orgasms?"
-            subheading="Shop everything you need to
-            up your O-game"
+            heading="Her body is a wonderland"
+            subheading="Shop for what she really wants"
         }}
 
         {{#if products.featured}}
-            {{> components/common/product-featured-category featured_category=true products=products.featured order="first" settings=../settings}}
+            {{!-- {{> components/common/product-featured-category featured_category=true products=products.featured order="first" settings=../settings}} --}}
+            {{> components/common/product-featured-listings featured_category=true products=(before products.featured 4) settings=../settings}}
             <div class="btn__wrapper">
-                <a href="/shop/toys/kegel/" class="btn btn__primary">Shop Trainers</a>
+                <a href="/mothers-day/" class="btn btn__primary">Shop All</a>
             </div>
         {{else}}
             <p>{{lang 'categories.no_products'}}</p>
@@ -92,25 +49,26 @@ blog:
             imageside="right"
             background="nude"
             textcolor="navy"
-            image="img/kegels.png"
+            image="img/home-orgasm.png"
             sense="Touch"
-            title="A Practical Guide to Kegels For All of Us"
+            title="6 Ways to Intensify Her Orgasm"
             author="KAISHA-DYAN MCMILLAN"
-            cta_link="/stories/a-practical-guide-to-kegels-for-all-of-us/"
+            cta_link="/6-ways-to-intensify-her-orgasm"
             cta_text="Read more"
         }}
 
         {{> components/products/landing-pullquote
             textcolor="navy"
             background="white"
-            heading="Enhance the experience"
-            subheading="Get in the mood"
+            heading="Spoil her"
+            subheading="Celebrate in style"
         }}
 
         {{#if products.featured}}
-            {{> components/common/product-featured-category featured_category=true products=products.featured settings=../settings}}
+            {{!-- {{> components/common/product-featured-category featured_category=true products=products.featured settings=../settings}} --}}
+            {{> components/common/product-featured-listings featured_category=true products=(after products.featured 4) settings=../settings}}
             <div class="btn__wrapper">
-                <a href="/shop/" class="btn btn__primary">Shop All</a>
+                <a href="/mothers-day/" class="btn btn__primary">Shop All</a>
             </div>
         {{else}}
             <p>{{lang 'categories.no_products'}}</p>

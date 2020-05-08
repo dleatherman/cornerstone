@@ -304,17 +304,51 @@
 // 1. Animate lines from 'x' to hamburger
 // -----------------------------------------------------------------------------
 
-.mobileCart {
+.mobileSearch {
     @include square($header-toggle-width);
     display: inline-block;
-    font-size: 0;
-    right: 0;
-    overflow: hidden;
+    right: remCalc(48);
     padding: remCalc(18);
     position: absolute;
+    text-decoration: none;
     z-index: 2;
     @include breakpoint($screen-xmedium) {
         display: none;
+    }
+}
+.mobileCart {
+    @include square($header-toggle-width);
+    display: inline-block;
+    right: 0;
+    padding: remCalc(18);
+    position: absolute;
+    text-decoration: none;
+    z-index: 2;
+    @include breakpoint($screen-xmedium) {
+        display: none;
+    }
+}
+
+.cart__item--count {
+    background-color: stencilColor('off-white');
+    border-radius: 10px;
+    color: stencilColor('navy');
+    display: none;
+    font-family: stencilFontFamily('sweet-font');
+    font-size: 12px;
+    line-height: 15px;
+    position: absolute;
+    height: 15px;
+    left: remCalc(9);
+    text-align: center;
+    top: remCalc(9);
+    width: 15px;
+    @include breakpoint($screen-xmedium) {
+        left: remCalc(18);
+        top: remCalc(32);
+    }
+    &.is-active {
+        display: block;
     }
 }
 

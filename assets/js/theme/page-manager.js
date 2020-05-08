@@ -1,6 +1,8 @@
 /* eslint-disable func-names */
 /* eslint-disable no-restricted-globals */
 /* eslint-disable no-unused-expressions */
+import utils from '@bigcommerce/stencil-utils';
+
 export default class PageManager {
     constructor(context) {
         this.context = context;
@@ -21,6 +23,19 @@ export default class PageManager {
             /mobi/i.test(navigator.userAgent) && !location.hash && setTimeout(() => {
                 if (!pageYOffset) window.scrollTo(0, 1);
             }, 1000);
+
+            // TODO: Come back to this, run when item added to cart
+            const cartItemsEl = document.querySelectorAll('[data-cart-items]');
+            utils.api.cart.getCart({}, (err, response) => {
+                let totalItems;
+                if (response && cartItemsEl.length > 0) {
+                    totalItems = Object.keys(response[0].lineItems.physicalItems).length + Object.keys(response[0].lineItems.customItems).length + Object.keys(response[0].lineItems.digitalItems).length + Object.keys(response[0].lineItems.giftCertificates).length;
+                    cartItemsEl.forEach(el => {
+                        el.classList.add('is-active');
+                        el.innerText = totalItems;
+                    });
+                }
+            });
         });
 
         if (context.template === 'pages/home') {

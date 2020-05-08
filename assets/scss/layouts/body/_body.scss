@@ -190,6 +190,31 @@ body {
     padding-bottom: 2em;
 }
 
+.page-content-sub,
+.page-content {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: stencilFontFamily('domaine-font');
+        font-weight: normal;
+    }
+    p {
+        color: stencilColor('navy');
+        font-family: stencilFontFamily("freight-font");
+        font-size: 1.3rem;
+        letter-spacing: 0.1px;
+        line-height: 1.5;
+        margin: 0 auto 2rem;
+        
+        a {
+            color: inherit;
+        }
+    }
+}
+
 .page-content--centered {
     color: stencilColor("navy");
     padding-bottom: 4rem;

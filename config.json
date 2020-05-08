@@ -1,6 +1,6 @@
 {
-  "name": "MothersDay-PepperTogether-Permalight-20200507",
-  "version": "2.11.4",
+  "name": "MothersDay-PepperTogether-Permalight-20200508",
+  "version": "2.12.0",
   "meta": {
     "price": 0,
     "documentation_url": "https://support.bigcommerce.com/articles/Public/Cornerstone-Theme-Manual",
@@ -37,7 +37,7 @@
     "productpage_reviews_count": 9,
     "productpage_related_products_count": 10,
     "productpage_similar_by_views_count": 10,
-    "categorypage_products_per_page": 12,
+    "categorypage_products_per_page": 16,
     "shop_by_price_visibility": true,
     "brandpage_products_per_page": 12,
     "searchpage_products_per_page": 12,
@@ -351,7 +351,7 @@
         "productpage_reviews_count": 9,
         "productpage_related_products_count": 10,
         "productpage_similar_by_views_count": 10,
-        "categorypage_products_per_page": 12,
+        "categorypage_products_per_page": 16,
         "shop_by_price_visibility": true,
         "brandpage_products_per_page": 12,
         "searchpage_products_per_page": 12,

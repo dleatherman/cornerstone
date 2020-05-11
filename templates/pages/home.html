@@ -17,10 +17,10 @@ blog:
     <div class="senses-explorer-wrapper">
         <div class="senses-explorer">
             <div class="senses-explorer-text container">
-                <p class="senses-explorer-title">Better than<br>breakfast in bed</p>
-                <p class="senses-explorer-description">Fill Mother's Day with good vibes.</p>
+                <p class="senses-explorer-title">Workout from home</p>
+                <p class="senses-explorer-description">This dynamic duo is all it takes to make your kegel workout mind-blowing.</p>
                 <div class="senses-explorer--cta">
-                    <a href="/shop/" class="btn btn__primary">Shop now</a>
+                    <a href="/shop/toys/kegel/" class="btn btn__primary">Shop now</a>
                     <!-- <a href="#" class="btn btn__primary bundle-products" data-bundle-products="[195, 179]">Buy now</a> -->
                 </>
             </div>
@@ -32,15 +32,16 @@ blog:
         {{> components/products/landing-pullquote
             textcolor="navy"
             background="white"
-            heading="Her body is a wonderland"
-            subheading="Shop for what she really wants"
+            heading="Did you know kegels can intensify your orgasms?"
+            subheading="Shop everything you need
+            to up your O-game"
         }}
 
         {{#if products.featured}}
-            {{!-- {{> components/common/product-featured-category featured_category=true products=products.featured order="first" settings=../settings}} --}}
-            {{> components/common/product-featured-listings featured_category=true products=(before products.featured 4) settings=../settings}}
+            {{> components/common/product-featured-category featured_category=true products=products.featured order="first" settings=../settings}}
+            {{!-- {{> components/common/product-featured-listings featured_category=true products=(before products.featured 4) settings=../settings}} --}}
             <div class="btn__wrapper">
-                <a href="/mothers-day/" class="btn btn__primary">Shop All</a>
+                <a href="/toys/kegel/" class="btn btn__primary">Shop All</a>
             </div>
         {{else}}
             <p>{{lang 'categories.no_products'}}</p>
@@ -50,26 +51,26 @@ blog:
             imageside="right"
             background="nude"
             textcolor="navy"
-            image="img/home-orgasm.png"
+            image="img/home-kegels.png"
             sense="Touch"
-            title="6 Ways to Intensify Her Orgasm"
+            title="A Practical Guide to Kegels For All of Us"
             author="KAISHA-DYAN MCMILLAN"
-            cta_link="/6-ways-to-intensify-her-orgasm"
+            cta_link="/stories/a-practical-guide-to-kegels-for-all-of-us/"
             cta_text="Read more"
         }}
 
         {{> components/products/landing-pullquote
             textcolor="navy"
             background="white"
-            heading="Spoil her"
-            subheading="Celebrate in style"
+            heading="Enhance the experience"
+            subheading="Get in the mood"
         }}
 
         {{#if products.featured}}
-            {{!-- {{> components/common/product-featured-category featured_category=true products=products.featured settings=../settings}} --}}
-            {{> components/common/product-featured-listings featured_category=true products=(after products.featured 4) settings=../settings}}
+            {{> components/common/product-featured-category featured_category=true products=products.featured settings=../settings}}
+            {{!-- {{> components/common/product-featured-listings featured_category=true products=(after products.featured 4) settings=../settings}} --}}
             <div class="btn__wrapper">
-                <a href="/mothers-day/" class="btn btn__primary">Shop All</a>
+                <a href="/toys/kegel/" class="btn btn__primary">Shop All</a>
             </div>
         {{else}}
             <p>{{lang 'categories.no_products'}}</p>

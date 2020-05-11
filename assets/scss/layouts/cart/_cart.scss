@@ -419,6 +419,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     }
 
     .form-input {
+        font-size: 16px;
         width: 78%;
     }
 
@@ -808,6 +809,9 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
             .custom-form-input-container {
                 display: flex;
+                .form-input {
+                    font-size: 16px;
+                }
             }
 
             .custom-promo-label {

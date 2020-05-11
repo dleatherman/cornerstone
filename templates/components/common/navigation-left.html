@@ -58,50 +58,6 @@
           <a class="navUser-action is-text" href="/stories">Stories</a>
           <div class="shop__menu--child">
             <ul class="category__menu--list stories__menu--list">
-              <li class="list-item sub-item child-item">
-                <a href="#">Senses</a>
-                  <ul class="subcategory__menu--list">
-                    <li class="list-item sub-item grandchild-item">
-                      <a href="/stories/tag/touch">
-                        <div>
-                          Touch
-                        </div>
-                      </a>
-                    </li>
-                    <li class="list-item sub-item grandchild-item">
-                      <a href="/stories/tag/taste">
-                        <div>
-                          Taste
-                        </div>
-                      </a>
-                    </li>
-                    <li class="list-item sub-item grandchild-item">
-                      <a href="/stories/tag/aroma">
-                        <div>
-                          Aroma
-                        </div>
-                      </a>
-                    </li>
-                    <li class="list-item sub-item grandchild-item">
-                      <a href="/stories/tag/gaze">
-                        <div>
-                          Gaze
-                        </div>
-                      </a>
-                    </li>
-                    <li class="list-item sub-item grandchild-item">
-                      <a href="/stories/tag/listen">
-                        <div>
-                          Listen
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-              </li>
-
-              <li class="list-item sub-item child-item read-more">
-                <a href="/stories/">Read more editorials</a>
-              </li>
 
               <li class="list-item sub-item child-item">
                 <a href="#">Categories</a>
@@ -121,7 +77,7 @@
                     </a>
                   </li>
                   <li class="list-item sub-item grandchild-item">
-                    <a href="/stories/tag/love-scopes">
+                    <a href="/stories/tag/lovescopes">
                       <div>
                         Lovescopes
                       </div>
@@ -164,6 +120,52 @@
                   </li>
                 </ul>
               </li><!--categories-->
+
+              <li class="list-item sub-item child-item read-more">
+                <a href="/stories/">Read more editorials</a>
+              </li>
+
+              <li class="list-item sub-item child-item">
+                <a href="#">Senses</a>
+                  <ul class="subcategory__menu--list">
+                    <li class="list-item sub-item grandchild-item">
+                      <a href="/stories/tag/touch">
+                        <div>
+                          Touch
+                        </div>
+                      </a>
+                    </li>
+                    <li class="list-item sub-item grandchild-item">
+                      <a href="/stories/tag/taste">
+                        <div>
+                          Taste
+                        </div>
+                      </a>
+                    </li>
+                    <li class="list-item sub-item grandchild-item">
+                      <a href="/stories/tag/aroma">
+                        <div>
+                          Aroma
+                        </div>
+                      </a>
+                    </li>
+                    <li class="list-item sub-item grandchild-item">
+                      <a href="/stories/tag/gaze">
+                        <div>
+                          Gaze
+                        </div>
+                      </a>
+                    </li>
+                    <li class="list-item sub-item grandchild-item">
+                      <a href="/stories/tag/listen">
+                        <div>
+                          Listen
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+              </li>
+
               {{#each (limit blog.recent_posts 2) as |post|}}
                 <li class="list-item-sub-item child-item stories-column">
                   <a href="{{post.url}}">

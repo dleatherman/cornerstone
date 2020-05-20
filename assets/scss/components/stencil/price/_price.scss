@@ -5,6 +5,7 @@
 .price--rrp,
 .price--non-sale,
 .price--discounted {
+    color: stencilColor('grey-light');
     text-decoration: line-through;
 }
 

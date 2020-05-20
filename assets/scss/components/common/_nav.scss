@@ -647,6 +647,14 @@
 
 .navUser-item.icon-link {
    padding: 0 0 0 1.5rem;
+   svg {
+      line-height: 1;
+      vertical-align: middle;
+   }
+}
+.navUser-item.registration__links {
+   font-family: stencilFontFamily("sweet-font");
+   text-transform: uppercase;
 }
 
 .navUser-right-nav.search-active .account-link {

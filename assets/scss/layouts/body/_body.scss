@@ -212,6 +212,16 @@ body {
             color: inherit;
         }
     }
+    ul {
+        > li {
+            list-style-type: disc;
+        }
+    }
+    ol {
+        > li {
+            list-style-type: decimal;
+        }
+    }
 }
 
 .page-content--centered {

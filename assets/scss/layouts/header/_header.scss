@@ -424,11 +424,29 @@
 }
 
 
+@keyframes fadeIn {
+0%, 20% {
+    opacity: 0;
+}
+80%, 100% {
+    opacity: 1;
+}
+}
+@keyframes fadeOut {
+0%, 20% {
+    opacity: 1;
+}
+80%, 100% {
+    opacity: 0;
+}
+}
+
+
 .banners {
     @include sweet-font;
     -webkit-font-variant-numeric: lining-nums;
     font-variant-numeric: lining-nums;
-    background-color: #c6c7c6;
+    background-color: stencilColor('pink');
     color: stencilColor('navy');
     font-size: 0.9rem;
     padding: 0.5rem;
@@ -438,5 +456,23 @@
     }
     a {
         color: stencilColor('navy');
+    }
+    p {
+        position: relative;
+    }
+    p span {
+        background-color: stencilColor('pink');
+        left: 0;
+        margin: 0 auto;
+        opacity: 0;
+        position: absolute;
+        right: 0;
+    }
+    p span:first-child {
+        animation: fadeIn 4s infinite alternate 2s;
+    }
+    p span:last-child {
+        animation: fadeOut 4s infinite alternate 2s;
+        opacity: 1;
     }
 }

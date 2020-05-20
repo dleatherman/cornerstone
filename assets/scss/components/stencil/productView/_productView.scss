@@ -559,6 +559,10 @@
 // Details - Product price
 // -----------------------------------------------------------------------------
 
+.price-section {
+    display: inline-block;
+}
+
 .productView-price {
     font-size: fontSize("smaller");
     letter-spacing: 0.05em;
@@ -797,15 +801,17 @@
         
         
         .product-price {
-            color: stencilColor("navy");
+            color: stencilColor("grey-dark");
             font-family: stencilFontFamily("sweet-font");
             font-size: 1.5rem;
             line-height: 1;
             letter-spacing: 0.05em;
             padding-right: 1rem;
+            max-width: 140px;
 
             @include breakpoint("medium") {
                 font-size: 1.25rem;
+                max-width: none;
             }
         }
 

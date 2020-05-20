@@ -1,7 +1,7 @@
 <div class="mobile-menu">
   <ul class="list-container main-list-container">
     <li>
-      <a class="menu-link main">My Account</a>
+      <a class="menu-link main">Hi, {{{capitalize (first (split customer.name ' '))}}}</a>
       <ul class="list-container">
         
         {{#if customer}}

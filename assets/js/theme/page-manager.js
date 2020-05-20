@@ -29,12 +29,14 @@ export default class PageManager {
             utils.api.cart.getCart({}, (err, response) => {
                 let totalItems;
                 if (response && cartItemsEl.length > 0) {
-                    totalItems = Object.keys(response[0].lineItems.physicalItems).length + Object.keys(response[0].lineItems.customItems).length + Object.keys(response[0].lineItems.digitalItems).length + Object.keys(response[0].lineItems.giftCertificates).length;
-                    cartItemsEl.forEach(el => {
-                        el.classList.add('is-active');
-                        // eslint-disable-next-line no-param-reassign
-                        el.innerText = totalItems;
-                    });
+                    if (response.length) {
+                        totalItems = Object.keys(response[0].lineItems.physicalItems).length + Object.keys(response[0].lineItems.customItems).length + Object.keys(response[0].lineItems.digitalItems).length + Object.keys(response[0].lineItems.giftCertificates).length;
+                        cartItemsEl.forEach(el => {
+                            el.classList.add('is-active');
+                            // eslint-disable-next-line no-param-reassign
+                            el.innerText = totalItems;
+                        });
+                    }
                 }
             });
         });

@@ -446,7 +446,7 @@
     @include sweet-font;
     -webkit-font-variant-numeric: lining-nums;
     font-variant-numeric: lining-nums;
-    background-color: stencilColor('pink');
+    background-color: stencilColor('light-pink');
     color: stencilColor('navy');
     font-size: 0.9rem;
     padding: 0.5rem;
@@ -461,7 +461,7 @@
         position: relative;
     }
     p span {
-        background-color: stencilColor('pink');
+        background-color: stencilColor('light-pink');
         left: 0;
         margin: 0 auto;
         opacity: 0;

@@ -92,6 +92,10 @@
             {{#if product.release_date }}
             <p>{{product.release_date}}</p>
             {{/if}}
+        
+            {{#contains (join (pluck product.custom_fields 'name') ', ') 'option_lead'}}
+                <p class="productOption__lead">{{> components/common/search-custom-field product=product custom_field="option_lead"}}</p>
+            {{/contains}}
             <form class="form" method="post" action="{{product.cart_url}}" enctype="multipart/form-data"
                 data-cart-item-add>
                 <input type="hidden" name="action" value="add">

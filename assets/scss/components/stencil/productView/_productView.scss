@@ -884,6 +884,21 @@
 // Product list (with images)
 // -----------------------------------------------------------------------------
 
+.productOption__lead {
+   color: stencilColor('grey-2');
+   font-family: stencilFontFamily('sweet-font');
+   font-size: 1rem;
+   letter-spacing: 0.1em;
+   line-height: 1.7;
+   margin: 0;
+   text-align: left;
+   text-transform: uppercase;
+   
+   @include breakpoint('medium') {
+      letter-spacing: 2px;
+   }
+}
+
 .productOptions-list {
     border: $productOptions-list-border;
     list-style: none;

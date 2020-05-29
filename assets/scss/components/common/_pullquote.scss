@@ -76,9 +76,19 @@
             font-size: $fontSize-hero - 10;
          }
          &.sweet-sans {
-            font-size: $fontSize-root * 1.7;
-            letter-spacing: 0.2em;
+            font-size: 1.1rem;
+            line-height: 1.4;
+            letter-spacing: 0.1em;
             text-transform: none;
+            @include breakpoint('medium') {
+               font-size: 1.5rem;
+            }
+            // TEMP:
+            br {
+               @include breakpoint('medium') {
+                  display: none;
+               }
+            }
          }
       }
       .page__pullquote--arrow {

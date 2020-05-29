@@ -4,7 +4,7 @@
          <h1 class="page__pullquote--heading domaine-display">{{nl2br heading}}</h1>
       {{/if}}
       {{#if subheading}}
-         <p class="page__pullquote--subheading rollerscript">{{nl2br subheading}}</p>
+         <p class="page__pullquote--subheading{{#if subheading_font}} {{subheading_font}}{{else}} rollerscript{{/if}}">{{nl2br subheading}}</p>
       {{/if}}
       {{#if arrow}}
          <img src="/assets/img/hero-arrow.svg" alt="" class="page__pullquote--arrow">

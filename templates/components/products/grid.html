@@ -2,7 +2,7 @@
     {{#if featured_category}}
         {{#if order '==' 'first'}}
         {{#each products}}
-        {{#contains (join category ' , ') 'Shop/Toys/Kegel'}}
+        {{#contains (join category ' , ') 'Bridal'}}
             <li class="product">
                 {{>components/products/card settings=../settings show_compare=../show_compare show_rating=../settings.show_product_rating theme_settings=../theme_settings customer=../customer event=../event position=(add @index 1)}}
             </li>
@@ -10,7 +10,7 @@
         {{/each}}
         {{else}}
             {{#each products}}
-            {{#contains (join category ' , ') 'Shop/Toys/Kegel'}}
+            {{#contains (join category ' , ') 'Bridal'}}
             {{else}}
                 <li class="product">
                     {{>components/products/card settings=../settings show_compare=../show_compare show_rating=../settings.show_product_rating theme_settings=../theme_settings customer=../customer event=../event position=(add @index 1)}}

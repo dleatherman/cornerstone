@@ -75,6 +75,11 @@
          @include breakpoint('large') {
             font-size: $fontSize-hero - 10;
          }
+         &.sweet-sans {
+            font-size: $fontSize-root * 1.7;
+            letter-spacing: 0.2em;
+            text-transform: none;
+         }
       }
       .page__pullquote--arrow {
          height: auto;

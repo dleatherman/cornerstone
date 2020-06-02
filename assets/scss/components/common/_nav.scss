@@ -208,12 +208,11 @@
          page-break-inside: avoid;
       }
       &.stories__menu--list {
-         // max-height: 300px;
          .child-item.read-more {
-            margin-top: 39%;
-            // position: absolute;
-            // bottom: 3.5rem;
-            // width: auto;
+            margin-top: 6vh;
+            @include breakpoint($screen-xlarge) {
+               margin-top: 10vh;
+            }
          }
          .stories-column {
             page-break-inside: auto;

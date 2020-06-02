@@ -13,13 +13,15 @@
                     <a href="/shop/">Shop All</a>
                   </li>
                   {{#each children as |child|}}
-                    <li class="list-item sub-item child-item">
+                    {{#contains child.name 'Sale'}}
+                    {{else}}
+                    <li class="list-item sub-item child-item child-item-{{dashcase child.name}}">
                       <a href="{{child.url}}">{{child.name}}</a>
                       {{#if child.children}}
                         <ul class="subcategory__menu--list">
                         {{#each children as |grandchild|}}
                         {{#if grandchild.count '>' 0}}
-                          <li class="list-item sub-item grandchild-item">
+                          <li class="list-item sub-item grandchild-item grandchild-item-{{dashcase grandchild.name}}">
                             <a href="{{grandchild.url}}" title="{{grandchild.name}}">
                               <div>
                                 {{grandchild.name}}
@@ -31,6 +33,7 @@
                         </ul>
                       {{/if}}
                     </li>
+                    {{/contains}}
                   {{/each}}
                 {{/if}}
                 {{!-- Only Brand children --}}
@@ -51,6 +54,9 @@
                   </li>
                 {{/if}}
               {{/withSort}}
+              <li class="list-item sub-item child-item child-item-sale">
+                <a href="/shop/sale/">Sale</a>
+              </li>
             </ul>
           </div>
       </li>
@@ -59,7 +65,7 @@
           <div class="shop__menu--child">
             <ul class="category__menu--list stories__menu--list">
 
-              <li class="list-item sub-item child-item">
+              <li class="list-item sub-item child-item child-item-categories">
                 <a href="#">Categories</a>
                 <ul class="subcategory__menu--list">
                   <li class="list-item sub-item grandchild-item">
@@ -125,7 +131,8 @@
                 <a href="/stories/">Read more editorials</a>
               </li>
 
-              <li class="list-item sub-item child-item">
+
+              <li class="list-item sub-item child-item child-item-senses">
                 <a href="#">Senses</a>
                   <ul class="subcategory__menu--list">
                     <li class="list-item sub-item grandchild-item">

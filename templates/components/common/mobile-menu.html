@@ -19,29 +19,15 @@
   </ul>
   <ul class="list-container main-list-container">
     <li>
-      <a class="menu-link main">Shop</a>
+      <a href="/shop/" class="menu-link main">Shop</a>
       <ul class="list-container">
         {{#withSort categories 'name' reverse='true'}}
           {{#if name '==' 'Shop'}}
-            <li><a class="menu-link shop-all" href="/shop/">Shop All</a></li>
             {{#each this.children as |child|}}
               <li><a class="menu-link" href="{{child.url}}">{{child.name}}</a></li>
             {{/each}}
           {{/if}}
         {{/withSort}}
-      </ul>
-    </li>
-  </ul>
-  {{!-- TODO: come back and add brands --}}
-  <ul class="list-container main-list-container">
-    <li>
-      <a class="menu-link main">Explore Senses</a>
-      <ul class="list-container">
-        <li><a href="/touch/" class="menu-link">Touch</a></li>
-        <li><a href="/taste/" class="menu-link">Taste</a></li>
-        <li><a href="/aroma/" class="menu-link">Aroma</a></li>
-        <li><a href="/gaze/" class="menu-link">Gaze</a></li>
-        <li><a href="/listen/" class="menu-link">Listen</a></li>
       </ul>
     </li>
   </ul>

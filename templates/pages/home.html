@@ -67,7 +67,19 @@ blog:
             cta_text="Read more"
         }}
 
-        {{!> components/common/half-page-callout
+        {{> components/products/landing-pullquote
+            textcolor="navy"
+            background="white"
+            heading="Our best sellers"
+            subheading="for good reason"
+            subheading_font="sweet-sans"
+        }}
+
+        {{#if products.top_sellers}}
+            {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
+        {{/if}}
+
+        {{> components/common/half-page-callout
             imageside="left"
             background="nude"
             textcolor="navy"

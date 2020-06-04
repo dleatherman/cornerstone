@@ -88,13 +88,13 @@ a.stepHeader {
 // -----------------------------------------------------------------------------
 
 .optimizedCheckout-headingPrimary {
-    color: stencilColor("grey-3");
+    color: stencilColor("navy");
     font-family: stencilFontFamily("domaine-font");
     font-weight: 300;
 }
 
 .optimizedCheckout-headingSecondary {
-    color: stencilColor("grey-3");
+    color: stencilColor("navy");
     font-family: stencilFontFamily("sweet-font");
     font-weight: stencilFontWeight("optimizedCheckout-headingSecondary-font");
 }
@@ -121,6 +121,10 @@ body {
 // .optimizedCheckout-contentPrimary styles body text in the Order Summary/Order Confirmation; drop-down-list items; and text that summarizes completed steps.
 // .optimizedCheckout-contentSecondary styles check boxes' text labels, and lower-level text in the Order Summary.
 // -----------------------------------------------------------------------------
+
+.dropdown-toggle--select:hover {
+    text-decoration: none;
+}
 
 .orderConfirmation-section {
     padding: 0 10rem 2.5rem 0;
@@ -196,16 +200,14 @@ body {
 
 .optimizedCheckout-buttonSecondary {
     text-transform: uppercase;
-    // background-color: stencilColor("navy");
-    // border: 1px solid stencilColor("navy");
-    border: 0;
-    border-bottom: 1px solid stencilColor('grey-2');
-    color: stencilColor("grey-2");
+    background-color: stencilColor("navy");
+    border: 1px solid stencilColor("navy");
+    color: #fff;
     font-family: stencilFontFamily("sweet-font");
     font-weight: stencilFontWeight("optimizedCheckout-buttonPrimary-font");
     border-radius: 0;
     letter-spacing: 0.1em;
-    padding: 0;
+    padding: 1rem;
     
     &:focus,
     &:hover,
@@ -299,6 +301,7 @@ a {
 
 .optimizedCheckout-form-label {
     color: stencilColor("navy");
+    border-color: stencilColor('navy');
 
     span {
         font-weight: 300;
@@ -410,6 +413,7 @@ $optimizedCheckout-input--error-boxShadow: 0 0 3px transparentize(stencilColor("
 .optimizedCheckout-form-checklist-item {
     background-color: white;
     border-color: stencilColor("navy");
+    color: stencilColor('navy');
 }
 
 .optimizedCheckout-form-checklist-item:hover,

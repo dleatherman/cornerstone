@@ -1,0 +1,27 @@
+.gift__certificates {
+
+  .form-label {
+    font-family: stencilFontFamily('freight-font');
+    color: stencilColor('navy');
+    small {
+      color: stencilColor('grey-2');
+      font-family: stencilFontFamily('sweet-font');
+    }
+  }
+  .form-input::placeholder {
+      color: stencilColor("grey-2");
+  }
+  .form-input::-moz-placeholder {
+      color: stencilColor("grey-2");
+  }
+  .form-fieldset {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  input[type="checkbox"] + label,
+  input[type="radio"] + label {
+    display: block;
+    color: stencilColor('navy');
+    font-family: stencilFontFamily('freight-font');
+  }
+}

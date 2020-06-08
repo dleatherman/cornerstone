@@ -17,10 +17,10 @@ blog:
     <div class="senses-explorer-wrapper">
         <div class="senses-explorer">
             <div class="senses-explorer-text container">
-                <p class="senses-explorer-title">For the bride</p>
-                <p class="senses-explorer-description">Shower her (near or <br class="mobile-only">far) <br class="desktop-only">with all kinds of <br class="mobile-only">nice and spice.</p>
+                <p class="senses-explorer-title">His kids call him &ldquo;Dad&rdquo;,<br>but he&rsquo;s our guy</p>
+                <p class="senses-explorer-description">Shop unforgettable <br class="mobile-only">gifts for him.</p>
                 <div class="senses-explorer--cta">
-                    <a href="/gifts/bridal-box/shower-her/" class="btn btn__primary">Shop now</a>
+                    <a href="/shop/" class="btn btn__primary">Shop now</a>
                     {{!-- <a href="#" class="btn btn__primary bundle-products" data-bundle-products="[195, 179]">Buy now</a> --}}
                 </div>
             </div>
@@ -32,22 +32,21 @@ blog:
         {{> components/products/landing-pullquote
             textcolor="navy"
             background="white"
-            heading="Pleasure is still a part of the plan"
-            subheading="Shop our bridal picks
-            designed to celebrate her"
+            heading="Make this Father's Day extra special."
+            subheading="Discover ways to up his downtime."
             subheading_font="sweet-sans"
         }}
 
         {{#if products.featured}}
-            {{> components/common/product-featured-category featured_category=true products=products.featured order="first" settings=../settings}}
-            {{!-- {{> components/common/product-featured-listings featured_category=true products=(before products.featured 4) settings=../settings}} --}}
+            {{!-- {{> components/common/product-featured-category featured_category=true products=products.featured order="first" settings=../settings}} --}}
+            {{> components/common/product-featured-listings featured_category=false products=(first products.featured 4) settings=../settings}}
         {{else}}
             <p>{{lang 'categories.no_products'}}</p>
         {{/if}}
 
         {{#if products.featured}}
-            {{> components/common/product-featured-category featured_category=true products=products.featured settings=../settings}}
-            {{!-- {{> components/common/product-featured-listings featured_category=true products=(after products.featured 4) settings=../settings}} --}}
+            {{!-- {{> components/common/product-featured-category featured_category=true products=products.featured settings=../settings}} --}}
+            {{> components/common/product-featured-listings featured_category=false products=(last products.featured 4) settings=../settings}}
             <div class="btn__wrapper">
                 <a href="/shop/" class="btn btn__primary">Shop All</a>
             </div>
@@ -57,13 +56,13 @@ blog:
 
         {{> components/common/home-featured-blog
             imageside="right"
-            background="grey"
-            textcolor="white"
-            image="img/home-pj-jaz.png"
-            sense="Listen"
-            title="Jaz and PJ: How to Get Engaged During Coronavirus"
-            author="ALI LAWRENCE"
-            cta_link="/real-couples/jaz&pj-how-to-get-engaged-coronavirus"
+            background="pink"
+            textcolor="navy"
+            image="img/home-dad-edition.jpg"
+            sense="Touch"
+            title="Navigating Intimacy and Caretaking: The Dad Edition"
+            author="Damon Brown"
+            cta_link="/touch/how-to/navigating-intimacy-and-caretaking-new-dads"
             cta_text="Read more"
         }}
 

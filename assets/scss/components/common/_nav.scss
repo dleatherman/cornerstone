@@ -671,10 +671,15 @@
 
 .navBar--sub {
    margin-bottom: 0;
+   color: stencilColor('navy');
+   font-family: stencilFontFamily('sweet-font');
+   letter-spacing: 0.1em;
+   padding: 2rem;
+   text-transform: uppercase;
 }
 
 .navBar--sub .navBar-action {
-   color: #fff;
+   color: stencilColor('navy');
    &:hover {
       color: stencilColor('navy');
    }

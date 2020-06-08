@@ -56,10 +56,10 @@
 }
 
 .home .senses-explorer {
-    background-image: url('../img/hero-bridal-mobile.jpg');
+    background-image: url('../img/hero-homepage-father-mobile.jpg');
     padding: 4rem 0;
     @include breakpoint('medium') {
-        background-image: url('../img/hero-bridal.jpg');
+        background-image: url('../img/hero-homepage-father.jpg');
         padding: 12rem 0;
     }
     @include breakpoint($screen-xmedium) {
@@ -67,6 +67,7 @@
     }
     .senses-explorer-title,
     p.senses-explorer-title {
+        color: stencilColor('navy');
         font-size: 2.25rem;
         line-height: 1.2;
         text-align: left;
@@ -76,6 +77,7 @@
         }
     }
     .senses-explorer-description {
+        color: stencilColor('navy');
         font-family: stencilFontFamily('sweet-font');
         font-size: 1.1rem;
         letter-spacing: 0.1em;

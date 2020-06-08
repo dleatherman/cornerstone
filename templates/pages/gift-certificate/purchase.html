@@ -4,7 +4,7 @@
 <h1 class="page-heading">{{lang 'gift_certificate.heading' }}</h1>
 {{> components/gift-certificate/navigation gift_page='purchase'}}
 
-<main class="account account--fixed">
+<main class="account account--fixed gift__certificates">
 
     {{#each forms.gift_certificate.errors}}
         {{> components/common/alert-error this}}
@@ -83,7 +83,7 @@
             <fieldset class="form-fieldset form-column">
                 <div class="form-field">
                     <label class="form-label" for="message">{{lang 'forms.gift_certificate.purchase.message' }}</label>
-                    <textarea class="form-input" name="message" id="message" rows="8" >{{forms.gift_certificate.values.message}}</textarea>
+                    <textarea class="form-input" name="message" id="message" rows="8">{{forms.gift_certificate.values.message}}</textarea>
                 </div>
                 <label class="form-label">
                     {{lang 'forms.gift_certificate.purchase.theme' }}

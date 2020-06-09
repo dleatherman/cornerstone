@@ -68,12 +68,15 @@
     .senses-explorer-title,
     p.senses-explorer-title {
         color: stencilColor('navy');
-        font-size: 2.25rem;
+        font-size: 2rem;
         line-height: 1.2;
         text-align: left;
         word-spacing: 0;
         @include breakpoint($screen-xmedium) {
-            font-size: 4rem;
+            font-size: 2.75rem;
+        }
+        @include breakpoint($screen-xlarge) {
+            font-size: 3rem;
         }
     }
     .senses-explorer-description {

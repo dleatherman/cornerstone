@@ -449,7 +449,7 @@
     background-color: stencilColor('light-pink');
     color: stencilColor('navy');
     font-size: 0.9rem;
-    padding: 0.5rem;
+    padding: 0.5rem 0.25rem;
     text-transform: uppercase;
     @include breakpoint('medium') {
         font-size: 1rem;

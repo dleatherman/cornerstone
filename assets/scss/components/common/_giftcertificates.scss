@@ -32,4 +32,7 @@
     color: stencilColor('navy');
     font-family: stencilFontFamily('freight-font');
   }
+  input[type="submit"] {
+    @extend .button;
+  }
 }

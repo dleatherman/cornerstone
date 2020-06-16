@@ -35,6 +35,9 @@
             <a href="{{> components/common/search-custom-field product=product custom_field="external_link"}}" target="_blank" class="button button--primary">{{> components/common/search-custom-field product=product custom_field="external_cta_text"}}</a>
         {{else if product.id '==' '155'}}
             <a href="{{> components/common/search-custom-field product=product custom_field="external_link"}}" target="_blank" class="button button--primary">{{> components/common/search-custom-field product=product custom_field="external_cta_text"}}</a>
+        {{else if product.id '==' '217'}}
+            <a href="/giftcertificates.php" class="button button--primary">Purchase</a>
+
         {{else}}
             <input id="form-action-addToCart" data-wait-message="{{lang 'products.adding_to_cart'}}" class="button button--primary" type="submit"
             value="{{#if product.pre_order}}{{lang 'products.pre_order'}}{{else}}{{lang 'products.add_to_cart'}}{{/if}}">

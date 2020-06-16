@@ -18,6 +18,14 @@
     padding-left: 0;
     padding-right: 0;
   }
+  ol, ul {
+    a {
+      color: stencilColor('navy');
+      &:hover {
+        color: stencilColor('pink');
+      }
+    }
+  }
   input[type="checkbox"] + label,
   input[type="radio"] + label {
     display: block;

@@ -73,9 +73,24 @@
         }
     }
 
-    .card:hover {
-        .card-actions {
-            visibility: visible;
+    .card-img-container {
+        .image-0 {
+            z-index: 1;
+        }
+        .image-1 {
+            z-index: 0;
+        }
+    }
+
+    .card-img-container:hover {
+        // .card-actions {
+        //     visibility: visible;
+        // }
+        .image-0 {
+            z-index: 0;
+        }
+        .image-1 {
+            z-index: 1;
         }
     }
 
@@ -83,6 +98,7 @@
         text-align: center;
         visibility: visible;
         @include breakpoint('medium') {
+            display: none;
             left: 0;
             margin: 0 auto;
             position: absolute;

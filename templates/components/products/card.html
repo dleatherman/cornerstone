@@ -23,7 +23,9 @@
         {{else}}
             <a href="{{url}}" {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}>
                 <div class="card-img-container">
-                    <img class="card-image lazyload" data-sizes="auto" src="" data-src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}">
+                    {{#each (first images 2) as |image|}}
+                        <img class="card-image lazyload image-{{@index}}" data-sizes="auto" src="" data-src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}">
+                    {{/each}}
                 </div>
             </a>
         {{/if}}

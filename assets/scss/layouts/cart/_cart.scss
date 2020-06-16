@@ -938,6 +938,13 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
         }
     }
 
+    .custom-cart-item-image {
+        img {
+            height: auto;
+            max-width: 100px;
+        }
+    }
+
     .custom-cart-item:last-of-type {
         border:none;
         padding-bottom: 0;

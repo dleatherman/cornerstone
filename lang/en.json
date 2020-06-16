@@ -219,10 +219,10 @@
     "gift_certificate": {
         "heading": "Gift Certificates",
         "purchase": {
-            "heading": "Purchase Gift Certificate"
+            "heading": "Purchase"
         },
         "redeem": {
-            "heading": "Redeem Gift Certificate",
+            "heading": "Redeem",
             "intro": "To redeem a gift certificate at {store_name}, follow the simple steps below.",
             "item1": "You need your unique gift certificate code, which is part of the gift certificate that was emailed to you as an attachment. It will look something like Z50-Y6K-COS-402.",
             "item2": "Browse the store and add items to your cart as you normally would.",
@@ -230,7 +230,7 @@
             "item4": "Type your gift certificate code in to the 'Redeem Gift Certificate' box and click 'Go'."
         },
         "balance": {
-            "heading": "Check Gift Certificate Balance",
+            "heading": "Check Balance",
             "intro": "You can check the balance of a gift certificate by typing the code in to the box below."
         }
     },
@@ -562,7 +562,7 @@
                 "from_email": "Your Email",
                 "message": "Optional Message",
                 "amount": "Amount",
-                "theme": "Gift Certificate Theme",
+                "theme": "Theme",
                 "custom_range": "(Value must be between {min} and {max})",
                 "agree": "I understand that Gift Certificates expire after {days, plural, one {1 day} other {# days}}",
                 "agree2": "I agree that Gift Certificates are nonrefundable",

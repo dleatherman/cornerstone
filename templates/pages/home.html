@@ -17,11 +17,10 @@ blog:
     <div class="senses-explorer-wrapper">
         <div class="senses-explorer">
             <div class="senses-explorer-text container">
-                <p class="senses-explorer-title">His kids call him &ldquo;Dad&rdquo;,<br>but he&rsquo;s our guy</p>
-                <p class="senses-explorer-description">Shop unforgettable <br class="mobile-only">gifts for him.</p>
+                <p class="senses-explorer-title">Connect More</p>
+                <p class="senses-explorer-description">Ingredients for spicing it up.</p>
                 <div class="senses-explorer--cta">
-                    <a href="/shop/gifts/fathers-day/" class="btn btn__primary">Shop now</a>
-                    {{!-- <a href="#" class="btn btn__primary bundle-products" data-bundle-products="[195, 179]">Buy now</a> --}}
+                    <a href="/shop/" class="btn btn__primary">Shop now</a>
                 </div>
             </div>
         </div>
@@ -32,14 +31,14 @@ blog:
         {{> components/products/landing-pullquote
             textcolor="navy"
             background="white"
-            heading="Make this Father's Day extra special."
-            subheading="Discover ways to up his downtime."
+            heading="What's New"
+            subheading="Add a little pepper to your life."
             subheading_font="sweet-sans"
         }}
 
         {{#if products.featured}}
-            {{!-- {{> components/common/product-featured-category featured_category=true products=products.featured order="first" settings=../settings}} --}}
-            {{> components/common/product-featured-listings featured_category=false products=(first products.featured 4) settings=../settings}}
+            {{> components/common/product-featured-category featured_category=true products=products.featured order="first" settings=../settings}}
+            {{!-- {{> components/common/product-featured-listings featured_category=false products=(first products.featured 4) settings=../settings}} --}}
         {{else}}
             <p>{{lang 'categories.no_products'}}</p>
         {{/if}}
@@ -48,34 +47,10 @@ blog:
             {{!-- {{> components/common/product-featured-category featured_category=true products=products.featured settings=../settings}} --}}
             {{> components/common/product-featured-listings featured_category=false products=(last products.featured 4) settings=../settings}}
             <div class="btn__wrapper">
-                <a href="/shop/gifts/fathers-day/" class="btn btn__primary">Shop All</a>
+                <a href="/shop/?sort=newest" class="btn btn__primary">Shop All</a>
             </div>
         {{else}}
             <p>{{lang 'categories.no_products'}}</p>
-        {{/if}}
-
-        {{> components/common/home-featured-blog
-            imageside="right"
-            background="pink"
-            textcolor="navy"
-            image="img/home-dad-edition.jpg"
-            sense="Touch"
-            title="Navigating Intimacy and Caretaking: The Dad Edition"
-            author="Damon Brown"
-            cta_link="/touch/how-to/navigating-intimacy-and-caretaking-new-dads"
-            cta_text="Read more"
-        }}
-
-        {{> components/products/landing-pullquote
-            textcolor="navy"
-            background="white"
-            heading="Our best sellers"
-            subheading="for good reason"
-            subheading_font="sweet-sans"
-        }}
-
-        {{#if products.top_sellers}}
-            {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
         {{/if}}
 
         {{> components/common/half-page-callout
@@ -89,6 +64,30 @@ blog:
             cta_link="/about-us/"
             cta_text="About Pepper"
         }}
+
+        {{!-- {{> components/common/home-featured-blog
+            imageside="right"
+            background="pink"
+            textcolor="navy"
+            image="img/home-dad-edition.jpg"
+            sense="Touch"
+            title="Navigating Intimacy and Caretaking: The Dad Edition"
+            author="Damon Brown"
+            cta_link="/touch/how-to/navigating-intimacy-and-caretaking-new-dads"
+            cta_text="Read more"
+        }} --}}
+
+        {{> components/products/landing-pullquote
+            textcolor="navy"
+            background="white"
+            heading="Our best sellers"
+            subheading="for good reason"
+            subheading_font="sweet-sans"
+        }}
+
+        {{#if products.top_sellers}}
+            {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
+        {{/if}}
     </main>
 
     {{> components/products/landing-pullquote

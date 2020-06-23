@@ -49,7 +49,7 @@
             "total": "Total",
             "change": "Change",
             "subtotal": "Subtotal",
-            "enter_code": "Coupon code / Gift certificate",
+            "enter_code": "Coupon code / Gift Card",
             "gift_wrapping": "Gift wrapping",
             "shipping": "Shipping",
             "grand_total": "Grand total",
@@ -65,7 +65,7 @@
         "is_empty": "Your cart is empty",
         "coupon_code": "Coupon Code",
         "discount": "Discount",
-        "gift_certificate": "Gift Certificate",
+        "gift_certificate": "Gift Card",
         "remove_file": "Remove this file",
         "freeshipping": "Free Shipping",
         "reconfigure_product": "Configure '{name}'",
@@ -82,11 +82,11 @@
             "remove": "Remove"
         },
         "gift_certificates": {
-            "add_cert_code": "Add Certificate",
-            "gift_certificate": "Gift Certificate",
-            "code_label": "Gift Certificate ({code})",
-            "cert_code": "Enter your certificate code",
-            "empty_error": "Please enter your valid certificate code.",
+            "add_cert_code": "Add Gift Card",
+            "gift_certificate": "Gift Card",
+            "code_label": "Gift Card ({code})",
+            "cert_code": "Enter your gift code",
+            "empty_error": "Please enter your valid gift code.",
             "remove": "Remove"
         },
         "shipping_estimator": {
@@ -152,7 +152,7 @@
         "account": "My account",
         "cart": "Cart",
         "search": "Search",
-        "gift_cert": "Gift Certificates",
+        "gift_cert": "Gift Cards",
         "save": "Save",
         "share": "Share",
         "delete": "Delete",
@@ -217,21 +217,21 @@
         "view_brands": "View all brands"
     },
     "gift_certificate": {
-        "heading": "Gift Certificates",
+        "heading": "Gift Cards",
         "purchase": {
             "heading": "Purchase"
         },
         "redeem": {
             "heading": "Redeem",
-            "intro": "To redeem a gift certificate at {store_name}, follow the simple steps below.",
-            "item1": "You need your unique gift certificate code, which is part of the gift certificate that was emailed to you as an attachment. It will look something like Z50-Y6K-COS-402.",
+            "intro": "To redeem a gift card at {store_name}, follow the simple steps below.",
+            "item1": "You need your unique gift card code, which is part of the gift card that was emailed to you as an attachment. It will look something like Z50-Y6K-COS-402.",
             "item2": "Browse the store and add items to your cart as you normally would.",
             "item3": "Click the '<a href=\"{cart_url}\">View Cart</a>' link to view the contents of your shopping cart.",
-            "item4": "Type your gift certificate code in to the 'Redeem Gift Certificate' box and click 'Go'."
+            "item4": "Type your gift card code in to the 'Redeem Gift Card' box and click 'Go'."
         },
         "balance": {
             "heading": "Check Balance",
-            "intro": "You can check the balance of a gift certificate by typing the code in to the box below."
+            "intro": "You can check the balance of a gift card by typing the code in to the box below."
         }
     },
     "create_account": {
@@ -561,17 +561,17 @@
                 "from_name": "Your Name",
                 "from_email": "Your Email",
                 "message": "Optional Message",
-                "amount": "Amount",
+                "amount": "Amount ($25+)",
                 "theme": "Theme",
                 "custom_range": "(Value must be between {min} and {max})",
-                "agree": "I understand that Gift Certificates expire after {days, plural, one {1 day} other {# days}}",
-                "agree2": "I agree that Gift Certificates are nonrefundable",
+                "agree": "I understand that Gift Card's expire after {days, plural, one {1 day} other {# days}}",
+                "agree2": "I agree that Gift Cards are nonrefundable",
                 "preview": "Preview",
                 "preview_error": "There was a problem loading the preview. Please try again later.",
-                "submit_value": "Add Gift Certificate to Cart"
+                "submit_value": "Add Gift Card to Cart"
             },
             "balance": {
-                "code": "Gift Certificate Code",
+                "code": "Gift Card Code",
                 "submit_value": "Check Balance"
             }
         },
@@ -655,7 +655,7 @@
                 "to_email": "You must enter a valid recipient email.",
                 "from_name": "You must enter your name.",
                 "from_email": "You must enter a valid email.",
-                "cert_theme": "You must select a gift certificate theme.",
+                "cert_theme": "You must select a gift card theme.",
                 "agree_terms": "You must agree to these terms."
             },
             "payment_method": {
@@ -923,7 +923,7 @@
             "edit_cart_action": "Edit Cart",
             "estimated_total_text": "Estimated Total",
             "free_text": "Free",
-            "gift_certificate_text": "Gift Certificate",
+            "gift_certificate_text": "Gift Card",
             "handling_text": "Handling",
             "item_count_text": "{count, plural, one{1 Item} other{# Items} }",
             "print_action": "Print",
@@ -1020,15 +1020,15 @@
             "apply_action": "Apply",
             "apply_store_credit_after_action": "store credit to order",
             "apply_store_credit_before_action": "Apply",
-            "code_invalid_error": "The gift certificate or coupon code is invalid",
-            "code_label": "Gift Certificate or Coupon Code",
-            "code_required_error": "Please enter a gift certificate or coupon code",
+            "code_invalid_error": "The gift Card or coupon code is invalid",
+            "code_label": "Gift Card or Coupon Code",
+            "code_required_error": "Please enter a gift card or coupon code",
             "coupon_text": "Coupon",
             "gift_certificate_remaining_text": "Remaining",
-            "gift_certificate_text": "Gift Certificate",
+            "gift_certificate_text": "Gift Card",
             "remove_action": "Remove",
             "store_credit_available_text": "Your account currently has {storeCredit} total store credit available",
-            "toggle_action": "Promo/Gift Certificate"
+            "toggle_action": "Promo/Gift Card"
         },
         "remote": {
             "browser_unsupported": "The selected payment method requires a different web browser. Please choose another payment method.",

@@ -37,8 +37,8 @@ blog:
         }}
 
         {{#if products.featured}}
-            {{> components/common/product-featured-category featured_category=true products=products.featured order="first" settings=../settings}}
-            {{!-- {{> components/common/product-featured-listings featured_category=false products=(first products.featured 4) settings=../settings}} --}}
+            {{!-- {{> components/common/product-featured-category featured_category=true products=products.featured order="first" settings=../settings}} --}}
+            {{> components/common/product-featured-listings featured_category=false products=(first products.featured 4) settings=../settings}}
         {{else}}
             <p>{{lang 'categories.no_products'}}</p>
         {{/if}}

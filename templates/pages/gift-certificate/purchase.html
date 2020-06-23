@@ -85,14 +85,21 @@
                 <label class="form-label" for="message">{{lang 'forms.gift_certificate.purchase.message' }}</label>
                 <textarea class="form-input" name="message" id="message" rows="8">{{forms.gift_certificate.values.message}}</textarea>
               </div>
-              <label class="form-label">
+              <label class="form-label visually-hidden">
                 {{lang 'forms.gift_certificate.purchase.theme' }}
                 <small>{{lang 'common.required' }}</small>
               </label>
-              <div class="form-field form-field-group">
+              <div class="form-field form-field-group visually-hidden">
                 {{#each forms.gift_certificate.themes}}
-                <input type="radio" class="form-radio" name="certificate_theme" id="theme_{{this.value}}" value="{{this.value}}"{{#if this.value '==' ../forms.gift_certificate.values.theme}} checked{{/if}}>
-                <label class="form-label" for="theme_{{this.value}}">{{this.display}}</label>
+                <input type="radio" class="form-radio" name="certificate_theme" id="theme_{{this.value}}" value="{{this.value}}"{{#if @first}} checked{{/if}}>
+                {{!-- <input type="radio" class="form-radio" name="certificate_theme" id="theme_{{this.value}}" value="{{this.value}}"{{#if this.value '==' ../forms.gift_certificate.values.theme}} checked{{/if}}> --}}
+                <label class="form-label" for="theme_{{this.value}}">
+                  {{# if this.display '==' 'General'  }}
+                    Gift
+                  {{ else }}
+                  {{this.display}}
+                  {{/if }}
+                </label>
                 {{/each}}
               </div>
             </fieldset>
@@ -128,4 +135,4 @@
 
 
 {{/partial}}
-{{> layout/base page_content="account"}}
+{{> layout/base page_content="account" page_title="Gift Card Purchase | Pepper"}}

@@ -167,7 +167,7 @@ body {
     font-family: stencilFontFamily('sweet-font');
     font-size: 1.1rem;
     letter-spacing: 0.2em;
-    padding: 0.75rem 2rem;
+    // padding: 0.75rem 2rem;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
@@ -200,9 +200,9 @@ body {
 
 .optimizedCheckout-buttonSecondary {
     text-transform: uppercase;
-    background-color: stencilColor("navy");
-    border: 1px solid stencilColor("navy");
-    color: #fff;
+    background-color: #ffffff;
+    border: 1px solid #fff;
+    color: stencilColor('grey-2');
     font-family: stencilFontFamily("sweet-font");
     font-weight: stencilFontWeight("optimizedCheckout-buttonPrimary-font");
     border-radius: 0;
@@ -213,8 +213,9 @@ body {
     &:hover,
     &:active {
         background-color: transparent;
-        border-color: stencilColor("navy");
+        border-color: #fff;
         color: stencilColor("navy");
+        text-decoration: none;
     }
 
     &[disabled],
@@ -227,6 +228,15 @@ body {
         border-color: stencilColor("grey");
         color: stencilColor("navy");
     }
+}
+
+[data-test="checkout-shipping-comments"] legend {
+    font-size: 0;
+}
+ 
+[data-test="checkout-shipping-comments"] legend::before {
+    content: "Add a Gift Message";
+    font-size: 1.15385rem;
 }
 
 //
@@ -268,6 +278,9 @@ a {
 
 .optimizedCheckout-orderSummary-cartSection {
     border-color:  #B4B6B8;
+    .productImage-giftCertificate svg {
+        vertical-align: middle;
+    }
 }
 
 .optimizedCheckout-checkoutStep {

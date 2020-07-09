@@ -2,7 +2,7 @@
 
 <div class="custom-cart-container" data-cart-quantity="{{cart.quantity}}">
     {{#each cart.items}}
-    <div class="custom-cart-item">
+    <div class="custom-cart-item" data-product-id="{{product_id}}">
         <div class="custom-cart-main-content">
             <div class="custom-cart-item-image">
                 {{#if type '==' 'GiftCertificate'}}
@@ -74,6 +74,6 @@
                     {{/if}}
             </div>
         </div>
-</div>
+    </div>
     {{/each}}
 </div>

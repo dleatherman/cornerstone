@@ -1,11 +1,8 @@
 ---
 cart: true
 products:
-    new:
-        limit: 4
-blog:
-    recent_posts:
-        limit: {{theme_settings.homepage_blog_posts_count}}
+    top_sellers:
+        limit: 5
 ---
 {{#partial "page"}}
 <div class="page">
@@ -18,8 +15,8 @@ blog:
 
         {{#if cart.items.length}}
             <div class="loadingOverlay"></div>
-            <div class="custom-shopping-cart-main">
-                <div class="left" >
+            <div class="custom-shopping-cart-main" data-item-count="{{cart.items.length}}">
+                <div class="left">
                     <div class="custom-shopping-cart-heading">
                         <h1 class="custom-shopping-cart-heading-title">My Cart</h1>
                         <a class="custom-shopping-cart-back" href="/shop/"><img src="{{cdn 'img/back-arrow.svg'}}" alt="" width="5" height="9" /> CONTINUE SHOPPING</a>
@@ -27,6 +24,18 @@ blog:
                     <div data-cart-content>
                         {{> components/cart/content}}
                     </div>
+                    {{#if products.top_sellers}}
+                        <div class="cart-upsells">
+                        {{>components/cart/recommended-products
+                            main-title="Add some more spice"
+                            subtitle=""
+                            items=products.top_sellers
+                            skip=1
+                            show_limit=2
+                            show_cart_action=true
+                        }}
+                        </div>
+                    {{/if}}
                 </div>
     
                 <div class="right" data-cart-totals>

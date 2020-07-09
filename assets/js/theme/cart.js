@@ -15,6 +15,18 @@ export default class Cart extends PageManager {
             .hide(); // TODO: temporary until roper pulls in his cart components
 
         this.bindEvents();
+        this.getProductViewById();
+    }
+
+    getProductViewById() {
+        const $productsInCart = $('.custom-cart-item:not(.custom-upsell)');
+
+        if ($productsInCart.length > 0) {
+            $.each($productsInCart, (i, prod) => {
+                const productId = $(prod).data('product-id');
+                $(`.custom-cart-item.custom-upsell[data-product-id="${productId}"`).addClass('is-in-cart');
+            });
+        }
     }
 
     cartUpdate($target) {

@@ -1,29 +1,24 @@
 <section>
+  {{#if main-title}}
   <h2 class="senses-main-title">{{{main-title}}}</h2>
+  {{/if}}
+  {{#if subtitle}}
   <div class="favorite-text">
     <span>{{nl2br subtitle}}</span>
     <img class="sense-arrow" src="{{cdn 'icons/sense-arrow.svg'}}" alt="sense-arrow" />
   </div>
+  {{/if}}
   <div class="items-container">
     <form action="{{urls.compare}}" method='POST' {{#if settings.data_tag_enabled}} data-list-name="Category: {{category.name}}" {{/if}} data-product-compare>
       <ul class="productGrid">
         {{#if items}}
           {{#each (limit items 4)}}
             <li class="product">
-              {{>components/products/card settings=../settings show_rating=../settings.show_product_rating theme_settings=../theme_settings customer=../customer event=../event position=(add @index 1)}}
+              {{>components/products/card settings=../settings show_rating=../settings.show_product_rating theme_settings=../theme_settings customer=../customer event=../event position=(add @index 1) show_cart_action=show_cart_action}}
             </li>
           {{/each}}
         {{/if}}
-        {{#is products "touch-main" }}
-          {{>components/products/senses-products/touch-main }}
-        {{/is}}
-        {{#is products "touch-turn-up" }}
-          {{>components/products/senses-products/touch-turn-up }}
-        {{/is}}
       </ul>
     </form>
-    <!-- <a href="{{link-url}}" class="shop-all">{{link-text}}
-      <img src="{{cdn 'icons/right-arrow.svg'}}" alt="right-arrow" />
-    </a> -->
   </div>
 </section> 

@@ -19,8 +19,12 @@ category:
 
 {{#partial "page"}}
 
+{{#if category.name }}
 <h1 class="visually-hidden">{{{category.name}}}</h1>
+{{/if}}
+{{#if category.description }}
 <div class="visually-hidden">{{{category.description}}}</div>
+{{/if}}
 {{{snippet 'categories'}}}
 
 {{#if category.faceted_search_enabled}}

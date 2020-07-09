@@ -17,6 +17,11 @@
 
 .list-filter-container {
     display: none;
+
+    &.sortForm,
+    &.collection-list {
+      width: 25%;
+    }
     
     &.sortForm,
     &.sort-container {
@@ -32,10 +37,10 @@
       border-bottom: 1px solid stencilColor('grey-2');
       border-right: 0 !important;
     }
-  
-  @include breakpoint("medium") {
-      display: block;
-  }
+    
+    @include breakpoint("medium") {
+        display: block;
+    }
 }
 
 .filters-container {
@@ -53,20 +58,13 @@
 
 
   .list-filter-container {
-    flex-basis: 0;
-    flex-grow: 1;
     border-right: 1px solid;
     border-color: stencilColor("light-pink");
-    display: flex;
   }
 
   a {
     text-decoration: none;
   }
-}
-
-.page.search-page .filters-container .list-filter-container {
-  flex-grow: 0.5;
 }
 
 nav {
@@ -95,11 +93,9 @@ nav {
 
 .list-item {
   display: block;
-  float: left;
   padding: 5px;
   position: relative;
   text-decoration: none;
-  width: 100%;
   background: white;
   color: #BCBEC0;
   font-family: stencilFontFamily("sweet-font");
@@ -501,6 +497,13 @@ nav {
   @include breakpoint('medium') {
     display: flex;
     flex-flow: row nowrap;
+    .list-filter-container {
+      display: flex;
+      flex: 1;
+      .list-item.main-item {
+        flex: 1;
+      }
+    }
   }
 }
 

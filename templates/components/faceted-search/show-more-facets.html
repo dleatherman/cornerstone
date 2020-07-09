@@ -1,6 +1,8 @@
 <div class="modal-body facets-modal">
     <h1 class="modal-header-title">
+        {{#replace '_' (capitalize all_facets)}} {{else}}
         {{capitalize all_facets}}
+        {{/replace}}
     </h1>
     <div class="form-field" id="facetedSearch-filterItems">
         <input class="form-input" type="search" placeholder={{lang 'forms.search.search'}}>
@@ -12,7 +14,7 @@
                     <li class="navList-item">
                         <a href="{{url}}" class="navList-action navList-action--checkbox {{#if selected }} is-selected {{/if}}" rel="nofollow" data-id="{{ id }}"
                         data-faceted-search-facet>
-                            {{title}} ({{count}})
+                            {{{title}}} ({{count}})
                         </a>
                     </li>
                 {{/each}}

@@ -1,12 +1,6 @@
 ---
 product_results:
     limit: {{theme_settings.searchpage_products_per_page}}
-products:
-    new:
-        limit: 4
-blog:
-    recent_posts:
-        limit: {{theme_settings.homepage_blog_posts_count}}
 ---
 {{inject 'categoryTree' forms.search.category_options}}
 {{inject 'searchProductsPerPage' theme_settings.searchpage_products_per_page}}
@@ -45,7 +39,7 @@ blog:
     {{/if}}
     {{#if product_results.products}}
         <div class="category-headline container on-search-container">
-            <h2><span class="capitalize">Shop {{forms.search.query}}</span> Products</h2>
+            <h2><span class="capitalize">Shop {{{forms.search.query}}}</span> Products</h2>
             <div class="favorite-text no-margin">
                 <span>search and you shall receive</span>
                 <img class="sense-arrow" src="{{cdn 'icons/sense-arrow.svg'}}" alt="sense-arrow" />
@@ -56,7 +50,7 @@ blog:
             <div class="custom-empty-cart-container empty-search">
                 <div class="inner">
                     <p class="empty-messsage">Your search didn't match any results.</p>
-                    <a class="button-shop" href="/shop-all-products">continue shopping</a>
+                    <a class="button-shop" href="/shop/">continue shopping</a>
                 </div>
             </div>
         {{/if}}
@@ -69,8 +63,17 @@ blog:
                 {{> components/common/paginator pagination.content_results reload=true}}
             {{/if}}
         </main>
+
+        {{!-- {{#if content_results}}
+        <div class="story__archive--outer">
+            <div class="story-archive container">
+                {{#each content_results}}
+                {{> components/blog/post post=this sense=true}}
+                {{/each}}
+            </div>
+        </div>
+        {{/if}} --}}
     </div>
-    {{!>components/common/latest-posts posts=blog.recent_posts}}
     {{>components/common/connect-more}}
 </section>
 {{/partial}}

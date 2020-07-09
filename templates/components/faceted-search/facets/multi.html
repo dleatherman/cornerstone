@@ -1,5 +1,5 @@
 {{#if items}}
-<ul class="list-filter-container">
+<ul class="list-filter-container list-filter-container-facet list-filter-container-{{toLowerCase (dashcase title)}}">
     <li class="list-item main-item">
         <a class="main-link" href="#">
             <div>
@@ -16,7 +16,7 @@
                     <a href="{{ url }}"
                         class="navList-action navList-action--checkbox{{#if selected }} is-selected{{/if}}" rel="nofollow"
                         data-faceted-search-facet>
-                        {{ sanitize title }}
+                        {{{ title }}}
                         {{#if ../show_product_counts}}
                         <span>({{ count }})</span>
                         {{/if}}

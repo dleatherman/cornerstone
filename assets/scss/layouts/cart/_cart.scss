@@ -611,40 +611,24 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 }
 
 .previewCartAction {
-    @include grid-row;
-    border-top: container("border");
+    // @include grid-row;
+    border-top: 0;
     display: block;
     padding: spacing("single") spacing("half");
 
-    .button {
+    .btn {
         margin: 0;
-        padding-left: spacing("half");
-        padding-right: spacing("half");
-        width: 100%;
     }
 }
 
 .previewCartAction-checkout,
 .previewCartAction-viewCart {
-    @include grid-column(6);
-
-    &.previewCartAction-viewCart--sole {
-        @include grid-column($columns: 6, $center: true);
-    }
-}
-
-.previewCartAction-checkout {
-    padding-right: spacing("quarter");
-}
-
-.previewCartAction-checkoutMultiple {
-    clear: both;
-    padding-left: spacing("half");
-    padding-top: spacing("quarter");
-}
-
-.previewCartAction-viewCart {
-    padding-left: spacing("quarter");
+    // @include grid-column(12);
+    display: block;
+    float: none;
+    margin-bottom: spacing('single');
+    padding: 0;
+    width: 100%;
 }
 
 .previewCart-emptyBody {

@@ -80,7 +80,10 @@
         </a>
       </li>
       <li class="navUser-item icon-link shopping-bag-li" id="shopping">
-        <a class="navUser-action shopping-bag" href="{{urls.cart}}">
+        <a class="navUser-action shopping-bag"
+          data-cart-preview
+          data-dropdown="cart-preview-dropdown"
+          href="{{urls.cart}}">
             <div class="cart__item--count" data-cart-items></div>
             <svg aria-hidden="true" focusable="false" data-prefix="fal" width="17" height="17" data-icon="shopping-cart"
                 class="svg-inline--fa fa-shopping-cart fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
@@ -89,6 +92,8 @@
                 </path>
             </svg>
         </a>
+
+        <div id="cart-preview-dropdown" data-dropdown-content aria-hidden="true"></div>
       </li>
   </ul>
 </nav>

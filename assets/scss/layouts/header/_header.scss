@@ -25,7 +25,7 @@
     background-color: stencilColor("navy");
     top: 0;
     width: 100%;
-    z-index: 999999;
+    z-index: 9;
     // transition: all 0.1s ease-in-out;
     height: 55px;
     // position: fixed;
@@ -182,7 +182,7 @@
         padding: $header-logo-paddingVertical 0;
         position: relative;
         text-decoration: none;
-        z-index: zIndex("low");
+        z-index: 9;
         justify-content: center;
         height: 55px;
         align-items: center;

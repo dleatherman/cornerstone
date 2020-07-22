@@ -1,10 +1,18 @@
 <div class="previewCart">
-    <a
-    class="previewCartClose"
-    data-cart-preview
-    data-dropdown="cart-preview-dropdown"
-    href="#">&times;</a>
-    
+    <div class="previewCartHeader">
+        <h3>Cart</h3>
+        <a
+        class="previewCartClose"
+        data-cart-preview
+        data-dropdown="cart-preview-dropdown"
+        href="#">&times;</a>
+    </div>
+
+    {{#unless customer}}
+    <div class="previewCartSignUp">
+        <p class="grey-font">To save the items in your cart <a href="{{urls.auth.login}}">Login</a> or <a href="{{urls.auth.create_account}}">Sign Up</a>.</p>
+    </div>
+    {{/unless}}
     {{#if cart.items.length}}
         <ul class="previewCartList">
             {{#each cart.items}}
@@ -44,8 +52,9 @@
         <div class="previewCartAction">
             {{#if cart.show_primary_checkout_button}}
                 <div class="previewCartAction-checkout">
+                    <p>Shipping &amp; taxes calculated at checkout</p>
                     <a href="{{urls.checkout.single_address}}" class="btn btn__primary btn__block">
-                        {{lang 'cart.preview.checkout_now'}}
+                        {{lang 'cart.preview.checkout_now' amount=cart.sub_total.formatted}}
                     </a>
                 </div>
             {{/if}}

@@ -1,56 +1,74 @@
 #cart-preview-dropdown {
   display: none;
-  left: auto !important;
-  height: 100vh;
-  overflow: hidden;
-  position: fixed !important;
-  right: 0;
-  top: 0 !important;
-  transform: translateX(100vw);
-  transition: all 0.2s ease-in-out;
-  width: 100vw;
-  &.is-loading {
-    display: flex;
-    max-width: 420px;
-    transform: translateX(0);
-    .loadingOverlay {
-      background-color: #fff;
-    }
-    .previewCart {
-      transform: translateX(0);
+  p {
+    color: stencilColor('navy');
+    font-family: stencilFontFamily('freight-font');
+    a {
+      color: inherit;
     }
   }
   &.is-open {
-    background-color: rgba(0,0,0,0.3);
-    display: flex;
-    transform: translateX(0);
-    z-index: 10;
+    display: block;
     .previewCart {
+      opacity: 1;
       transform: translateX(0);
     }
   }
   .previewCart {
     background-color: #fff;
+    box-shadow: 0 0 10px rgba(stencilColor('navy'),.3);
     display: flex;
     flex: 1;
     flex-flow: column;
     max-height: 100vh;
-    max-width: 420px;
+    max-width: 350px;
     min-height: 100vh;
     overflow-y: scroll;
+    opacity: 0;
     position: fixed;
     right: 0;
-    transform: translateX(420px);
-    transition: all 0.2s ease-in-out;
+    top: 0;
+    transform: translateX(350px);
+    transition: all 0.5s 0.2s ease-in-out;
     z-index: 12;
+    @include breakpoint('medium') {
+      max-width: 420px;
+      transform: translateX(420px);
+    }
+  }
+  .previewCartHeader {
+    align-items: center;
+    border-bottom: 1px solid #e1e1e1;
+    display: flex;
+    justify-content: space-between;
+    h3 {
+      font-family: stencilFontFamily('domaine-font');
+      font-weight: 300;
+      margin: 0;
+      padding: spacing('single') spacing('single');
+    }
     .previewCartClose {
       display: block;
       color: stencilColor('navy');
       font-size: 1.618rem;
-      padding: spacing('half');
+      padding: spacing('single') spacing('single');
       text-align: right;
       text-decoration: none;
     }
+  }
+  .previewCartSignUp {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: spacing('single') spacing('single') 0;
+  }
+  .previewCartList {
+    flex: 1;
+  }
+  .previewCartAction {
+    align-self: flex-end;
+    border-top: 1px solid #e1e1e1;
+    padding: spacing('single') spacing('single') 0;
   }
   .previewCart-emptyBody {
     align-items: stretch;
@@ -67,52 +85,50 @@
       margin-top: spacing('single');
     }
   }
+  .previewCartItem {
+    display: flex;
+    padding-bottom: spacing('single');
+    padding-top: spacing('single');
+  }
   .previewCartItem + .previewCartItem {
     border-color: #e1e1e1;
   }
   .previewCartItem-name a {
     color: stencilColor("navy");
+    display: block;
     font-family: stencilFontFamily("domaine-font");
     font-size: 1.618rem;
     font-weight: 300;
+    line-height: 1.2;
     margin: 0;
-    padding-bottom: 0.5rem;
-    @include breakpoint('small') {
-    }
-    @include breakpoint("medium") {
-        border: 0;
-        display: block;
-        line-height: 1.2;
-        max-width: 350px;
-        margin: 0;
-        padding-bottom: 0;
-    }
+    padding-bottom: spacing('half');
   }
   .previewCartItem-brand {
     color: stencilColor('grey-2');
     display: block;
     font-family: stencilFontFamily('sweet-font');
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 300;
     letter-spacing: 0.1em;
     line-height: 1.7;
+    padding-bottom: spacing('half');
     text-align: left;
     text-transform: uppercase;
 
-      @include breakpoint("medium") {
-          font-size: 1rem;
-          letter-spacing: 2px;
-          text-align: left;
-      }
+    @include breakpoint("medium") {
+        font-size: 1rem;
+        letter-spacing: 2px;
+        text-align: left;
+    }
   }
   .previewCartItem-price {
     color: stencilColor("grey-dark");
     display: block;
     font-family: stencilFontFamily("sweet-font");
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     line-height: 1;
     letter-spacing: 0.05em;
-    padding-right: 1rem;
+    padding-bottom: spacing('half');
     max-width: 140px;
 
     @include breakpoint("medium") {

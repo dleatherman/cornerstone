@@ -390,7 +390,8 @@ export default class ProductDetails {
             } else {
                 this.$overlay.show();
                 // if no modal, redirect to the cart page
-                this.redirectTo(response.data.cart_item.cart_url || this.context.urls.cart);
+                $('a.shopping-bag').trigger('click');
+                // this.redirectTo(response.data.cart_item.cart_url || this.context.urls.cart);
             }
         });
     }

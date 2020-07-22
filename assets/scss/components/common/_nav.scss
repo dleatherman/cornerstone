@@ -38,7 +38,7 @@
    
    @include breakpoint($screen-xmedium) {
       right: auto;
-      z-index: zIndex("high");
+      z-index: zIndex("lowest");
       
       &.left-nav {
          display: flex;

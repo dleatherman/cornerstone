@@ -75,7 +75,7 @@
                 {{else if id '==' '155'}}
                     <a href="{{> components/common/search-custom-field product=this custom_field="external_link"}}" target="_blank" class="btn btn__outline--false card-figcaption-button">{{> components/common/search-custom-field product=this custom_field="external_cta_text"}}</a>
                 {{else}}
-                    <a href="{{add_to_cart_url}}" data-event-type="product-click" class="btn btn__outline--false card-figcaption-button">{{lang 'products.add_to_cart'}}</a>
+                    <a href="{{url}}" data-event-type="product-click" class="btn btn__outline--false card-figcaption-button add-to-cart-btn">{{lang 'products.add_to_cart'}}</a>
                 {{/if}}
             {{/if}}
             {{#if out_of_stock_message }}

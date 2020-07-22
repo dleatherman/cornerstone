@@ -38,7 +38,9 @@
                 </g>
             </svg>
         </a>
-        <a href="{{urls.cart}}" class="mobileCart">
+        <a href="{{urls.cart}}" class="mobileCart"
+                data-cart-preview
+                data-dropdown="cart-preview-dropdown">
             <div class="cart__item--count" data-cart-items></div>
             <svg aria-hidden="true" focusable="false" data-prefix="fal" width="17" height="17" data-icon="shopping-cart"
                 class="svg-inline--fa fa-shopping-cart fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
@@ -67,5 +69,6 @@
         
         {{> components/common/mobile-menu}}
         <div class="dropdown dropdown--quickSearch" id="quickSearch" aria-hidden="true" tabindex="-1" data-prevent-quick-search-close></div>
+        <div id="cart-preview-dropdown" data-dropdown-content aria-hidden="true"></div>
     </div>
 </header>

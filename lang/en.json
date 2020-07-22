@@ -57,9 +57,9 @@
             "update": "Update shipping cost"
         },
         "preview": {
-            "checkout_now": "Check out now",
+            "checkout_now": "Checkout | {amount}",
             "checkout_multiple": "or check out with multiple addresses",
-            "view_cart": "View Cart"
+            "view_cart": "Edit Cart"
         },
         "label": "Your Cart ({quantity, plural, one {# item} other {# items}})",
         "is_empty": "Your cart is empty",
@@ -717,7 +717,7 @@
             "hide": "Hide Videos",
             "show": "Show Videos"
         },
-        "add_to_cart": "Buy Now",
+        "add_to_cart": "Add to Cart",
         "adding_to_cart": "Adding…",
         "options": "Options",
         "none": "None",

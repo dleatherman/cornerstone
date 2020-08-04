@@ -1,3 +1,68 @@
+.page__hero--outer.page__learn {
+   align-items: flex-start;
+   background-image: url('../img/blog-hero-mobile.jpg');
+   background-position: center center;
+   height: 60vh;
+   justify-content: flex-start;
+   min-height: 300px;
+   text-align: left;
+   @include breakpoint('medium') {
+      align-items: center;
+      background-image: url('../img/blog-hero.jpg');
+      height: 30vh;
+      justify-content: center;
+   }
+   .page__hero--inner {
+      flex-flow: column nowrap;
+   }
+   .page__hero--inner {
+      .page__hero--heading {
+         color: stencilColor("white");
+         font-family: stencilFontFamily("domaine-font");
+         font-size: $fontSize-root * 2.5;
+         font-weight: normal;
+         margin-bottom: 0;
+         text-align: left;
+
+         @include breakpoint("medium") {
+            line-height: 1.2;
+            margin: 3.5rem 0 1rem;
+            br {
+               display: none;
+            }
+         }
+         @include breakpoint($screen-xmedium) {
+               font-size: 2.75rem;
+         }
+         @include breakpoint($screen-xlarge) {
+               font-size: 3rem;
+         }
+      }
+      .page__hero--subheading {
+        color: stencilColor('white');
+        font-family: stencilFontFamily('sweet-font');
+        font-size: 1.1rem;
+        letter-spacing: 0.1em;
+        line-height: 1.3;
+        margin: 0 0 1.5rem;
+        text-align: left;
+        width: 85%;
+        br.mobile-only {
+            display: inline-block;
+            @include breakpoint('small') {
+                display: none;
+            }
+        }
+        br.desktop-only {
+            display: none;
+            @include breakpoint('small') {
+                display: inline-block;
+            }
+        }
+      }
+   }
+}
+
 .page__hero--outer {
    align-items: center;
    background-image: url('../img/hero-couples-kit-experience-mobile.jpg');

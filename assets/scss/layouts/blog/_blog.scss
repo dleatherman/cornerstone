@@ -352,7 +352,7 @@ p.senses-explorer-title {
     }
   
     h1 {
-        border-top: 1px solid stencilColor("pink");
+        // border-top: 1px solid stencilColor("pink");
         color: stencilColor("navy");
         display: block;
         font-family: stencilFontFamily("domaine-font");
@@ -821,6 +821,32 @@ p.senses-explorer-title {
             background-size: cover;
             overflow: hidden;
             min-height: 400px;
+        }
+    }
+}
+
+.category__list {
+    font-family: stencilFontFamily('sweet-font');
+    list-style-type: none;
+    margin: 1rem 0;
+    padding: 0;
+    @include breakpoint('medium') {
+        margin: 2rem 0;
+    }
+    > li {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        > a {
+            color: stencilColor('grey-2');
+            display: block;
+            letter-spacing: 0.1em;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            &:hover {
+                color: stencilColor('grey-4');
+            }
         }
     }
 }

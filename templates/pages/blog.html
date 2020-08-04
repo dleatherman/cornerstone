@@ -10,14 +10,26 @@ blog:
 ---
 {{#partial "page"}}
 <main class="page stories-landing">
-    {{#each (limit blog.posts 1) as |post|}}
-    {{> components/blog/sticky-blog-post
-        imageside="right"
-        background="auto"
-        cta_text="Read More"
-        post=post
+    {{> components/common/hero
+        title="Learn"
+        subtitle="Our blog explores <br class='mobile-only'>sexual wellness <br class='desktop-only'>and <br class='mobile-only'>human connection."
+        page_id="learn"
     }}
-    {{/each}}
+    <section class="page__pullquote page__pullquote--outer text-navy background-{{#if pagination.blog '===' null}}white{{else if pagination.blog.current '===' 1}}off-white{{/if}}">
+    <div class="container page__pullquote--inner">
+        <h1 class="page__pullquote--heading domaine-display">Explore the Pepper Blog</h1>
+        <ul class="category__list">
+            <li><a href="/learn/tag/experts">Experts</a></li>
+            <li><a href="/learn/tag/inspiration">Inspiration</a></li>
+            <li><a href="/learn/tag/lovescopes">Lovescopes</a></li>
+            <li><a href="/learn/tag/real-couples">Real Couples</a></li>
+            <li><a href="/learn/tag/tips-tricks">Tips + Tricks</a></li>
+            <li><a href="/learn/tag/travel">Travel</a></li>
+            <li><a href="/learn/tag/wellness">Wellness</a></li>
+        </ul>
+        <div class="divider"></div>
+    </div>
+    </section>
     {{#if pagination.blog '===' null}}
     {{else if pagination.blog.current '===' 1}}
     <div class="featured-stories">
@@ -44,4 +56,4 @@ blog:
     {{>components/common/connect-more}}
 </main>
 {{/partial}}
-{{> layout/base page_title="Stories | Pepper" }}
+{{> layout/base page_title="Learn | Pepper" }}

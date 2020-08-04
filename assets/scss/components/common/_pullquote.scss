@@ -102,3 +102,12 @@
       margin: 3rem auto 0;
    }
 }
+
+.stories-landing .page__pullquote--outer {
+   .divider {
+      width: calc(100% - 40px);
+      @include breakpoint('medium') {
+         width: 100%;
+      }
+   }
+}
